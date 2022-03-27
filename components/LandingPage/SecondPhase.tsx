@@ -8,11 +8,17 @@ interface Props {
 
 export default function SecondPhase({ begin }: Props) {
   const [width, setWidth] = useState(0);
+  const [isSm, setIsSm] = useState(false);
   const heightFactor = 0.12;
 
   useEffect(() => {
     setWidth(window.innerWidth - 64);
     window.addEventListener("resize", () => setWidth(window.innerWidth - 64));
+  }, []);
+
+  useEffect(() => {
+    setIsSm(window.innerWidth < 960);
+    window.addEventListener("resize", () => setIsSm(window.innerWidth < 960));
   }, []);
 
   console.log("11111  SecondPhase:  ", width);
@@ -46,15 +52,57 @@ export default function SecondPhase({ begin }: Props) {
         />
         <div
           css={css`
-            width: ${width * 0.17}px;
+            width: ${width * 0.165}px;
             height: ${width * heightFactor}px;
             margin-bottom: ${width * 0.3 * 0.35}px;
             //background-color: green;
           `}
-        />
+        >
+          <div
+            css={css`
+              width: 100%;
+              height: 100%;
+              //background-color: rgba(0, 112, 243, 0.66);
+              //background: linear-gradient(
+              //  to top right,
+              //  rgba(0, 0, 0, 0) 0%,
+              //  rgba(0, 0, 0, 0) calc(50% - 3px),
+              //  rgba(0, 0, 0, 1) 50%,
+              //  rgba(0, 0, 0, 0) calc(50% + 3px),
+              //  rgba(0, 0, 0, 0) 100%
+              //);
+            `}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              version="1.1"
+              preserveAspectRatio="none"
+              viewBox={isSm ? "0 0 100% 100" : "0 0 100 100"}
+            >
+              <line
+                x1="0"
+                y1="0"
+                x2={width * 0.165}
+                y2={width * heightFactor}
+                // y2="70"
+                stroke="black"
+                strokeWidth="3"
+                vectorEffect="non-scaling-stroke"
+              />
+              {/*<line*/}
+              {/*  x1="0"*/}
+              {/*  y1="100"*/}
+              {/*  x2="100"*/}
+              {/*  y2="0"*/}
+              {/*  stroke="black"*/}
+              {/*  vectorEffect="non-scaling-stroke"*/}
+              {/*/>*/}
+            </svg>
+          </div>
+        </div>
         <div
           css={css`
-            width: ${width * 0.26}px;
+            width: ${width * 0.27}px;
             height: ${width * heightFactor}px;
             margin-bottom: ${width * 0.3 * 0.35}px;
             //background-color: blue;
@@ -75,7 +123,7 @@ export default function SecondPhase({ begin }: Props) {
         </div>
         <div
           css={css`
-            width: ${width * 0.17}px;
+            width: ${width * 0.165}px;
             height: ${width * heightFactor}px;
             margin-bottom: ${width * 0.3 * 0.35}px;
             //background-color: green;
