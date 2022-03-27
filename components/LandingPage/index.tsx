@@ -2,26 +2,39 @@ import { css } from "@emotion/react";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { backgroundBlack, backgroundWhite } from "../../res/colors";
+import SecondPhase from "./SecondPhase";
 
 interface Props {}
 
 export default function LandingPage({}: Props) {
   const [loading, setLoading] = useState(true);
   const [isXs, setIsXs] = useState(false);
+  const [beginAnimationPhase2, setBeginAnimationPhase2] = useState(false);
 
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    setLoading(true);
-    setTimeout((args) => {
-      setLoading(false);
-    }, 700);
-  }, [count]);
-
-  useEffect(() => {
     setIsXs(window.innerWidth < 600);
     window.addEventListener("resize", () => setIsXs(window.innerWidth < 600));
+
+    // const animated = document.getElementById("icon");
+    // console.log("11111  animated:  ", animated);
+    // animated.addEventListener("animationend", () => {
+    //   console.log("11111  onanimationend:  ");
+    //   setBeginAnimationPhase2(true);
+    // });
   }, []);
+
+  useEffect(() => {
+    setLoading(true);
+    setBeginAnimationPhase2(false);
+    setTimeout(() => {
+      setLoading(false);
+      setTimeout((args) => {
+        setBeginAnimationPhase2(true);
+      }, 1000);
+    }, 700);
+  }, [count]);
 
   return (
     <div
@@ -41,41 +54,26 @@ export default function LandingPage({}: Props) {
           grid-row: 1;
           grid-column: 1;
           width: ${loading ? 80 : 30}%;
-          margin-bottom: ${loading ? 0 : 20}%;
+          margin-bottom: ${loading ? 0 : 10}%;
 
-          transition: width 500ms ease, margin-bottom 500ms ease;
+          transition: width 1000ms ease, margin-bottom 1000ms ease;
         `}
       >
         <Image
+          // id={"icon"}
           src={require("../../res/images/logo_big.png")}
           alt={""}
           layout={"intrinsic"}
           css={css`
             filter: ${loading
-              ? "brightness(0) saturate(100%) invert(92%) sepia(16%) saturate(0%) hue-rotate(176deg) brightness(103%) contrast(102%)"
-              : "brightness(0) saturate(100%) invert(0%) sepia(56%) saturate(7220%) hue-rotate(165deg) brightness(60%) contrast(83%)"};
+              ? "brightness(0) saturate(100%) invert(96%) sepia(97%) saturate(12%) hue-rotate(237deg) brightness(103%) contrast(103%)"
+              : "brightness(0) saturate(100%) invert(0%) sepia(98%) saturate(9%) hue-rotate(344deg) brightness(102%) contrast(100%)"};
 
-            transition: filter 500ms ease;
+            transition: filter 1000ms ease;
           `}
         />
       </div>
-      <div
-        css={css`
-          width: 100%;
-          //height: 100%;
-          grid-row: 1;
-          grid-column: 1;
-        `}
-      >
-        <div
-          css={css`
-            width: 100%;
-            height: 30vw;
-            //position: fixed;
-            background-color: rgba(255, 0, 0, 0.37);
-          `}
-        />
-      </div>
+      <SecondPhase begin={beginAnimationPhase2} />
     </div>
   );
 }
