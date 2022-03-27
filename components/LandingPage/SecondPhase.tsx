@@ -58,47 +58,23 @@ export default function SecondPhase({ begin }: Props) {
             //background-color: green;
           `}
         >
-          <div
-            css={css`
-              width: 100%;
-              height: 100%;
-              //background-color: rgba(0, 112, 243, 0.66);
-              //background: linear-gradient(
-              //  to top right,
-              //  rgba(0, 0, 0, 0) 0%,
-              //  rgba(0, 0, 0, 0) calc(50% - 3px),
-              //  rgba(0, 0, 0, 1) 50%,
-              //  rgba(0, 0, 0, 0) calc(50% + 3px),
-              //  rgba(0, 0, 0, 0) 100%
-              //);
-            `}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            version="1.1"
+            preserveAspectRatio="none"
+            viewBox={isSm ? "0 0 100% 100" : "0 0 100 100"}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              version="1.1"
-              preserveAspectRatio="none"
-              viewBox={isSm ? "0 0 100% 100" : "0 0 100 100"}
-            >
-              <line
-                x1="0"
-                y1="0"
-                x2={width * 0.165}
-                y2={width * heightFactor}
-                // y2="70"
-                stroke="black"
-                strokeWidth="3"
-                vectorEffect="non-scaling-stroke"
-              />
-              {/*<line*/}
-              {/*  x1="0"*/}
-              {/*  y1="100"*/}
-              {/*  x2="100"*/}
-              {/*  y2="0"*/}
-              {/*  stroke="black"*/}
-              {/*  vectorEffect="non-scaling-stroke"*/}
-              {/*/>*/}
-            </svg>
-          </div>
+            <line
+              x1="0"
+              y1="0"
+              x2={width * 0.165 + 1}
+              y2={width * heightFactor - 1}
+              // y2="70"
+              stroke={textOnWhite}
+              strokeWidth="2.8"
+              vectorEffect="non-scaling-stroke"
+            />
+          </svg>
         </div>
         <div
           css={css`
@@ -128,7 +104,25 @@ export default function SecondPhase({ begin }: Props) {
             margin-bottom: ${width * 0.3 * 0.35}px;
             //background-color: green;
           `}
-        />
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            version="1.1"
+            preserveAspectRatio="none"
+            viewBox={isSm ? "0 0 100% 100" : "0 0 100 100"}
+          >
+            <line
+              x1="-1"
+              y1={width * heightFactor - 1}
+              x2={width * 0.165}
+              y2="0"
+              // y2="70"
+              stroke={textOnWhite}
+              strokeWidth="2.8"
+              vectorEffect="non-scaling-stroke"
+            />
+          </svg>
+        </div>
         <div
           css={css`
             width: ${width * 0.2}px;
