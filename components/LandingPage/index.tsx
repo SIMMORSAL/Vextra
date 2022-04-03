@@ -10,6 +10,7 @@ export default function LandingPage({}: Props) {
   const [loading, setLoading] = useState(true);
   const [isXs, setIsXs] = useState(false);
   const [beginAnimationPhase2, setBeginAnimationPhase2] = useState(false);
+  const [beginAnimationPhase3, setBeginAnimationPhase3] = useState(false);
 
   const [count, setCount] = useState(0);
 
@@ -38,7 +39,7 @@ export default function LandingPage({}: Props) {
 
   return (
     <div
-      onClick={() => setCount(count + 1)}
+      // onClick={() => setCount(count + 1)}
       css={css`
         width: 100%;
         height: 100%;
@@ -49,7 +50,10 @@ export default function LandingPage({}: Props) {
         transition: background-color 500ms ease;
       `}
     >
-      <SecondPhase begin={beginAnimationPhase2} />
+      <SecondPhase
+        begin={beginAnimationPhase2}
+        beginNextPhase={setBeginAnimationPhase3}
+      />
       <div
         css={css`
           grid-row: 1;
