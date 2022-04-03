@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { backgroundBlack, backgroundWhite } from "../../res/colors";
 import SecondPhase from "./SecondPhase";
+import ThirdPhase from "./ThirdPhase";
 
 interface Props {}
 
@@ -78,6 +79,7 @@ export default function LandingPage({}: Props) {
           `}
         />
       </div>
+      <ThirdPhase begin={beginAnimationPhase3} />
     </div>
   );
 }
