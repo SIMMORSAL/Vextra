@@ -49,6 +49,7 @@ export default function LandingPage({}: Props) {
         transition: background-color 500ms ease;
       `}
     >
+      <SecondPhase begin={beginAnimationPhase2} />
       <div
         css={css`
           grid-row: 1;
@@ -73,7 +74,6 @@ export default function LandingPage({}: Props) {
           `}
         />
       </div>
-      <SecondPhase begin={beginAnimationPhase2} />
     </div>
   );
 }
