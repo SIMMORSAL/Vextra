@@ -1,16 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { css } from "@emotion/react";
-import { backgroundWhite, textOnWhite } from "../../res/colors";
+import { backgroundWhite, headerItemSelect, textOnWhite } from "../../res/colors";
 import Image from "next/image";
 
 interface Props {
   begin: boolean;
   beginNextPhase: (begin: boolean) => void;
+  selectedPage?: string;
+  setSelectedPage: (p: string) => void;
 }
 
-export default function SecondPhase({ begin, beginNextPhase }: Props) {
+export default function CenterStuff({
+  begin,
+  beginNextPhase,
+  selectedPage,
+  setSelectedPage,
+}: Props) {
   const [width, setWidth] = useState(0);
   const [showText, setShowText] = useState(false);
+  const [pagesClickable, setPagesClickable] = useState(false);
 
   // const [isSm, setIsSm] = useState(false);
   // const heightFactor = 0.12;
@@ -25,6 +33,7 @@ export default function SecondPhase({ begin, beginNextPhase }: Props) {
       setTimeout(() => {
         setTimeout(() => {
           setShowText(true);
+          setPagesClickable(true);
         }, durationTextAppear);
         beginNextPhase(true);
       }, durationLineAppear - durationLineAppear * 0.4);
@@ -46,6 +55,8 @@ export default function SecondPhase({ begin, beginNextPhase }: Props) {
     //   console.log("11111  RESIZE:  ", ev.view.innerWidth, ev.view.innerHeight);
     // });
   }, []);
+
+  console.log("11111  CenterStuff:  ", selectedPage);
 
   return (
     <div
@@ -145,9 +156,19 @@ export default function SecondPhase({ begin, beginNextPhase }: Props) {
           `}
         >
           <p
+            onClick={() => pagesClickable && setSelectedPage("aboutMe")}
             css={css`
-              cursor: pointer;
+              cursor: ${pagesClickable ? "pointer" : "default"};
               margin: 0;
+              color: ${selectedPage === "aboutMe" ? headerItemSelect : textOnWhite};
+
+              transition: 200ms ease;
+              transition-property: color, text-shadow;
+
+              :hover {
+                color: ${headerItemSelect};
+                text-shadow: 0 0 12px ${headerItemSelect}22;
+              }
             `}
           >
             About me
@@ -166,9 +187,21 @@ export default function SecondPhase({ begin, beginNextPhase }: Props) {
           `}
         >
           <p
+            onClick={() => pagesClickable && setSelectedPage("portfolio")}
             css={css`
-              cursor: pointer;
+              cursor: ${pagesClickable ? "pointer" : "default"};
               margin: 0;
+              color: ${selectedPage === "portfolio"
+                ? headerItemSelect
+                : textOnWhite};
+
+              transition: 200ms ease;
+              transition-property: color, text-shadow;
+
+              :hover {
+                color: ${headerItemSelect};
+                text-shadow: 0 0 12px ${headerItemSelect}22;
+              }
             `}
           >
             Portfolio

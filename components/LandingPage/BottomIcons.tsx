@@ -6,19 +6,20 @@ import EmailIcon from "@mui/icons-material/Email";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import { textOnWhite } from "../../res/colors";
+import Image from "next/image";
 
 interface Props {
   begin: boolean;
 }
 
-export default function ThirdPhase({ begin }: Props) {
+export default function BottomIcons({ begin }: Props) {
   const [delayPassed, setDelayPassed] = useState(false);
 
   useEffect(() => {
     if (begin)
       setTimeout(() => {
         setDelayPassed(true);
-      }, 1200);
+      }, 1300);
   }, [begin]);
 
   return (
@@ -42,16 +43,6 @@ export default function ThirdPhase({ begin }: Props) {
           color: black;
         `}
       >
-        <LinkedInIcon
-          css={css`
-            margin: 16px 4px;
-            transform: translateY(${delayPassed ? 0 : "-50%"});
-            opacity: ${delayPassed ? 1 : 0};
-
-            transition: 200ms ease;
-            transition-property: transform, opacity;
-          `}
-        />
         <PinterestIcon
           css={css`
             margin: 16px 4px;
@@ -60,10 +51,32 @@ export default function ThirdPhase({ begin }: Props) {
 
             transition: 200ms ease;
             transition-property: transform, opacity;
-            transition-delay: 100ms;
           `}
         />
-        <EmailIcon
+        <div
+          css={css`
+            width: 24px;
+            height: 24px;
+            margin: 16px 4px;
+            transform: translateY(${delayPassed ? 0 : "-50%"});
+            opacity: ${delayPassed ? 1 : 0};
+
+            transition: 200ms ease;
+            transition-property: transform, opacity;
+            transition-delay: 100ms;
+          `}
+        >
+          <Image
+            src={require("/res/images/behance.png")}
+            alt={"behance"}
+            layout={"intrinsic"}
+            // css={css`
+            //   filter: brightness(0) saturate(100%) invert(96%) sepia(97%)
+            //     saturate(12%) hue-rotate(237deg) brightness(103%) contrast(103%);
+            // `}
+          />
+        </div>
+        <LinkedInIcon
           css={css`
             margin: 16px 4px;
             transform: translateY(${delayPassed ? 0 : "-50%"});
@@ -85,7 +98,7 @@ export default function ThirdPhase({ begin }: Props) {
             transition-delay: 300ms;
           `}
         />
-        <LocalPhoneIcon
+        <EmailIcon
           css={css`
             margin: 16px 4px;
             transform: translateY(${delayPassed ? 0 : "-50%"});
@@ -94,6 +107,17 @@ export default function ThirdPhase({ begin }: Props) {
             transition: 200ms ease;
             transition-property: transform, opacity;
             transition-delay: 400ms;
+          `}
+        />
+        <LocalPhoneIcon
+          css={css`
+            margin: 16px 4px;
+            transform: translateY(${delayPassed ? 0 : "-50%"});
+            opacity: ${delayPassed ? 1 : 0};
+
+            transition: 200ms ease;
+            transition-property: transform, opacity;
+            transition-delay: 500ms;
           `}
         />
       </div>

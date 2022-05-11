@@ -4,3 +4,4 @@ export const backgroundWhite = "#fdfdfe";
 export const backgroundBlack = "#161616";
 export const logoOnBlack = "#fdfdfe";
 export const logoOnWhite = "#161616";
+export const headerItemSelect = "#1497a9";

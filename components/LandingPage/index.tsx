@@ -2,8 +2,9 @@ import { css } from "@emotion/react";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { backgroundBlack, backgroundWhite } from "../../res/colors";
-import SecondPhase from "./SecondPhase";
-import ThirdPhase from "./ThirdPhase";
+import CenterStuff from "./CenterStuff";
+import BottomIcons from "./BottomIcons";
+import LandingHeader from "./LandingHeader";
 
 interface Props {}
 
@@ -12,6 +13,7 @@ export default function LandingPage({}: Props) {
   const [isXs, setIsXs] = useState(false);
   const [beginAnimationPhase2, setBeginAnimationPhase2] = useState(false);
   const [beginAnimationPhase3, setBeginAnimationPhase3] = useState(false);
+  const [selectedPage, setSelectedPage] = useState(undefined);
 
   const [count, setCount] = useState(0);
 
@@ -51,9 +53,12 @@ export default function LandingPage({}: Props) {
         transition: background-color 500ms ease;
       `}
     >
-      <SecondPhase
+      <LandingHeader selectedPage={selectedPage} />
+      <CenterStuff
         begin={beginAnimationPhase2}
         beginNextPhase={setBeginAnimationPhase3}
+        selectedPage={selectedPage}
+        setSelectedPage={setSelectedPage}
       />
       <div
         css={css`
@@ -79,7 +84,7 @@ export default function LandingPage({}: Props) {
           `}
         />
       </div>
-      <ThirdPhase begin={beginAnimationPhase3} />
+      <BottomIcons begin={beginAnimationPhase3} />
     </div>
   );
 }
