@@ -122,7 +122,9 @@ export default function SecondPhase({ begin, beginNextPhase }: Props) {
           grid-column: 1;
           width: 100%;
           height: calc(100% + ${width * 0.14}px);
-          transform: translateY(${showText ? width * 0.05 * -1 : 0}px);
+          transform: translateY(
+            ${showText ? width * 0.05 * -1 : width * 0.035 * -1}px
+          );
           opacity: ${showText ? 1 : 0};
           padding: 0 32px;
           display: flex;
@@ -148,7 +150,7 @@ export default function SecondPhase({ begin, beginNextPhase }: Props) {
               margin: 0;
             `}
           >
-            About Me
+            About me
           </p>
         </div>
         <div
