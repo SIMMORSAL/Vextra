@@ -63,7 +63,7 @@ export default function BottomIcons({ begin }: Props) {
 
             transition: 200ms ease;
             transition-property: transform, opacity;
-            transition-delay: 100ms;
+            transition-delay: 300ms;
           `}
         >
           <Image
@@ -84,7 +84,7 @@ export default function BottomIcons({ begin }: Props) {
 
             transition: 200ms ease;
             transition-property: transform, opacity;
-            transition-delay: 200ms;
+            transition-delay: 400ms;
           `}
         />
         <InstagramIcon
@@ -95,7 +95,7 @@ export default function BottomIcons({ begin }: Props) {
 
             transition: 200ms ease;
             transition-property: transform, opacity;
-            transition-delay: 300ms;
+            transition-delay: 100ms;
           `}
         />
         <EmailIcon
@@ -106,20 +106,20 @@ export default function BottomIcons({ begin }: Props) {
 
             transition: 200ms ease;
             transition-property: transform, opacity;
-            transition-delay: 400ms;
+            transition-delay: 200ms;
           `}
         />
-        <LocalPhoneIcon
-          css={css`
-            margin: 16px 4px;
-            transform: translateY(${delayPassed ? 0 : "-50%"});
-            opacity: ${delayPassed ? 1 : 0};
+        {/*<LocalPhoneIcon*/}
+        {/*  css={css`*/}
+        {/*    margin: 16px 4px;*/}
+        {/*    transform: translateY(${delayPassed ? 0 : "-50%"});*/}
+        {/*    opacity: ${delayPassed ? 1 : 0};*/}
 
-            transition: 200ms ease;
-            transition-property: transform, opacity;
-            transition-delay: 500ms;
-          `}
-        />
+        {/*    transition: 200ms ease;*/}
+        {/*    transition-property: transform, opacity;*/}
+        {/*    transition-delay: 400ms;*/}
+        {/*  `}*/}
+        {/*/>*/}
       </div>
     </div>
   );
