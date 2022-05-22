@@ -20,11 +20,6 @@ export default function CenterStuff({
   const [showText, setShowText] = useState(false);
   const [pagesClickable, setPagesClickable] = useState(false);
 
-  // const [isSm, setIsSm] = useState(false);
-  // const heightFactor = 0.12;
-  // const [rightX2, setRightX2] = useState(0);
-  // const [rightY2, setRightY2] = useState(0);
-
   const durationLineAppear = 1500;
   const durationTextAppear = 500;
 
@@ -43,20 +38,7 @@ export default function CenterStuff({
   useEffect(() => {
     setWidth(window.innerWidth - 64);
     window.addEventListener("resize", () => setWidth(window.innerWidth - 64));
-    //
-    // setIsSm(window.innerWidth < 960);
-    // window.addEventListener("resize", () => {
-    //   setIsSm(window.innerWidth < 960);
-    //   setWidth(window.innerWidth - 64);
-    // });
-    // const lineLeftRoot = document.getElementById("lineleft");
-    // console.log("11111  lin:  ", lineLeftRoot);
-    // lineLeftRoot.addEventListener("resize", (ev) => {
-    //   console.log("11111  RESIZE:  ", ev.view.innerWidth, ev.view.innerHeight);
-    // });
   }, []);
-
-  console.log("11111  CenterStuff:  ", selectedPage);
 
   return (
     <div
@@ -75,7 +57,6 @@ export default function CenterStuff({
           width: 100%;
           height: 100%;
           padding: 0 32px;
-          //background-color: rgba(255, 0, 0, 0.43);
           display: flex;
           flex-direction: row;
           align-items: end;
@@ -143,7 +124,6 @@ export default function CenterStuff({
           color: ${textOnWhite};
           font-size: ${width * 0.03}px;
           text-align: center;
-          //background-color: rgba(0, 112, 243, 0.44);
 
           transition: ${durationTextAppear}ms ease;
           transition-property: transform, opacity;
@@ -152,7 +132,6 @@ export default function CenterStuff({
         <div
           css={css`
             width: ${width * 0.161}px;
-            //background-color: rgba(0, 128, 0, 0.62);
           `}
         >
           <p
@@ -177,13 +156,11 @@ export default function CenterStuff({
         <div
           css={css`
             width: ${width * 0.678}px;
-            //background-color: rgba(0, 128, 0, 0.26);
           `}
         />
         <div
           css={css`
             width: ${width * 0.161}px;
-            //background-color: rgba(0, 128, 0, 0.62);
           `}
         >
           <p
