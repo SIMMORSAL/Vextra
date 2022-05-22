@@ -13,11 +13,6 @@ export default function LandingHeader(props: Props) {
         grid-column: 1;
         width: 100%;
         height: 100px;
-        background-color: ${props.selectedPage === "aboutMe"
-          ? "red"
-          : props.selectedPage === "portfolio"
-          ? "blue"
-          : "transparent"};
         align-self: start;
       `}
     />

@@ -66,12 +66,14 @@ export default function LandingPage({}: Props) {
           grid-column: 1;
           width: ${loading ? 80 : 30}%;
           margin-bottom: ${loading ? 0 : 10}%;
+          z-index: 99;
 
           transition: width 1000ms ease, margin-bottom 1000ms ease;
         `}
       >
         <Image
           // id={"icon"}
+          onClick={() => setSelectedPage(undefined)}
           src={require("../../res/images/logo_big.png")}
           alt={""}
           layout={"intrinsic"}
@@ -84,7 +86,23 @@ export default function LandingPage({}: Props) {
           `}
         />
       </div>
-      <BottomIcons begin={beginAnimationPhase3} />
+      <div
+        css={css`
+          grid-row: 1;
+          grid-column: 1;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: end;
+          justify-content: center;
+          opacity: ${selectedPage === undefined ? 1 : 0};
+          // transform: ${selectedPage === undefined ? "none" : "translateY(10vh)"};
+
+          transition: opacity 200ms ease, transform 200ms ease;
+        `}
+      >
+        <BottomIcons begin={beginAnimationPhase3} />
+      </div>
     </div>
   );
 }

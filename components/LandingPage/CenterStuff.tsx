@@ -70,6 +70,10 @@ export default function CenterStuff({
           css={css`
             filter: brightness(0) saturate(100%) invert(45%) sepia(0%)
               saturate(1073%) hue-rotate(140deg) brightness(96%) contrast(85%);
+            opacity: ${selectedPage === undefined ? 1 : 0};
+            transform: ${selectedPage === undefined ? "none" : "translateY(15vh)"};
+
+            transition: opacity 200ms ease, transform 200ms ease;
           `}
         />
       </div>
@@ -140,9 +144,13 @@ export default function CenterStuff({
               cursor: ${pagesClickable ? "pointer" : "default"};
               margin: 0;
               color: ${selectedPage === "aboutMe" ? headerItemSelect : textOnWhite};
+              transform: ${selectedPage === undefined
+                ? "none"
+                : "translateY(-15vh) translateX(4vw)"};
+              opacity: ${selectedPage === undefined ? 1 : 0};
 
               transition: 200ms ease;
-              transition-property: color, text-shadow;
+              transition-property: color, text-shadow, transform, opacity;
 
               :hover {
                 color: ${headerItemSelect};
@@ -171,9 +179,13 @@ export default function CenterStuff({
               color: ${selectedPage === "portfolio"
                 ? headerItemSelect
                 : textOnWhite};
+              transform: ${selectedPage === undefined
+                ? "none"
+                : "translateY(-15vh) translateX(-4vw)"};
+              opacity: ${selectedPage === undefined ? 1 : 0};
 
               transition: 200ms ease;
-              transition-property: color, text-shadow;
+              transition-property: color, text-shadow, transform, opacity;
 
               :hover {
                 color: ${headerItemSelect};

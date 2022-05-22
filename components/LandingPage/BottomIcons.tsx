@@ -27,17 +27,7 @@ export default function BottomIcons({ begin }: Props) {
   }, [begin]);
 
   return (
-    <div
-      css={css`
-        grid-row: 1;
-        grid-column: 1;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: end;
-        justify-content: center;
-      `}
-    >
+    <div css={css``}>
       <div
         css={css`
           display: flex;
@@ -95,6 +85,7 @@ export default function BottomIcons({ begin }: Props) {
             alt={"behance"}
             layout={"intrinsic"}
             css={css`
+              padding: 0 4px;
               filter: invert(5%) sepia(1%) saturate(545%) hue-rotate(323deg)
                 brightness(101%) contrast(93%);
 
