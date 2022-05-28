@@ -41,7 +41,6 @@ export default function LandingHeaderButton(props: Props) {
           :hover {
             color: ${headerItemSelect};
             text-shadow: 0 0 12px ${headerItemSelect}40;
-            font-size: 1.05em;
             //margin-bottom: 6px;
             padding-top: 6px;
             //margin-bottom: -6px;

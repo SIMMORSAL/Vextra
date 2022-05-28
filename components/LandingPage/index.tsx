@@ -6,10 +6,13 @@ import CenterStuff from "./CenterStuff";
 import BottomIcons from "./BottomIcons";
 import LandingHeader from "./LandingHeader";
 import LandingLogo from "./LandingLogo";
+import { useRouter } from "next/router";
 
 interface Props {}
 
 export default function LandingPage({}: Props) {
+  const router = useRouter();
+
   const [loading, setLoading] = useState(true);
   const [isXs, setIsXs] = useState(false);
   const [beginAnimationPhase2, setBeginAnimationPhase2] = useState(false);
@@ -29,6 +32,13 @@ export default function LandingPage({}: Props) {
     //   setBeginAnimationPhase2(true);
     // });
   }, []);
+  useEffect(() => {
+    if (selectedPage !== undefined) {
+      setTimeout(() => {
+        if (selectedPage !== undefined) router.push(`/${selectedPage}/`);
+      }, 200);
+    }
+  }, [router, selectedPage]);
 
   useEffect(() => {
     setLoading(true);

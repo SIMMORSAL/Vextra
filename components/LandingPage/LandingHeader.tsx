@@ -4,12 +4,11 @@ import LandingHeaderButton from "./LandingHeaderButton";
 import Image from "next/image";
 
 interface Props {
-  selectedPage?: string; // undefined | aboutMe | portfolio
+  selectedPage?: string; // undefined | about-me | portfolio
   setSelectedPage?: (page?: string) => void;
 }
 
 export default function LandingHeader(props: Props) {
-  const [mouseOverLogo, setMouseOverLogo] = useState(false);
   return (
     <div
       css={css`
@@ -35,7 +34,7 @@ export default function LandingHeader(props: Props) {
         Home
       </LandingHeaderButton>
       <LandingHeaderButton
-        page={"aboutMe"}
+        page={"about-me"}
         selectedPage={props.selectedPage}
         setSelectedPage={props.setSelectedPage}
         transform={

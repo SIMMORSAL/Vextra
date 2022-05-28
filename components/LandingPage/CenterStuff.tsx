@@ -139,11 +139,11 @@ export default function CenterStuff({
           `}
         >
           <p
-            onClick={() => pagesClickable && setSelectedPage("aboutMe")}
+            onClick={() => pagesClickable && setSelectedPage("about-me")}
             css={css`
               cursor: ${pagesClickable ? "pointer" : "default"};
               margin: 0;
-              color: ${selectedPage === "aboutMe" ? headerItemSelect : textOnWhite};
+              color: ${selectedPage === "about-me" ? headerItemSelect : textOnWhite};
               transform: ${selectedPage === undefined
                 ? "none"
                 : "translateY(-15vh) translateX(4vw)"};
