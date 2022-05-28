@@ -54,7 +54,7 @@ export default function LandingPage({}: Props) {
         transition: background-color 500ms ease;
       `}
     >
-      <LandingHeader selectedPage={selectedPage} />
+      <LandingHeader selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
       <CenterStuff
         begin={beginAnimationPhase2}
         beginNextPhase={setBeginAnimationPhase3}
