@@ -53,7 +53,7 @@ export default function BottomIcons({ begin }: Props) {
             :hover {
               width: 42px;
               height: 32px;
-              color: ${headerItemSelect};
+              // color: ${headerItemSelect};
             }
           `}
         />
@@ -92,8 +92,8 @@ export default function BottomIcons({ begin }: Props) {
               transition: filter 200ms ease;
 
               :hover {
-                filter: invert(46%) sepia(38%) saturate(1830%) hue-rotate(150deg)
-                  brightness(89%) contrast(84%);
+                //filter: invert(46%) sepia(38%) saturate(1830%) hue-rotate(150deg)
+                //  brightness(89%) contrast(84%);
               }
             `}
           />
@@ -113,7 +113,7 @@ export default function BottomIcons({ begin }: Props) {
             :hover {
               width: 42px;
               height: 32px;
-              color: ${headerItemSelect};
+              // color: ${headerItemSelect};
             }
           `}
         />
@@ -132,7 +132,7 @@ export default function BottomIcons({ begin }: Props) {
             :hover {
               width: 42px;
               height: 32px;
-              color: ${headerItemSelect};
+              //color: ${headerItemSelect};
             }
           `}
         />
@@ -151,7 +151,7 @@ export default function BottomIcons({ begin }: Props) {
             :hover {
               width: 42px;
               height: 32px;
-              color: ${headerItemSelect};
+              //color: ${headerItemSelect};
             }
           `}
         />

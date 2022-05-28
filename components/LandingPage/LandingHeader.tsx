@@ -97,7 +97,7 @@ export default function LandingHeader(props: Props) {
         Portfolio
       </LandingHeaderButton>
       <LandingHeaderButton
-        page={"contactMe"}
+        page={"contact-me"}
         selectedPage={props.selectedPage}
         setSelectedPage={props.setSelectedPage}
         transform={props.selectedPage === undefined ? "translateX(25vw)" : "none"}

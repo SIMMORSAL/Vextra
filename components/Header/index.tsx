@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import { headerItemSelect, textOnWhite } from "../../res/colors";
 import LandingHeaderButton from "../LandingPage/LandingHeaderButton";
@@ -9,14 +9,20 @@ import { useRouter } from "next/router";
 interface Props {
   // selectedPage?: string; // undefined | about-me | portfolio
   // setSelectedPage?: (page?: string) => void;
+  route: string;
 }
 
 export default function Header(props: Props) {
   const router = useRouter();
-  const [selectedPage, setSelectedPage] = useState(
-    router.route.slice(1).split("/")[0]
-  );
-  console.log(`11111  Header:  ${router.route.slice(1).split("/")}`);
+  const route = router.asPath.slice(1).split("/")[0];
+  console.log(`11111  Headasdfer:  ${router.asPath.slice(1).split("/")[0]}`);
+  const [selectedPage, setSelectedPage] = useState(route);
+  useEffect(() => {
+    const route = router.route.slice(1).split("/")[0];
+    setSelectedPage(route);
+  }, [router]);
+  console.log(`11111  Header:  ${selectedPage}`);
+  console.log(`11111  Headasdfer:  ${router.asPath.slice(1).split("/")[0]}`);
   return (
     <div
       css={css`
@@ -90,7 +96,7 @@ export default function Header(props: Props) {
         Portfolio
       </HeaderButton>
       <HeaderButton
-        page={"contactMe"}
+        page={"contact-me"}
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
       >

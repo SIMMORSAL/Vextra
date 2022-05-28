@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
   return (
     <div
       css={css`
@@ -11,7 +12,7 @@ function MyApp({ Component, pageProps }) {
         height: 100%;
       `}
     >
-      <Header />
+      <Header route={router.route} />
       <Component {...pageProps} />
     </div>
   );
