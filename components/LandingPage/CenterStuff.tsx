@@ -73,7 +73,7 @@ export default function CenterStuff({
             opacity: ${selectedPage === undefined ? 1 : 0};
             transform: ${selectedPage === undefined ? "none" : "translateY(15vh)"};
 
-            transition: opacity 200ms ease, transform 200ms ease;
+            transition: opacity 70ms ease, transform 70ms ease;
           `}
         />
       </div>
@@ -148,13 +148,17 @@ export default function CenterStuff({
                 ? "none"
                 : "translateY(-15vh) translateX(4vw)"};
               opacity: ${selectedPage === undefined ? 1 : 0};
+              font-size: 1em;
 
               transition: 200ms ease;
-              transition-property: color, text-shadow, transform, opacity;
+              transition-property: color, text-shadow, transform, opacity, font-size,
+                margin-top;
 
               :hover {
                 color: ${headerItemSelect};
-                text-shadow: 0 0 12px ${headerItemSelect}22;
+                text-shadow: 0 0 12px ${headerItemSelect}40;
+                font-size: 1.05em;
+                margin-top: 6px;
               }
             `}
           >
@@ -185,11 +189,14 @@ export default function CenterStuff({
               opacity: ${selectedPage === undefined ? 1 : 0};
 
               transition: 200ms ease;
-              transition-property: color, text-shadow, transform, opacity;
+              transition-property: color, text-shadow, transform, opacity,
+                font-weight, font-size, margin-top;
 
               :hover {
                 color: ${headerItemSelect};
-                text-shadow: 0 0 12px ${headerItemSelect}22;
+                text-shadow: 0 0 12px ${headerItemSelect}40;
+                font-size: 1.05em;
+                margin-top: 6px;
               }
             `}
           >
