@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import { backgroundBlack, backgroundWhite } from "../../res/colors";
 import CenterStuff from "./CenterStuff";
@@ -7,12 +7,14 @@ import BottomIcons from "./BottomIcons";
 import LandingHeader from "./LandingHeader";
 import LandingLogo from "./LandingLogo";
 import { useRouter } from "next/router";
+import { _AppContext } from "../../data/providers/provider_App";
 
 interface Props {}
 
 export default function LandingPage({}: Props) {
   const router = useRouter();
 
+  const { setMoveToMain } = useContext(_AppContext);
   const [loading, setLoading] = useState(true);
   const [isXs, setIsXs] = useState(false);
   const [beginAnimationPhase2, setBeginAnimationPhase2] = useState(false);
@@ -24,6 +26,7 @@ export default function LandingPage({}: Props) {
   useEffect(() => {
     setIsXs(window.innerWidth < 600);
     window.addEventListener("resize", () => setIsXs(window.innerWidth < 600));
+    setMoveToMain(false);
 
     // const animated = document.getElementById("icon");
     // console.log("11111  animated:  ", animated);
