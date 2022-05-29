@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useContext } from "react";
 import { css } from "@emotion/react";
 import { headerItemSelect, textOnWhite } from "../../res/colors";
 import { useRouter } from "next/router";
@@ -8,22 +8,26 @@ interface Props {
   selectedPage: string;
   setSelectedPage: (page: string) => void;
   children?: ReactNode;
+  homeClicked?: () => void;
 }
 
 export default function HeaderButton(props: Props) {
   const router = useRouter();
   const buttonSelected = props.selectedPage === props.page;
-  console.log(`11111  HeaderButton ${props.page}:  ${props.selectedPage}`);
   return (
     <a
     // href={props.page !== "home" ? `/${props.page}/` : undefined}
     >
       <div
-        onClick={() =>
-          setTimeout(() => {
-            if (props.page !== "home") router.push(`/${props.page}/`);
-          }, 100)
-        }
+        onClick={() => {
+          if (props.page === "home") {
+            props.homeClicked();
+          } else {
+            setTimeout(() => {
+              router.push(`/${props.page}/`);
+            }, 100);
+          }
+        }}
         css={css`
           display: flex;
           flex-direction: column;

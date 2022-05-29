@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import { headerItemSelect, textOnWhite } from "../../res/colors";
 import LandingHeaderButton from "../LandingPage/LandingHeaderButton";
 import Image from "next/image";
 import HeaderButton from "./HeaderButton";
 import { useRouter } from "next/router";
+import { _AppContext } from "../../data/providers/provider_App";
 
 interface Props {
   // selectedPage?: string; // undefined | about-me | portfolio
@@ -15,14 +16,15 @@ interface Props {
 export default function Header(props: Props) {
   const router = useRouter();
   const route = router.asPath.slice(1).split("/")[0];
-  console.log(`11111  Headasdfer:  ${router.asPath.slice(1).split("/")[0]}`);
   const [selectedPage, setSelectedPage] = useState(route);
+  const { moveToMain, setMoveToMain } = useContext(_AppContext);
   useEffect(() => {
     const route = router.route.slice(1).split("/")[0];
     setSelectedPage(route);
   }, [router]);
-  console.log(`11111  Header:  ${selectedPage}`);
-  console.log(`11111  Headasdfer:  ${router.asPath.slice(1).split("/")[0]}`);
+  useEffect(() => {
+    console.log(`11111  asdfasdfasdf:  ${moveToMain}`);
+  }, [moveToMain]);
   return (
     <div
       css={css`
@@ -44,6 +46,7 @@ export default function Header(props: Props) {
         page={"home"}
         selectedPage={selectedPage}
         setSelectedPage={() => setSelectedPage(undefined)}
+        homeClicked={() => setMoveToMain(true)}
       >
         Home
       </HeaderButton>
@@ -73,7 +76,10 @@ export default function Header(props: Props) {
           src={require("../../res/images/logo_big.png")}
           alt={""}
           layout={"intrinsic"}
-          onClick={() => setSelectedPage(undefined)}
+          onClick={() => {
+            setSelectedPage(undefined);
+            setMoveToMain(true);
+          }}
           css={css`
             cursor: pointer;
             opacity: ${selectedPage === undefined ? 0 : 1};
