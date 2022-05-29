@@ -60,7 +60,13 @@ export default function Header(props: Props) {
         </HeaderButton>
       )}
       <HeaderButton
-        page={isXs ? "contact-me" : "about-me"}
+        page={
+          !isXs
+            ? "about-me"
+            : selectedPage === "contact-me"
+            ? "contact-me"
+            : "about-me"
+        }
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
       >
