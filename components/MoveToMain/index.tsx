@@ -28,7 +28,7 @@ export default function MoveToMain(props: Props) {
     <div
       css={css`
         width: 100%;
-        height: 100vh;
+        height: 100%;
         position: fixed;
         top: 0;
         z-index: 9999;
