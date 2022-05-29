@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { css } from "@emotion/react";
 import LandingHeaderButton from "./LandingHeaderButton";
 import Image from "next/image";
+import useWindowSize from "../../hooks/useWindowSize";
 
 interface Props {
   selectedPage?: string; // undefined | about-me | portfolio
@@ -9,6 +10,9 @@ interface Props {
 }
 
 export default function LandingHeader(props: Props) {
+  const windowWidth = useWindowSize();
+  const isXs = windowWidth.width < 600;
+
   return (
     <div
       css={css`
@@ -18,22 +22,28 @@ export default function LandingHeader(props: Props) {
         height: 70px;
         z-index: 1000;
         align-self: start;
-        overflow: hidden;
+        //overflow: hidden;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
       `}
     >
+      {isXs ? (
+        <></>
+      ) : (
+        <LandingHeaderButton
+          isFirstOrLast={true}
+          page={"home"}
+          selectedPage={props.selectedPage}
+          setSelectedPage={() => props.setSelectedPage(undefined)}
+          // transform={props.selectedPage === undefined ? "translateX(-25vw)" : "none"}
+        >
+          Home
+        </LandingHeaderButton>
+      )}
       <LandingHeaderButton
-        page={"home"}
-        selectedPage={props.selectedPage}
-        setSelectedPage={() => props.setSelectedPage(undefined)}
-        transform={props.selectedPage === undefined ? "translateX(-25vw)" : "none"}
-      >
-        Home
-      </LandingHeaderButton>
-      <LandingHeaderButton
+        isFirstOrLast={false}
         page={"about-me"}
         selectedPage={props.selectedPage}
         setSelectedPage={props.setSelectedPage}
@@ -85,6 +95,7 @@ export default function LandingHeader(props: Props) {
         />
       </div>
       <LandingHeaderButton
+        isFirstOrLast={false}
         page={"portfolio"}
         selectedPage={props.selectedPage}
         setSelectedPage={props.setSelectedPage}
@@ -96,14 +107,19 @@ export default function LandingHeader(props: Props) {
       >
         Portfolio
       </LandingHeaderButton>
-      <LandingHeaderButton
-        page={"contact-me"}
-        selectedPage={props.selectedPage}
-        setSelectedPage={props.setSelectedPage}
-        transform={props.selectedPage === undefined ? "translateX(25vw)" : "none"}
-      >
-        Contact Me
-      </LandingHeaderButton>
+      {isXs ? (
+        <></>
+      ) : (
+        <LandingHeaderButton
+          isFirstOrLast={true}
+          page={"contact-me"}
+          selectedPage={props.selectedPage}
+          setSelectedPage={props.setSelectedPage}
+          // transform={props.selectedPage === undefined ? "translateX(25vw)" : "none"}
+        >
+          Contact Me
+        </LandingHeaderButton>
+      )}
     </div>
   );
 }

@@ -6,6 +6,7 @@ import Image from "next/image";
 import HeaderButton from "./HeaderButton";
 import { useRouter } from "next/router";
 import { _AppContext } from "../../data/providers/provider_App";
+import useWindowSize from "../../hooks/useWindowSize";
 
 interface Props {
   // selectedPage?: string; // undefined | about-me | portfolio
@@ -18,13 +19,15 @@ export default function Header(props: Props) {
   const route = router.asPath.slice(1).split("/")[0];
   const [selectedPage, setSelectedPage] = useState(route);
   const { moveToMain, setMoveToMain } = useContext(_AppContext);
+
+  const windowWidth = useWindowSize();
+  const isXs = windowWidth.width < 600;
+
   useEffect(() => {
     const route = router.route.slice(1).split("/")[0];
     setSelectedPage(route);
   }, [router]);
-  useEffect(() => {
-    console.log(`11111  asdfasdfasdf:  ${moveToMain}`);
-  }, [moveToMain]);
+  useEffect(() => {}, [moveToMain]);
   return (
     <div
       css={css`
@@ -42,14 +45,18 @@ export default function Header(props: Props) {
         //background-color: red;
       `}
     >
-      <HeaderButton
-        page={"home"}
-        selectedPage={selectedPage}
-        setSelectedPage={() => setSelectedPage(undefined)}
-        homeClicked={() => setMoveToMain(true)}
-      >
-        Home
-      </HeaderButton>
+      {isXs ? (
+        <></>
+      ) : (
+        <HeaderButton
+          page={"home"}
+          selectedPage={selectedPage}
+          setSelectedPage={() => setSelectedPage(undefined)}
+          homeClicked={() => setMoveToMain(true)}
+        >
+          Home
+        </HeaderButton>
+      )}
       <HeaderButton
         page={"about-me"}
         selectedPage={selectedPage}
@@ -101,13 +108,17 @@ export default function Header(props: Props) {
       >
         Portfolio
       </HeaderButton>
-      <HeaderButton
-        page={"contact-me"}
-        selectedPage={selectedPage}
-        setSelectedPage={setSelectedPage}
-      >
-        Contact Me
-      </HeaderButton>
+      {isXs ? (
+        <></>
+      ) : (
+        <HeaderButton
+          page={"contact-me"}
+          selectedPage={selectedPage}
+          setSelectedPage={setSelectedPage}
+        >
+          Contact Me
+        </HeaderButton>
+      )}
     </div>
   );
 }

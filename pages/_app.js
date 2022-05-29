@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import Header from "../components/Header";
 import { useRouter } from "next/router";
 import { _AppProvider } from "../data/providers/provider_App";
-import MoveToMain from "../components/MoveToMain";
+import _MoveToMain from "../components/_MoveToMain";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }) {
       >
         <Header route={router.route} />
         <Component {...pageProps} />
-        <MoveToMain />
+        <_MoveToMain />
       </div>
     </_AppProvider>
   );

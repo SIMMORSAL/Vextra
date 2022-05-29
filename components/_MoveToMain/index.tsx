@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 
 interface Props {}
 
-export default function MoveToMain(props: Props) {
+export default function _MoveToMain(props: Props) {
   const { moveToMain } = useContext(_AppContext);
   const [beginAnimation, setBeginAnimation] = useState(false);
   const router = useRouter();

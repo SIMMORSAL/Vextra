@@ -1,18 +1,20 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import { headerItemSelect, textOnWhite } from "../../res/colors";
 import transform from "next/dist/build/babel/loader/transform";
 
 interface Props {
+  isFirstOrLast: boolean;
   page: string;
   selectedPage: string;
   setSelectedPage: (page: string) => void;
   children?: ReactNode;
-  transform: string;
+  transform?: string;
 }
 
 export default function LandingHeaderButton(props: Props) {
   const buttonSelected = props.selectedPage === props.page;
+
   return (
     <div
       css={css`
@@ -34,9 +36,10 @@ export default function LandingHeaderButton(props: Props) {
           opacity: ${props.selectedPage === undefined ? 0 : 1};
           padding: ${buttonSelected ? 6 : 0}px 16px 0;
 
-          transition: 200ms ease;
+          transition: ${props.isFirstOrLast ? 100 : 200}ms ease;
           transition-property: color, text-shadow, transform, opacity, font-weight,
             font-size, margin-bottom, margin-top, padding-top;
+          transition-delay: ${props.isFirstOrLast ? 100 : 0}ms;
 
           :hover {
             color: ${headerItemSelect};
