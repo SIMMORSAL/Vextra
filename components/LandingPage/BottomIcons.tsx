@@ -5,7 +5,15 @@ import PinterestIcon from "@mui/icons-material/Pinterest";
 import EmailIcon from "@mui/icons-material/Email";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
-import { headerItemSelect, textOnWhite } from "../../res/colors";
+import {
+  headerItemSelect,
+  headerItemSelectFilter,
+  itemOnWhite,
+  itemOnWhiteFilter,
+  itemOnWhiteFocused,
+  itemOnWhiteFocusedFilter,
+  textOnWhite,
+} from "../../res/colors";
 import Image from "next/image";
 
 interface Props {
@@ -15,6 +23,7 @@ interface Props {
 export default function BottomIcons({ begin }: Props) {
   const [delayPassed, setDelayPassed] = useState(false);
   const [hasAnimationFinished, setHasAnimationFinished] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
     if (begin)
@@ -26,8 +35,13 @@ export default function BottomIcons({ begin }: Props) {
       }, 1300);
   }, [begin]);
 
+  useEffect(() => {}, [isHovering]);
+
   return (
-    <div css={css``}>
+    <div
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+    >
       <div
         css={css`
           display: flex;
@@ -39,6 +53,7 @@ export default function BottomIcons({ begin }: Props) {
         `}
       >
         <PinterestIcon
+          style={{ color: isHovering ? itemOnWhiteFocused : itemOnWhite }}
           css={css`
             margin: 16px 0;
             width: 30px;
@@ -46,6 +61,7 @@ export default function BottomIcons({ begin }: Props) {
             transform: translateY(${delayPassed ? 0 : "-50%"});
             opacity: ${delayPassed ? 1 : 0};
             cursor: pointer;
+            //color: ${isHovering ? itemOnWhiteFocused : itemOnWhite};
 
             transition: 200ms ease;
             transition-property: transform, opacity, color, width, height;
@@ -53,7 +69,7 @@ export default function BottomIcons({ begin }: Props) {
             :hover {
               width: 42px;
               height: 32px;
-              // color: ${headerItemSelect};
+              color: ${headerItemSelect};
             }
           `}
         />
@@ -86,19 +102,18 @@ export default function BottomIcons({ begin }: Props) {
             layout={"intrinsic"}
             css={css`
               padding: 0 4px;
-              filter: invert(5%) sepia(1%) saturate(545%) hue-rotate(323deg)
-                brightness(101%) contrast(93%);
+              filter: ${isHovering ? itemOnWhiteFocusedFilter : itemOnWhiteFilter};
 
               transition: filter 200ms ease;
 
               :hover {
-                //filter: invert(46%) sepia(38%) saturate(1830%) hue-rotate(150deg)
-                //  brightness(89%) contrast(84%);
+                // filter: ${headerItemSelectFilter};
               }
             `}
           />
         </div>
         <LinkedInIcon
+          style={{ color: isHovering ? itemOnWhiteFocused : itemOnWhite }}
           css={css`
             margin: 16px 0;
             width: 30px;
@@ -118,6 +133,7 @@ export default function BottomIcons({ begin }: Props) {
           `}
         />
         <InstagramIcon
+          style={{ color: isHovering ? itemOnWhiteFocused : itemOnWhite }}
           css={css`
             margin: 16px 0;
             width: 30px;
@@ -137,6 +153,7 @@ export default function BottomIcons({ begin }: Props) {
           `}
         />
         <EmailIcon
+          style={{ color: isHovering ? itemOnWhiteFocused : itemOnWhite }}
           css={css`
             margin: 16px 0;
             width: 30px;

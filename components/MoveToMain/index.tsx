@@ -47,7 +47,6 @@ export default function MoveToMain(props: Props) {
           grid-column: 1;
           width: ${beginAnimation ? 80 : 50}%;
           //z-index: 99;
-
           transition: 500ms ease;
           transition-property: width, margin-bottom, opacity;
           transition-delay: 100ms;
