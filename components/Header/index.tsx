@@ -14,6 +14,8 @@ interface Props {
   route: string;
 }
 
+export const headerHeight = 70;
+
 export default function Header(props: Props) {
   const router = useRouter();
   const route = router.asPath.slice(1).split("/")[0];
@@ -34,7 +36,7 @@ export default function Header(props: Props) {
         grid-row: 1;
         grid-column: 1;
         width: 100%;
-        height: 70px;
+        height: ${headerHeight}px;
         z-index: 1000;
         align-self: start;
         overflow: hidden;
@@ -58,7 +60,7 @@ export default function Header(props: Props) {
         </HeaderButton>
       )}
       <HeaderButton
-        page={"about-me"}
+        page={isXs ? "contact-me" : "about-me"}
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
       >
