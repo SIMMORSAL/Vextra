@@ -4,6 +4,7 @@ import Header, { headerHeight } from "../components/Header";
 import { useRouter } from "next/router";
 import { _AppProvider } from "../data/providers/provider_App";
 import _MoveToMain from "../components/_MoveToMain";
+import { useState } from "react";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();

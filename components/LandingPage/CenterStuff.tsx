@@ -152,13 +152,13 @@ export default function CenterStuff({
 
               transition: 200ms ease;
               transition-property: color, text-shadow, transform, opacity, font-size,
-                margin-top;
+                padding-top;
 
               :hover {
                 color: ${headerItemSelect};
                 text-shadow: 0 0 12px ${headerItemSelect}40;
                 font-size: 1.05em;
-                margin-top: 6px;
+                padding-top: 6px;
               }
             `}
           >
@@ -190,13 +190,13 @@ export default function CenterStuff({
 
               transition: 200ms ease;
               transition-property: color, text-shadow, transform, opacity,
-                font-weight, font-size, margin-top;
+                font-weight, font-size, padding-top;
 
               :hover {
                 color: ${headerItemSelect};
                 text-shadow: 0 0 12px ${headerItemSelect}40;
                 font-size: 1.05em;
-                margin-top: 6px;
+                padding-top: 6px;
               }
             `}
           >
