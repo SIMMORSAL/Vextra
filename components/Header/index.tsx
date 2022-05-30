@@ -20,7 +20,7 @@ export default function Header(props: Props) {
   const router = useRouter();
   const route = router.asPath.slice(1).split("/")[0];
   const [selectedPage, setSelectedPage] = useState(route);
-  const { moveToMain, setMoveToMain } = useContext(_AppContext);
+  const { moveToMain, setMoveToMain, setFadeOutContent } = useContext(_AppContext);
 
   const windowWidth = useWindowSize();
   const isXs = windowWidth.width < 600;
@@ -29,7 +29,13 @@ export default function Header(props: Props) {
     const route = router.route.slice(1).split("/")[0];
     setSelectedPage(route);
   }, [router]);
+
+  useEffect(() => {
+    setFadeOutContent(true);
+  }, [setFadeOutContent, selectedPage]);
+
   useEffect(() => {}, [moveToMain]);
+
   return (
     <div
       css={css`
