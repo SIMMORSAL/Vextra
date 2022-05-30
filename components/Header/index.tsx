@@ -6,7 +6,7 @@ import Image from "next/image";
 import HeaderButton from "./HeaderButton";
 import { useRouter } from "next/router";
 import { _AppContext } from "../../data/providers/provider_App";
-import useWindowSize from "../../hooks/useWindowSize";
+import useWindowSize from "../../tools/hooks/useWindowSize";
 
 interface Props {
   // selectedPage?: string; // undefined | about-me | portfolio

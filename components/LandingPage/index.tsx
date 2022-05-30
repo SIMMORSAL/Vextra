@@ -35,6 +35,7 @@ export default function LandingPage({}: Props) {
     //   setBeginAnimationPhase2(true);
     // });
   }, []);
+
   useEffect(() => {
     if (selectedPage !== undefined) {
       setTimeout(() => {

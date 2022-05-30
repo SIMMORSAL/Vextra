@@ -25,6 +25,8 @@ export default function BottomIcons({ begin }: Props) {
   const [hasAnimationFinished, setHasAnimationFinished] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
 
+  const delayTimes = [0, 1, 2, 3];
+
   useEffect(() => {
     if (begin)
       setTimeout(() => {
