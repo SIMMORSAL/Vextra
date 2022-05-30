@@ -9,7 +9,6 @@ interface Props {}
 export default function ContactMe(props: Props) {
   const windowSize = useWindowSize();
   const isXs = windowSize.width < 600;
-  console.log(`11111  AboutMe:  ${isXs}`);
 
   return (
     <div

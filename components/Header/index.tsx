@@ -9,37 +9,38 @@ import { _AppContext } from "../../data/providers/provider_App";
 import useWindowSize from "../../tools/hooks/useWindowSize";
 
 interface Props {
-  // selectedPage?: string; // undefined | about-me | portfolio
-  // setSelectedPage?: (page?: string) => void;
-  route: string;
+  selectedPage: string; // undefined | about-me | portfolio
+  setSelectedPage: (page?: string) => void;
+  // route: string;
 }
 
 export const headerHeight = 70;
 
 export default function Header(props: Props) {
-  const router = useRouter();
-  const route = router.asPath.slice(1).split("/")[0];
-  const [selectedPage, setSelectedPage] = useState(route);
   const { moveToMain, setMoveToMain, setFadeOutContent } = useContext(_AppContext);
 
   const windowWidth = useWindowSize();
   const isXs = windowWidth.width < 600;
 
-  useEffect(() => {
-    const route = router.route.slice(1).split("/")[0];
-    setSelectedPage(route);
-  }, [router]);
+  // const router = useRouter();
+  // const route = router.asPath.slice(1).split("/")[0];
+  // const [selectedPage, setSelectedPage] = useState(route);
 
-  useEffect(() => {
-    if (
-      selectedPage === "about-me" ||
-      selectedPage === "portfolio" ||
-      selectedPage === "contact-me"
-    )
-      setFadeOutContent(true);
-  }, [setFadeOutContent, selectedPage]);
+  // useEffect(() => {
+  //   const route = router.route.slice(1).split("/")[0];
+  //   setSelectedPage(route);
+  // }, [router]);
 
-  useEffect(() => {}, [moveToMain]);
+  // useEffect(() => {
+  //   if (
+  //     selectedPage === "about-me" ||
+  //     selectedPage === "portfolio" ||
+  //     selectedPage === "contact-me"
+  //   )
+  //     setFadeOutContent(true);
+  // }, [setFadeOutContent, selectedPage]);
+
+  // useEffect(() => {}, [moveToMain]);
 
   return (
     <div
@@ -63,8 +64,8 @@ export default function Header(props: Props) {
       ) : (
         <HeaderButton
           page={"home"}
-          selectedPage={selectedPage}
-          setSelectedPage={() => setSelectedPage(undefined)}
+          selectedPage={props.selectedPage}
+          setSelectedPage={() => props.setSelectedPage(undefined)}
           homeClicked={() => setMoveToMain(true)}
         >
           Home
@@ -74,12 +75,12 @@ export default function Header(props: Props) {
         page={
           !isXs
             ? "about-me"
-            : selectedPage === "contact-me"
+            : props.selectedPage === "contact-me"
             ? "contact-me"
             : "about-me"
         }
-        selectedPage={selectedPage}
-        setSelectedPage={setSelectedPage}
+        selectedPage={props.selectedPage}
+        setSelectedPage={props.setSelectedPage}
       >
         About me
       </HeaderButton>
@@ -103,12 +104,12 @@ export default function Header(props: Props) {
           alt={""}
           layout={"intrinsic"}
           onClick={() => {
-            setSelectedPage(undefined);
+            props.setSelectedPage(undefined);
             setMoveToMain(true);
           }}
           css={css`
             cursor: pointer;
-            opacity: ${selectedPage === undefined ? 0 : 1};
+            opacity: ${props.selectedPage === undefined ? 0 : 1};
 
             transition: 200ms ease;
             transition-property: filter, background-color, transform, opacity;
@@ -122,8 +123,8 @@ export default function Header(props: Props) {
       </div>
       <HeaderButton
         page={"portfolio"}
-        selectedPage={selectedPage}
-        setSelectedPage={setSelectedPage}
+        selectedPage={props.selectedPage}
+        setSelectedPage={props.setSelectedPage}
       >
         Portfolio
       </HeaderButton>
@@ -132,8 +133,8 @@ export default function Header(props: Props) {
       ) : (
         <HeaderButton
           page={"contact-me"}
-          selectedPage={selectedPage}
-          setSelectedPage={setSelectedPage}
+          selectedPage={props.selectedPage}
+          setSelectedPage={props.setSelectedPage}
         >
           Contact Me
         </HeaderButton>

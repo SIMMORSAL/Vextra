@@ -10,6 +10,15 @@ import { route } from "next/dist/server/router";
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const routeChops = router.asPath.slice(1).split("/");
+
+  const routeRoot = routeChops[0];
+  const [selectedPage, setSelectedPage] = useState(routeRoot);
+
+  useEffect(() => {
+    const route = routeChops[0];
+    setSelectedPage(route);
+  }, [routeChops]);
+
   return (
     <div
       css={css`
@@ -29,7 +38,7 @@ function MyApp({ Component, pageProps }) {
             height: 100%;
           `}
         >
-          <Header route={router.route} />
+          <Header selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
           <Content
             Component={Component}
             pageProps={pageProps}
@@ -63,8 +72,6 @@ function Content({ Component, pageProps, routeChops }) {
       }, 65);
     }
   }, [routeChops, shouldFadeIn, router.route]);
-
-  console.log(`11111  Fade in:  ${fadeOutContent}`);
 
   return (
     <div

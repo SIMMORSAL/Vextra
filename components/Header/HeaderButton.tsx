@@ -13,8 +13,17 @@ interface Props {
 
 export default function HeaderButton(props: Props) {
   const router = useRouter();
-  const buttonSelected = props.selectedPage === props.page;
+  const buttonSelected = router.asPath.slice(1).split("/")[0] === props.page;
+  // const buttonSelected = selectedPage === props.page;
   const [isHovering, setIsHovering] = useState(false);
+
+  console.log("11111 BUTTONS   ", 
+  props.page, 
+  // router.asPath.slice(1).split("/")[0],
+  //  buttonSelected
+  buttonSelected || isHovering
+   )
+
   return (
     <a
     // href={props.page !== "home" ? `/${props.page}/` : undefined}
@@ -47,14 +56,13 @@ export default function HeaderButton(props: Props) {
           css={css`
             //margin: 0 16px;
             height: 14px;
-            color: ${buttonSelected || isHovering ? headerItemSelect : textOnWhite};
+            color: ${buttonSelected ? headerItemSelect : textOnWhite};
             opacity: ${props.selectedPage === undefined ? 0 : 1};
             padding: ${buttonSelected || isHovering ? 6 : 0}px 16px 0;
             text-shadow: ${isHovering ? `0 0 12px ${headerItemSelect}40` : ""};
 
             transition: 200ms ease;
-            transition-property: color, text-shadow, transform, opacity, font-weight,
-              font-size, margin-bottom, margin-top, padding-top;
+            transition-property: color, opacity, padding-top;
 
             :hover {
               //color: ${headerItemSelect};
