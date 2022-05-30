@@ -34,6 +34,8 @@ export default function LandingPage({}: Props) {
     //   console.log("11111  onanimationend:  ");
     //   setBeginAnimationPhase2(true);
     // });
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
