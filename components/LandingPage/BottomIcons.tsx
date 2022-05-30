@@ -15,6 +15,7 @@ import {
   textOnWhite,
 } from "../../res/colors";
 import Image from "next/image";
+import { shuffleArray } from "../../tools/tools";
 
 interface Props {
   begin: boolean;
@@ -25,7 +26,7 @@ export default function BottomIcons({ begin }: Props) {
   const [hasAnimationFinished, setHasAnimationFinished] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
 
-  const delayTimes = [0, 1, 2, 3];
+  const delayTimes = shuffleArray([0, 1, 2, 3, 4]);
 
   useEffect(() => {
     if (begin)
@@ -67,6 +68,7 @@ export default function BottomIcons({ begin }: Props) {
 
             transition: 200ms ease;
             transition-property: transform, opacity, color, width, height;
+            transition-delay: ${hasAnimationFinished ? "0" : `${delayTimes[0]}00ms`};
 
             :hover {
               width: 42px;
@@ -89,7 +91,7 @@ export default function BottomIcons({ begin }: Props) {
             transition: 200ms ease;
             transition-property: transform, opacity, color, width, height,
               padding-left, padding-right;
-            transition-delay: ${hasAnimationFinished ? "0" : "300ms"};
+            transition-delay: ${hasAnimationFinished ? "0" : `${delayTimes[1]}00ms`};
 
             :hover {
               width: 36px;
@@ -125,7 +127,7 @@ export default function BottomIcons({ begin }: Props) {
 
             transition: 200ms ease;
             transition-property: transform, opacity, color, width, height;
-            transition-delay: ${hasAnimationFinished ? "0" : "400ms"};
+            transition-delay: ${hasAnimationFinished ? "0" : `${delayTimes[2]}00ms`};
 
             :hover {
               width: 42px;
@@ -145,7 +147,7 @@ export default function BottomIcons({ begin }: Props) {
 
             transition: 200ms ease;
             transition-property: transform, opacity, color, width, height;
-            transition-delay: ${hasAnimationFinished ? "0" : "100ms"};
+            transition-delay: ${hasAnimationFinished ? "0" : `${delayTimes[3]}00ms`};
 
             :hover {
               width: 42px;
@@ -165,7 +167,7 @@ export default function BottomIcons({ begin }: Props) {
 
             transition: 200ms ease;
             transition-property: transform, opacity, color, width, height;
-            transition-delay: ${hasAnimationFinished ? "0" : "200ms"};
+            transition-delay: ${hasAnimationFinished ? "0" : `${delayTimes[4]}00ms`};
 
             :hover {
               width: 42px;
