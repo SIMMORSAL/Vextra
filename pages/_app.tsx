@@ -64,14 +64,14 @@ function Content({ Component, pageProps, routeChops }) {
     }
   }, [routeChops, shouldFadeIn, router.route]);
 
-  console.log(`11111  Fade in:  ${shouldFadeIn}`);
+  console.log(`11111  Fade in:  ${fadeOutContent}`);
 
   return (
     <div
       css={css`
         width: 100%;
         height: calc(100% - ${headerHeight}px);
-        opacity: ${doFadeIn ? (fadeOutContent ? 1 : 0) : 0};
+        /* opacity: ${doFadeIn ? (fadeOutContent ? 0 : 1) : 0}; */
 
         transition: opacity ${fadeOutContent ? 100 : 500}ms ease;
       `}

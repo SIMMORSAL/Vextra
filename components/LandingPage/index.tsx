@@ -50,6 +50,7 @@ export default function LandingPage({}: Props) {
     setLoading(true);
     setBeginAnimationPhase2(false);
     setTimeout(() => {
+    console.log("1111  ", loading)
       setLoading(false);
       setTimeout((args) => {
         setBeginAnimationPhase2(true);
@@ -65,6 +66,7 @@ export default function LandingPage({}: Props) {
         height: 100%;
         display: grid;
         place-items: center;
+        /* background-color: red; */
         background-color: ${loading ? backgroundBlack : backgroundWhite};
 
         transition: background-color 500ms ease;
