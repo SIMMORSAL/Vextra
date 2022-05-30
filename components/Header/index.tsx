@@ -31,7 +31,12 @@ export default function Header(props: Props) {
   }, [router]);
 
   useEffect(() => {
-    setFadeOutContent(true);
+    if (
+      selectedPage === "about-me" ||
+      selectedPage === "portfolio" ||
+      selectedPage === "contact-me"
+    )
+      setFadeOutContent(true);
   }, [setFadeOutContent, selectedPage]);
 
   useEffect(() => {}, [moveToMain]);

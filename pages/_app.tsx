@@ -71,9 +71,9 @@ function Content({ Component, pageProps, routeChops }) {
       css={css`
         width: 100%;
         height: calc(100% - ${headerHeight}px);
-        opacity: ${doFadeIn || !fadeOutContent ? 1 : 0};
+        opacity: ${doFadeIn ? (fadeOutContent ? 1 : 0) : 0};
 
-        transition: opacity ${fadeOutContent ? 100 : 250}ms ease;
+        transition: opacity ${fadeOutContent ? 100 : 500}ms ease;
       `}
     >
       <Component {...pageProps} />
