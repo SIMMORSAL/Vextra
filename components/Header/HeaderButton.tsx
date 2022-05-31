@@ -19,14 +19,6 @@ export default function HeaderButton(props: Props) {
   const [isHovering, setIsHovering] = useState(false);
   const { setFlashContent } = useContext(_AppContext);
 
-  console.log(
-    "11111 BUTTONS   ",
-    props.page,
-    // router.asPath.slice(1).split("/")[0],
-    //  buttonSelected
-    buttonSelected || isHovering
-  );
-
   return (
     <a
     // href={props.page !== "home" ? `/${props.page}/` : undefined}

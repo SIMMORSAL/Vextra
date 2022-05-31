@@ -50,7 +50,6 @@ export default function LandingPage({}: Props) {
     setLoading(true);
     setBeginAnimationPhase2(false);
     setTimeout(() => {
-    console.log("1111  ", loading)
       setLoading(false);
       setTimeout((args) => {
         setBeginAnimationPhase2(true);

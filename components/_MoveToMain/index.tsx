@@ -37,7 +37,7 @@ export default function _MoveToMain(props: Props) {
         display: ${moveToMain ? "flex" : "none"};
         background-color: ${beginAnimation ? backgroundBlack : "transparent"};
 
-        transition: 300ms ease;
+        transition: 100ms ease;
         transition-property: background-color;
       `}
     >
@@ -47,6 +47,7 @@ export default function _MoveToMain(props: Props) {
           grid-column: 1;
           width: ${beginAnimation ? 80 : 50}%;
           //z-index: 99;
+          margin-bottom: ${beginAnimation ? 0 : 60}vh;
           transition: 500ms ease;
           transition-property: width, margin-bottom, opacity;
           transition-delay: 100ms;

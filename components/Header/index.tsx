@@ -32,7 +32,6 @@ export default function Header(props: Props) {
         height: ${headerHeight}px;
         z-index: 1000;
         align-self: start;
-        overflow: hidden;
         display: flex;
         flex-direction: row;
         align-items: center;

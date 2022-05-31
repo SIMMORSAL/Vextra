@@ -18,8 +18,11 @@ export default function HeaderImage(props: Props) {
         margin-top: 20px;
         margin-left: 8px;
         margin-right: 8px;
+        opacity: ${moveToMain ? 0 : 1};
+        transform: translateY(${moveToMain ? 5 : 0}vh) scale(${moveToMain ? 1.3 : 1});
 
-        transition: width 200ms ease;
+        transition: 200ms ease;
+        transition-property: width, transform, opacity;
 
         :hover {
           width: 80px;
@@ -36,10 +39,8 @@ export default function HeaderImage(props: Props) {
         }}
         css={css`
           cursor: pointer;
-          opacity: ${props.selectedPage === undefined ? 0 : 1};
 
           transition: 200ms ease;
-          transition-property: filter, background-color, transform, opacity;
 
           //:hover {
           //  filter: invert(46%) sepia(38%) saturate(1830%) hue-rotate(150deg)
