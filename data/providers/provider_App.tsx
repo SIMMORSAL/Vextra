@@ -13,6 +13,8 @@ interface _AppInterface {
   setMoveToMain: Dispatch<SetStateAction<boolean>>;
   fadeOutContent: boolean;
   setFadeOutContent: Dispatch<SetStateAction<boolean>>;
+  flashContent: boolean;
+  setFlashContent: Dispatch<SetStateAction<boolean>>;
 }
 
 export const _AppContext = createContext({
@@ -20,6 +22,8 @@ export const _AppContext = createContext({
   setMoveToMain: () => {},
   fadeOutContent: false,
   setFadeOutContent: () => {},
+  flashContent: false,
+  setFlashContent: () => {},
 } as _AppInterface);
 
 interface Props {
@@ -29,10 +33,18 @@ interface Props {
 export function _AppProvider(props: Props) {
   const [moveToMain, setMoveToMain] = useState(false);
   const [fadeOutContent, setFadeOutContent] = useState(false);
+  const [flashContent, setFlashContent] = useState(false);
   useEffect(() => {}, []);
   return (
     <_AppContext.Provider
-      value={{ moveToMain, setMoveToMain, fadeOutContent, setFadeOutContent }}
+      value={{
+        moveToMain,
+        setMoveToMain,
+        fadeOutContent,
+        setFadeOutContent,
+        flashContent,
+        setFlashContent,
+      }}
     >
       {props.children}
     </_AppContext.Provider>

@@ -2,6 +2,7 @@ import React, { ReactNode, useContext, useState } from "react";
 import { css } from "@emotion/react";
 import { headerItemSelect, textOnWhite } from "../../res/colors";
 import { useRouter } from "next/router";
+import { _AppContext } from "../../data/providers/provider_App";
 
 interface Props {
   page: string;
@@ -16,13 +17,15 @@ export default function HeaderButton(props: Props) {
   const buttonSelected = router.asPath.slice(1).split("/")[0] === props.page;
   // const buttonSelected = selectedPage === props.page;
   const [isHovering, setIsHovering] = useState(false);
+  const { setFlashContent } = useContext(_AppContext);
 
-  console.log("11111 BUTTONS   ", 
-  props.page, 
-  // router.asPath.slice(1).split("/")[0],
-  //  buttonSelected
-  buttonSelected || isHovering
-   )
+  console.log(
+    "11111 BUTTONS   ",
+    props.page,
+    // router.asPath.slice(1).split("/")[0],
+    //  buttonSelected
+    buttonSelected || isHovering
+  );
 
   return (
     <a
@@ -32,12 +35,16 @@ export default function HeaderButton(props: Props) {
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
         onClick={() => {
-          if (props.page === "home") {
-            props.homeClicked();
+          if (props.page === props.selectedPage) {
+            setFlashContent(true);
           } else {
-            setTimeout(() => {
-              router.push(`/${props.page}/`);
-            }, 100);
+            if (props.page === "home") {
+              props.homeClicked();
+            } else {
+              setTimeout(() => {
+                router.push(`/${props.page}/`);
+              }, 100);
+            }
           }
         }}
         css={css`

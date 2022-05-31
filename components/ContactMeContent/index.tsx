@@ -9,7 +9,7 @@ export default function ContactMeContent(props: Props) {
       css={css`
         width: 100%;
         height: 100%;
-        border: 1px solid #484848;
+        //border: 1px solid #484848;
         font-weight: bold;
         text-align: center;
         display: flex;

@@ -17,30 +17,11 @@ interface Props {
 export const headerHeight = 70;
 
 export default function Header(props: Props) {
-  const { moveToMain, setMoveToMain, setFadeOutContent } = useContext(_AppContext);
+  const { moveToMain, setMoveToMain, setFadeOutContent, setFlashContent } =
+    useContext(_AppContext);
 
   const windowWidth = useWindowSize();
   const isXs = windowWidth.width < 600;
-
-  // const router = useRouter();
-  // const route = router.asPath.slice(1).split("/")[0];
-  // const [selectedPage, setSelectedPage] = useState(route);
-
-  // useEffect(() => {
-  //   const route = router.route.slice(1).split("/")[0];
-  //   setSelectedPage(route);
-  // }, [router]);
-
-  // useEffect(() => {
-  //   if (
-  //     selectedPage === "about-me" ||
-  //     selectedPage === "portfolio" ||
-  //     selectedPage === "contact-me"
-  //   )
-  //     setFadeOutContent(true);
-  // }, [setFadeOutContent, selectedPage]);
-
-  // useEffect(() => {}, [moveToMain]);
 
   return (
     <div

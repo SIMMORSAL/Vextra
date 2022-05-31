@@ -54,7 +54,8 @@ function MyApp({ Component, pageProps }) {
 export default MyApp;
 
 function Content({ Component, pageProps, routeChops }) {
-  const { fadeOutContent, setFadeOutContent } = useContext(_AppContext);
+  const { fadeOutContent, setFadeOutContent, flashContent, setFlashContent } =
+    useContext(_AppContext);
   const router = useRouter();
 
   // const shouldFadeIn = routeChops.length === 1;
@@ -73,6 +74,13 @@ function Content({ Component, pageProps, routeChops }) {
     }
   }, [routeChops, shouldFadeIn, router.route]);
 
+  useEffect(() => {
+    if (flashContent)
+      setTimeout((args) => {
+        setFlashContent(false);
+      }, 200);
+  }, [flashContent, setFlashContent]);
+
   return (
     <div
       css={css`
@@ -80,7 +88,12 @@ function Content({ Component, pageProps, routeChops }) {
         height: calc(100% - ${headerHeight}px);
         /* opacity: ${doFadeIn ? (fadeOutContent ? 0 : 1) : 0}; */
 
-        transition: opacity ${fadeOutContent ? 100 : 500}ms ease;
+        transform: scale(${flashContent ? 0.95 : 1});
+        border: ${flashContent ? "1px solid #484848" : ""};
+
+        //transition: ${fadeOutContent ? 100 : 500}ms ease;
+        transition: 200ms ease;
+        transition-property: opacity, transform;
       `}
     >
       <Component {...pageProps} />
