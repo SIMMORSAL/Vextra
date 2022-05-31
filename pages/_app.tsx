@@ -38,7 +38,13 @@ function MyApp({ Component, pageProps }) {
             height: 100%;
           `}
         >
-          <Header selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+          <div
+            css={css`
+              display: ${router.route === "/" ? "none" : "flex"};
+            `}
+          >
+            <Header selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+          </div>
           <Content
             Component={Component}
             pageProps={pageProps}
@@ -85,7 +91,7 @@ function Content({ Component, pageProps, routeChops }) {
     <div
       css={css`
         width: 100%;
-        height: calc(100% - ${headerHeight}px);
+        height: calc(100% - ${router.route === "/" ? 0 : headerHeight}px);
         /* opacity: ${doFadeIn ? (fadeOutContent ? 0 : 1) : 0}; */
 
         transform: scale(${flashContent ? 0.95 : 1});
