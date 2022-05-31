@@ -13,6 +13,8 @@ export default function LandingHeader(props: Props) {
   const windowWidth = useWindowSize();
   const isXs = windowWidth.width < 600;
 
+  const selectedPage = "portfolio";
+
   return (
     <div
       css={css`
@@ -62,8 +64,14 @@ export default function LandingHeader(props: Props) {
           margin-top: 20px;
           margin-left: 8px;
           margin-right: 8px;
+          opacity: ${props.selectedPage === undefined ? 0 : 1};
+          transform: ${props.selectedPage === undefined
+            ? "translateY(15vh)"
+            : "none"};
 
-          transition: width 200ms ease;
+          transition: 150ms ease;
+          transition-delay: 50ms;
+          transition-property: width, transform, opacity;
 
           :hover {
             width: 80px;
@@ -79,12 +87,9 @@ export default function LandingHeader(props: Props) {
           onClick={() => props.setSelectedPage(undefined)}
           css={css`
             cursor: pointer;
-            transform: ${props.selectedPage === undefined
-              ? "translateY(15vh)"
-              : "none"};
-            opacity: ${props.selectedPage === undefined ? 0 : 1};
 
-            transition: 200ms ease;
+            transition: 150ms ease;
+            transition-delay: 50ms;
             transition-property: filter, background-color, transform, opacity;
 
             :hover {
