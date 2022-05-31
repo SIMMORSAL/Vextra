@@ -7,6 +7,7 @@ import HeaderButton from "./HeaderButton";
 import { useRouter } from "next/router";
 import { _AppContext } from "../../data/providers/provider_App";
 import useWindowSize from "../../tools/hooks/useWindowSize";
+import HeaderImage from "./HeaderImage";
 
 interface Props {
   selectedPage: string; // undefined | about-me | portfolio
@@ -17,8 +18,7 @@ interface Props {
 export const headerHeight = 70;
 
 export default function Header(props: Props) {
-  const { moveToMain, setMoveToMain, setFadeOutContent, setFlashContent } =
-    useContext(_AppContext);
+  const { setMoveToMain } = useContext(_AppContext);
 
   const windowWidth = useWindowSize();
   const isXs = windowWidth.width < 600;
@@ -66,42 +66,11 @@ export default function Header(props: Props) {
         About me
       </HeaderButton>
 
-      <div
-        css={css`
-          width: 70px;
-          margin-top: 20px;
-          margin-left: 8px;
-          margin-right: 8px;
+      <HeaderImage
+        selectedPage={props.selectedPage}
+        setSelectedPage={props.setSelectedPage}
+      />
 
-          transition: width 200ms ease;
-
-          :hover {
-            width: 80px;
-          }
-        `}
-      >
-        <Image
-          src={require("../../res/images/logo_big.png")}
-          alt={""}
-          layout={"intrinsic"}
-          onClick={() => {
-            props.setSelectedPage(undefined);
-            setMoveToMain(true);
-          }}
-          css={css`
-            cursor: pointer;
-            opacity: ${props.selectedPage === undefined ? 0 : 1};
-
-            transition: 200ms ease;
-            transition-property: filter, background-color, transform, opacity;
-
-            :hover {
-              filter: invert(46%) sepia(38%) saturate(1830%) hue-rotate(150deg)
-                brightness(89%) contrast(84%);
-            }
-          `}
-        />
-      </div>
       <HeaderButton
         page={"portfolio"}
         selectedPage={props.selectedPage}

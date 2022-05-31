@@ -82,7 +82,7 @@ function Content({ Component, pageProps, routeChops }) {
 
   useEffect(() => {
     if (flashContent)
-      setTimeout((args) => {
+      setTimeout(() => {
         setFlashContent(false);
       }, 200);
   }, [flashContent, setFlashContent]);

@@ -35,6 +35,7 @@ export default function HeaderButton(props: Props) {
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
         onClick={() => {
+          props.setSelectedPage(props.page);
           if (props.page === props.selectedPage) {
             setFlashContent(true);
           } else {
@@ -59,7 +60,6 @@ export default function HeaderButton(props: Props) {
         `}
       >
         <p
-          onClick={() => props.setSelectedPage(props.page)}
           css={css`
             //margin: 0 16px;
             height: 14px;
