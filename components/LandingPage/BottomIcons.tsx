@@ -47,9 +47,10 @@ export default function BottomIcons({ begin }: Props) {
     >
       <div
         css={css`
-          display: flex;
+          display: flex; 
           flex-direction: row;
           align-items: end;
+          padding: 0 24px;
           overflow: hidden;
           // color: ${textOnWhite};
           color: black;
