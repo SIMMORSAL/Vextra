@@ -47,7 +47,7 @@ export default function _MoveToMain(props: Props) {
           grid-column: 1;
           width: ${beginAnimation ? 80 : 50}%;
           //z-index: 99;
-          margin-bottom: ${beginAnimation ? 0 : 60}vh;
+          margin-bottom: ${beginAnimation ? 0 : 20}vh;
           transition: 500ms ease;
           transition-property: width, margin-bottom, opacity;
           transition-delay: 100ms;

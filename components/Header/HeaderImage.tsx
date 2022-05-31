@@ -19,9 +19,9 @@ export default function HeaderImage(props: Props) {
         margin-left: 8px;
         margin-right: 8px;
         opacity: ${moveToMain ? 0 : 1};
-        transform: translateY(${moveToMain ? 5 : 0}vh) scale(${moveToMain ? 1.3 : 1});
+        transform: translateY(${moveToMain ? 5 : 0}vh) scale(${moveToMain ? 1.2 : 1});
 
-        transition: 200ms ease;
+        transition: 100ms ease;
         transition-property: width, transform, opacity;
 
         :hover {
