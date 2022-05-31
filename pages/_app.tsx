@@ -89,11 +89,13 @@ function Content({ Component, pageProps, routeChops }) {
         /* opacity: ${doFadeIn ? (fadeOutContent ? 0 : 1) : 0}; */
 
         transform: scale(${flashContent ? 0.95 : 1});
-        border: ${flashContent ? "1px solid #484848" : ""};
+        border: ${flashContent ? "1px solid #484848" : "0px solid transparent"};
 
         //transition: ${fadeOutContent ? 100 : 500}ms ease;
         transition: 200ms ease;
-        transition-property: opacity, transform;
+        transition-property: opacity, transform, border-bottom-color,
+          border-bottom-width, border-right-color, border-right-width,
+          border-left-color, border-left-width, border-top-color, border-top-width;
       `}
     >
       <Component {...pageProps} />
