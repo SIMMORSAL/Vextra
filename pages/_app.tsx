@@ -97,11 +97,9 @@ function Content({ Component, pageProps, routeChops }) {
         /* opacity: ${doFadeIn ? (fadeOutContent ? 0 : 1) : 0}; */
 
         transform: scale(${flashContent ? 0.95 : 1});
-        border: ${isLandingPage
-          ? ""
-          : flashContent
+        border: ${flashContent
           ? "1px solid #484848"
-          : "1px solid transparent"};
+          : `${isLandingPage ? 0 : 1}px solid transparent`};
 
         //transition: ${fadeOutContent ? 100 : 500}ms ease;
         transition: 200ms ease;
