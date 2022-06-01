@@ -20,7 +20,7 @@ export default function ContactMe(props: Props) {
       <div
         css={css`
           width: 100%;
-          height: 45%;
+          /* height: 45%; */
           transform: scale(0.95);
           display: ${isXs ? "flex" : "none"};
         `}
@@ -30,7 +30,7 @@ export default function ContactMe(props: Props) {
       <div
         css={css`
           width: 100%;
-          height: ${isXs ? 40 : 100}%;
+          height: ${isXs ? "fit-content" : "100%"};
           transform: scale(0.95);
         `}
       >
