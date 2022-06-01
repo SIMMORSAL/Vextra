@@ -9,6 +9,14 @@ body {
   font-family: 'Dosis', sans-serif;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.html,
+body::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
 }
 
 a {

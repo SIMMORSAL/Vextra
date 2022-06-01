@@ -10,6 +10,7 @@ import { route } from "next/dist/server/router";
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const routeChops = router.asPath.slice(1).split("/");
+  const isLandingPage = router.route === "/";
 
   const routeRoot = routeChops[0];
   const [selectedPage, setSelectedPage] = useState(routeRoot);
@@ -22,7 +23,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <div
       css={css`
-        position: fixed;
+        position: ${isLandingPage ? "fixed" : "relative"};
         top: 0;
         bottom: 0;
         left: 0;
@@ -40,7 +41,7 @@ function MyApp({ Component, pageProps }) {
         >
           <div
             css={css`
-              display: ${router.route === "/" ? "none" : "flex"};
+              display: ${isLandingPage ? "none" : "flex"};
             `}
           >
             <Header selectedPage={selectedPage} setSelectedPage={setSelectedPage} />

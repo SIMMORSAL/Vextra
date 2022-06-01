@@ -14,13 +14,13 @@ export default function AboutMe(props: Props) {
     <div
       css={css`
         width: 100%;
-        height: 100%;
+        /* height: 100%; */
       `}
     >
       <div
         css={css`
           width: 100%;
-          height: ${isXs ? "fit-content" : "100%"};
+          /* height: ${isXs ? "fit-content" : "100%"}; */
           transform: scale(0.95);
         `}
       >
