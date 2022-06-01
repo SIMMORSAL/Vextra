@@ -46,11 +46,15 @@ function MyApp({ Component, pageProps }) {
           >
             <Header selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
           </div>
-          <Content
-            Component={Component}
-            pageProps={pageProps}
-            routeChops={routeChops}
-          />
+          {isLandingPage ? (
+            <Component {...pageProps} />
+          ) : (
+            <Content
+              Component={Component}
+              pageProps={pageProps}
+              routeChops={routeChops}
+            />
+          )}
           <_MoveToMain />
         </div>
       </_AppProvider>
@@ -64,7 +68,6 @@ function Content({ Component, pageProps, routeChops }) {
   const { fadeOutContent, setFadeOutContent, flashContent, setFlashContent } =
     useContext(_AppContext);
   const router = useRouter();
-  const isLandingPage = router.route === "/";
 
   // const shouldFadeIn = routeChops.length === 1;
   const shouldFadeIn =
@@ -93,13 +96,11 @@ function Content({ Component, pageProps, routeChops }) {
     <div
       css={css`
         width: 100%;
-        height: calc(100% - ${router.route === "/" ? 0 : headerHeight}px);
+        height: calc(100% - ${headerHeight}px);
         /* opacity: ${doFadeIn ? (fadeOutContent ? 0 : 1) : 0}; */
 
         transform: scale(${flashContent ? 0.95 : 1});
-        border: ${flashContent
-          ? "1px solid #484848"
-          : `${isLandingPage ? 0 : 1}px solid transparent`};
+        border: ${flashContent ? "1px solid #484848" : "1px solid transparent"};
 
         //transition: ${fadeOutContent ? 100 : 500}ms ease;
         transition: 200ms ease;
