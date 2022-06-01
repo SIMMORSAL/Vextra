@@ -1,5 +1,6 @@
 import React from "react";
 import { css } from "@emotion/react";
+import { headerHeight } from "../Header";
 
 interface Props {}
 
@@ -15,10 +16,12 @@ export default function AboutMeContent(props: Props) {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 24px;
+        padding: ${headerHeight}px 24px 24px;
       `}
     >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
+        alt={"avatar"}
         src={
           "https://avatarairlines.com/wp-content/uploads/2020/05/Female-Placeholder.png"
         }

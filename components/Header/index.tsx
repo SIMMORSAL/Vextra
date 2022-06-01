@@ -23,11 +23,39 @@ export default function Header(props: Props) {
   const windowWidth = useWindowSize();
   const isXs = windowWidth.width < 600;
 
+  const [shouldBlur, setShouldBlur] = useState(false);
+
+  const listenToScroll = () => {
+    // const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    // const height =
+    //   document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    // const normalizedScroll = winScroll / height;
+
+    const scroll = document.documentElement.scrollTop;
+    if (scroll > 24) {
+      setShouldBlur(true);
+      console.log(`11111  listenToScroll:  ${true}`);
+    } else {
+      setShouldBlur(false);
+      console.log(`11111  listenToScroll:  ${false}`);
+    }
+
+    console.log(`11111  listenToScroll:  ${scroll} ${shouldBlur}`);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", listenToScroll);
+    return () => {
+      window.removeEventListener("scroll", listenToScroll);
+    };
+  }, [listenToScroll]);
+
   return (
     <div
       css={css`
         grid-row: 1;
         grid-column: 1;
+        position: fixed;
         width: 100%;
         height: ${headerHeight}px;
         z-index: 1000;
@@ -37,6 +65,17 @@ export default function Header(props: Props) {
         align-items: center;
         justify-content: center;
         //background-color: red;
+        backdrop-filter: blur(${shouldBlur ? 3 : 0}px);
+        background-color: ${shouldBlur ? "#ffffff88" : "transparent"};
+        padding-bottom: ${shouldBlur ? 16 : 0}px;
+
+        border-bottom-width: 1px;
+        border-bottom-color: ${shouldBlur ? "#00000033" : "transparent"};
+        border-bottom-style: solid;
+
+        transition: 300ms ease;
+        transition-property: border-bottom-color, background-color, backdrop-filter,
+          padding-bottom;
       `}
     >
       {isXs ? (

@@ -1,5 +1,6 @@
 import React from "react";
 import { css } from "@emotion/react";
+import { headerHeight } from "../Header";
 
 interface Props {}
 
@@ -15,6 +16,7 @@ export default function ContactMeContent(props: Props) {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        padding: ${headerHeight}px 24px 24px;
       `}
     >
       Contact Me
