@@ -29,7 +29,7 @@ export default function AboutMeContent(props: Props) {
       />
       <p
         css={css`
-          max-width: 800px;
+          max-width: 500px;
           /* font-weight: bold; */
         `}
       >
