@@ -65,17 +65,17 @@ export default function Header(props: Props) {
         align-items: center;
         justify-content: center;
         //background-color: red;
-        backdrop-filter: blur(${shouldBlur ? 3 : 0}px);
         background-color: ${shouldBlur ? "#ffffff88" : "transparent"};
-        padding-bottom: ${shouldBlur ? 16 : 0}px;
+        padding-bottom: ${shouldBlur ? 9 : 0}px;
+        backdrop-filter: blur(${shouldBlur ? 3 : 0}px);
+        -webkit-backdrop-filter: blur(${shouldBlur ? 3 : 0}px);
 
         border-bottom-width: 1px;
         border-bottom-color: ${shouldBlur ? "#00000033" : "transparent"};
         border-bottom-style: solid;
 
         transition: 300ms ease;
-        transition-property: border-bottom-color, background-color, backdrop-filter,
-          padding-bottom;
+        transition-property: border-bottom-color, background-color, padding-bottom;
       `}
     >
       {isXs ? (

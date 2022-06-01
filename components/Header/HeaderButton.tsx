@@ -57,7 +57,7 @@ export default function HeaderButton(props: Props) {
             height: 14px;
             color: ${buttonSelected ? headerItemSelect : textOnWhite};
             opacity: ${props.selectedPage === undefined ? 0 : 1};
-            padding: ${buttonSelected || isHovering ? 6 : 0}px 16px 0;
+            padding: ${buttonSelected || isHovering ? 9 : 0}px 16px 0;
             text-shadow: ${isHovering ? `0 0 12px ${headerItemSelect}40` : ""};
 
             transition: 200ms ease;
