@@ -74,7 +74,7 @@ export default function Header(props: Props) {
         border-bottom-color: ${shouldBlur ? "#00000033" : "transparent"};
         border-bottom-style: solid;
 
-        transition: 200ms ease;
+        transition: ${shouldBlur ? 300 : 200}ms ease;
         transition-property: border-bottom-color, background-color, padding-bottom;
       `}
     >
