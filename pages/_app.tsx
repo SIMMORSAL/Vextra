@@ -64,6 +64,7 @@ function Content({ Component, pageProps, routeChops }) {
   const { fadeOutContent, setFadeOutContent, flashContent, setFlashContent } =
     useContext(_AppContext);
   const router = useRouter();
+  const isLandingPage = router.route === "/";
 
   // const shouldFadeIn = routeChops.length === 1;
   const shouldFadeIn =
@@ -96,7 +97,11 @@ function Content({ Component, pageProps, routeChops }) {
         /* opacity: ${doFadeIn ? (fadeOutContent ? 0 : 1) : 0}; */
 
         transform: scale(${flashContent ? 0.95 : 1});
-        border: ${flashContent ? "1px solid #484848" : "1px solid transparent"};
+        border: ${isLandingPage
+          ? ""
+          : flashContent
+          ? "1px solid #484848"
+          : "1px solid transparent"};
 
         //transition: ${fadeOutContent ? 100 : 500}ms ease;
         transition: 200ms ease;
