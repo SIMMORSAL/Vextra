@@ -9,7 +9,7 @@ import React, {
 const LSK_App = "_App";
 
 interface _AppInterface {
-  moveToMain: boolean;
+  shouldMoveToMain: boolean;
   setMoveToMain: Dispatch<SetStateAction<boolean>>;
   fadeOutContent: boolean;
   setFadeOutContent: Dispatch<SetStateAction<boolean>>;
@@ -18,7 +18,7 @@ interface _AppInterface {
 }
 
 export const _AppContext = createContext({
-  moveToMain: false,
+  shouldMoveToMain: false,
   setMoveToMain: () => {},
   fadeOutContent: false,
   setFadeOutContent: () => {},
@@ -38,7 +38,7 @@ export function _AppProvider(props: Props) {
   return (
     <_AppContext.Provider
       value={{
-        moveToMain,
+        shouldMoveToMain: moveToMain,
         setMoveToMain,
         fadeOutContent,
         setFadeOutContent,

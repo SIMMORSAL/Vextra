@@ -8,12 +8,12 @@ import { useRouter } from "next/router";
 interface Props {}
 
 export default function _MoveToMain(props: Props) {
-  const { moveToMain } = useContext(_AppContext);
+  const { shouldMoveToMain } = useContext(_AppContext);
   const [beginAnimation, setBeginAnimation] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
-    if (moveToMain) {
+    if (shouldMoveToMain) {
       setTimeout(() => {
         setBeginAnimation(true);
         setTimeout(() => {
@@ -23,7 +23,7 @@ export default function _MoveToMain(props: Props) {
     } else {
       setBeginAnimation(false);
     }
-  }, [moveToMain, router]);
+  }, [shouldMoveToMain, router]);
   return (
     <div
       css={css`
@@ -34,7 +34,7 @@ export default function _MoveToMain(props: Props) {
         z-index: 9999;
         align-items: center;
         justify-content: center;
-        display: ${moveToMain ? "flex" : "none"};
+        display: ${shouldMoveToMain ? "flex" : "none"};
         background-color: ${beginAnimation ? backgroundBlack : "transparent"};
 
         transition: 100ms ease;
@@ -47,7 +47,7 @@ export default function _MoveToMain(props: Props) {
           grid-column: 1;
           width: ${beginAnimation ? 80 : 50}%;
           //z-index: 99;
-          margin-bottom: ${beginAnimation ? 0 : 20}vh;
+          // margin-bottom: ${beginAnimation ? 0 : 20}vh;
           transition: 500ms ease;
           transition-property: width, margin-bottom, opacity;
           transition-delay: 100ms;

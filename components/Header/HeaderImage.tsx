@@ -9,7 +9,7 @@ interface Props {
 }
 
 export default function HeaderImage(props: Props) {
-  const { moveToMain, setMoveToMain, setFadeOutContent, setFlashContent } =
+  const { shouldMoveToMain, setMoveToMain, setFadeOutContent, setFlashContent } =
     useContext(_AppContext);
   return (
     <div
@@ -18,8 +18,8 @@ export default function HeaderImage(props: Props) {
         margin-top: 20px;
         margin-left: 8px;
         margin-right: 8px;
-        opacity: ${moveToMain ? 0 : 1};
-        transform: translateY(${moveToMain ? 5 : 0}vh) scale(${moveToMain ? 1.2 : 1});
+        opacity: ${shouldMoveToMain ? 0 : 1};
+        transform: scale(${shouldMoveToMain ? 1.3 : 1});
 
         transition: 100ms ease;
         transition-property: width, transform, opacity;
