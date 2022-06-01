@@ -36,7 +36,7 @@ export default function AboutMeContent(props: Props) {
             font-size: 1.1em;
           `}
         >
-          I'm Mitra Sisakht ! <br />
+          I&apos:m Mitra Sisakht ! <br />
           <br />
         </span>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at
