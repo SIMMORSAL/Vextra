@@ -66,7 +66,7 @@ export default function AboutMeContent(props: Props) {
           width: 100%;
           height: 100%;
           display: ${fadeInFinish ? "none" : "block"};
-          margin-top: ${fadeIn ? "1000px" : "-220px"};
+          margin-top: ${fadeIn ? "1000px" : "-240px"};
 
           transition: margin-top 1000ms ease;
         `}
