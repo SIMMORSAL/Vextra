@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import { headerHeight } from "../Header";
+import { useRouter } from "next/router";
 
 interface Props {}
 
 export default function AboutMeContent(props: Props) {
   const [fadeIn, setFadeIn] = useState(false);
+  const router = useRouter();
   useEffect(() => {
     setTimeout(() => {
       setFadeIn(true);
@@ -39,22 +41,27 @@ export default function AboutMeContent(props: Props) {
           grid-column: 1;
           width: 100%;
           height: 100%;
-          margin-top: ${fadeIn ? "100%" : "-250px"};
+          margin-top: ${fadeIn ? "1000px" : "-300px"};
 
-          transition: margin-top 1500ms ease;
+          transition: margin-top 1000ms ease;
         `}
       >
         <div
           css={css`
             width: 100%;
-            height: 250px;
-            background-image: linear-gradient(0deg, #ffffff, transparent);
+            height: 300px;
+            //background-image: linear-gradient(0deg, #ffffff, #ffffff00);
+            background-image: linear-gradient(
+              0deg,
+              #ffffff,
+              ${router.route === "/portfolio" ? "transparent" : "#ffffff00"}
+            );
           `}
         />
         <div
           css={css`
             width: 100%;
-            height: calc(100% + 250px);
+            height: calc(100% + 300px);
             background-color: #ffffff;
           `}
         />
