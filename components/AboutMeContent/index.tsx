@@ -22,7 +22,7 @@ export default function AboutMeContent(props: Props) {
       setTimeout(() => {
         setFadeInFinish(true);
       }, 1000);
-    }, 200);
+    }, 70);
   }, []);
 
   useEffect(() => {
@@ -40,8 +40,11 @@ export default function AboutMeContent(props: Props) {
         width: 100%;
         display: grid;
         opacity: ${fadeOut ? 0 : 1};
+        margin-top: ${fadeOut ? 14 : 0}px;
+        padding-top: 25vh;
 
-        transition: opacity 100ms ease;
+        transition: 100ms ease;
+        transition-property: opacity, margin-top;
 
         // * this is to apply gradient fading
         // -webkit-mask-image: -webkit-gradient(

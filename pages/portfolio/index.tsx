@@ -13,7 +13,6 @@ export default function Portfolio(props: Props) {
   //     css={css`
   //       width: 100%;
   //       height: 100%;
-  //       transform: scale(0.95);
   //     `}
   //   >
   //     <PortfolioContent />
@@ -34,7 +33,6 @@ export default function Portfolio(props: Props) {
         css={css`
           width: 100%;
           /* height: ${isXs ? "fit-content" : "100%"}; */
-          transform: scale(0.95);
         `}
       >
         <AboutMeContent />
@@ -43,7 +41,6 @@ export default function Portfolio(props: Props) {
         css={css`
           width: 100%;
           height: 50%;
-          transform: scale(0.95);
           display: ${isXs ? "flex" : "none"};
         `}
       >
