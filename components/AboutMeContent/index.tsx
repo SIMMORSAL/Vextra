@@ -7,10 +7,13 @@ interface Props {}
 
 export default function AboutMeContent(props: Props) {
   const [fadeIn, setFadeIn] = useState(false);
-  const router = useRouter();
+  const [fadeInFinish, setFadeInFinish] = useState(false);
   useEffect(() => {
     setTimeout(() => {
       setFadeIn(true);
+      setTimeout(() => {
+        setFadeInFinish(true);
+      }, 1000);
     }, 200);
   }, []);
   return (
@@ -41,7 +44,8 @@ export default function AboutMeContent(props: Props) {
           grid-column: 1;
           width: 100%;
           height: 100%;
-          margin-top: ${fadeIn ? "1000px" : "-300px"};
+          display: ${fadeInFinish ? "none" : "block"};
+          margin-top: ${fadeIn ? "1000px" : "-220px"};
 
           transition: margin-top 1000ms ease;
         `}
@@ -50,18 +54,14 @@ export default function AboutMeContent(props: Props) {
           css={css`
             width: 100%;
             height: 300px;
-            //background-image: linear-gradient(0deg, #ffffff, #ffffff00);
-            background-image: linear-gradient(
-              0deg,
-              #ffffff,
-              ${router.route === "/portfolio" ? "transparent" : "#ffffff00"}
-            );
+            background-image: linear-gradient(0deg, #ffffff, transparent);
           `}
         />
         <div
           css={css`
             width: 100%;
             height: calc(100% + 300px);
+            //background-color: rgba(215, 74, 74, 0.44);
             background-color: #ffffff;
           `}
         />
