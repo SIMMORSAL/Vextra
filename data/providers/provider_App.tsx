@@ -5,10 +5,14 @@ import React, {
   useEffect,
   useState,
 } from "react";
+import { useRouter } from "next/router";
+import { getActiveTab } from "../../tools/tools";
 
 const LSK_App = "_App";
 
 interface _AppInterface {
+  newTabSelected: string;
+  setNewTabSelected: Dispatch<SetStateAction<string>>;
   shouldMoveToMain: boolean;
   setMoveToMain: Dispatch<SetStateAction<boolean>>;
   fadeOutContent: boolean;
@@ -18,6 +22,8 @@ interface _AppInterface {
 }
 
 export const _AppContext = createContext({
+  newTabSelected: "/inContext",
+  setNewTabSelected: () => {},
   shouldMoveToMain: false,
   setMoveToMain: () => {},
   fadeOutContent: false,
@@ -31,6 +37,8 @@ interface Props {
 }
 
 export function _AppProvider(props: Props) {
+  const router = useRouter();
+  const [newTabSelected, setNewTabSelected] = useState(getActiveTab(router));
   const [moveToMain, setMoveToMain] = useState(false);
   const [fadeOutContent, setFadeOutContent] = useState(false);
   const [flashContent, setFlashContent] = useState(false);
@@ -38,6 +46,8 @@ export function _AppProvider(props: Props) {
   return (
     <_AppContext.Provider
       value={{
+        newTabSelected,
+        setNewTabSelected,
         shouldMoveToMain: moveToMain,
         setMoveToMain,
         fadeOutContent,

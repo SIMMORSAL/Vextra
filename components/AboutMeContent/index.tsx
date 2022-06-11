@@ -1,13 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import { headerHeight } from "../Header";
 import { useRouter } from "next/router";
+import { _AppContext } from "../../data/providers/provider_App";
+import { getActiveTab } from "../../tools/tools";
 
 interface Props {}
 
 export default function AboutMeContent(props: Props) {
+  const router = useRouter();
+
+  const { newTabSelected } = useContext(_AppContext);
+
   const [fadeIn, setFadeIn] = useState(false);
   const [fadeInFinish, setFadeInFinish] = useState(false);
+  const [fadeOut, setFadeOut] = useState(false);
+
   useEffect(() => {
     setTimeout(() => {
       setFadeIn(true);
@@ -16,11 +24,21 @@ export default function AboutMeContent(props: Props) {
       }, 1000);
     }, 200);
   }, []);
+
+  useEffect(() => {
+    if (newTabSelected !== getActiveTab(router)) setFadeOut(true);
+  }, [newTabSelected, router]);
+
+  console.log(`11111  AboutMeContent:  ${fadeOut}`);
+
   return (
     <div
       css={css`
         width: 100%;
         display: grid;
+        opacity: ${fadeOut ? 0 : 1};
+
+        transition: opacity 100ms ease;
 
         // * this is to apply gradient fading
         // -webkit-mask-image: -webkit-gradient(

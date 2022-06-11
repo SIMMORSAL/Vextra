@@ -12,3 +12,7 @@ export function shuffleArray(array) {
   }
   return array;
 }
+
+export function getActiveTab(router): string {
+  return router.asPath.slice(1).split("/")[0];
+}

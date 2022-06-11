@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 import { headerItemSelect, textOnWhite } from "../../res/colors";
 import { useRouter } from "next/router";
 import { _AppContext } from "../../data/providers/provider_App";
+import { getActiveTab } from "../../tools/tools";
 
 interface Props {
   page: string;
@@ -14,10 +15,10 @@ interface Props {
 
 export default function HeaderButton(props: Props) {
   const router = useRouter();
-  const buttonSelected = router.asPath.slice(1).split("/")[0] === props.page;
+  const buttonSelected = getActiveTab(router) === props.page;
   // const buttonSelected = selectedPage === props.page;
   const [isHovering, setIsHovering] = useState(false);
-  const { setFlashContent } = useContext(_AppContext);
+  const { setNewTabSelected, setFlashContent } = useContext(_AppContext);
 
   return (
     <a
@@ -34,6 +35,7 @@ export default function HeaderButton(props: Props) {
             if (props.page === "home") {
               props.homeClicked();
             } else {
+              setNewTabSelected(props.page);
               setTimeout(() => {
                 router.push(`/${props.page}/`);
               }, 100);
