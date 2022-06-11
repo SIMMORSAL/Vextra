@@ -14,7 +14,7 @@ interface Props {}
 export default function LandingPage({}: Props) {
   const router = useRouter();
 
-  const { setMoveToMain } = useContext(_AppContext);
+  const { setMoveToMain, setNewTabSelected } = useContext(_AppContext);
   const [loading, setLoading] = useState(true);
   const [isXs, setIsXs] = useState(false);
   const [beginAnimationPhase2, setBeginAnimationPhase2] = useState(false);
@@ -40,6 +40,7 @@ export default function LandingPage({}: Props) {
 
   useEffect(() => {
     if (selectedPage !== undefined) {
+      setNewTabSelected(selectedPage);
       setTimeout(() => {
         if (selectedPage !== undefined) router.push(`/${selectedPage}/`);
       }, 200);

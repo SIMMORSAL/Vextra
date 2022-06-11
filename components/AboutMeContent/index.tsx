@@ -27,9 +27,12 @@ export default function AboutMeContent(props: Props) {
 
   useEffect(() => {
     if (newTabSelected !== getActiveTab(router)) setFadeOut(true);
+    else setFadeOut(false);
   }, [newTabSelected, router]);
 
-  console.log(`11111  AboutMeContent:  ${fadeOut}`);
+  console.log(
+    `11111  AboutMeContent:  ${getActiveTab(router)}  ${newTabSelected}  ${fadeOut}`
+  );
 
   return (
     <div

@@ -34,13 +34,9 @@ export default function Header(props: Props) {
     const scroll = document.documentElement.scrollTop;
     if (scroll > 24) {
       setShouldBlur(true);
-      console.log(`11111  listenToScroll:  ${true}`);
     } else {
       setShouldBlur(false);
-      console.log(`11111  listenToScroll:  ${false}`);
     }
-
-    console.log(`11111  listenToScroll:  ${scroll} ${shouldBlur}`);
   };
 
   useEffect(() => {

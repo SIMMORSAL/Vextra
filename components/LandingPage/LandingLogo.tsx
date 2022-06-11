@@ -16,7 +16,7 @@ export default function LandingLogo(props: Props) {
         grid-row: 1;
         grid-column: 1;
         width: ${props.loading ? 80 : noPageSelected ? 30 : 20}%;
-        margin-bottom: ${props.loading ? 0 : noPageSelected ? 10 : 40}%;
+        margin-bottom: ${props.loading ? 0 : noPageSelected ? "10%" : "60vh"};
         z-index: 99;
         opacity: ${noPageSelected ? 1 : 0};
 
