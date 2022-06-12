@@ -2,6 +2,8 @@ import React from "react";
 import { css } from "@emotion/react";
 import { headerHeight } from "../Header";
 import EmailIcon from "@mui/icons-material/Email";
+import SharedIdLinks from "./SharedIdLinks";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface Props {}
 
@@ -15,7 +17,8 @@ export default function ContactMeContent(props: Props) {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: ${headerHeight}px 24px 150px;
+        align-items: center;
+        padding: ${headerHeight}px 24px 0px;
       `}
     >
       <div
@@ -25,7 +28,6 @@ export default function ContactMeContent(props: Props) {
           justify-content: center;
           align-items: center;
           user-select: text;
-          height: 100%;
           font-weight: bold;
           text-align: center;
         `}
@@ -37,6 +39,23 @@ export default function ContactMeContent(props: Props) {
         />
         mhmitra.mh@gmail.com
       </div>
+      <div
+        css={css`
+          margin-top: 16px;
+          user-select: text;
+          font-weight: bold;
+          text-align: center;
+        `}
+      >
+        @mhmitramh
+      </div>
+      <SharedIdLinks begin={true} />
+
+      <FontAwesomeIcon icon={["fal", "coffee"]} />
+      <FontAwesomeIcon icon={["far", "coffee"]} />
+      <FontAwesomeIcon icon={["fas", "coffee"]} />
+      <FontAwesomeIcon icon="coffee" />
+      <FontAwesomeIcon icon={["fab", "github"]} />
     </div>
   );
 }

@@ -30,6 +30,7 @@ export default function AboutMe(props: Props) {
           width: 100%;
           height: 50%;
           display: ${isXs ? "flex" : "none"};
+          padding-bottom: 200px;
         `}
       >
         <ContactMeContent />

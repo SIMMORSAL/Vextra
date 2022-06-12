@@ -11,8 +11,6 @@ export default function ContactMe(props: Props) {
   const windowSize = useWindowSize();
   const isXs = windowSize.width < 600;
 
-  console.log(`11111  ContactMe:  ${headerHeight}`);
-
   return (
     <div
       css={css`
@@ -23,8 +21,6 @@ export default function ContactMe(props: Props) {
       <div
         css={css`
           width: 100%;
-          /* height: 45%; */
-          //transform: scale(0.95);
           display: ${isXs ? "flex" : "none"};
         `}
       >
@@ -33,9 +29,8 @@ export default function ContactMe(props: Props) {
       <div
         css={css`
           width: 100%;
-          height: ${isXs ? "fit-content" : `calc(100vh - ${6}px)`};
-          //height: 100vh;
-          //transform: scale(0.95);
+          height: ${isXs ? "fit-content" : `calc(100vh - 6px)`};
+          padding-bottom: ${isXs ? "200px" : "0"};
         `}
       >
         <ContactMeContent />
