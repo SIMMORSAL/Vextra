@@ -1,13 +1,35 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import { headerHeight } from "../Header";
 import EmailIcon from "@mui/icons-material/Email";
 import SharedIdLinks from "./SharedIdLinks";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import OneLineLink from "./OneLineLink";
+import { _AppContext } from "../../data/providers/provider_App";
+import { useRouter } from "next/router";
+import { getActiveTab } from "../../tools/tools";
 
 interface Props {}
 
 export default function ContactMeContent(props: Props) {
+  const router = useRouter();
+
+  const { newTabSelected } = useContext(_AppContext);
+  const [fadeOut, setFadeOut] = useState(false);
+
+  const [fadeIn, setFadeIn] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setFadeIn(true);
+    }, 50);
+  }, []);
+
+  useEffect(() => {
+    if (newTabSelected !== getActiveTab(router)) setFadeOut(true);
+    else setFadeOut(false);
+  }, [newTabSelected, router]);
+
   return (
     <div
       css={css`
@@ -19,26 +41,13 @@ export default function ContactMeContent(props: Props) {
         justify-content: center;
         align-items: center;
         padding: ${headerHeight}px 24px 0px;
+        opacity: ${fadeIn && !fadeOut ? 1 : 0};
+
+        transition: ${fadeOut ? 100 : 200}ms ease;
+        transition-property: opacity;
       `}
     >
-      <div
-        css={css`
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
-          user-select: text;
-          font-weight: bold;
-          text-align: center;
-        `}
-      >
-        <EmailIcon
-          css={css`
-            margin-right: 12px;
-          `}
-        />
-        mhmitra.mh@gmail.com
-      </div>
+      <OneLineLink />
       <div
         css={css`
           margin-top: 16px;
@@ -50,12 +59,6 @@ export default function ContactMeContent(props: Props) {
         @mhmitramh
       </div>
       <SharedIdLinks begin={true} />
-
-      <FontAwesomeIcon icon={["fal", "coffee"]} />
-      <FontAwesomeIcon icon={["far", "coffee"]} />
-      <FontAwesomeIcon icon={["fas", "coffee"]} />
-      <FontAwesomeIcon icon="coffee" />
-      <FontAwesomeIcon icon={["fab", "github"]} />
     </div>
   );
 }

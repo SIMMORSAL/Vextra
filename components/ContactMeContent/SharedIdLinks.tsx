@@ -27,7 +27,7 @@ export default function SharedIdLinks({ begin }: Props) {
   const [hasAnimationFinished, setHasAnimationFinished] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
 
-  const delayTimes = shuffleArray([0, 1, 2, 3, 4]);
+  const delayTimes = shuffleArray([0, 1, 2, 3]);
 
   useEffect(() => {
     if (begin)
@@ -63,11 +63,6 @@ export default function SharedIdLinks({ begin }: Props) {
           color: black;
         `}
       >
-        <FontAwesomeIcon icon={["fal", "coffee"]} />
-        <FontAwesomeIcon icon={["far", "coffee"]} />
-        <FontAwesomeIcon icon={["fas", "coffee"]} />
-        <FontAwesomeIcon icon="coffee" />
-        <FontAwesomeIcon icon={["fab", "github"]} />
         <PinterestIcon
           style={{ color: itemOnWhiteFocused }}
           css={css`
@@ -108,7 +103,7 @@ export default function SharedIdLinks({ begin }: Props) {
 
             :hover {
               width: 36px;
-              height: 42px;
+              height: 32px;
               padding: 0 2px;
             }
           `}
