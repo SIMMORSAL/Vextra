@@ -41,7 +41,7 @@ export default function AboutMeContent(props: Props) {
         display: grid;
         opacity: ${fadeOut ? 0 : 1};
         margin-top: ${fadeOut ? 14 : 0}px;
-        padding-top: 25vh;
+        padding-top: 15vh;
 
         transition: 100ms ease;
         transition-property: opacity, margin-top;
