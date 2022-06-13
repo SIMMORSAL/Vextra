@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import EmailIcon from "@mui/icons-material/Email";
 
 interface Props {}
 
 export default function OneLineLink(props: Props) {
+  const [beginAnimation, setBeginAnimation] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setBeginAnimation(true);
+    }, 50);
+  }, []);
+
   return (
     <div
       css={css`
@@ -32,9 +40,11 @@ export default function OneLineLink(props: Props) {
             width: 24px;
             height: 24px;
             cursor: pointer;
+            margin-right: ${beginAnimation ? 0 : 16}px;
+            opacity: ${beginAnimation ? 1 : 0};
 
             transition: 140ms ease;
-            transition-property: width, height;
+            transition-property: width, height, margin-right, opacity;
 
             :hover {
               width: 30px;
