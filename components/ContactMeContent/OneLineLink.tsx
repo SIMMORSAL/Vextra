@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import EmailIcon from "@mui/icons-material/Email";
 
-interface Props {}
+interface Props {
+  text: string;
+  href: string;
+}
 
 export default function OneLineLink(props: Props) {
   const [beginAnimation, setBeginAnimation] = useState(false);
@@ -35,25 +38,33 @@ export default function OneLineLink(props: Props) {
           align-items: center;
         `}
       >
-        <EmailIcon
+        <a
+          href={props.href}
           css={css`
-            width: 24px;
-            height: 24px;
-            cursor: pointer;
-            margin-right: ${beginAnimation ? 0 : 16}px;
-            opacity: ${beginAnimation ? 1 : 0};
-
-            transition: 140ms ease;
-            transition-property: width, height, margin-right, opacity;
-
-            :hover {
-              width: 30px;
-              height: 30px;
-            }
+            //background-color: red;
+            display: flex;
           `}
-        />
+        >
+          <EmailIcon
+            css={css`
+              width: 24px;
+              height: 24px;
+              cursor: pointer;
+              margin-right: ${beginAnimation ? 0 : 16}px;
+              opacity: ${beginAnimation ? 1 : 0};
+
+              transition: 140ms ease;
+              transition-property: width, height, margin-right, opacity;
+
+              :hover {
+                width: 30px;
+                height: 30px;
+              }
+            `}
+          />
+        </a>
       </div>
-      mhmitra.mh@gmail.com
+      {props.text}
     </div>
   );
 }

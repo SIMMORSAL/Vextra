@@ -47,7 +47,7 @@ export default function BottomIcons({ begin }: Props) {
     >
       <div
         css={css`
-          display: flex; 
+          display: flex;
           flex-direction: row;
           align-items: end;
           padding: 0 24px;
@@ -56,28 +56,39 @@ export default function BottomIcons({ begin }: Props) {
           color: black;
         `}
       >
-        <PinterestIcon
-          style={{ color: isHovering ? itemOnWhiteFocused : itemOnWhite }}
+        <a
+          href={"https://www.pinterest.com/mhmitramh/"}
+          target={"_blank"}
+          rel="noreferrer"
           css={css`
-            margin: 16px 0;
-            width: 30px;
-            //padding: 0 4px;
-            transform: translateY(${delayPassed ? 0 : "-50%"});
-            opacity: ${delayPassed ? 1 : 0};
-            cursor: pointer;
-            //color: ${isHovering ? itemOnWhiteFocused : itemOnWhite};
-
-            transition: 200ms ease;
-            transition-property: transform, opacity, color, width, height;
-            transition-delay: ${hasAnimationFinished ? "0" : `${delayTimes[0]}00ms`};
-
-            :hover {
-              width: 42px;
-              height: 32px;
-              color: ${headerItemSelect};
-            }
+            display: flex;
           `}
-        />
+        >
+          <PinterestIcon
+            style={{ color: isHovering ? itemOnWhiteFocused : itemOnWhite }}
+            css={css`
+              margin: 16px 0;
+              width: 30px;
+              //padding: 0 4px;
+              transform: translateY(${delayPassed ? 0 : "-50%"});
+              opacity: ${delayPassed ? 1 : 0};
+              cursor: pointer;
+              //color: ${isHovering ? itemOnWhiteFocused : itemOnWhite};
+
+              transition: 200ms ease;
+              transition-property: transform, opacity, color, width, height;
+              transition-delay: ${hasAnimationFinished
+                ? "0"
+                : `${delayTimes[0]}00ms`};
+
+              :hover {
+                width: 42px;
+                height: 32px;
+                color: ${headerItemSelect};
+              }
+            `}
+          />
+        </a>
         <div
           css={css`
             margin: 16px 0;
@@ -117,66 +128,97 @@ export default function BottomIcons({ begin }: Props) {
             `}
           />
         </div>
-        <LinkedInIcon
-          style={{ color: isHovering ? itemOnWhiteFocused : itemOnWhite }}
+        <a
+          href={"https://www.linkedin.com/in/mhmitramh/"}
+          target={"_blank"}
+          rel="noreferrer"
           css={css`
-            margin: 16px 0;
-            width: 30px;
-            transform: translateY(${delayPassed ? 0 : "-50%"});
-            opacity: ${delayPassed ? 1 : 0};
-            cursor: pointer;
-
-            transition: 200ms ease;
-            transition-property: transform, opacity, color, width, height;
-            transition-delay: ${hasAnimationFinished ? "0" : `${delayTimes[2]}00ms`};
-
-            :hover {
-              width: 42px;
-              height: 32px;
-              // color: ${headerItemSelect};
-            }
+            display: flex;
           `}
-        />
-        <InstagramIcon
-          style={{ color: isHovering ? itemOnWhiteFocused : itemOnWhite }}
+        >
+          <LinkedInIcon
+            style={{ color: isHovering ? itemOnWhiteFocused : itemOnWhite }}
+            css={css`
+              margin: 16px 0;
+              width: 30px;
+              transform: translateY(${delayPassed ? 0 : "-50%"});
+              opacity: ${delayPassed ? 1 : 0};
+              cursor: pointer;
+
+              transition: 200ms ease;
+              transition-property: transform, opacity, color, width, height;
+              transition-delay: ${hasAnimationFinished
+                ? "0"
+                : `${delayTimes[2]}00ms`};
+
+              :hover {
+                width: 42px;
+                height: 32px;
+                // color: ${headerItemSelect};
+              }
+            `}
+          />
+        </a>
+        <a
+          href={"https://www.instagram.com/mhmitramh/"}
+          target={"_blank"}
+          rel="noreferrer"
           css={css`
-            margin: 16px 0;
-            width: 30px;
-            transform: translateY(${delayPassed ? 0 : "-50%"});
-            opacity: ${delayPassed ? 1 : 0};
-            cursor: pointer;
-
-            transition: 200ms ease;
-            transition-property: transform, opacity, color, width, height;
-            transition-delay: ${hasAnimationFinished ? "0" : `${delayTimes[3]}00ms`};
-
-            :hover {
-              width: 42px;
-              height: 32px;
-              //color: ${headerItemSelect};
-            }
+            display: flex;
           `}
-        />
-        <EmailIcon
-          style={{ color: isHovering ? itemOnWhiteFocused : itemOnWhite }}
+        >
+          <InstagramIcon
+            style={{ color: isHovering ? itemOnWhiteFocused : itemOnWhite }}
+            css={css`
+              margin: 16px 0;
+              width: 30px;
+              transform: translateY(${delayPassed ? 0 : "-50%"});
+              opacity: ${delayPassed ? 1 : 0};
+              cursor: pointer;
+
+              transition: 200ms ease;
+              transition-property: transform, opacity, color, width, height;
+              transition-delay: ${hasAnimationFinished
+                ? "0"
+                : `${delayTimes[3]}00ms`};
+
+              :hover {
+                width: 42px;
+                height: 32px;
+                //color: ${headerItemSelect};
+              }
+            `}
+          />
+        </a>
+        <a
+          href={"mailto: mhmitra.mh@gmail.com"}
           css={css`
-            margin: 16px 0;
-            width: 30px;
-            transform: translateY(${delayPassed ? 0 : "-50%"});
-            opacity: ${delayPassed ? 1 : 0};
-            cursor: pointer;
-
-            transition: 200ms ease;
-            transition-property: transform, opacity, color, width, height;
-            transition-delay: ${hasAnimationFinished ? "0" : `${delayTimes[4]}00ms`};
-
-            :hover {
-              width: 42px;
-              height: 32px;
-              //color: ${headerItemSelect};
-            }
+            display: flex;
           `}
-        />
+        >
+          <EmailIcon
+            style={{ color: isHovering ? itemOnWhiteFocused : itemOnWhite }}
+            css={css`
+              margin: 16px 0;
+              width: 30px;
+              transform: translateY(${delayPassed ? 0 : "-50%"});
+              opacity: ${delayPassed ? 1 : 0};
+              cursor: pointer;
+
+              transition: 200ms ease;
+              transition-property: transform, opacity, color, width, height;
+              transition-delay: ${hasAnimationFinished
+                ? "0"
+                : `${delayTimes[4]}00ms`};
+
+              :hover {
+                width: 42px;
+                height: 32px;
+                //color: ${headerItemSelect};
+              }
+            `}
+          />
+        </a>
       </div>
     </div>
   );

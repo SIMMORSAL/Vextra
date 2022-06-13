@@ -47,7 +47,10 @@ export default function ContactMeContent(props: Props) {
         transition-property: opacity;
       `}
     >
-      <OneLineLink />
+      <OneLineLink
+        text={"mhmitra.mh@gmail.com"}
+        href={"mailto: mhmitra.mh@gmail.com"}
+      />
       <div
         css={css`
           margin-top: 16px;

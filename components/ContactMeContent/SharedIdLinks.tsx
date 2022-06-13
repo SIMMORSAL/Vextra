@@ -63,28 +63,36 @@ export default function SharedIdLinks({ begin }: Props) {
           color: black;
         `}
       >
-        <PinterestIcon
-          style={{ color: itemOnWhiteFocused }}
-          css={css`
-            margin: 16px 0;
-            width: 30px;
-            //padding: 0 4px;
-            transform: translateY(${delayPassed ? 0 : "50%"});
-            opacity: ${delayPassed ? 1 : 0};
-            cursor: pointer;
-            //color: ${isHovering ? itemOnWhiteFocused : itemOnWhite};
+        <a
+          href={"https://www.pinterest.com/mhmitramh/"}
+          target={"_blank"}
+          rel="noreferrer"
+        >
+          <PinterestIcon
+            style={{ color: itemOnWhiteFocused }}
+            css={css`
+              margin: 16px 0;
+              width: 30px;
+              //padding: 0 4px;
+              transform: translateY(${delayPassed ? 0 : "50%"});
+              opacity: ${delayPassed ? 1 : 0};
+              cursor: pointer;
+              //color: ${isHovering ? itemOnWhiteFocused : itemOnWhite};
 
-            transition: 200ms ease;
-            transition-property: transform, opacity, color, width, height;
-            transition-delay: ${hasAnimationFinished ? "0" : `${delayTimes[0]}00ms`};
+              transition: 200ms ease;
+              transition-property: transform, opacity, color, width, height;
+              transition-delay: ${hasAnimationFinished
+                ? "0"
+                : `${delayTimes[0]}00ms`};
 
-            :hover {
-              width: 42px;
-              height: 32px;
-              color: ${headerItemSelect};
-            }
-          `}
-        />
+              :hover {
+                width: 42px;
+                height: 32px;
+                color: ${headerItemSelect};
+              }
+            `}
+          />
+        </a>
         <div
           css={css`
             margin: 16px 0;
@@ -124,46 +132,62 @@ export default function SharedIdLinks({ begin }: Props) {
             `}
           />
         </div>
-        <LinkedInIcon
-          style={{ color: itemOnWhiteFocused }}
-          css={css`
-            margin: 16px 0;
-            width: 30px;
-            transform: translateY(${delayPassed ? 0 : "50%"});
-            opacity: ${delayPassed ? 1 : 0};
-            cursor: pointer;
+        <a
+          href={"https://www.linkedin.com/in/mhmitramh/"}
+          target={"_blank"}
+          rel="noreferrer"
+        >
+          <LinkedInIcon
+            style={{ color: itemOnWhiteFocused }}
+            css={css`
+              margin: 16px 0;
+              width: 30px;
+              transform: translateY(${delayPassed ? 0 : "50%"});
+              opacity: ${delayPassed ? 1 : 0};
+              cursor: pointer;
 
-            transition: 200ms ease;
-            transition-property: transform, opacity, color, width, height;
-            transition-delay: ${hasAnimationFinished ? "0" : `${delayTimes[2]}00ms`};
+              transition: 200ms ease;
+              transition-property: transform, opacity, color, width, height;
+              transition-delay: ${hasAnimationFinished
+                ? "0"
+                : `${delayTimes[2]}00ms`};
 
-            :hover {
-              width: 42px;
-              height: 32px;
-              // color: ${headerItemSelect};
-            }
-          `}
-        />
-        <InstagramIcon
-          style={{ color: itemOnWhiteFocused }}
-          css={css`
-            margin: 16px 0;
-            width: 30px;
-            transform: translateY(${delayPassed ? 0 : "50%"});
-            opacity: ${delayPassed ? 1 : 0};
-            cursor: pointer;
+              :hover {
+                width: 42px;
+                height: 32px;
+                // color: ${headerItemSelect};
+              }
+            `}
+          />
+        </a>
+        <a
+          href={"https://www.instagram.com/mhmitramh/"}
+          target={"_blank"}
+          rel="noreferrer"
+        >
+          <InstagramIcon
+            style={{ color: itemOnWhiteFocused }}
+            css={css`
+              margin: 16px 0;
+              width: 30px;
+              transform: translateY(${delayPassed ? 0 : "50%"});
+              opacity: ${delayPassed ? 1 : 0};
+              cursor: pointer;
 
-            transition: 200ms ease;
-            transition-property: transform, opacity, color, width, height;
-            transition-delay: ${hasAnimationFinished ? "0" : `${delayTimes[3]}00ms`};
+              transition: 200ms ease;
+              transition-property: transform, opacity, color, width, height;
+              transition-delay: ${hasAnimationFinished
+                ? "0"
+                : `${delayTimes[3]}00ms`};
 
-            :hover {
-              width: 42px;
-              height: 32px;
-              //color: ${headerItemSelect};
-            }
-          `}
-        />
+              :hover {
+                width: 42px;
+                height: 32px;
+                //color: ${headerItemSelect};
+              }
+            `}
+          />
+        </a>
         {/*<EmailIcon*/}
         {/*  style={{ color: isHovering ? itemOnWhiteFocused : itemOnWhite }}*/}
         {/*  css={css`*/}
