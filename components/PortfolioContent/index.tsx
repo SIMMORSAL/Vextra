@@ -41,7 +41,7 @@ export default function PortfolioContent(props: Props) {
       >
         {getPortfolios().map((value, index) => {
           return (
-            <Grid key={value.name} item xs={12} sm={6}>
+            <Grid key={value.name} item xs={6} sm={6}>
               <PortfolioItem portfolio={value} index={index} />
             </Grid>
           );
