@@ -18,8 +18,6 @@ interface Props {}
 
 let awardCounts = 0;
 
-console.log(`11111  asdfasdfasdf:  ${awardCounts}`);
-
 export default function PortfolioContent(props: Props) {
   const router = useRouter();
 

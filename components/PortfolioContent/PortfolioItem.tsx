@@ -18,7 +18,6 @@ export default function PortfolioItem(props: Props) {
     setTimeout(() => {
       setBeginFadeIn(true);
       if (props.portfolio.award) {
-        console.log(`11111  sadfasdf:  ${props.awardDelayMultiplier}`);
         setTimeout(() => {
           setFadeInAward(true);
           setTimeout(() => {
@@ -103,21 +102,31 @@ export default function PortfolioItem(props: Props) {
               padding-left, padding-right;
           `}
         >
-          <Image
-            // src={require("/res/images/portfolio/ab.png")}
-            src={require(`/res/images/portfolio/${props.portfolio.award}`)}
-            alt={"behance"}
-            layout={"intrinsic"}
+          <div
             css={css`
-              padding: 0 4px;
-              transform: translateY(${beginFadeIn ? 0 : 15}%)
-                rotate3d(${beginFadeIn ? 0 : 1}, 0, 0, 45deg);
+              box-shadow: ${makeAwardSmall
+                ? "1px 1px 4px 1px #00000055"
+                : `5px 5px 22px 6px #00000000`};
 
-              transition: 700ms ease;
-              transition-property: transform;
-              transition-delay: ${props.index}50ms;
+              transition: box-shadow 700ms ease;
             `}
-          />
+          >
+            <Image
+              // src={require("/res/images/portfolio/ab.png")}
+              src={require(`/res/images/portfolio/${props.portfolio.award}`)}
+              alt={"behance"}
+              layout={"intrinsic"}
+              css={css`
+                padding: 0 4px;
+                transform: translateY(${beginFadeIn ? 0 : 15}%)
+                  rotate3d(${beginFadeIn ? 0 : 1}, 0, 0, 45deg);
+
+                transition: 700ms ease;
+                transition-property: transform;
+                transition-delay: ${props.index}50ms;
+              `}
+            />
+          </div>
         </div>
       ) : (
         <></>
