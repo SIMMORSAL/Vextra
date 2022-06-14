@@ -16,6 +16,10 @@ import { getActiveTab } from "../../tools/tools";
 
 interface Props {}
 
+let awardCounts = 0;
+
+console.log(`11111  asdfasdfasdf:  ${awardCounts}`);
+
 export default function PortfolioContent(props: Props) {
   const router = useRouter();
 
@@ -59,7 +63,10 @@ export default function PortfolioContent(props: Props) {
           justify-content: center;
         `}
       >
+        {`${(awardCounts = 0).toString().slice(0, 0)}`}
         {data.map((value, index) => {
+          if (value.award) awardCounts++;
+
           return (
             <Grid
               key={value.name}
@@ -67,7 +74,11 @@ export default function PortfolioContent(props: Props) {
               xs={index === 0 && data.length % 2 === 1 ? 7 : 6}
               css={css``}
             >
-              <PortfolioItem portfolio={value} index={index} />
+              <PortfolioItem
+                portfolio={value}
+                index={index}
+                awardDelayMultiplier={awardCounts}
+              />
             </Grid>
           );
         })}

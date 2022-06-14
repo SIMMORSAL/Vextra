@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import { Portfolio } from "../../data/models/portfolio";
 import Image from "next/image";
-import { headerItemSelectFilter } from "../../res/colors";
+import { backgroundWhite, headerItemSelectFilter } from "../../res/colors";
 
 interface Props {
   portfolio: Portfolio;
   index: number;
+  awardDelayMultiplier: number;
 }
 
 export default function PortfolioItem(props: Props) {
@@ -17,12 +18,13 @@ export default function PortfolioItem(props: Props) {
     setTimeout(() => {
       setBeginFadeIn(true);
       if (props.portfolio.award) {
+        console.log(`11111  sadfasdf:  ${props.awardDelayMultiplier}`);
         setTimeout(() => {
           setFadeInAward(true);
           setTimeout(() => {
             setMakeAwardSmall(true);
           }, 1500);
-        }, 1500);
+        }, 1500 * props.awardDelayMultiplier);
       }
     }, 50);
   }, []);
@@ -64,13 +66,36 @@ export default function PortfolioItem(props: Props) {
       {props.portfolio.award ? (
         <div
           css={css`
-            width: ${makeAwardSmall ? 20 : 100}%;
+            width: 100%;
+            height: 100%;
             grid-row: 1;
             grid-column: 1;
+            z-index: 1;
+            background-color: ${fadeInAward
+              ? makeAwardSmall
+                ? "transparent"
+                : `${backgroundWhite}99`
+              : "transparent"};
+
+            transition: 500ms ease;
+            transition-property: background-color;
+          `}
+        />
+      ) : (
+        <></>
+      )}
+      {props.portfolio.award ? (
+        <div
+          css={css`
+            width: 100%;
+            grid-row: 1;
+            grid-column: 1;
+            z-index: 2;
             justify-self: start;
             align-self: end;
             opacity: ${fadeInAward ? 1 : 0};
-            padding: 0 ${makeAwardSmall ? 4 : 27}% ${makeAwardSmall ? 2 : 12}%;
+            padding: 0 ${makeAwardSmall ? 80 : 27}% ${makeAwardSmall ? 2 : 12}%
+              ${makeAwardSmall ? 4 : 27}%;
             filter: blur(${fadeInAward ? 0 : 30}px);
 
             transition: 700ms ease;
