@@ -3,4 +3,5 @@ export interface Portfolio {
   image: string;
   color: string;
   backgroundColor: string;
+  award?: string;
 }
