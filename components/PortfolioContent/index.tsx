@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import { headerHeight } from "../Header";
 import { Grid } from "@mui/material";
@@ -10,10 +10,25 @@ import {
 } from "../../res/colors";
 import { getPortfolios } from "../../data/offlineData";
 import PortfolioItem from "./PortfolioItem";
+import { useRouter } from "next/router";
+import { _AppContext } from "../../data/providers/provider_App";
+import { getActiveTab } from "../../tools/tools";
 
 interface Props {}
 
 export default function PortfolioContent(props: Props) {
+  const router = useRouter();
+
+  const { newTabSelected } = useContext(_AppContext);
+  const [fadeOut, setFadeOut] = useState(false);
+
+  const data = getPortfolios();
+
+  useEffect(() => {
+    if (newTabSelected !== getActiveTab(router)) setFadeOut(true);
+    else setFadeOut(false);
+  }, [newTabSelected, router]);
+
   return (
     <div
       css={css`
@@ -28,20 +43,30 @@ export default function PortfolioContent(props: Props) {
         justify-content: center;
         align-items: center;
         padding: ${headerHeight}px 24px 0px;
+        opacity: ${fadeOut ? 0 : 1};
+        margin-top: ${fadeOut ? 12 : 0}px;
+
+        transition: 100ms ease;
+        transition-property: opacity, margin-top;
       `}
     >
       <Grid
         container
         css={css`
-          max-width: 900px;
+          max-width: 600px;
           display: flex;
           align-items: center;
           justify-content: center;
         `}
       >
-        {getPortfolios().map((value, index) => {
+        {data.map((value, index) => {
           return (
-            <Grid key={value.name} item xs={6} sm={6}>
+            <Grid
+              key={value.name}
+              item
+              xs={index === 0 && data.length % 2 === 1 ? 7 : 6}
+              css={css``}
+            >
               <PortfolioItem portfolio={value} index={index} />
             </Grid>
           );

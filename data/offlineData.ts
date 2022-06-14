@@ -20,11 +20,11 @@ export function getPortfolios(): Portfolio[] {
       backgroundColor: "#3f0101",
       image: "umbrella.png",
     },
-    {
-      name: "Desk Light",
-      color: "#00ff7c",
-      backgroundColor: "#00381c",
-      image: "desk_light.png",
-    },
+    // {
+    //   name: "Desk Light",
+    //   color: "#00ff7c",
+    //   backgroundColor: "#00381c",
+    //   image: "desk_light.png",
+    // },
   ];
 }
