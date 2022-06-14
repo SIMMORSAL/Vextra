@@ -93,7 +93,7 @@ export default function PortfolioItem(props: Props) {
             justify-self: start;
             align-self: end;
             opacity: ${fadeInAward ? 1 : 0};
-            padding: 0 ${makeAwardSmall ? 80 : 27}% ${makeAwardSmall ? 2 : 12}%
+            padding: 0 ${makeAwardSmall ? 80 : 27}% ${makeAwardSmall ? 0 : 12}%
               ${makeAwardSmall ? 4 : 27}%;
             filter: blur(${fadeInAward ? 0 : 30}px);
 
@@ -104,11 +104,13 @@ export default function PortfolioItem(props: Props) {
         >
           <div
             css={css`
+              margin-bottom: ${makeAwardSmall ? 15 : 0}%;
               box-shadow: ${makeAwardSmall
                 ? "1px 1px 4px 1px #00000055"
                 : `5px 5px 22px 6px #00000000`};
 
-              transition: box-shadow 700ms ease;
+              transition: 700ms ease;
+              transition-property: box-shadow, margin-bottom;
             `}
           >
             <Image
