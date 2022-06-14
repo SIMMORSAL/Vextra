@@ -104,9 +104,9 @@ export default function PortfolioItem(props: Props) {
         >
           <div
             css={css`
-              margin-bottom: ${makeAwardSmall ? 15 : 0}%;
+              margin-bottom: ${makeAwardSmall ? 30 : 0}%;
               box-shadow: ${makeAwardSmall
-                ? "1px 1px 4px 1px #00000055"
+                ? "1px 1px 3px 1px #00000055"
                 : `5px 5px 22px 6px #00000000`};
 
               transition: 700ms ease;
