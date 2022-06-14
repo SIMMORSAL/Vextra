@@ -13,6 +13,7 @@ import PortfolioItem from "./PortfolioItem";
 import { useRouter } from "next/router";
 import { _AppContext } from "../../data/providers/provider_App";
 import { getActiveTab } from "../../tools/tools";
+import GalleryButton from "./GalleryButton";
 
 interface Props {}
 
@@ -81,6 +82,7 @@ export default function PortfolioContent(props: Props) {
           );
         })}
       </Grid>
+      <GalleryButton delay={data.length * 150 + 200} />
     </div>
   );
 }

@@ -14,6 +14,7 @@ export default function PortfolioItem(props: Props) {
   const [beginFadeIn, setBeginFadeIn] = useState(false);
   const [fadeInAward, setFadeInAward] = useState(false);
   const [makeAwardSmall, setMakeAwardSmall] = useState(false);
+  const [isAwardInteractive, setIsAwardInteractive] = useState(false);
   useEffect(() => {
     setTimeout(() => {
       setBeginFadeIn(true);
@@ -22,6 +23,9 @@ export default function PortfolioItem(props: Props) {
           setFadeInAward(true);
           setTimeout(() => {
             setMakeAwardSmall(true);
+            setTimeout(() => {
+              setIsAwardInteractive(true);
+            }, 700);
           }, 1500);
         }, 1500 * props.awardDelayMultiplier);
       }
@@ -102,33 +106,33 @@ export default function PortfolioItem(props: Props) {
               padding-left, padding-right;
           `}
         >
-          <div
-            css={css`
-              margin-bottom: ${makeAwardSmall ? 30 : 0}%;
-              box-shadow: ${makeAwardSmall
-                ? "1px 1px 1px 1px #00000055"
-                : `5px 5px 22px 6px #00000000`};
-
-              transition: 700ms ease;
-              transition-property: box-shadow, margin-bottom;
-            `}
-          >
-            <Image
-              // src={require("/res/images/portfolio/ab.png")}
-              src={require(`/res/images/portfolio/${props.portfolio.award}`)}
-              alt={"behance"}
-              layout={"intrinsic"}
+          <a target={"_blank"} rel="noreferrer">
+            <div
+              onClick={() => {
+                // isAwardInteractive && TODO
+              }}
               css={css`
-                padding: 0 4px;
-                transform: translateY(${beginFadeIn ? 0 : 15}%)
-                  rotate3d(${beginFadeIn ? 0 : 1}, 0, 0, 45deg);
+                margin-bottom: ${makeAwardSmall ? 30 : 0}%;
+                box-shadow: ${makeAwardSmall
+                  ? "1px 1px 1px 1px #00000055"
+                  : `5px 5px 22px 6px #00000000`};
+                cursor: ${isAwardInteractive ? "pointer" : "default"};
 
-                transition: 700ms ease;
-                transition-property: transform;
-                transition-delay: ${props.index}50ms;
+                transition: ${isAwardInteractive ? 300 : 700}ms ease;
+                transition-property: box-shadow, margin-bottom, transform;
+
+                :hover {
+                  transform: scale(${isAwardInteractive ? 1.1 : 1});
+                }
               `}
-            />
-          </div>
+            >
+              <Image
+                src={require(`/res/images/portfolio/${props.portfolio.award}`)}
+                alt={"behance"}
+                layout={"intrinsic"}
+              />
+            </div>
+          </a>
         </div>
       ) : (
         <></>
