@@ -29,7 +29,7 @@ export default function PortfolioItem(props: Props) {
         layout={"intrinsic"}
         css={css`
           padding: 0 4px;
-          transform: translateY(${beginFadeIn ? 0 : -24}px)
+          transform: translateY(${beginFadeIn ? 0 : 21}px)
             rotate3d(${beginFadeIn ? 0 : 1}, 0, 0, -35deg);
           opacity: ${beginFadeIn ? 1 : 0};
 
