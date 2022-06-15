@@ -21,7 +21,7 @@ export function getPortfolios(): Portfolio[] {
       color: "#ff0000",
       backgroundColor: "#3f0101",
       image: "umbrella.png",
-      award: "a_design_award.gif",
+      award: "GDPJ_logo.png",
     },
     // {
     //   name: "Desk Light",

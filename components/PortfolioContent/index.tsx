@@ -45,7 +45,7 @@ export default function PortfolioContent(props: Props) {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: ${headerHeight}px 24px 0px;
+        padding: ${headerHeight}px 24px 10%;
         opacity: ${fadeOut ? 0 : 1};
         margin-top: ${fadeOut ? 12 : 0}px;
 
@@ -82,7 +82,7 @@ export default function PortfolioContent(props: Props) {
           );
         })}
       </Grid>
-      <GalleryButton delay={data.length * 150 + 200} />
+      {/*<GalleryButton delay={data.length * 150 + 200} />*/}
     </div>
   );
 }

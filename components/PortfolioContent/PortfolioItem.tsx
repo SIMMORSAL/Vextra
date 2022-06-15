@@ -15,6 +15,19 @@ export default function PortfolioItem(props: Props) {
   const [fadeInAward, setFadeInAward] = useState(false);
   const [makeAwardSmall, setMakeAwardSmall] = useState(false);
   const [isAwardInteractive, setIsAwardInteractive] = useState(false);
+
+  const padding =
+    props.portfolio.award === "a_design_award.gif"
+      ? `0px ${makeAwardSmall ? 80 : 27}% ${makeAwardSmall ? 0 : 12}% ${
+          makeAwardSmall ? 4 : 27
+        }%`
+      : `0px ${makeAwardSmall ? 70 : 12}% ${makeAwardSmall ? 0 : 25}% ${
+          makeAwardSmall ? 4 : 12
+        }%`;
+
+  const backgroundColor =
+    props.portfolio.award === "a_design_award.gif" ? "transparent" : "#8fc31f";
+
   useEffect(() => {
     setTimeout(() => {
       setBeginFadeIn(true);
@@ -23,9 +36,9 @@ export default function PortfolioItem(props: Props) {
           setFadeInAward(true);
           setTimeout(() => {
             setMakeAwardSmall(true);
-            setTimeout(() => {
-              setIsAwardInteractive(true);
-            }, 700);
+            // setTimeout(() => {
+            //   setIsAwardInteractive(true);
+            // }, 700);
           }, 1500);
         }, 1500 * props.awardDelayMultiplier);
       }
@@ -74,11 +87,6 @@ export default function PortfolioItem(props: Props) {
             grid-row: 1;
             grid-column: 1;
             z-index: 1;
-            background-color: ${fadeInAward
-              ? makeAwardSmall
-                ? "transparent"
-                : `${backgroundWhite}99`
-              : "transparent"};
 
             transition: 500ms ease;
             transition-property: background-color;
@@ -97,42 +105,42 @@ export default function PortfolioItem(props: Props) {
             justify-self: start;
             align-self: end;
             opacity: ${fadeInAward ? 1 : 0};
-            padding: 0 ${makeAwardSmall ? 80 : 27}% ${makeAwardSmall ? 0 : 12}%
-              ${makeAwardSmall ? 4 : 27}%;
+            padding: ${padding};
             filter: blur(${fadeInAward ? 0 : 30}px);
 
             transition: 700ms ease;
             transition-property: opacity, width, filter, padding-bottom, padding-top,
-              padding-left, padding-right;
+              padding-left, padding-right, bottom;
           `}
         >
-          <a target={"_blank"} rel="noreferrer">
-            <div
-              onClick={() => {
-                // isAwardInteractive && TODO
-              }}
-              css={css`
-                margin-bottom: ${makeAwardSmall ? 30 : 0}%;
-                box-shadow: ${makeAwardSmall
-                  ? "1px 1px 1px 1px #00000055"
-                  : `5px 5px 22px 6px #00000000`};
-                cursor: ${isAwardInteractive ? "pointer" : "default"};
+          <div
+            // onClick={() => {
+            //   isAwardInteractive &&
+            // }}
+            css={css`
+              margin-bottom: ${makeAwardSmall ? 30 : 0}%;
+              box-shadow: ${makeAwardSmall
+                ? "1px 1px 1px 1px #00000055"
+                : `5px 5px 22px 6px #00000000`};
+              // cursor: ${isAwardInteractive ? "pointer" : "default"};
 
-                transition: ${isAwardInteractive ? 300 : 700}ms ease;
-                transition-property: box-shadow, margin-bottom, transform;
+              transition: ${isAwardInteractive ? 300 : 700}ms ease;
+              transition-property: box-shadow, margin-bottom, transform;
+              background-color: ${backgroundColor};
+              -webkit-backdrop-filter: blur(4em);
+              backdrop-filter: blur(4em);
 
-                :hover {
-                  transform: scale(${isAwardInteractive ? 1.1 : 1});
-                }
-              `}
-            >
-              <Image
-                src={require(`/res/images/portfolio/${props.portfolio.award}`)}
-                alt={"behance"}
-                layout={"intrinsic"}
-              />
-            </div>
-          </a>
+              // :hover {
+              //   transform: scale(${isAwardInteractive ? 1.1 : 1});
+              // }
+            `}
+          >
+            <Image
+              src={require(`/res/images/portfolio/${props.portfolio.award}`)}
+              alt={"behance"}
+              layout={"intrinsic"}
+            />
+          </div>
         </div>
       ) : (
         <></>
