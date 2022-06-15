@@ -40,7 +40,7 @@ export default function PortfolioItem(props: Props) {
             //   setIsAwardInteractive(true);
             // }, 700);
           }, 1500);
-        }, 1500 * props.awardDelayMultiplier);
+        }, 2000 * props.awardDelayMultiplier);
       }
     }, 50);
   }, []);
