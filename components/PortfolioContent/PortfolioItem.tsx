@@ -87,6 +87,11 @@ export default function PortfolioItem(props: Props) {
             grid-row: 1;
             grid-column: 1;
             z-index: 1;
+            background-color: ${fadeInAward
+              ? makeAwardSmall
+                ? "transparent"
+                : `${backgroundWhite}33`
+              : "transparent"};
 
             transition: 500ms ease;
             transition-property: background-color;
