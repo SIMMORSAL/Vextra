@@ -79,27 +79,27 @@ export default function PortfolioItem(props: Props) {
           `}
         />
       </div>
-      {props.portfolio.award ? (
-        <div
-          css={css`
-            width: 100%;
-            height: 100%;
-            grid-row: 1;
-            grid-column: 1;
-            z-index: 1;
-            background-color: ${fadeInAward
-              ? makeAwardSmall
-                ? "transparent"
-                : `${backgroundWhite}33`
-              : "transparent"};
+      {/*{props.portfolio.award ? (*/}
+      {/*  <div*/}
+      {/*    css={css`*/}
+      {/*      width: 100%;*/}
+      {/*      height: 100%;*/}
+      {/*      grid-row: 1;*/}
+      {/*      grid-column: 1;*/}
+      {/*      z-index: 1;*/}
+      {/*      background-color: ${fadeInAward*/}
+      {/*        ? makeAwardSmall*/}
+      {/*          ? "transparent"*/}
+      {/*          : `${backgroundWhite}33`*/}
+      {/*        : "transparent"};*/}
 
-            transition: 500ms ease;
-            transition-property: background-color;
-          `}
-        />
-      ) : (
-        <></>
-      )}
+      {/*      transition: 500ms ease;*/}
+      {/*      transition-property: background-color;*/}
+      {/*    `}*/}
+      {/*  />*/}
+      {/*) : (*/}
+      {/*  <></>*/}
+      {/*)}*/}
       {props.portfolio.award ? (
         <div
           css={css`
@@ -125,15 +125,15 @@ export default function PortfolioItem(props: Props) {
             css={css`
               margin-bottom: ${makeAwardSmall ? 30 : 0}%;
               box-shadow: ${makeAwardSmall
-                ? "1px 1px 1px 1px #00000055"
-                : `5px 5px 22px 6px #00000000`};
+                ? "0px 0px 5px 2px #00000055"
+                : `0px 0px 85px 16px #ffffff88`};
               // cursor: ${isAwardInteractive ? "pointer" : "default"};
 
               transition: ${isAwardInteractive ? 300 : 700}ms ease;
               transition-property: box-shadow, margin-bottom, transform;
               background-color: ${backgroundColor};
-              -webkit-backdrop-filter: blur(4em);
-              backdrop-filter: blur(4em);
+              //-webkit-backdrop-filter: blur(4em);
+              //backdrop-filter: blur(4em);
 
               // :hover {
               //   transform: scale(${isAwardInteractive ? 1.1 : 1});
