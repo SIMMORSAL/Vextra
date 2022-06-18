@@ -6,6 +6,8 @@ import { _AppContext, _AppProvider } from "../data/providers/provider_App";
 import _MoveToMain from "../components/_MoveToMain";
 import { useContext, useEffect, useState } from "react";
 import { route } from "next/dist/server/router";
+import { getPortfolios } from "../data/offlineData";
+import { cacheImage } from "../tools/tools";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -14,6 +16,26 @@ function MyApp({ Component, pageProps }) {
 
   const routeRoot = routeChops[0];
   const [selectedPage, setSelectedPage] = useState(routeRoot);
+
+  // caching images
+  useEffect(() => {
+    getPortfolios().map((v) => {
+      // noinspection JSIgnoredPromiseFromCall
+      cacheImage(v.image).catch((reason) =>
+        console.log(`Image Caching Failed:  ${v.image}\n${reason}`)
+      );
+      cacheImage(v.award).catch((reason) =>
+        console.log(`Image Caching Failed:  ${v.award}\n${reason}`)
+      );
+    });
+    cacheImage(
+      "https://avatarairlines.com/wp-content/uploads/2020/05/Female-Placeholder.png"
+    ).catch((reason) =>
+      console.log(
+        `Image Caching Failed:  "https://avatarairlines.com/wp-content/uploads/2020/05/Female-Placeholder.png"\n${reason}`
+      )
+    );
+  }, []);
 
   useEffect(() => {
     const route = routeChops[0];

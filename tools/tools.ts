@@ -16,3 +16,12 @@ export function shuffleArray(array) {
 export function getActiveTab(router): string {
   return router.route.slice(1).split("/")[0];
 }
+
+export const cacheImage = (path) =>
+  new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve(path);
+    img.onerror = () => reject();
+
+    img.src = path;
+  });
