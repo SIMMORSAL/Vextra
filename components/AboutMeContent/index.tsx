@@ -60,8 +60,6 @@ export default function AboutMeContent(props: Props) {
           grid-row: 1;
           grid-column: 1;
           width: 100%;
-          //height: 100%;
-          //max-height: 85vh;
           max-height: ${contentHeightSmallerThanVh ? `${contentHeight}px` : "85vh"};
           overflow: hidden;
           display: ${fadeInFinish ? "none" : "block"};
@@ -71,7 +69,7 @@ export default function AboutMeContent(props: Props) {
           css={css`
             width: 100%;
             height: 100%;
-            margin-top: ${fadeIn ? "2000px" : "-240px"};
+            margin-top: ${fadeIn ? "100vh" : "-240px"};
 
             transition: margin-top ${fadeInDuration}ms ease;
           `}
@@ -115,7 +113,7 @@ export default function AboutMeContent(props: Props) {
           css={css`
             width: 100%;
             max-width: 450px;
-            margin-bottom: 24px;
+            margin: 0 24px 24px;
           `}
         />
         <p
