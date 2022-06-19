@@ -31,9 +31,6 @@ export default function PortfolioItem(props: Props) {
     ? "0px 0px 5px 1px #00000055"
     : `12px 12px 85px 16px #00000088`;
 
-  const backgroundColor =
-    props.portfolio.award === "a_design_award.gif" ? "transparent" : "#8fc31f";
-
   useEffect(() => {
     setTimeout(() => {
       setBeginFadeIn(true);
@@ -109,7 +106,6 @@ export default function PortfolioItem(props: Props) {
 
               transition: 700ms ease;
               transition-property: box-shadow, margin-bottom, transform;
-              // background-color: ${backgroundColor};
             `}
           >
             <Image
