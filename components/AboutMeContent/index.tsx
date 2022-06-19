@@ -4,6 +4,7 @@ import { headerHeight } from "../Header";
 import { useRouter } from "next/router";
 import { _AppContext } from "../../data/providers/provider_App";
 import { getActiveTab } from "../../tools/tools";
+import Achievements from "./Achievements";
 
 interface Props {}
 
@@ -117,6 +118,7 @@ export default function AboutMeContent(props: Props) {
             padding: 0 32px 0;
           `}
         />
+        <Achievements />
         <p
           css={css`
             max-width: 500px;

@@ -8,6 +8,7 @@ import { useContext, useEffect, useState } from "react";
 import { route } from "next/dist/server/router";
 import { getPortfolios } from "../data/offlineData";
 import { cacheImage } from "../tools/tools";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -43,44 +44,62 @@ function MyApp({ Component, pageProps }) {
   }, [routeChops]);
 
   return (
-    <div
-      css={css`
-        position: ${isLandingPage ? "fixed" : "relative"};
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-      `}
-    >
-      <_AppProvider>
-        <div
-          css={css`
-            width: 100%;
-            height: 100%;
-          `}
-        >
+    <>
+      <Head>
+        {/*<meta name="viewport" content="initial-scale=1.0, width=device-width" />*/}
+        {/*<meta charSet="utf-8" />*/}
+        <title>Mitra</title>
+        {/*<meta name="description" content="An example of a meta description." />*/}
+        {/*<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />*/}
+
+        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+        <script
+          src="https://kit.fontawesome.com/195ee4c6bd.js"
+          crossOrigin="anonymous"
+        />
+      </Head>
+      <div
+        css={css`
+          position: ${isLandingPage ? "fixed" : "relative"};
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+        `}
+      >
+        <_AppProvider>
           <div
             css={css`
-              display: ${isLandingPage ? "none" : "flex"};
+              width: 100%;
+              height: 100%;
             `}
           >
-            <Header selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+            <div
+              css={css`
+                display: ${isLandingPage ? "none" : "flex"};
+              `}
+            >
+              <Header
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              />
+            </div>
+            {isLandingPage ? (
+              <Component {...pageProps} />
+            ) : (
+              <Content
+                Component={Component}
+                pageProps={pageProps}
+                routeChops={routeChops}
+              />
+            )}
+            <_MoveToMain />
           </div>
-          {isLandingPage ? (
-            <Component {...pageProps} />
-          ) : (
-            <Content
-              Component={Component}
-              pageProps={pageProps}
-              routeChops={routeChops}
-            />
-          )}
-          <_MoveToMain />
-        </div>
-      </_AppProvider>
-    </div>
+        </_AppProvider>
+      </div>
+    </>
   );
 }
 

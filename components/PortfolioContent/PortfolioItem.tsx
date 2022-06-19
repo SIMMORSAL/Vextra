@@ -25,11 +25,11 @@ export default function PortfolioItem(props: Props) {
   const awardBoxShadow = props.portfolio.isBackgroundDark
     ? // Gensai
       makeAwardSmall
-      ? "0px 0px 5px 1px #ffffff44"
-      : `12px 12px 85px 16px #ffffff66`
+      ? ".5px 1px 5px 1px #ffffff44"
+      : `4px 12px 85px 16px #ffffff66`
     : makeAwardSmall
-    ? "0px 0px 5px 1px #00000055"
-    : `12px 12px 85px 16px #00000088`;
+    ? ".5px 1px 5px 1px #00000055"
+    : `4px 12px 85px 16px #00000088`;
 
   useEffect(() => {
     setTimeout(() => {
