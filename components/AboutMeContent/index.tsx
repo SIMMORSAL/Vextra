@@ -19,7 +19,7 @@ export default function AboutMeContent(props: Props) {
   const [contentHeightSmallerThanVh, setContentHeightSmallerThanVh] =
     useState(false);
 
-  const fadeInDuration = 1200;
+  const fadeInDuration = 900;
 
   useEffect(() => {
     setTimeout(() => {

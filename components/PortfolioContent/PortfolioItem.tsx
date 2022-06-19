@@ -15,24 +15,22 @@ export default function PortfolioItem(props: Props) {
   const [fadeInAward, setFadeInAward] = useState(false);
   const [makeAwardSmall, setMakeAwardSmall] = useState(false);
 
-  const padding =
-    props.portfolio.award === "a_design_award.gif"
-      ? `0px ${makeAwardSmall ? 80 : 27}% ${makeAwardSmall ? 0 : 12}% ${
-          makeAwardSmall ? 4 : 27
-        }%`
-      : `0px ${makeAwardSmall ? 70 : 12}% ${makeAwardSmall ? 0 : 25}% ${
-          makeAwardSmall ? 4 : 12
-        }%`;
+  const padding = props.portfolio.isBackgroundDark
+    ? `0px ${makeAwardSmall ? 70 : 12}% ${makeAwardSmall ? 0 : 25}% ${
+        makeAwardSmall ? 4 : 12
+      }%`
+    : `0px ${makeAwardSmall ? 80 : 27}% ${makeAwardSmall ? 0 : 12}% ${
+        makeAwardSmall ? 4 : 27
+      }%`;
 
-  const awardBoxShadow =
-    props.portfolio.award === "a_design_award.gif"
-      ? makeAwardSmall
-        ? "0px 0px 5px 1px #00000055"
-        : `0px 0px 85px 16px #ffffff88`
-      : // Gensai
+  const awardBoxShadow = props.portfolio.isBackgroundDark
+    ? // Gensai
       makeAwardSmall
-      ? "0px 0px 5px 1px #ffffff99"
-      : `0px 0px 85px 16px #00000088`;
+      ? "0px 0px 5px 1px #ffffff44"
+      : `12px 12px 85px 16px #ffffff66`
+    : makeAwardSmall
+    ? "0px 0px 5px 1px #00000055"
+    : `12px 12px 85px 16px #00000088`;
 
   const backgroundColor =
     props.portfolio.award === "a_design_award.gif" ? "transparent" : "#8fc31f";
@@ -110,10 +108,13 @@ export default function PortfolioItem(props: Props) {
             css={css`
               margin-bottom: ${makeAwardSmall ? 30 : 0}%;
               box-shadow: ${awardBoxShadow};
+              //vertical-align: bottom;
+
+              display: flex;
 
               transition: 700ms ease;
               transition-property: box-shadow, margin-bottom, transform;
-              background-color: ${backgroundColor};
+              // background-color: ${backgroundColor};
             `}
           >
             <Image

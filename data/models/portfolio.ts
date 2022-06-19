@@ -3,5 +3,6 @@ export interface Portfolio {
   image: string;
   color: string;
   backgroundColor: string;
+  isBackgroundDark: boolean;
   award?: string;
 }
