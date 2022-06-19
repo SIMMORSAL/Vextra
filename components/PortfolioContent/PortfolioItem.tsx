@@ -25,6 +25,15 @@ export default function PortfolioItem(props: Props) {
           makeAwardSmall ? 4 : 12
         }%`;
 
+  const awardBoxShadow =
+    props.portfolio.award === "a_design_award.gif"
+      ? makeAwardSmall
+        ? "0px 0px 5px 1px #00000055"
+        : `0px 0px 85px 16px #ffffff88`
+      : // Gensai
+      makeAwardSmall
+      ? "0px 0px 5px 1px #ffffff99"
+      : `0px 0px 85px 16px #00000088`;
   const backgroundColor =
     props.portfolio.award === "a_design_award.gif" ? "transparent" : "#8fc31f";
 
@@ -124,9 +133,7 @@ export default function PortfolioItem(props: Props) {
             // }}
             css={css`
               margin-bottom: ${makeAwardSmall ? 30 : 0}%;
-              box-shadow: ${makeAwardSmall
-                ? "0px 0px 5px 2px #00000055"
-                : `0px 0px 85px 16px #ffffff88`};
+              box-shadow: ${awardBoxShadow};
               // cursor: ${isAwardInteractive ? "pointer" : "default"};
 
               transition: ${isAwardInteractive ? 300 : 700}ms ease;
