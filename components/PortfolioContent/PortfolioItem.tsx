@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import { Portfolio } from "../../data/models/portfolio";
 import Image from "next/image";
-import { backgroundWhite, headerItemSelectFilter } from "../../res/colors";
 
 interface Props {
   portfolio: Portfolio;
@@ -43,9 +42,6 @@ export default function PortfolioItem(props: Props) {
           setFadeInAward(true);
           setTimeout(() => {
             setMakeAwardSmall(true);
-            // setTimeout(() => {
-            //   setIsAwardInteractive(true);
-            // }, 700);
           }, 1500);
         }, 2000 * props.awardDelayMultiplier);
       }
@@ -71,7 +67,6 @@ export default function PortfolioItem(props: Props) {
         `}
       >
         <Image
-          // src={require("/res/images/portfolio/ab.png")}
           src={require(`/res/images/portfolio/${props.portfolio.image}`)}
           alt={"behance"}
           layout={"intrinsic"}

@@ -113,7 +113,8 @@ export default function AboutMeContent(props: Props) {
           css={css`
             width: 100%;
             max-width: 450px;
-            margin: 0 24px 24px;
+            margin: 0 0 24px;
+            padding: 0 32px 0;
           `}
         />
         <p
