@@ -16,17 +16,20 @@ export default function AboutMeContent(props: Props) {
   const [fadeInFinish, setFadeInFinish] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
   const [contentHeight, setContentHeight] = useState<undefined | number>(undefined);
+  const [contentHeightSmallerThanVh, setContentHeightSmallerThanVh] =
+    useState(false);
 
-  // TODO come up with a solution to make fading in speed and margin-top properly set
   const fadeInDuration = 1200;
 
   useEffect(() => {
     setTimeout(() => {
       setFadeIn(true);
       setContentHeight(document.getElementById("content").clientHeight);
-      console.log(
-        `11111  sddsas:  ${document.getElementById("content").clientHeight}`
-      );
+      const contentHeight = document.getElementById("content").clientHeight;
+      setContentHeightSmallerThanVh(contentHeight < window.innerHeight);
+      // console.log(
+      //   `11111  sddsas:  ${document.getElementById("content").clientHeight}`
+      // );
       setTimeout(() => {
         setFadeInFinish(true);
       }, fadeInDuration);
@@ -59,9 +62,7 @@ export default function AboutMeContent(props: Props) {
           width: 100%;
           //height: 100%;
           //max-height: 85vh;
-          max-height: ${contentHeight < window.innerHeight
-            ? `${contentHeight}px`
-            : "85vh"};
+          max-height: ${contentHeightSmallerThanVh ? `${contentHeight}px` : "85vh"};
           overflow: hidden;
           display: ${fadeInFinish ? "none" : "block"};
         `}
