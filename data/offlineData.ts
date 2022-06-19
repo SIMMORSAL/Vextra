@@ -1,4 +1,5 @@
 import { Portfolio } from "./models/portfolio";
+import { Achievements } from "./models/achievements";
 
 export function getPortfolios(): Portfolio[] {
   return [
@@ -33,4 +34,12 @@ export function getPortfolios(): Portfolio[] {
     //   image: "desk_light.png",
     // },
   ];
+}
+
+export function getAchievements(): Achievements[] {
+  return [
+    {
+      icon:
+    }
+  ]
 }
