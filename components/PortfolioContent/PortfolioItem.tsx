@@ -14,7 +14,6 @@ export default function PortfolioItem(props: Props) {
   const [beginFadeIn, setBeginFadeIn] = useState(false);
   const [fadeInAward, setFadeInAward] = useState(false);
   const [makeAwardSmall, setMakeAwardSmall] = useState(false);
-  const [isAwardInteractive, setIsAwardInteractive] = useState(false);
 
   const padding =
     props.portfolio.award === "a_design_award.gif"
@@ -34,6 +33,7 @@ export default function PortfolioItem(props: Props) {
       makeAwardSmall
       ? "0px 0px 5px 1px #ffffff99"
       : `0px 0px 85px 16px #00000088`;
+
   const backgroundColor =
     props.portfolio.award === "a_design_award.gif" ? "transparent" : "#8fc31f";
 
@@ -88,27 +88,6 @@ export default function PortfolioItem(props: Props) {
           `}
         />
       </div>
-      {/*{props.portfolio.award ? (*/}
-      {/*  <div*/}
-      {/*    css={css`*/}
-      {/*      width: 100%;*/}
-      {/*      height: 100%;*/}
-      {/*      grid-row: 1;*/}
-      {/*      grid-column: 1;*/}
-      {/*      z-index: 1;*/}
-      {/*      background-color: ${fadeInAward*/}
-      {/*        ? makeAwardSmall*/}
-      {/*          ? "transparent"*/}
-      {/*          : `${backgroundWhite}33`*/}
-      {/*        : "transparent"};*/}
-
-      {/*      transition: 500ms ease;*/}
-      {/*      transition-property: background-color;*/}
-      {/*    `}*/}
-      {/*  />*/}
-      {/*) : (*/}
-      {/*  <></>*/}
-      {/*)}*/}
       {props.portfolio.award ? (
         <div
           css={css`
@@ -128,23 +107,13 @@ export default function PortfolioItem(props: Props) {
           `}
         >
           <div
-            // onClick={() => {
-            //   isAwardInteractive &&
-            // }}
             css={css`
               margin-bottom: ${makeAwardSmall ? 30 : 0}%;
               box-shadow: ${awardBoxShadow};
-              // cursor: ${isAwardInteractive ? "pointer" : "default"};
 
-              transition: ${isAwardInteractive ? 300 : 700}ms ease;
+              transition: 700ms ease;
               transition-property: box-shadow, margin-bottom, transform;
               background-color: ${backgroundColor};
-              //-webkit-backdrop-filter: blur(4em);
-              //backdrop-filter: blur(4em);
-
-              // :hover {
-              //   transform: scale(${isAwardInteractive ? 1.1 : 1});
-              // }
             `}
           >
             <Image

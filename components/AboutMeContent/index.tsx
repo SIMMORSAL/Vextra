@@ -15,13 +15,21 @@ export default function AboutMeContent(props: Props) {
   const [fadeIn, setFadeIn] = useState(false);
   const [fadeInFinish, setFadeInFinish] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
+  const [contentHeight, setContentHeight] = useState<undefined | number>(undefined);
+
+  // TODO come up with a solution to make fading in speed and margin-top properly set
+  const fadeInDuration = 1200;
 
   useEffect(() => {
     setTimeout(() => {
       setFadeIn(true);
+      setContentHeight(document.getElementById("content").clientHeight);
+      console.log(
+        `11111  sddsas:  ${document.getElementById("content").clientHeight}`
+      );
       setTimeout(() => {
         setFadeInFinish(true);
-      }, 1000);
+      }, fadeInDuration);
     }, 70);
   }, []);
 
@@ -49,29 +57,42 @@ export default function AboutMeContent(props: Props) {
           grid-row: 1;
           grid-column: 1;
           width: 100%;
-          height: 100%;
+          //height: 100%;
+          //max-height: 85vh;
+          max-height: ${contentHeight < window.innerHeight
+            ? `${contentHeight}px`
+            : "85vh"};
+          overflow: hidden;
           display: ${fadeInFinish ? "none" : "block"};
-          margin-top: ${fadeIn ? "1000px" : "-240px"};
-
-          transition: margin-top 1000ms ease;
         `}
       >
         <div
           css={css`
             width: 100%;
-            height: 300px;
-            background-image: linear-gradient(0deg, #ffffff, transparent);
+            height: 100%;
+            margin-top: ${fadeIn ? "2000px" : "-240px"};
+
+            transition: margin-top ${fadeInDuration}ms ease;
           `}
-        />
-        <div
-          css={css`
-            width: 100%;
-            height: calc(100% + 300px);
-            background-color: #ffffff;
-          `}
-        />
+        >
+          <div
+            css={css`
+              width: 100%;
+              height: 300px;
+              background-image: linear-gradient(0deg, #ffffff, transparent);
+            `}
+          />
+          <div
+            css={css`
+              width: 100%;
+              height: calc(100% + 300px);
+              background-color: #ffffff;
+            `}
+          />
+        </div>
       </div>
       <div
+        id={"content"}
         css={css`
           z-index: 1;
           grid-row: 1;
@@ -90,7 +111,11 @@ export default function AboutMeContent(props: Props) {
           src={
             "https://avatarairlines.com/wp-content/uploads/2020/05/Female-Placeholder.png"
           }
-          css={css``}
+          css={css`
+            width: 100%;
+            max-width: 450px;
+            margin-bottom: 24px;
+          `}
         />
         <p
           css={css`
@@ -118,10 +143,9 @@ export default function AboutMeContent(props: Props) {
           Etiam at nisl tempor nibh iaculis mattis. Aliquam quam leo, efficitur
           fringilla commodo eu, vehicula ut velit. Nam eu ante vulputate libero
           convallis gravida et at dolor. In est justo, viverra pretium ullamcorper
-          sed, maximus auctor nulla. Integer et enim vitae libero ornare
-          sollicitudin. In volutpat, lacus vel viverra mattis, dolor dolor pharetra
-          ipsum, sit amet hendrerit metus sapien eleifend tortor. Fusce purus justo,
-          vestibulum a volutpat et, porta quis massa. Pellentesque volutpat
+          pellentesque pellentesque. Fusce turpis erat, congue in lobortis ut,
+          viverra et nibh. Suspendisse vel tortor aliquam, rhoncus dui et, sagittis
+          arcu. Cras dictum sapien purus, justo, viverra pretium ullamcorper
           pellentesque pellentesque. Fusce turpis erat, congue in lobortis ut,
           viverra et nibh. Suspendisse vel tortor aliquam, rhoncus dui et, sagittis
           arcu. Cras dictum sapien purus, sed vulputate augue convallis consectetur.
