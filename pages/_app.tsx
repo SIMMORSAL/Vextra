@@ -9,6 +9,7 @@ import { route } from "next/dist/server/router";
 import { getPortfolios } from "../data/offlineData";
 import { cacheImage } from "../tools/tools";
 import Head from "next/head";
+import Script from "next/script";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -51,13 +52,11 @@ function MyApp({ Component, pageProps }) {
         <title>Mitra</title>
         {/*<meta name="description" content="An example of a meta description." />*/}
         {/*<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />*/}
-
-        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-        <script
-          src="https://kit.fontawesome.com/195ee4c6bd.js"
-          crossOrigin="anonymous"
-        />
       </Head>
+      <Script
+        src="https://kit.fontawesome.com/195ee4c6bd.js"
+        crossOrigin="anonymous"
+      />
       <div
         css={css`
           position: ${isLandingPage ? "fixed" : "relative"};
