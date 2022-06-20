@@ -2,10 +2,7 @@ import React, { useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import PinterestIcon from "@mui/icons-material/Pinterest";
-import EmailIcon from "@mui/icons-material/Email";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   headerItemSelect,
   headerItemSelectFilter,

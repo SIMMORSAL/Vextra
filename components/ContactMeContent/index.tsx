@@ -3,7 +3,6 @@ import { css } from "@emotion/react";
 import { headerHeight } from "../Header";
 import EmailIcon from "@mui/icons-material/Email";
 import SharedIdLinks from "./SharedIdLinks";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import OneLineLink from "./OneLineLink";
 import { _AppContext } from "../../data/providers/provider_App";
 import { useRouter } from "next/router";
