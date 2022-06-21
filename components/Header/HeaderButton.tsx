@@ -79,7 +79,7 @@ export default function HeaderButton(props: Props) {
         <div
           css={css`
             width: 100%;
-            height: 2px;
+            height: 1.5px;
             margin-bottom: 5px;
             background-color: #b0b0b0;
             align-self: end;
