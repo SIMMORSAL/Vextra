@@ -45,7 +45,7 @@ export default function LandingPage({}: Props) {
         if (selectedPage !== undefined) router.push(`/${selectedPage}/`);
       }, 200);
     }
-  }, [router, selectedPage]);
+  }, [router, selectedPage, setNewTabSelected]);
 
   useEffect(() => {
     setLoading(true);

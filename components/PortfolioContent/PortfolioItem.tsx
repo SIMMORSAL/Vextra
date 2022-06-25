@@ -23,27 +23,26 @@ export default function PortfolioItem(props: Props) {
       }%`;
 
   const awardBoxShadow = props.portfolio.isBackgroundDark
-    ? // Gensai
-      makeAwardSmall
-      ? ".5px 1px 5px 1px #ffffff44"
-      : `4px 12px 85px 16px #ffffff66`
+    ? makeAwardSmall
+      ? ".5px 1px 5px 1px #ffffff66"
+      : `4px 12px 85px 16px #ffffff44`
     : makeAwardSmall
-    ? ".5px 1px 5px 1px #00000055"
-    : `4px 12px 85px 16px #00000088`;
+    ? ".5px 1px 5px 1px #00000066"
+    : `4px 12px 85px 16px #00000044`;
 
-  useEffect(() => {
-    setTimeout(() => {
-      setBeginFadeIn(true);
-      if (props.portfolio.award) {
+  // * Begin animation
+  setTimeout(() => {
+    setBeginFadeIn(true);
+    if (props.portfolio.award) {
+      setTimeout(() => {
+        setFadeInAward(true);
         setTimeout(() => {
-          setFadeInAward(true);
-          setTimeout(() => {
-            setMakeAwardSmall(true);
-          }, 1500);
-        }, 2000 * props.awardDelayMultiplier);
-      }
-    }, 50);
-  }, []);
+          setMakeAwardSmall(true);
+        }, 1500);
+      }, 2000 * props.awardDelayMultiplier);
+    }
+  }, 50);
+
   return (
     <div
       css={css`
@@ -66,6 +65,7 @@ export default function PortfolioItem(props: Props) {
         <Image
           src={require(`/res/images/portfolio/${props.portfolio.image}`)}
           alt={"behance"}
+          loading={"lazy"}
           layout={"intrinsic"}
           css={css`
             padding: 0 4px;
@@ -112,6 +112,7 @@ export default function PortfolioItem(props: Props) {
               src={require(`/res/images/portfolio/${props.portfolio.award}`)}
               alt={"behance"}
               layout={"intrinsic"}
+              loading={"lazy"}
             />
           </div>
         </div>
