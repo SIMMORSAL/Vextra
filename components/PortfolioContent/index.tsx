@@ -25,7 +25,7 @@ export default function PortfolioContent(props: Props) {
   const { newTabSelected } = useContext(_AppContext);
   const [fadeOut, setFadeOut] = useState(false);
 
-  const data = getPortfolios();
+  const portfolioItems = getPortfolios();
 
   useEffect(() => {
     if (newTabSelected !== getActiveTab(router)) setFadeOut(true);
@@ -63,14 +63,14 @@ export default function PortfolioContent(props: Props) {
         `}
       >
         {`${(awardCounts = 0).toString().slice(0, 0)}`}
-        {data.map((value, index) => {
+        {portfolioItems.map((value, index) => {
           if (value.award) awardCounts++;
 
           return (
             <Grid
               key={value.name}
               item
-              xs={index === 0 && data.length % 2 === 1 ? 7 : 6}
+              xs={index === 0 && portfolioItems.length % 2 === 1 ? 12 : 6}
               css={css``}
             >
               <PortfolioItem
@@ -82,7 +82,7 @@ export default function PortfolioContent(props: Props) {
           );
         })}
       </Grid>
-      {/*<GalleryButton delay={data.length * 150 + 200} />*/}
+      {/*<GalleryButton delay={portfolioItems.length * 150 + 200} />*/}
     </div>
   );
 }
