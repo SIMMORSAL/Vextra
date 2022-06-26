@@ -5,7 +5,7 @@ import { Grid } from "@mui/material";
 import { getPortfolios } from "../../data/local/dataPortfolios";
 import PortfolioItem from "./PortfolioItem";
 import { useRouter } from "next/router";
-import { _AppContext } from "../../data/providers/provider_App";
+import { _AppContext } from "../../helpers/providers/provider_App";
 import { getActiveTab } from "../../tools/tools";
 
 interface Props {}

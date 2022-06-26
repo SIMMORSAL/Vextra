@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { css } from "@emotion/react";
-import { _AppContext } from "../../data/providers/provider_App";
+import { _AppContext } from "../../helpers/providers/provider_App";
 import { backgroundBlack, backgroundWhite } from "../../res/colors";
 import Image from "next/image";
 import { useRouter } from "next/router";

@@ -2,7 +2,7 @@ import React, { ReactNode, useContext, useState } from "react";
 import { css } from "@emotion/react";
 import { headerItemSelect, textOnWhite } from "../../res/colors";
 import { useRouter } from "next/router";
-import { _AppContext } from "../../data/providers/provider_App";
+import { _AppContext } from "../../helpers/providers/provider_App";
 import { getActiveTab } from "../../tools/tools";
 
 interface Props {

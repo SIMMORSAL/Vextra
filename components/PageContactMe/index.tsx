@@ -4,7 +4,7 @@ import { headerHeight } from "../Header";
 import EmailIcon from "@mui/icons-material/Email";
 import SharedIdLinks from "./SharedIdLinks";
 import OneLineLink from "./OneLineLink";
-import { _AppContext } from "../../data/providers/provider_App";
+import { _AppContext } from "../../helpers/providers/provider_App";
 import { useRouter } from "next/router";
 import { getActiveTab } from "../../tools/tools";
 

@@ -2,12 +2,13 @@ import "../styles/globals.css";
 import { css } from "@emotion/react";
 import Header, { headerHeight } from "../components/Header";
 import { useRouter } from "next/router";
-import { _AppContext, _AppProvider } from "../data/providers/provider_App";
-import _MoveToMain from "../components/_MoveToMain";
-import { useContext, useEffect, useState } from "react";
+import { _AppProvider } from "../helpers/providers/provider_App";
+import _MoveToMain from "../components/_App/_MoveToMain";
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import Script from "next/script";
 import { cacheImages } from "../helpers/StartUpTasks";
+import { Content } from "../components/_App/_Content";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -85,53 +86,3 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp;
-
-function Content({ Component, pageProps, routeChops }) {
-  const { fadeOutContent, setFadeOutContent, flashContent, setFlashContent } =
-    useContext(_AppContext);
-  const router = useRouter();
-
-  // const shouldFadeIn = routeChops.length === 1;
-  const shouldFadeIn =
-    router.route === "/about-me" ||
-    router.route === "/portfolio" ||
-    router.route === "/contact-me";
-  const [doFadeIn, setDoFadeIn] = useState(!shouldFadeIn);
-
-  useEffect(() => {
-    if (shouldFadeIn) {
-      setDoFadeIn(false);
-      setTimeout(() => {
-        setDoFadeIn(true);
-      }, 65);
-    }
-  }, [routeChops, shouldFadeIn, router.route]);
-
-  useEffect(() => {
-    if (flashContent)
-      setTimeout(() => {
-        setFlashContent(false);
-      }, 200);
-  }, [flashContent, setFlashContent]);
-
-  return (
-    <div
-      css={css`
-        width: 100%;
-        height: calc(100% - ${headerHeight}px);
-        /* opacity: ${doFadeIn ? (fadeOutContent ? 0 : 1) : 0}; */
-
-        transform: scale(${flashContent ? 0.95 : 1});
-        border: ${flashContent ? "1px solid #484848" : "1px solid transparent"};
-
-        //transition: ${fadeOutContent ? 100 : 500}ms ease;
-        transition: 200ms ease;
-        transition-property: opacity, transform, border-bottom-color,
-          border-bottom-width, border-right-color, border-right-width,
-          border-left-color, border-left-width, border-top-color, border-top-width;
-      `}
-    >
-      <Component {...pageProps} />
-    </div>
-  );
-}

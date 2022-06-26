@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { css } from "@emotion/react";
 import Image from "next/image";
-import { _AppContext } from "../../data/providers/provider_App";
+import { _AppContext } from "../../helpers/providers/provider_App";
 
 interface Props {
   selectedPage: string; // undefined | about-me | portfolio

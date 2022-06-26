@@ -7,7 +7,7 @@ import BottomIcons from "./BottomIcons";
 import LandingHeader from "./LandingHeader";
 import LandingLogo from "./LandingLogo";
 import { useRouter } from "next/router";
-import { _AppContext } from "../../data/providers/provider_App";
+import { _AppContext } from "../../helpers/providers/provider_App";
 
 interface Props {}
 

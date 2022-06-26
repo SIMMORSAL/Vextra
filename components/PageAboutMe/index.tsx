@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import { headerHeight } from "../Header";
 import { useRouter } from "next/router";
-import { _AppContext } from "../../data/providers/provider_App";
+import { _AppContext } from "../../helpers/providers/provider_App";
 import { getActiveTab } from "../../tools/tools";
 import Achievements from "./Achievements";
 
