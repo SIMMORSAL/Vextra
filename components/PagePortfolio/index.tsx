@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import { headerHeight } from "../Header";
 import { Grid } from "@mui/material";
-import { getPortfolios } from "../../data/offlineData";
+import { getPortfolios } from "../../data/local/dataPortfolios";
 import PortfolioItem from "./PortfolioItem";
 import { useRouter } from "next/router";
 import { _AppContext } from "../../data/providers/provider_App";

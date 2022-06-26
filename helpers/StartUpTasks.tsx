@@ -1,4 +1,4 @@
-import { getPortfolios } from "../data/offlineData";
+import { getPortfolios } from "../data/local/dataPortfolios";
 import { cacheImage } from "../tools/tools";
 
 export const cacheImages = () => {
