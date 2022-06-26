@@ -89,45 +89,6 @@ export default function BottomIcons({ begin }: Props) {
             `}
           />
         </a>
-        <div
-          css={css`
-            margin: 16px 0;
-            width: 24px;
-            height: 24px;
-            transform: translateY(${delayPassed ? 0 : "-50%"});
-            opacity: ${delayPassed ? 1 : 0};
-            cursor: pointer;
-            display: flex;
-            align-items: end;
-
-            transition: 200ms ease;
-            transition-property: transform, opacity, color, width, height,
-              padding-left, padding-right;
-            transition-delay: ${hasAnimationFinished ? "0" : `${delayTimes[1]}00ms`};
-
-            :hover {
-              width: 36px;
-              height: 42px;
-              padding: 0 2px;
-            }
-          `}
-        >
-          <Image
-            src={require("/res/images/behance.png")}
-            alt={"behance"}
-            layout={"intrinsic"}
-            css={css`
-              padding: 0 4px;
-              filter: ${isHovering ? itemOnWhiteFocusedFilter : itemOnWhiteFilter};
-
-              transition: filter 200ms ease;
-
-              :hover {
-                // filter: ${headerItemSelectFilter};
-              }
-            `}
-          />
-        </div>
         <a
           href={"https://www.linkedin.com/in/mhmitramh/"}
           target={"_blank"}

@@ -30,7 +30,7 @@ export default function HeaderImage(props: Props) {
       `}
     >
       <Image
-        src={require("../../res/images/logo_big.png")}
+        src={require("../../public/images/logo_big.png")}
         alt={""}
         layout={"intrinsic"}
         onClick={() => {

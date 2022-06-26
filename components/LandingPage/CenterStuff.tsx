@@ -64,7 +64,7 @@ export default function CenterStuff({
         `}
       >
         <Image
-          src={require("../../res/images/landing_line.png")}
+          src={require("../../public/images/landing_line.png")}
           alt={""}
           layout={"intrinsic"}
           css={css`

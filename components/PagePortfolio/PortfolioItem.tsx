@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import { Portfolio } from "../../data/models/portfolio";
@@ -48,7 +49,9 @@ export default function PortfolioItem(props: Props) {
       css={css`
         margin: 16px 8px;
         opacity: ${beginFadeIn ? 1 : 0};
+        width: 100%;
         max-width: 400px;
+        //aspect-ratio: 1 / 1;
         transition: 400ms ease;
         transition-property: opacity;
         transition-delay: ${props.index}50ms;
@@ -61,14 +64,18 @@ export default function PortfolioItem(props: Props) {
           height: 100%;
           grid-row: 1;
           grid-column: 1;
+          position: relative;
         `}
       >
-        <Image
-          src={require(`/res/images/portfolio/${props.portfolio.image}`)}
+        <img
+          // src={require(`/public/images/portfolio/${props.portfolio.image}`)}
+          src={props.portfolio.image}
           alt={"behance"}
-          loading={"lazy"}
-          layout={"intrinsic"}
+          loading={"eager"}
+          // layout={"fill"}
+          // quality={100}
           css={css`
+            width: 100%;
             padding: 0 4px;
             transform: translateY(${beginFadeIn ? 0 : 15}%)
               rotate3d(${beginFadeIn ? 0 : 1}, 0, 0, 45deg);
@@ -102,6 +109,9 @@ export default function PortfolioItem(props: Props) {
               margin-bottom: ${makeAwardSmall ? 30 : 0}%;
               box-shadow: ${awardBoxShadow};
               //vertical-align: bottom;
+              position: relative;
+              width: 100%;
+              //aspect-ratio: 1/1;
 
               display: flex;
 
@@ -109,11 +119,19 @@ export default function PortfolioItem(props: Props) {
               transition-property: box-shadow, margin-bottom, transform;
             `}
           >
-            <Image
-              src={require(`/res/images/portfolio/${props.portfolio.award}`)}
-              alt={"behance"}
-              layout={"intrinsic"}
-              loading={"lazy"}
+            {/*<Image*/}
+            {/*  // src={require(`/res/images/portfolio/${props.portfolio.award}`)}*/}
+            {/*  src={props.portfolio.award}*/}
+            {/*  alt={"behance"}*/}
+            {/*  layout={"fill"}*/}
+            {/*  loading={"lazy"}*/}
+            {/*  quality={100}*/}
+            {/*/>*/}
+            <img
+              src={props.portfolio.award}
+              width={"100%"}
+              loading={"eager"}
+              alt={""}
             />
           </div>
         </div>

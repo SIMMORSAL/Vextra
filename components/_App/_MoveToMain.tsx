@@ -55,7 +55,7 @@ export default function _MoveToMain(props: Props) {
       >
         <Image
           // id={"icon"}
-          src={require("../../res/images/logo_big.png")}
+          src={require("../../public/images/logo_big.png")}
           alt={""}
           layout={"intrinsic"}
           css={css`

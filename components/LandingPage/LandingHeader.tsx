@@ -81,7 +81,7 @@ export default function LandingHeader(props: Props) {
         <Image
           // id={"icon"}
           // onClick={props.onClick}
-          src={require("../../res/images/logo_big.png")}
+          src={require("../../public/images/logo_big.png")}
           alt={""}
           layout={"intrinsic"}
           onClick={() => props.setSelectedPage(undefined)}
