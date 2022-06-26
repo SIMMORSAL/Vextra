@@ -10,7 +10,7 @@ import { getActiveTab } from "../../tools/tools";
 
 interface Props {}
 
-export default function ContactMeContent(props: Props) {
+export default function PageContactMe(props: Props) {
   const router = useRouter();
 
   const { newTabSelected } = useContext(_AppContext);

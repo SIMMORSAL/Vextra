@@ -1,9 +1,9 @@
 import React from "react";
 import { css } from "@emotion/react";
-import PortfolioContent from "../../components/PortfolioContent";
+import PagePortfolio from "../../components/PagePortfolio";
 import useWindowSize from "../../tools/hooks/useWindowSize";
-import AboutMeContent from "../../components/AboutMeContent";
-import ContactMeContent from "../../components/ContactMeContent";
+import PageAboutMe from "../../components/PageAboutMe";
+import PageContactMe from "../../components/PageContactMe";
 
 interface Props {}
 
@@ -15,7 +15,7 @@ export default function Portfolio(props: Props) {
         height: 100%;
       `}
     >
-      <PortfolioContent />
+      <PagePortfolio />
     </div>
   );
 }

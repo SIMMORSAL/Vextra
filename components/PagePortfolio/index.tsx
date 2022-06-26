@@ -2,24 +2,17 @@ import React, { useContext, useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import { headerHeight } from "../Header";
 import { Grid } from "@mui/material";
-import Image from "next/image";
-import {
-  headerItemSelectFilter,
-  itemOnWhiteFilter,
-  itemOnWhiteFocusedFilter,
-} from "../../res/colors";
 import { getPortfolios } from "../../data/offlineData";
 import PortfolioItem from "./PortfolioItem";
 import { useRouter } from "next/router";
 import { _AppContext } from "../../data/providers/provider_App";
 import { getActiveTab } from "../../tools/tools";
-import GalleryButton from "./GalleryButton";
 
 interface Props {}
 
 let awardCounts = 0;
 
-export default function PortfolioContent(props: Props) {
+export default function PagePortfolio(props: Props) {
   const router = useRouter();
 
   const { newTabSelected } = useContext(_AppContext);

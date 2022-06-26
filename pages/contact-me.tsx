@@ -1,8 +1,8 @@
 import React from "react";
 import { css } from "@emotion/react";
 import useWindowSize from "../tools/hooks/useWindowSize";
-import AboutMeContent from "../components/AboutMeContent";
-import ContactMeContent from "../components/ContactMeContent";
+import PageAboutMe from "../components/PageAboutMe";
+import PageContactMe from "../components/PageContactMe";
 import { headerHeight } from "../components/Header";
 
 interface Props {}
@@ -24,7 +24,7 @@ export default function ContactMe(props: Props) {
           display: ${isXs ? "flex" : "none"};
         `}
       >
-        <AboutMeContent />
+        <PageAboutMe />
       </div>
       <div
         css={css`
@@ -33,7 +33,7 @@ export default function ContactMe(props: Props) {
           padding-bottom: ${isXs ? "200px" : "0"};
         `}
       >
-        <ContactMeContent />
+        <PageContactMe />
       </div>
     </div>
   );

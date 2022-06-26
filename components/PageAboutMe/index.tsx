@@ -8,7 +8,7 @@ import Achievements from "./Achievements";
 
 interface Props {}
 
-export default function AboutMeContent(props: Props) {
+export default function PageAboutMe(props: Props) {
   const router = useRouter();
 
   const { newTabSelected } = useContext(_AppContext);
