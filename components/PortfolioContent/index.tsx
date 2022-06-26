@@ -71,7 +71,10 @@ export default function PortfolioContent(props: Props) {
               key={value.name}
               item
               xs={index === 0 && portfolioItems.length % 2 === 1 ? 12 : 6}
-              css={css``}
+              css={css`
+                display: flex;
+                justify-content: center;
+              `}
             >
               <PortfolioItem
                 portfolio={value}
