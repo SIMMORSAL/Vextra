@@ -18,6 +18,12 @@ export default function OneLineLink(props: Props) {
     }, 50);
   }, []);
 
+  const _target =
+    props.contact.links[0].href.startsWith("tel") ||
+    props.contact.links[0].href.startsWith("mailto")
+      ? "_self"
+      : "_blank";
+
   return (
     <div
       css={css`
@@ -26,6 +32,7 @@ export default function OneLineLink(props: Props) {
         justify-content: end;
         align-items: center;
         font-weight: bold;
+        margin-bottom: 8px;
         text-align: center;
       `}
     >
@@ -41,7 +48,7 @@ export default function OneLineLink(props: Props) {
       >
         <a
           href={props.contact.links[0].href}
-          target={"_blank"}
+          target={_target}
           css={css`
             display: flex;
             justify-content: center;
@@ -59,6 +66,7 @@ export default function OneLineLink(props: Props) {
               width: 24px;
               cursor: pointer;
               opacity: ${beginAnimation ? 1 : 0};
+              margin-right: ${beginAnimation ? 0 : 16}px;
               text-align: right;
               font-size: 24px;
               transform: scale(1.1);

@@ -27,8 +27,6 @@ export default function SharedHandleLinks(p: Props) {
   const [isHovering, setIsHovering] = useState(false);
 
   const delayTimes = shuffleArray(Array.from(Array(p.contact.links.length).keys()));
-  console.log(`11111  SharedHandleLinks:  ${JSON.stringify(delayTimes)}`);
-  console.log(`11111  SharedHandleLinks:  ${Array(p.contact.links.length).keys()}`);
 
   useEffect(() => {
     if (p.begin)
@@ -81,8 +79,13 @@ export default function SharedHandleLinks(p: Props) {
           `}
         >
           {p.contact.links.map((value, index) => {
+            const _target =
+              value.href.startsWith("tel") || value.href.startsWith("mailto")
+                ? "_self"
+                : "_blank";
+
             return (
-              <a key={index} target={"_blank"} href={value.href} rel={"noreferrer"}>
+              <a key={index} target={_target} href={value.href} rel={"noreferrer"}>
                 <i
                   className={value.icon}
                   css={css`

@@ -36,6 +36,10 @@ export function getContacts(): ContactGroup[] {
       socialHandle: "+1 243-555-2394",
       links: [
         {
+          icon: "fa-solid fa-phone",
+          href: "tel: +1 243-555-2394",
+        },
+        {
           icon: "fa-brands fa-twitch",
           href: "https://www.pinterest.com/mhmitramh",
         },
