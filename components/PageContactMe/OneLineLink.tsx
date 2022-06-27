@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import EmailIcon from "@mui/icons-material/Email";
+import { ContactGroup } from "../../data/models/contactGroup";
 
 interface Props {
-  text: string;
-  href: string;
+  // text: string;
+  // href: string;
+  contact: ContactGroup;
 }
 
 export default function OneLineLink(props: Props) {
@@ -23,7 +25,6 @@ export default function OneLineLink(props: Props) {
         flex-direction: row;
         justify-content: end;
         align-items: center;
-        user-select: text;
         font-weight: bold;
         text-align: center;
       `}
@@ -39,32 +40,64 @@ export default function OneLineLink(props: Props) {
         `}
       >
         <a
-          href={props.href}
+          href={props.contact.links[0].href}
+          target={"_blank"}
           css={css`
-            //background-color: red;
             display: flex;
+            justify-content: center;
+            align-items: center;
+            width: fit-content;
+
+            transition: 140ms ease;
+            transition-property: width, height, margin-right, opacity, transform;
           `}
+          rel="noreferrer"
         >
-          <EmailIcon
+          <i
+            className={props.contact.links[0].icon + " fa-lg"}
             css={css`
               width: 24px;
-              height: 24px;
               cursor: pointer;
-              margin-right: ${beginAnimation ? 0 : 16}px;
               opacity: ${beginAnimation ? 1 : 0};
+              text-align: center;
+              transform: scale(1.1);
 
               transition: 140ms ease;
-              transition-property: width, height, margin-right, opacity;
+              transition-property: width, height, margin-right, opacity, transform;
 
               :hover {
                 width: 30px;
-                height: 30px;
+                transform: scale(1.27);
               }
             `}
           />
+          {/*<EmailIcon*/}
+          {/*  css={css`*/}
+          {/*    width: 24px;*/}
+          {/*    height: 24px;*/}
+          {/*    cursor: pointer;*/}
+          {/*    margin-right: ${beginAnimation ? 0 : 16}px;*/}
+          {/*    opacity: ${beginAnimation ? 1 : 0};*/}
+
+          {/*    transition: 140ms ease;*/}
+          {/*    transition-property: width, height, margin-right, opacity;*/}
+
+          {/*    :hover {*/}
+          {/*      width: 30px;*/}
+          {/*      height: 30px;*/}
+          {/*    }*/}
+          {/*  `}*/}
+          {/*/>*/}
         </a>
       </div>
-      {props.text}
+      <div
+        css={css`
+          user-select: text;
+          margin-bottom: 0.2em;
+        `}
+      >
+        {props.contact.socialHandle}
+      </div>
     </div>
   );
 }

@@ -6,7 +6,7 @@ export function getContacts(): ContactGroup[] {
       socialHandle: "mhmitra.mh@gmail.com",
       links: [
         {
-          icon: "fa-light fa-envelope",
+          icon: "fa-regular fa-envelope",
           href: "mailto: mhmitra.mh@gmail.com",
         },
       ],

@@ -7,6 +7,7 @@ import OneLineLink from "./OneLineLink";
 import { _AppContext } from "../../helpers/providers/provider_App";
 import { useRouter } from "next/router";
 import { getActiveTab } from "../../tools/tools";
+import { getContacts } from "../../data/local/dataContact";
 
 interface Props {}
 
@@ -17,6 +18,8 @@ export default function PageContactMe(props: Props) {
   const [fadeOut, setFadeOut] = useState(false);
 
   const [fadeIn, setFadeIn] = useState(false);
+
+  const contacts = getContacts();
 
   useEffect(() => {
     setTimeout(() => {
@@ -46,20 +49,11 @@ export default function PageContactMe(props: Props) {
         transition-property: opacity;
       `}
     >
-      <OneLineLink
-        text={"mhmitra.mh@gmail.com"}
-        href={"mailto: mhmitra.mh@gmail.com"}
-      />
-      <div
-        css={css`
-          margin-top: 16px;
-          user-select: text;
-          font-weight: bold;
-          text-align: center;
-        `}
-      >
-        @mhmitramh
-      </div>
+      {contacts.map((contact) => {
+        if (contact.links.length === 1) {
+          return <OneLineLink key={contact.socialHandle} contact={contact} />;
+        }
+      })}
       <SharedIdLinks begin={true} />
     </div>
   );
