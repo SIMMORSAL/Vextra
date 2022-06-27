@@ -32,5 +32,30 @@ export function getContacts(): ContactGroup[] {
         },
       ],
     },
+    {
+      socialHandle: "+1 243-555-2394",
+      links: [
+        {
+          icon: "fa-brands fa-twitch",
+          href: "https://www.pinterest.com/mhmitramh",
+        },
+        {
+          icon: "fa-brands fa-snapchat",
+          href: "https://www.pinterest.com/mhmitramh",
+        },
+        {
+          icon: "fa-brands fa-facebook-messenger",
+          href: "https://www.pinterest.com/mhmitramh",
+        },
+        {
+          icon: "fa-brands fa-telegram",
+          href: "https://www.behance.com/mhmitramh",
+        },
+        {
+          icon: "fa-brands fa-whatsapp",
+          href: "https://www.linkedin.com/in/mhmitramh",
+        },
+      ],
+    },
   ];
 }

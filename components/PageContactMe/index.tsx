@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import { headerHeight } from "../Header";
 import EmailIcon from "@mui/icons-material/Email";
-import SharedIdLinks from "./SharedIdLinks";
+import SharedHandleLinks from "./SharedHandleLinks";
 import OneLineLink from "./OneLineLink";
 import { _AppContext } from "../../helpers/providers/provider_App";
 import { useRouter } from "next/router";
@@ -53,8 +53,14 @@ export default function PageContactMe(props: Props) {
         if (contact.links.length === 1) {
           return <OneLineLink key={contact.socialHandle} contact={contact} />;
         }
+        return (
+          <SharedHandleLinks
+            key={contact.socialHandle}
+            begin={true}
+            contact={contact}
+          />
+        );
       })}
-      <SharedIdLinks begin={true} />
     </div>
   );
 }

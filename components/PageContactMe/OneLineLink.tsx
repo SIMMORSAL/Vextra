@@ -54,20 +54,23 @@ export default function OneLineLink(props: Props) {
           rel="noreferrer"
         >
           <i
-            className={props.contact.links[0].icon + " fa-lg"}
+            className={props.contact.links[0].icon}
             css={css`
               width: 24px;
               cursor: pointer;
               opacity: ${beginAnimation ? 1 : 0};
-              text-align: center;
+              text-align: right;
+              font-size: 24px;
               transform: scale(1.1);
 
               transition: 140ms ease;
-              transition-property: width, height, margin-right, opacity, transform;
+              transition-property: width, height, margin-right, opacity, transform,
+                font-size;
 
               :hover {
                 width: 30px;
-                transform: scale(1.27);
+                font-size: 30px;
+                //transform: scale(1.47);
               }
             `}
           />
