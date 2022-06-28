@@ -63,6 +63,7 @@ function Ach({ ach }: { ach: Achievement }) {
             {value.title}
             <span
               css={css`
+                font-size: 0.9em;
                 font-weight: bold;
                 color: #646464;
                 margin-left: 12px;
