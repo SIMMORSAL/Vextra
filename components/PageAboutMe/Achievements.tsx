@@ -12,7 +12,8 @@ export default function Achievements(props: Props) {
       css={css`
         display: flex;
         flex-direction: column;
-        width: calc(100% - 48px);
+        width: calc(100% - 24px);
+        max-width: 476px;
         background-color: #eaeaea;
       `}
     >
@@ -51,6 +52,27 @@ function Ach({ ach }: { ach: Achievement }) {
           {ach.groupName}
         </h4>
       </div>
+      {ach.items.map((value) => {
+        return (
+          <p
+            key={value.title}
+            css={css`
+              padding: 0 12px;
+            `}
+          >
+            {value.title}
+            <span
+              css={css`
+                font-weight: bold;
+                color: #646464;
+                margin-left: 12px;
+              `}
+            >
+              {value.data}
+            </span>
+          </p>
+        );
+      })}
       <div
         css={css`
           height: 24px;

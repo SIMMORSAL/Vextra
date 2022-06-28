@@ -22,7 +22,7 @@ export function getAchievements(): Achievement[] {
     },
     {
       groupName: "Licenses",
-      icon: "fa-solid fa-file-certificate",
+      icon: "fa-solid fa-file",
       items: [
         {
           title: "Teram printing",
@@ -32,7 +32,7 @@ export function getAchievements(): Achievement[] {
     },
     {
       groupName: "Achievements",
-      icon: "fa-solid fa-trophy-star",
+      icon: "fa-solid fa-trophy",
       items: [
         {
           title: "Teram printing",
@@ -58,7 +58,7 @@ export function getAchievements(): Achievement[] {
     },
     {
       groupName: "Executive tasks",
-      icon: "fa-solid fa-file-certificate",
+      icon: "fa-solid fa-chart-line",
       items: [
         {
           title: "Teram printing",
