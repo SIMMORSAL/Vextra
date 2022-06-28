@@ -61,7 +61,7 @@ export default function Header(props: Props) {
         align-items: center;
         justify-content: center;
         //background-color: red;
-        background-color: ${shouldBlur ? "#ffffffbb" : "transparent"};
+        background-color: ${shouldBlur ? "#ffffffcc" : "transparent"};
         padding-bottom: ${shouldBlur ? 20 : 0}px;
         backdrop-filter: blur(${shouldBlur ? 3 : 0}px);
         -webkit-backdrop-filter: blur(${shouldBlur ? 3 : 0}px);
