@@ -118,11 +118,9 @@ export default function PageAboutMe(props: Props) {
             padding: 0 32px 0;
           `}
         />
-        <Achievements />
         <p
           css={css`
             max-width: 500px;
-            background-image: linear-gradient(180deg, #ffffff, transparent);
           `}
         >
           <span
@@ -141,6 +139,13 @@ export default function PageAboutMe(props: Props) {
           erat. Ut nec magna mauris. Integer accumsan tempus quam, elementum pharetra
           elit suscipit id.
           <br />
+        </p>
+        <Achievements />
+        <p
+          css={css`
+            max-width: 500px;
+          `}
+        >
           <br />
           Etiam at nisl tempor nibh iaculis mattis. Aliquam quam leo, efficitur
           fringilla commodo eu, vehicula ut velit. Nam eu ante vulputate libero

@@ -10,6 +10,14 @@ export function getAchievements(): Achievement[] {
           title: "Teram printing",
           data: "2021",
         },
+        {
+          title: "Teram printing",
+          data: "2021",
+        },
+        {
+          title: "Teram printing",
+          data: "2021",
+        },
       ],
     },
     {
@@ -30,12 +38,32 @@ export function getAchievements(): Achievement[] {
           title: "Teram printing",
           data: "2021",
         },
+        {
+          title: "Teram printing",
+          data: "2021",
+        },
+        {
+          title: "Teram printing",
+          data: "2021",
+        },
+        {
+          title: "Teram printing",
+          data: "2021",
+        },
+        {
+          title: "Teram printing",
+          data: "2021",
+        },
       ],
     },
     {
       groupName: "Executive tasks",
       icon: "fa-solid fa-file-certificate",
       items: [
+        {
+          title: "Teram printing",
+          data: "2021",
+        },
         {
           title: "Teram printing",
           data: "2021",
