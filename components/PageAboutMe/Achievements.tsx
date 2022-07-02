@@ -1,12 +1,13 @@
 import React from "react";
 import { css } from "@emotion/react";
-import { getAchievements } from "../../data/local/dataAchievements";
-import { Achievement } from "../../data/models/achievement";
+import { getHistory } from "../../data/local/dataHistory";
+import { History } from "../../data/models/history";
+import ReactMarkdown from "react-markdown";
 
 interface Props {}
 
 export default function Achievements(props: Props) {
-  const achievements = getAchievements();
+  const achievements = getHistory();
   return (
     <div
       css={css`
@@ -24,7 +25,7 @@ export default function Achievements(props: Props) {
   );
 }
 
-function Ach({ ach }: { ach: Achievement }) {
+function Ach({ ach }: { ach: History }) {
   return (
     <div key={ach.groupName}>
       <div
@@ -43,35 +44,58 @@ function Ach({ ach }: { ach: Achievement }) {
             height: 1em;
           `}
         />
-        <h4
+        <p
           css={css`
             color: #333333;
             margin: 0 0 0 12px;
+            font-weight: bold;
+            font-size: 0.93em;
           `}
         >
           {ach.groupName}
-        </h4>
+        </p>
       </div>
       {ach.items.map((value) => {
         return (
-          <p
+          <div
             key={value.title}
             css={css`
-              padding: 0 12px;
+              margin-top: 18px;
             `}
           >
-            {value.title}
-            <span
+            <div>
+              <p
+                css={css`
+                  padding: 0 12px;
+                  font-weight: 600;
+                  color: #4d4d4d;
+                  font-size: 1.07em;
+                `}
+              >
+                {value.title}
+                <span
+                  css={css`
+                    font-size: 0.9em;
+                    font-weight: lighter;
+                    color: #646464;
+                    margin-left: 12px;
+                  `}
+                >
+                  {value.date}
+                </span>
+              </p>
+            </div>
+            <ReactMarkdown
               css={css`
+                padding: 0 12px;
                 font-size: 0.9em;
-                font-weight: bold;
-                color: #646464;
-                margin-left: 12px;
+                margin-top: -4px;
+                color: #232323;
               `}
             >
-              {value.data}
-            </span>
-          </p>
+              {value.description}
+            </ReactMarkdown>
+          </div>
         );
       })}
       <div

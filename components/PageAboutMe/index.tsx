@@ -21,6 +21,7 @@ export default function PageAboutMe(props: Props) {
     useState(false);
 
   const fadeInDuration = 900;
+  const rootPaddingTop = 48;
 
   useEffect(() => {
     setTimeout(() => {
@@ -28,9 +29,6 @@ export default function PageAboutMe(props: Props) {
       setContentHeight(document.getElementById("content").clientHeight);
       const contentHeight = document.getElementById("content").clientHeight;
       setContentHeightSmallerThanVh(contentHeight < window.innerHeight);
-      // console.log(
-      //   `11111  sddsas:  ${document.getElementById("content").clientHeight}`
-      // );
       setTimeout(() => {
         setFadeInFinish(true);
       }, fadeInDuration);
@@ -49,7 +47,7 @@ export default function PageAboutMe(props: Props) {
         display: grid;
         opacity: ${fadeOut ? 0 : 1};
         margin-top: ${fadeOut ? 14 : 0}px;
-        padding-top: 48px;
+        padding-top: ${rootPaddingTop}px;
 
         transition: 100ms ease;
         transition-property: opacity, margin-top;
@@ -61,7 +59,9 @@ export default function PageAboutMe(props: Props) {
           grid-row: 1;
           grid-column: 1;
           width: 100%;
-          max-height: ${contentHeightSmallerThanVh ? `${contentHeight}px` : "85vh"};
+          max-height: ${contentHeightSmallerThanVh
+            ? `${contentHeight}px`
+            : `calc(100vh - ${rootPaddingTop}px)`};
           overflow: hidden;
           display: ${fadeInFinish ? "none" : "block"};
         `}

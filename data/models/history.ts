@@ -1,4 +1,4 @@
-export interface Achievement {
+export interface History {
   groupName: string;
   icon: string;
   items: Item[];
@@ -6,5 +6,6 @@ export interface Achievement {
 
 interface Item {
   title: string;
-  data: string;
+  date: string;
+  description?: string;
 }
