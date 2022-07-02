@@ -47,97 +47,104 @@ export default function PortfolioItem(props: Props) {
   return (
     <div
       css={css`
-        margin: 16px 8px;
-        opacity: ${beginFadeIn ? 1 : 0};
-        width: 100%;
-        max-width: 400px;
-        //aspect-ratio: 1 / 1;
-        transition: 400ms ease;
-        transition-property: opacity;
+        transform: translateY(${beginFadeIn ? 0 : 15}%)
+          //rotate3d(${beginFadeIn ? 2 : 1}, 0, 0, 75deg);
+          rotateX(${beginFadeIn ? 0 : 15}deg) rotateY(${beginFadeIn ? 0 : -20}deg);
+        //rotateY(45deg);
+
+        transition: 700ms ease;
+        transition-property: transform;
         transition-delay: ${props.index}50ms;
-        display: grid;
       `}
     >
       <div
         css={css`
+          margin: 16px 8px;
+          opacity: ${beginFadeIn ? 1 : 0};
           width: 100%;
-          height: 100%;
-          grid-row: 1;
-          grid-column: 1;
-          position: relative;
+          max-width: 400px;
+          //aspect-ratio: 1 / 1;
+          transition: 400ms ease;
+          transition-property: opacity;
+          transition-delay: ${props.index}50ms;
+          display: grid;
         `}
       >
-        <img
-          // src={require(`/public/images/portfolio/${props.portfolio.image}`)}
-          src={props.portfolio.image}
-          alt={"behance"}
-          loading={"eager"}
-          // layout={"fill"}
-          // quality={100}
-          css={css`
-            width: 100%;
-            padding: 0 4px;
-            transform: translateY(${beginFadeIn ? 0 : 15}%)
-              rotate3d(${beginFadeIn ? 0 : 1}, 0, 0, 45deg);
-
-            transition: 700ms ease;
-            transition-property: transform;
-            transition-delay: ${props.index}50ms;
-          `}
-        />
-      </div>
-      {props.portfolio.award ? (
         <div
           css={css`
             width: 100%;
+            height: 100%;
             grid-row: 1;
             grid-column: 1;
-            z-index: 2;
-            justify-self: start;
-            align-self: end;
-            opacity: ${fadeInAward ? 1 : 0};
-            padding: ${padding};
-            filter: blur(${fadeInAward ? 0 : 30}px);
-
-            transition: 700ms ease;
-            transition-property: opacity, width, filter, padding-bottom, padding-top,
-              padding-left, padding-right, bottom;
+            position: relative;
           `}
         >
+          <img
+            // src={require(`/public/images/portfolio/${props.portfolio.image}`)}
+            src={props.portfolio.image}
+            alt={"behance"}
+            loading={"eager"}
+            // layout={"fill"}
+            // quality={100}
+            css={css`
+              width: 100%;
+              padding: 0 4px;
+            `}
+          />
+        </div>
+        {props.portfolio.award ? (
           <div
             css={css`
-              margin-bottom: ${makeAwardSmall ? 30 : 0}%;
-              box-shadow: ${awardBoxShadow};
-              //vertical-align: bottom;
-              position: relative;
               width: 100%;
-              //aspect-ratio: 1/1;
-
-              display: flex;
+              grid-row: 1;
+              grid-column: 1;
+              z-index: 2;
+              justify-self: start;
+              align-self: end;
+              opacity: ${fadeInAward ? 1 : 0};
+              padding: ${padding};
+              filter: blur(${fadeInAward ? 0 : 30}px);
 
               transition: 700ms ease;
-              transition-property: box-shadow, margin-bottom, transform;
+              transition-property: opacity, width, filter, padding-bottom,
+                padding-top, padding-left, padding-right, bottom;
             `}
           >
-            {/*<Image*/}
-            {/*  // src={require(`/res/images/portfolio/${props.portfolio.award}`)}*/}
-            {/*  src={props.portfolio.award}*/}
-            {/*  alt={"behance"}*/}
-            {/*  layout={"fill"}*/}
-            {/*  loading={"lazy"}*/}
-            {/*  quality={100}*/}
-            {/*/>*/}
-            <img
-              src={props.portfolio.award}
-              width={"100%"}
-              loading={"eager"}
-              alt={""}
-            />
+            <div
+              css={css`
+                margin-bottom: ${makeAwardSmall ? 30 : 0}%;
+                box-shadow: ${awardBoxShadow};
+                //vertical-align: bottom;
+                position: relative;
+                width: 100%;
+                //aspect-ratio: 1/1;
+
+                display: flex;
+
+                transition: 700ms ease;
+                transition-property: box-shadow, margin-bottom, transform;
+              `}
+            >
+              {/*<Image*/}
+              {/*  // src={require(`/res/images/portfolio/${props.portfolio.award}`)}*/}
+              {/*  src={props.portfolio.award}*/}
+              {/*  alt={"behance"}*/}
+              {/*  layout={"fill"}*/}
+              {/*  loading={"lazy"}*/}
+              {/*  quality={100}*/}
+              {/*/>*/}
+              <img
+                src={props.portfolio.award}
+                width={"100%"}
+                loading={"eager"}
+                alt={""}
+              />
+            </div>
           </div>
-        </div>
-      ) : (
-        <></>
-      )}
+        ) : (
+          <></>
+        )}
+      </div>
     </div>
   );
 }

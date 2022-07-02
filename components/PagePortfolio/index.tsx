@@ -38,7 +38,7 @@ export default function PagePortfolio(props: Props) {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: ${headerHeight}px 24px 20%;
+        padding: ${headerHeight}px 24px 24px;
         opacity: ${fadeOut ? 0 : 1};
         margin-top: ${fadeOut ? 12 : 0}px;
 
