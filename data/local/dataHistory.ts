@@ -60,38 +60,13 @@ Honors: cum laude (GPA: 3.6/4.0)
       icon: "fa-solid fa-trophy",
       items: [
         {
-          title: "Teram printing",
+          title: "awwwards. design winner ",
           date: "2021",
+          description: "for the website [example.com](https://example.com)",
         },
         {
-          title: "Teram printing",
-          date: "2021",
-        },
-        {
-          title: "Teram printing",
-          date: "2021",
-        },
-        {
-          title: "Teram printing",
-          date: "2021",
-        },
-        {
-          title: "Teram printing",
-          date: "2021",
-        },
-      ],
-    },
-    {
-      groupName: "Executive tasks",
-      icon: "fa-solid fa-chart-line",
-      items: [
-        {
-          title: "Teram printing",
-          date: "2021",
-        },
-        {
-          title: "Teram printing",
-          date: "2021",
+          title: "React Open Source Awards",
+          date: "2020",
         },
       ],
     },

@@ -15,7 +15,7 @@ export default function Achievements(props: Props) {
         flex-direction: column;
         width: calc(100% - 24px);
         max-width: 476px;
-        background-color: #eaeaea;
+        background-color: #efefef;
       `}
     >
       {achievements.map((value) => {
@@ -90,7 +90,7 @@ function Ach({ ach }: { ach: History }) {
                 padding: 0 12px;
                 font-size: 0.9em;
                 margin-top: -4px;
-                color: #232323;
+                color: #151515;
               `}
             >
               {value.description}
