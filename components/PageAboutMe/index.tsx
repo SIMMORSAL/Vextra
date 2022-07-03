@@ -5,6 +5,8 @@ import { useRouter } from "next/router";
 import { _AppContext } from "../../helpers/providers/provider_App";
 import { getActiveTab } from "../../tools/tools";
 import Achievements from "./Achievements";
+import { getAboutMeData } from "../../data/local/dataAboutMe";
+import ReactMarkdown from "react-markdown";
 
 interface Props {}
 
@@ -22,6 +24,8 @@ export default function PageAboutMe(props: Props) {
 
   const fadeInDuration = 900;
   const rootPaddingTop = 48;
+
+  const data = getAboutMeData();
 
   useEffect(() => {
     setTimeout(() => {
@@ -108,9 +112,7 @@ export default function PageAboutMe(props: Props) {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           alt={"avatar"}
-          src={
-            "https://avatarairlines.com/wp-content/uploads/2020/05/Female-Placeholder.png"
-          }
+          src={data.image}
           css={css`
             width: 100%;
             max-width: 450px;
@@ -118,47 +120,21 @@ export default function PageAboutMe(props: Props) {
             padding: 0 32px 0;
           `}
         />
-        <p
+        <ReactMarkdown
           css={css`
             max-width: 500px;
           `}
         >
-          <span
-            css={css`
-              font-size: 1.1em;
-            `}
-          >
-            I&apos;m Mitra Sisakht ! <br />
-            <br />
-          </span>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at
-          convallis velit. Nunc bibendum nibh in lectus convallis aliquam vitae id
-          diam. Ut ut ante eu dui placerat sodales. Suspendisse vulputate maximus
-          nisl, sed suscipit ante lacinia ac. Vestibulum suscipit, sapien vitae
-          convallis porttitor, mauris ligula placerat nibh, a ornare mauris diam at
-          erat. Ut nec magna mauris. Integer accumsan tempus quam, elementum pharetra
-          elit suscipit id.
-          <br />
-        </p>
+          {data.textTop}
+        </ReactMarkdown>
         <Achievements />
-        <p
+        <ReactMarkdown
           css={css`
             max-width: 500px;
           `}
         >
-          <br />
-          Etiam at nisl tempor nibh iaculis mattis. Aliquam quam leo, efficitur
-          fringilla commodo eu, vehicula ut velit. Nam eu ante vulputate libero
-          convallis gravida et at dolor. In est justo, viverra pretium ullamcorper
-          pellentesque pellentesque. Fusce turpis erat, congue in lobortis ut,
-          viverra et nibh. Suspendisse vel tortor aliquam, rhoncus dui et, sagittis
-          arcu. Cras dictum sapien purus, justo, viverra pretium ullamcorper
-          pellentesque pellentesque. Fusce turpis erat, congue in lobortis ut,
-          viverra et nibh. Suspendisse vel tortor aliquam, rhoncus dui et, sagittis
-          arcu. Cras dictum sapien purus, sed vulputate augue convallis consectetur.
-          Orci varius natoque penatibus et magnis dis parturient montes, nascetur
-          ridiculus mus.
-        </p>
+          {data.textBottom}
+        </ReactMarkdown>
       </div>
     </div>
   );

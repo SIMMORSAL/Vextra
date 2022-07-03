@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "@emotion/react";
-import { getHistory } from "../../data/local/dataHistory";
+import { getHistory } from "../../data/local/dataAboutMe";
 import { History } from "../../data/models/history";
 import ReactMarkdown from "react-markdown";
 
@@ -61,6 +61,7 @@ function Ach({ ach }: { ach: History }) {
             key={value.title}
             css={css`
               margin-top: 18px;
+              user-select: text;
             `}
           >
             <div>
@@ -79,6 +80,7 @@ function Ach({ ach }: { ach: History }) {
                     font-weight: lighter;
                     color: #646464;
                     margin-left: 12px;
+                    user-select: none;
                   `}
                 >
                   {value.date}
