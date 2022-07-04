@@ -7,6 +7,7 @@ import PortfolioItem from "./PortfolioItem";
 import { useRouter } from "next/router";
 import { _AppContext } from "../../helpers/providers/provider_App";
 import { getActiveTab } from "../../tools/tools";
+import { Portfolio } from "../../data/models/portfolio";
 
 interface Props {}
 
@@ -17,6 +18,7 @@ export default function PagePortfolio(props: Props) {
 
   const { newTabSelected } = useContext(_AppContext);
   const [fadeOut, setFadeOut] = useState(false);
+  const [selectedItem, setSelectedItem] = useState<Portfolio | undefined>();
 
   const portfolioItems = getPortfolios();
 
@@ -73,6 +75,8 @@ export default function PagePortfolio(props: Props) {
                 portfolio={value}
                 index={index}
                 awardDelayMultiplier={awardCounts}
+                selectedItem={selectedItem}
+                setSelectedItem={setSelectedItem}
               />
             </Grid>
           );

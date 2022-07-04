@@ -30,14 +30,8 @@ export default function HeaderButton(props: Props) {
         onMouseLeave={() => setIsHovering(false)}
         onClick={() => {
           props.setSelectedPage(props.page);
-          if (props.page === props.selectedPage) {
-            if (isTabRootSelected) setFlashContent(true);
-            else {
-              setNewTabSelected(props.page);
-              setTimeout(() => {
-                router.push(`/${props.page}/`);
-              }, 100);
-            }
+          if (props.page === props.selectedPage && isTabRootSelected) {
+            setFlashContent(true);
           } else {
             if (props.page === "home") {
               props.homeClicked();
