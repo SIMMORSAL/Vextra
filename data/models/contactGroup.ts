@@ -3,7 +3,7 @@ export interface ContactGroup {
   links: Links[];
 }
 
-interface Links {
+export interface Links {
   icon: string;
   href: string;
 }

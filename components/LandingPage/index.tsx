@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import { backgroundBlack, backgroundWhite } from "../../res/colors";
 import CenterStuff from "./CenterStuff";
-import BottomIcons from "./BottomIcons";
+import BottomContacts from "./BottomContacts";
 import LandingHeader from "./LandingHeader";
 import LandingLogo from "./LandingLogo";
 import { useRouter } from "next/router";
@@ -99,7 +99,7 @@ export default function LandingPage({}: Props) {
           transition: opacity 200ms ease, transform 200ms ease;
         `}
       >
-        <BottomIcons begin={beginAnimationPhase3} />
+        <BottomContacts begin={beginAnimationPhase3} />
       </div>
     </div>
   );
