@@ -3,7 +3,8 @@ import { Portfolio } from "../models/portfolio";
 export function getPortfolios(): Portfolio[] {
   return [
     {
-      name: "One More",
+      linkId: "one-more",
+      name: "One More Faucet",
       color: "#0066ff",
       backgroundColor: "#011736",
       isBackgroundDark: false,
@@ -13,6 +14,7 @@ export function getPortfolios(): Portfolio[] {
       award: "/images/portfolio/a_design_award.gif",
     },
     {
+      linkId: "umbrella-ca",
       name: "ab",
       color: "#ff00ff",
       backgroundColor: "#3a053a",
@@ -21,7 +23,8 @@ export function getPortfolios(): Portfolio[] {
       // award: "a_design_award.gif",
     },
     {
-      name: "ab",
+      linkId: "umbrella",
+      name: "umbrella",
       color: "#ff0000",
       backgroundColor: "#3f0101",
       isBackgroundDark: true,

@@ -1,8 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import { Portfolio } from "../../data/models/portfolio";
 import Image from "next/image";
+import { _AppContext } from "../../helpers/providers/provider_App";
+import { useRouter } from "next/router";
 
 interface Props {
   portfolio: Portfolio;
@@ -11,26 +13,18 @@ interface Props {
 }
 
 export default function PortfolioItem(props: Props) {
+  const router = useRouter();
   const [beginFadeIn, setBeginFadeIn] = useState(false);
   const [fadeInAward, setFadeInAward] = useState(false);
   const [makeAwardSmall, setMakeAwardSmall] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
+  const { setNewTabSelected } = useContext(_AppContext);
 
-  const padding = props.portfolio.isBackgroundDark
-    ? `0px ${makeAwardSmall ? 70 : 12}% ${makeAwardSmall ? 0 : 25}% ${
-        makeAwardSmall ? 4 : 12
-      }%`
-    : `0px ${makeAwardSmall ? 80 : 27}% ${makeAwardSmall ? 0 : 12}% ${
-        makeAwardSmall ? 4 : 27
-      }%`;
-
-  const awardBoxShadow = props.portfolio.isBackgroundDark
-    ? makeAwardSmall
-      ? ".5px 1px 5px 1px #ffffff66"
-      : `4px 12px 85px 16px #ffffff44`
-    : makeAwardSmall
-    ? ".5px 1px 5px 1px #00000066"
-    : `4px 12px 85px 16px #00000044`;
+  const onClicked = () => {
+    setTimeout(() => {
+      router.push(`/portfolio/${props.portfolio.linkId}`);
+    }, 200);
+  };
 
   // * Begin animation
   setTimeout(() => {
@@ -44,6 +38,25 @@ export default function PortfolioItem(props: Props) {
       }, 2000 * props.awardDelayMultiplier);
     }
   }, 50);
+
+  // * if your awards are not in the shape of square, you may need to
+  // * uncomment below code and make changes to the values
+  const awardPadding =
+    props.portfolio.name === "umbrella"
+      ? `0px ${makeAwardSmall ? 70 : 12}% ${makeAwardSmall ? 0 : 25}% ${
+          makeAwardSmall ? 4 : 12
+        }%`
+      : `0px ${makeAwardSmall ? 80 : 27}% ${makeAwardSmall ? 0 : 12}% ${
+          makeAwardSmall ? 4 : 27
+        }%`;
+
+  const awardBoxShadow = props.portfolio.isBackgroundDark
+    ? makeAwardSmall
+      ? ".5px 1px 5px 1px #ffffff66"
+      : `4px 12px 85px 16px #ffffff44`
+    : makeAwardSmall
+    ? ".5px 1px 5px 1px #00000066"
+    : `4px 12px 85px 16px #00000044`;
 
   return (
     <div
@@ -72,14 +85,15 @@ export default function PortfolioItem(props: Props) {
         `}
       >
         <div
+          onClick={onClicked}
           css={css`
-            overflow: hidden;
-            width: calc(100% - 8px);
-            height: calc(100% - 4px);
             grid-row: 1;
             grid-column: 1;
+            width: calc(100% - 8px);
+            height: calc(100% - 4px);
+            left: 4px;
             position: relative;
-            background-color: red;
+            overflow: hidden;
           `}
         >
           <img
@@ -98,13 +112,14 @@ export default function PortfolioItem(props: Props) {
 
               transform: scale(${isHovering ? 1.1 : 1});
 
-              transition: 200ms ease;
+              transition: 400ms ease;
               transition-property: transform;
             `}
           />
         </div>
         {props.portfolio.award ? (
           <div
+            onClick={onClicked}
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
             css={css`
@@ -115,7 +130,7 @@ export default function PortfolioItem(props: Props) {
               justify-self: start;
               align-self: end;
               opacity: ${fadeInAward ? 1 : 0};
-              padding: ${padding};
+              padding: ${awardPadding};
               filter: blur(${fadeInAward ? 0 : 30}px);
               cursor: pointer;
 

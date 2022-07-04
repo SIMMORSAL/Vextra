@@ -1,4 +1,5 @@
 export interface Portfolio {
+  linkId: string;
   name: string;
   image: string;
   color: string;
