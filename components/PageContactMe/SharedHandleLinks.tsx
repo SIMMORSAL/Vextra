@@ -85,38 +85,46 @@ export default function SharedHandleLinks(p: Props) {
                 : "_blank";
 
             return (
-              <a key={index} target={_target} href={value.href} rel={"noreferrer"}>
-                <i
-                  className={value.icon}
-                  css={css`
-                    width: 30px;
-                    height: 32px;
-                    cursor: pointer;
-                    opacity: ${delayPassed ? 1 : 0};
-                    margin: 16px 0;
-                    padding: 0;
-                    //background-color: red;
-                    transform: translateY(${delayPassed ? 0 : "50%"});
-                    text-align: center;
-                    font-size: 150%;
+              <div
+                key={index}
+                css={css`
+                  display: flex;
+                  flex-direction: column-reverse;
+                `}
+              >
+                <div>
+                  <a target={_target} href={value.href} rel={"noreferrer"}>
+                    <i
+                      className={value.icon}
+                      css={css`
+                        width: 30px;
+                        height: 30px;
+                        cursor: pointer;
+                        opacity: ${delayPassed ? 1 : 0};
+                        margin: 16px 0;
+                        padding: 0;
+                        //background-color: red;
+                        //background-color: red;
+                        transform: translateY(${delayPassed ? 0 : "50%"});
+                        text-align: center;
+                        font-size: 150%;
 
-                    transition: 140ms ease;
-                    transition-property: width, height, margin-top, opacity,
-                      transform, font-size;
-                    transition-delay: ${hasAnimationFinished
-                      ? "0"
-                      : `${delayTimes[index]}00ms`};
+                        transition: 140ms ease;
+                        transition-property: width, height, margin-top, opacity,
+                          transform, font-size, color;
+                        transition-delay: ${hasAnimationFinished
+                          ? "0"
+                          : `${delayTimes[index]}00ms`};
 
-                    :hover {
-                      font-size: 32px;
-                      width: 42px;
-                      //height: 32px;
-                      //margin-top: 14px;
-                      //transform: scale(1.3);
-                    }
-                  `}
-                />
-              </a>
+                        :hover {
+                          transform: scale(1.3) translateY(6%);
+                          width: 42px;
+                        }
+                      `}
+                    />
+                  </a>
+                </div>
+              </div>
             );
           })}
         </div>

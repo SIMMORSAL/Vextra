@@ -83,44 +83,50 @@ export default function BottomContacts({ begin }: Props) {
               : "_blank";
 
           return (
-            <a key={index} target={_target} href={value.href} rel={"noreferrer"}>
-              <div
-                css={css`
-                  display: flex;
-                  flex-direction: column-reverse;
-                `}
-              >
-                <i
-                  className={value.icon}
-                  css={css`
-                    width: 30px;
-                    height: 32px;
-                    cursor: pointer;
-                    opacity: ${delayPassed ? 1 : 0};
-                    margin: 16px 0;
-                    padding: 0;
-                    //background-color: red;
-                    transform: translateY(${delayPassed ? 0 : "-50%"});
-                    text-align: center;
-                    font-size: 150%;
-                    color: ${isHovering ? itemOnWhiteFocused : itemOnWhite};
+            <div
+              key={index}
+              css={css`
+                display: flex;
+                flex-direction: column-reverse;
+              `}
+            >
+              <div>
+                <a target={_target} href={value.href} rel={"noreferrer"}>
+                  <i
+                    className={value.icon}
+                    css={css`
+                      width: 30px;
+                      height: 30px;
+                      cursor: pointer;
+                      opacity: ${delayPassed ? 1 : 0};
+                      margin: 16px 0;
+                      padding: 0;
+                      //background-color: red;
+                      //background-color: red;
+                      transform: translateY(${delayPassed ? 0 : "-50%"});
+                      text-align: center;
+                      font-size: 150%;
+                      color: ${isHovering ? itemOnWhiteFocused : itemOnWhite};
 
-                    transition: 140ms ease;
-                    transition-property: width, height, margin-top, opacity,
-                      transform, font-size, color;
-                    transition-delay: ${hasAnimationFinished ? "0" : `${index}00ms`};
+                      transition: 140ms ease;
+                      transition-property: width, height, margin-top, opacity,
+                        transform, font-size, color;
+                      transition-delay: ${hasAnimationFinished
+                        ? "0"
+                        : `${index}00ms`};
 
-                    :hover {
-                      transform: scale(1.3);
-                      width: 42px;
-                      //height: 32px;
-                      //margin-top: 14px;
-                      //transform: scale(1.3);
-                    }
-                  `}
-                />
+                      :hover {
+                        transform: scale(1.3) translateY(-6%);
+                        width: 42px;
+                        //height: 32px;
+                        //margin-top: 14px;
+                        //transform: scale(1.3);
+                      }
+                    `}
+                  />
+                </a>
               </div>
-            </a>
+            </div>
           );
         })}
       </div>
