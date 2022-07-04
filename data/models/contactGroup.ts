@@ -6,4 +6,5 @@ export interface ContactGroup {
 export interface Links {
   icon: string;
   href: string;
+  showInHome?: boolean;
 }

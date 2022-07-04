@@ -8,6 +8,7 @@ export function getContacts(): ContactGroup[] {
         {
           icon: "fa-solid fa-envelope",
           href: "mailto: mhmitra.mh@gmail.com",
+          showInHome: true,
         },
       ],
     },
@@ -21,10 +22,12 @@ export function getContacts(): ContactGroup[] {
         {
           icon: "fa-brands fa-behance-square",
           href: "https://www.behance.com/mhmitramh",
+          showInHome: true,
         },
         {
           icon: "fa-brands fa-linkedin",
           href: "https://www.linkedin.com/in/mhmitramh",
+          showInHome: true,
         },
         {
           icon: "fa-brands fa-instagram",
@@ -58,6 +61,7 @@ export function getContacts(): ContactGroup[] {
         {
           icon: "fa-brands fa-whatsapp",
           href: "https://www.linkedin.com/in/mhmitramh",
+          showInHome: true,
         },
       ],
     },

@@ -14,6 +14,7 @@ export default function PortfolioItem(props: Props) {
   const [beginFadeIn, setBeginFadeIn] = useState(false);
   const [fadeInAward, setFadeInAward] = useState(false);
   const [makeAwardSmall, setMakeAwardSmall] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
 
   const padding = props.portfolio.isBackgroundDark
     ? `0px ${makeAwardSmall ? 70 : 12}% ${makeAwardSmall ? 0 : 25}% ${
@@ -72,14 +73,18 @@ export default function PortfolioItem(props: Props) {
       >
         <div
           css={css`
-            width: 100%;
-            height: 100%;
+            overflow: hidden;
+            width: calc(100% - 8px);
+            height: calc(100% - 4px);
             grid-row: 1;
             grid-column: 1;
             position: relative;
+            background-color: red;
           `}
         >
           <img
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
             // src={require(`/public/images/portfolio/${props.portfolio.image}`)}
             src={props.portfolio.image}
             alt={"behance"}
@@ -88,12 +93,20 @@ export default function PortfolioItem(props: Props) {
             // quality={100}
             css={css`
               width: 100%;
-              padding: 0 4px;
+              overflow: hidden;
+              cursor: pointer;
+
+              transform: scale(${isHovering ? 1.1 : 1});
+
+              transition: 200ms ease;
+              transition-property: transform;
             `}
           />
         </div>
         {props.portfolio.award ? (
           <div
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
             css={css`
               width: 100%;
               grid-row: 1;
@@ -104,6 +117,7 @@ export default function PortfolioItem(props: Props) {
               opacity: ${fadeInAward ? 1 : 0};
               padding: ${padding};
               filter: blur(${fadeInAward ? 0 : 30}px);
+              cursor: pointer;
 
               transition: 700ms ease;
               transition-property: opacity, width, filter, padding-bottom,

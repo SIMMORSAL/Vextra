@@ -28,35 +28,34 @@ export default function BottomContacts({ begin }: Props) {
   const [hasAnimationFinished, setHasAnimationFinished] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const [contactItems, setContactItems] = useState<Links[]>();
-  // const [delayTimes, setDelayTimes] = useState([0]);
-
-  // * research this
-  // const contactItems: Links[] = getContacts().map((value): Links => {
-  //   console.log(`11111  value:  ${JSON.stringify(value)}`);
-  //   return value.links.map((value1) => {
-  //     return value1;
-  //   });
-  // });
+  const [hasAnyContactItemLeft, setHasAnyContactItemLeft] = useState(false);
 
   useEffect(() => {
     const ci: Links[] = [];
     getContacts().map((value) => {
       ci.push(...value.links);
     });
-    setContactItems(ci);
+
+    let ciLeft = false;
+    const ciPickedToShow: Links[] = [];
+    ci.map((value) => {
+      if (value.showInHome) ciPickedToShow.push(value);
+      else ciLeft = true;
+    });
+
+    setContactItems(ciPickedToShow);
+    setHasAnyContactItemLeft(true);
   }, []);
 
-  // const delayTimes = shuffleArray([0, 1, 2, 3, 4]);
-
   useEffect(() => {
-    if (begin)
+    if (begin && contactItems.length > 0)
       setTimeout(() => {
         setDelayPassed(true);
         setTimeout(() => {
           setHasAnimationFinished(true);
-        }, 700); // 700 is the number of items plus 200 to finish last animation
+        }, contactItems.length * 100 + 200); // 700 is the number of items plus 200 to finish last animation
       }, 1300);
-  }, [begin]);
+  }, [begin, contactItems]);
 
   useEffect(() => {}, [isHovering]);
 
