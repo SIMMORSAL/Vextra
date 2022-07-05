@@ -61,7 +61,6 @@ export default function PortfolioItem(p: Props) {
     ? ".5px 1px 5px 1px #00000066"
     : `4px 12px 85px 16px #00000044`;
 
-  console.log(`11111  PortfolioItem:  ${p.selectedItem}  ${p.portfolio}`);
   return (
     <div
       css={css`

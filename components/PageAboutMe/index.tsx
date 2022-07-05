@@ -13,7 +13,7 @@ interface Props {}
 export default function PageAboutMe(props: Props) {
   const router = useRouter();
 
-  const { newTabSelected } = useContext(_AppContext);
+  const { newTabSelected, setNewTabSelected } = useContext(_AppContext);
 
   const [fadeIn, setFadeIn] = useState(false);
   const [fadeInFinish, setFadeInFinish] = useState(false);
@@ -26,6 +26,12 @@ export default function PageAboutMe(props: Props) {
   const rootPaddingTop = 48;
 
   const data = getAboutMeData();
+
+  // * this is to make navigating with back button work properly
+  useEffect(() => {
+    setNewTabSelected(getActiveTab(router));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     setTimeout(() => {

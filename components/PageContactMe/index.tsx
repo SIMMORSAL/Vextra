@@ -14,12 +14,17 @@ interface Props {}
 export default function PageContactMe(props: Props) {
   const router = useRouter();
 
-  const { newTabSelected } = useContext(_AppContext);
-  const [fadeOut, setFadeOut] = useState(false);
+  const { newTabSelected, setNewTabSelected } = useContext(_AppContext);
 
+  const [fadeOut, setFadeOut] = useState(false);
   const [fadeIn, setFadeIn] = useState(false);
 
   const contacts = getContacts();
+
+  useEffect(() => {
+    setNewTabSelected(getActiveTab(router));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     setTimeout(() => {

@@ -16,11 +16,18 @@ let awardCounts = 0;
 export default function PagePortfolio(props: Props) {
   const router = useRouter();
 
-  const { newTabSelected } = useContext(_AppContext);
+  const { newTabSelected, setNewTabSelected } = useContext(_AppContext);
   const [fadeOut, setFadeOut] = useState(false);
   const [selectedItem, setSelectedItem] = useState<Portfolio | undefined>();
 
   const portfolioItems = getPortfolios();
+  console.log(`11111  PagePortfolio:  ${fadeOut}`);
+  // console.log(`11111  PagePortfolio:  ${newTabSelected}  ${getActiveTab(router)}`);
+
+  useEffect(() => {
+    setNewTabSelected("portfolio");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     if (newTabSelected !== getActiveTab(router)) setFadeOut(true);
