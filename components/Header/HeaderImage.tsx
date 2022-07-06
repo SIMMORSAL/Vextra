@@ -1,7 +1,10 @@
-import React, { useContext } from "react";
+/* eslint-disable @next/next/no-img-element */
+import React, { useContext, useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import Image from "next/image";
 import { _AppContext } from "../../helpers/providers/provider_App";
+import { cacheImage } from "../../tools/tools";
+import { getGeneralData } from "../../data/local/_dataGeneral";
 
 interface Props {
   justLoaded: boolean;
@@ -12,10 +15,23 @@ interface Props {
 export default function HeaderImage(p: Props) {
   const { shouldMoveToMain, setMoveToMain, setFadeOutContent, setFlashContent } =
     useContext(_AppContext);
+  const [imageCached, setImageCached] = useState(false);
+
+  const generalData = getGeneralData();
+
+  useEffect(() => {
+    cacheImage(generalData.logo).then(() => {
+      console.log(`11111  LOGO:  ${"LOGO CACHED"}`);
+      setImageCached(true);
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  console.log(`11111  HeaderImage:  ${p.justLoaded && !imageCached}`);
   return (
     <div
       css={css`
-        opacity: ${p.justLoaded ? 0 : 1};
+        opacity: ${p.justLoaded ? 0 : !imageCached ? 0 : 1};
 
         transition: 900ms ease;
         transition-property: opacity;
@@ -39,16 +55,16 @@ export default function HeaderImage(p: Props) {
           }
         `}
       >
-        <Image
-          src={require("../../public/images/logo_big.png")}
-          alt={""}
-          layout={"intrinsic"}
+        <img
+          src={generalData.logo}
+          alt={"logo"}
           onClick={() => {
             p.setSelectedPage(undefined);
             setMoveToMain(true);
           }}
           css={css`
             cursor: pointer;
+            width: 100%;
 
             transition: 200ms ease;
 
