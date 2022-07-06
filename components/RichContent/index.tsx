@@ -9,7 +9,12 @@ interface Props {
 
 export default function RichContent(p: Props) {
   return (
-    <div>
+    <div
+      css={css`
+        width: 100%;
+        height: 100%;
+      `}
+    >
       {p.data.map((textChunk) => {
         return <RichChunk key={textChunk.name} chunk={textChunk} />;
       })}

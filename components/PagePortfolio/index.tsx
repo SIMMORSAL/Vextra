@@ -21,7 +21,6 @@ export default function PagePortfolio(props: Props) {
   const [selectedItem, setSelectedItem] = useState<Portfolio | undefined>();
 
   const portfolioItems = getPortfolios();
-  console.log(`11111  PagePortfolio:  ${fadeOut}`);
   // console.log(`11111  PagePortfolio:  ${newTabSelected}  ${getActiveTab(router)}`);
 
   useEffect(() => {

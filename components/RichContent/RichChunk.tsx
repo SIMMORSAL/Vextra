@@ -9,11 +9,6 @@ interface Props {
 }
 
 export default function RichChunk(props: Props) {
-  console.log(
-    `11111  ChunkShortMediaBar:  ${props.chunk.name}   ${JSON.stringify(
-      props.chunk.textImageBar
-    )}`
-  );
   return (
     <div
       css={css`
@@ -40,7 +35,6 @@ export default function RichChunk(props: Props) {
           css={css`
             width: 100%;
             height: 100%;
-            min-height: 500px;
             max-width: 900px;
             margin: 0 auto;
           `}
