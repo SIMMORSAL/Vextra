@@ -1,4 +1,4 @@
-import { ContactGroup } from "../models/contactGroup";
+import { ContactGroup } from "../models/local-data/contactGroup";
 
 export function getContacts(): ContactGroup[] {
   return [

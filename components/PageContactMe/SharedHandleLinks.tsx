@@ -14,7 +14,7 @@ import {
 } from "../../res/colors";
 import Image from "next/image";
 import { shuffleArray } from "../../tools/tools";
-import { ContactGroup } from "../../data/models/contactGroup";
+import { ContactGroup } from "../../data/models/local-data/contactGroup";
 
 interface Props {
   begin: boolean;

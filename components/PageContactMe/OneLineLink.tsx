@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import EmailIcon from "@mui/icons-material/Email";
-import { ContactGroup } from "../../data/models/contactGroup";
+import { ContactGroup } from "../../data/models/local-data/contactGroup";
 
 interface Props {
   contact: ContactGroup;

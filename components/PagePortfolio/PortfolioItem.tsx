@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useContext, useEffect, useState } from "react";
 import { css } from "@emotion/react";
-import { Portfolio } from "../../data/models/portfolio";
+import { Portfolio } from "../../data/models/local-data/portfolio";
 import Image from "next/image";
 import { _AppContext } from "../../helpers/providers/provider_App";
 import { useRouter } from "next/router";

@@ -1,4 +1,4 @@
-import { Portfolio } from "../models/portfolio";
+import { Portfolio } from "../models/local-data/portfolio";
 
 export function getPortfolios(): Portfolio[] {
   return [

@@ -1,5 +1,5 @@
-import { History } from "../models/history";
-import { AboutMeData } from "../models/aboutMeData";
+import { History } from "../models/local-data/history";
+import { AboutMeData } from "../models/local-data/aboutMeData";
 
 export function getAboutMeData(): AboutMeData {
   return {

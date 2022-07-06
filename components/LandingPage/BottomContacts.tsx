@@ -17,7 +17,7 @@ import {
 import Image from "next/image";
 import { shuffleArray } from "../../tools/tools";
 import { getContacts } from "../../data/local/dataContact";
-import { Links } from "../../data/models/contactGroup";
+import { Links } from "../../data/models/local-data/contactGroup";
 
 interface Props {
   begin: boolean;

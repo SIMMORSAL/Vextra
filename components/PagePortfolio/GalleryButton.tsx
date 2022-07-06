@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { css } from "@emotion/react";
-import { Portfolio } from "../../data/models/portfolio";
+import { Portfolio } from "../../data/models/local-data/portfolio";
 import Image from "next/image";
 import {
   backgroundWhite,

@@ -7,7 +7,7 @@ import PortfolioItem from "./PortfolioItem";
 import { useRouter } from "next/router";
 import { _AppContext } from "../../helpers/providers/provider_App";
 import { getActiveTab } from "../../tools/tools";
-import { Portfolio } from "../../data/models/portfolio";
+import { Portfolio } from "../../data/models/local-data/portfolio";
 
 interface Props {}
 

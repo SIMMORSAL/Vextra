@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "@emotion/react";
 import { getHistory } from "../../data/local/dataAboutMe";
-import { History } from "../../data/models/history";
+import { History } from "../../data/models/local-data/history";
 import ReactMarkdown from "react-markdown";
 
 interface Props {}
