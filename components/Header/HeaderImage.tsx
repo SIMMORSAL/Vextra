@@ -21,13 +21,11 @@ export default function HeaderImage(p: Props) {
 
   useEffect(() => {
     cacheImage(generalData.logo).then(() => {
-      console.log(`11111  LOGO:  ${"LOGO CACHED"}`);
       setImageCached(true);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log(`11111  HeaderImage:  ${p.justLoaded && !imageCached}`);
   return (
     <div
       css={css`
