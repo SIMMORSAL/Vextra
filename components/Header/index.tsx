@@ -24,6 +24,16 @@ export default function Header(props: Props) {
   const isXs = windowWidth.width < 600;
 
   const [shouldBlur, setShouldBlur] = useState(false);
+  const [justLoaded, setJustLoaded] = useState(true);
+
+  useEffect(() => {
+    setJustLoaded(false);
+    if (document.documentElement.scrollTop > 24) {
+      setShouldBlur(true);
+    } else {
+      setShouldBlur(false);
+    }
+  }, []);
 
   const listenToScroll = () => {
     // const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -60,7 +70,6 @@ export default function Header(props: Props) {
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        //background-color: red;
         background-color: ${shouldBlur ? "#ffffffcc" : "transparent"};
         padding-bottom: ${shouldBlur ? 20 : 0}px;
         backdrop-filter: blur(${shouldBlur ? 3 : 0}px);
@@ -79,6 +88,7 @@ export default function Header(props: Props) {
       ) : (
         <HeaderButton
           page={"home"}
+          justLoaded={justLoaded}
           selectedPage={props.selectedPage}
           setSelectedPage={() => props.setSelectedPage(undefined)}
           homeClicked={() => setMoveToMain(true)}
@@ -94,6 +104,7 @@ export default function Header(props: Props) {
             ? "contact-me"
             : "about-me"
         }
+        justLoaded={justLoaded}
         selectedPage={props.selectedPage}
         setSelectedPage={props.setSelectedPage}
       >
@@ -107,6 +118,7 @@ export default function Header(props: Props) {
 
       <HeaderButton
         page={"portfolio"}
+        justLoaded={justLoaded}
         selectedPage={props.selectedPage}
         setSelectedPage={props.setSelectedPage}
       >
@@ -117,6 +129,7 @@ export default function Header(props: Props) {
       ) : (
         <HeaderButton
           page={"contact-me"}
+          justLoaded={justLoaded}
           selectedPage={props.selectedPage}
           setSelectedPage={props.setSelectedPage}
         >
