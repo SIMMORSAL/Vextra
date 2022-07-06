@@ -112,6 +112,7 @@ export default function Header(props: Props) {
       </HeaderButton>
 
       <HeaderImage
+        justLoaded={justLoaded}
         selectedPage={props.selectedPage}
         setSelectedPage={props.setSelectedPage}
       />
