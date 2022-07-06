@@ -19,6 +19,7 @@ export default function HeaderImage(p: Props) {
 
         transition: 900ms ease;
         transition-property: opacity;
+        transition-delay: 100ms;
       `}
     >
       <div

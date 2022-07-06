@@ -5,6 +5,7 @@ import { Portfolio } from "../../data/models/portfolio";
 import Image from "next/image";
 import { _AppContext } from "../../helpers/providers/provider_App";
 import { useRouter } from "next/router";
+import { cacheAndGetImage, cacheImage } from "../../tools/tools";
 
 interface Props {
   portfolio: Portfolio;
@@ -22,6 +23,30 @@ export default function PortfolioItem(p: Props) {
   const [isHovering, setIsHovering] = useState(false);
   // const [itemClicked, setItemClicked] = useState(false);
 
+  // const initialShowDelay = 200;
+
+  // const imgPortfolioItem = cacheImage();
+
+  // * Begin animation
+  useEffect(() => {
+    // const imgMain =
+    cacheImage(p.portfolio.image).then(() => {
+      setBeginFadeIn(true);
+      if (p.portfolio.award) {
+        setTimeout(() => {
+          setFadeInAward(true);
+          setTimeout(() => {
+            setMakeAwardSmall(true);
+          }, 1500);
+        }, 2000 * p.awardDelayMultiplier);
+      }
+    });
+    return () => {
+      // imgMain. * cancel promise
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const onClicked = () => {
     p.setSelectedItem(p.portfolio);
     setTimeout(() => {
@@ -29,18 +54,8 @@ export default function PortfolioItem(p: Props) {
     }, 200);
   };
 
-  // * Begin animation
-  setTimeout(() => {
-    setBeginFadeIn(true);
-    if (p.portfolio.award) {
-      setTimeout(() => {
-        setFadeInAward(true);
-        setTimeout(() => {
-          setMakeAwardSmall(true);
-        }, 1500);
-      }, 2000 * p.awardDelayMultiplier);
-    }
-  }, 50);
+  // setTimeout(() => {
+  // }, 50);
 
   // * if your awards are not in the shape of square, you may need to
   // * uncomment below code and make changes to the values

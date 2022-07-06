@@ -13,7 +13,7 @@ export default function OneLineLink(props: Props) {
   useEffect(() => {
     setTimeout(() => {
       setBeginAnimation(true);
-    }, 50);
+    }, 350);
   }, []);
 
   const _target =

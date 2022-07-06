@@ -35,7 +35,7 @@ export default function SharedHandleLinks(p: Props) {
         setTimeout(() => {
           setHasAnimationFinished(true);
         }, 700); // 700 is the number of items plus 200 to finish last animation
-      }, 50);
+      }, 450);
   }, [p.begin]);
 
   useEffect(() => {}, [isHovering]);
