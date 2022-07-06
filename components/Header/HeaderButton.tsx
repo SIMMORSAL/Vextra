@@ -51,7 +51,7 @@ export default function HeaderButton(p: Props) {
         cursor: pointer;
         opacity: ${p.justLoaded ? 0 : 1};
         transition: opacity 1000ms ease;
-        transition-delay: 1500ms;
+        transition-delay: 500ms;
       `}
     >
       <p
