@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "@emotion/react";
-import { RichTextModel } from "../../data/models/RichTextModel";
+import { RichTextModel } from "../../data/models/rich-content/RichTextModel";
 
 interface Props {
   texts: RichTextModel[];

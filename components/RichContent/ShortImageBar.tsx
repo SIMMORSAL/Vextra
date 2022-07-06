@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "@emotion/react";
-import { WebinyRichText } from "../../data/models/RichTextModel";
+import { WebinyRichText } from "../../data/models/rich-content/RichTextModel";
 import { Grid } from "@mui/material";
 import Image from "next/image";
 import RichText from "../Webiny/RichTextModel";

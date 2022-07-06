@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "@emotion/react";
-import { RichChunkModel } from "../../data/models/RichChunkModel";
+import { RichChunkModel } from "../../data/models/rich-content/RichChunkModel";
 import RichText from "./RichText";
 import ShortImageBar from "./ShortImageBar";
 
