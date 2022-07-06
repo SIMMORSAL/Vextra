@@ -1,13 +1,13 @@
 import React from "react";
 import { css } from "@emotion/react";
-import { WebinyRichText } from "../../data/models/rich-content/RichTextModel";
 import { Grid } from "@mui/material";
 import Image from "next/image";
-import RichText from "../Webiny/RichTextModel";
+import { RichTextModel } from "../../data/models/rich-content/RichChunkModel";
+import RichText from "./RichText";
 
 interface Props {
   smallImageLeft?: string;
-  shortText?: WebinyRichText[];
+  shortText?: RichTextModel[];
   smallImageRight?: string;
 }
 
@@ -29,8 +29,8 @@ export default function ShortImageBar(props: Props) {
             `}
           >
             {/*<Image*/}
-            {/*  // loader={() => props.smallImageLeft!}*/}
-            {/*  src={props.smallImageLeft}*/}
+            {/*  // loader={() => props.imageBarLeft!}*/}
+            {/*  src={props.imageBarLeft}*/}
             {/*  alt={""}*/}
             {/*  layout={"fill"}*/}
             {/*/>*/}
@@ -73,8 +73,8 @@ export default function ShortImageBar(props: Props) {
             `}
           >
             {/*<Image*/}
-            {/*  // loader={() => props.smallImageRight!}*/}
-            {/*  src={props.smallImageRight}*/}
+            {/*  // loader={() => props.imageBarRight!}*/}
+            {/*  src={props.imageBarRight}*/}
             {/*  alt={""}*/}
             {/*  layout={"fill"}*/}
             {/*  width={"100%"}*/}

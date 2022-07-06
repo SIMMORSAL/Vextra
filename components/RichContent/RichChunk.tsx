@@ -11,7 +11,7 @@ interface Props {
 export default function RichChunk(props: Props) {
   console.log(
     `11111  ChunkShortMediaBar:  ${props.chunk.name}   ${JSON.stringify(
-      props.chunk.shortText
+      props.chunk.textImageBar
     )}`
   );
   return (
@@ -67,9 +67,9 @@ export default function RichChunk(props: Props) {
           <RichText texts={props.chunk.longTextMiddle} />
         </div>
       )}
-      {(props.chunk.smallImageLeft ||
-        props.chunk.shortText ||
-        props.chunk.smallImageRight) && (
+      {(props.chunk.imageBarLeft ||
+        props.chunk.textImageBar ||
+        props.chunk.imageBarRight) && (
         <div
           css={css`
             max-width: 900px;
@@ -78,9 +78,9 @@ export default function RichChunk(props: Props) {
           `}
         >
           <ShortImageBar
-            smallImageLeft={props.chunk.smallImageLeft}
-            shortText={props.chunk.shortText}
-            smallImageRight={props.chunk.smallImageRight}
+            smallImageLeft={props.chunk.imageBarLeft}
+            shortText={props.chunk.textImageBar}
+            smallImageRight={props.chunk.imageBarRight}
           />
         </div>
       )}
