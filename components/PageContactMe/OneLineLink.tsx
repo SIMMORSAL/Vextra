@@ -50,77 +50,30 @@ export default function OneLineLink(props: Props) {
             flex-direction: row-reverse;
           `}
         >
-          <div>
-            <a
-              target={_target}
-              href={props.contact.links[0].href}
-              rel={"noreferrer"}
-            >
-              <i
-                className={props.contact.links[0].icon}
-                css={css`
-                  width: 30px;
-                  //height: 30px;
-                  cursor: pointer;
-                  opacity: ${beginAnimation ? 1 : 0};
-                  margin: 16px 0;
-                  padding: 0;
-                  //background-color: red;
-                  //background-color: red;
-                  transform: translateX(${beginAnimation ? 0 : "-50%"});
-                  text-align: center;
-                  font-size: 150%;
+          <a target={_target} href={props.contact.links[0].href} rel={"noreferrer"}>
+            <i
+              className={props.contact.links[0].icon}
+              css={css`
+                width: 30px;
+                cursor: pointer;
+                opacity: ${beginAnimation ? 1 : 0};
+                margin: 16px 0;
+                padding: 0;
+                transform: translateX(${beginAnimation ? 0 : "-50%"});
+                text-align: center;
+                font-size: 150%;
 
-                  transition: 140ms ease;
-                  transition-property: width, height, margin-top, opacity, transform,
-                    font-size, color;
+                transition: 140ms ease;
+                transition-property: width, transform, opacity;
 
-                  :hover {
-                    transform: scale(1.3);
-                    width: 42px;
-                  }
-                `}
-              />
-            </a>
-          </div>
+                :hover {
+                  transform: scale(1.3) translateX(0.1em);
+                  width: 42px;
+                }
+              `}
+            />
+          </a>
         </div>
-        {/*<a*/}
-        {/*  href={props.contact.links[0].href}*/}
-        {/*  target={_target}*/}
-        {/*  css={css`*/}
-        {/*    display: flex;*/}
-        {/*    justify-content: center;*/}
-        {/*    align-items: center;*/}
-        {/*    width: fit-content;*/}
-
-        {/*    transition: 140ms ease;*/}
-        {/*    transition-property: width, height, margin-right, opacity, transform;*/}
-        {/*  `}*/}
-        {/*  rel="noreferrer"*/}
-        {/*>*/}
-        {/*  <i*/}
-        {/*    className={props.contact.links[0].icon}*/}
-        {/*    css={css`*/}
-        {/*      width: 24px;*/}
-        {/*      cursor: pointer;*/}
-        {/*      opacity: ${beginAnimation ? 1 : 0};*/}
-        {/*      margin-right: ${beginAnimation ? 0 : 16}px;*/}
-        {/*      text-align: right;*/}
-        {/*      font-size: 24px;*/}
-        {/*      transform: scale(1.1);*/}
-
-        {/*      transition: 140ms ease;*/}
-        {/*      transition-property: width, height, margin-right, opacity, transform,*/}
-        {/*        font-size;*/}
-
-        {/*      :hover {*/}
-        {/*        width: 30px;*/}
-        {/*        font-size: 30px;*/}
-        {/*        //transform: scale(1.47);*/}
-        {/*      }*/}
-        {/*    `}*/}
-        {/*  />*/}
-        {/*</a>*/}
       </div>
       <div
         css={css`
