@@ -27,7 +27,7 @@ export default function RichChunk(props: Props) {
       {props.chunk.longTextTop && props.chunk.longTextTop.length > 0 && (
         <div
           css={css`
-            padding: 32px 16px;
+            padding: 24px 16px;
             max-width: 900px;
             margin: 0 auto;
           `}
