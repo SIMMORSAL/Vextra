@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "@emotion/react";
-import { RichTextModel } from "../../data/models/rich-content/RichTextModel";
 import ReactMarkdown from "react-markdown";
+import { RichTextModel } from "../../data/models/rich-content/RichChunkModel";
 
 interface Props {
   texts: RichTextModel[];
