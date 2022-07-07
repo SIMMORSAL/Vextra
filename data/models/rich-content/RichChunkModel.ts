@@ -3,11 +3,11 @@ export interface RichChunkModel {
   backgroundColor?: string;
   textColor?: string;
   longTextTop?: RichTextModel[];
-  bigImage?: string;
+  bigImage?: RichImageModel;
   videoClip?: string;
-  imageBarLeft?: string;
+  imageBarLeft?: RichImageModel;
   textImageBar?: RichTextModel[];
-  imageBarRight?: string;
+  imageBarRight?: RichImageModel;
   longTextMiddle?: RichTextModel[];
   longTextEnd?: RichTextModel[];
   button1Title?: string;
@@ -18,5 +18,10 @@ export interface RichChunkModel {
 
 export interface RichTextModel {
   text: string;
-  textAlign: string;
+  textAlign?: string;
+}
+
+export interface RichImageModel {
+  path: string;
+  subText?: string;
 }

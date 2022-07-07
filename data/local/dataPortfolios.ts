@@ -1,4 +1,5 @@
 import { Portfolio } from "../models/local-data/portfolio";
+import { RichChunkModel } from "../models/rich-content/RichChunkModel";
 
 export function getPortfolios(): Portfolio[] {
   return [

@@ -18,7 +18,14 @@ export default function ShortImageBar(props: Props) {
   props.smallImageRight && available++;
 
   return (
-    <Grid container>
+    <Grid
+      container
+      css={css`
+        max-width: 900px;
+        //padding: 32px 16px;
+        margin: 0 auto;
+      `}
+    >
       {props.smallImageLeft && (
         <Grid item xs={12} sm={12 / available}>
           <div

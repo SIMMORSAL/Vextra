@@ -3,11 +3,14 @@ import { _AppContext } from "../../helpers/providers/provider_App";
 import { useRouter } from "next/router";
 import { css } from "@emotion/react";
 import { headerHeight } from "../Header";
+import { getActiveTab, getSubTab } from "../../tools/tools";
 
 export function Content({ Component, pageProps, routeChops }) {
   const { fadeOutContent, setFadeOutContent, flashContent, setFlashContent } =
     useContext(_AppContext);
   const router = useRouter();
+
+  const tabRootIsShowing = getSubTab(router) === undefined;
 
   // const shouldFadeIn = routeChops.length === 1;
   const shouldFadeIn =
@@ -38,7 +41,11 @@ export function Content({ Component, pageProps, routeChops }) {
         width: 100%;
         height: calc(100% - ${headerHeight}px);
         transform: scale(${flashContent ? 0.95 : 1});
-        border: ${flashContent ? "1px solid #484848" : "1px solid transparent"};
+        border: ${tabRootIsShowing
+          ? flashContent
+            ? "1px solid #484848"
+            : "1px solid transparent"
+          : ""};
 
         transition: 200ms ease;
         transition-property: opacity, transform, border-bottom-color,

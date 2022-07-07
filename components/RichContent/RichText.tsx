@@ -12,6 +12,9 @@ export default function RichText(props: Props) {
     <div
       css={css`
         width: 100%;
+        padding: 32px 16px;
+        max-width: 900px;
+        margin: 0 auto;
         display: flex;
         flex-direction: column;
         //background-color: red;
