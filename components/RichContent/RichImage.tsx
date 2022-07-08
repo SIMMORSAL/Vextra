@@ -38,7 +38,7 @@ export default function RichImage(p: Props) {
     if (p.image.animateOnScroll) {
       const scroll = document.documentElement.scrollTop;
       const imagePosition = (refImageRoot.current as HTMLDivElement).offsetTop;
-      if (scroll + window.innerHeight * 0.4 < imagePosition) setScrollReached(false);
+      if (scroll + window.innerHeight * 0.8 < imagePosition) setScrollReached(false);
       else setScrollReached(true);
     }
 
