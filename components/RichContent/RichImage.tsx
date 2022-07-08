@@ -80,7 +80,7 @@ export default function RichImage(p: Props) {
           object-fit: cover;
           opacity: ${shouldAnimateIn ? 1 : 0};
 
-          transition: opacity 200ms ease;
+          transition: opacity 500ms ease;
         `}
       />
       {!imageCached && p.image.aspectRatio ? (
