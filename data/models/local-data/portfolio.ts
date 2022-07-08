@@ -1,3 +1,5 @@
+import { RichChunkModel } from "../RichChunkModel";
+
 export interface Portfolio {
   linkId: string;
   name: string;
@@ -6,4 +8,5 @@ export interface Portfolio {
   backgroundColor: string;
   isBackgroundDark: boolean;
   award?: string;
+  pageContent: RichChunkModel[];
 }

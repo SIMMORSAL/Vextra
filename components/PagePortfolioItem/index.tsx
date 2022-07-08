@@ -4,11 +4,22 @@ import RichContent from "../RichContent";
 import { RichChunkModel } from "../../data/models/RichChunkModel";
 import { headerHeight } from "../Header";
 import { getDataProject1 } from "../../data/local/portfolio/getDataProject1";
+import { useRouter } from "next/router";
+import { getSubTab } from "../../tools/tools";
+import { Portfolio } from "../../data/models/local-data/portfolio";
+import { getPortfolio } from "../../data/local/dataPortfoliosPage";
 
 interface Props {}
 
 export default function PagePortfolioItem(p: Props) {
-  const data: RichChunkModel[] = getDataProject1();
+  const router = useRouter();
+
+  const linkId = router.query.PortfolioID as string;
+  const dataPortfolio: Portfolio = getPortfolio(linkId);
+
+  console.log(
+    `11111  PagePortfolioItem:  ${linkId} \n\n ${JSON.stringify(linkId)} \n\n`
+  );
 
   return (
     <div
@@ -22,7 +33,7 @@ export default function PagePortfolioItem(p: Props) {
         padding-top: ${headerHeight}px;
       `}
     >
-      <RichContent data={data} />
+      {dataPortfolio && <RichContent data={dataPortfolio.pageContent} />}
     </div>
   );
 }

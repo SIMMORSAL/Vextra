@@ -1,8 +1,8 @@
-import { getPortfolios } from "../data/local/dataPortfoliosPage";
+import { getAllPortfolios } from "../data/local/dataPortfoliosPage";
 import { cacheImage } from "../tools/tools";
 
 export const cacheImages = () => {
-  getPortfolios().map((v) => {
+  getAllPortfolios().map((v) => {
     v.image &&
       cacheImage(v.image)
         .then((value) => {
