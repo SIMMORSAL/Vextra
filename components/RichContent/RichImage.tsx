@@ -26,7 +26,7 @@ export default function RichImage(p: Props) {
     //     scroll + window.innerHeight * 0.4 < imagePosition
     //   }`
     // );
-    if (scroll + window.innerHeight * 0.4 < imagePosition) setScrollReached(false);
+    if (scroll + window.innerHeight * 0.6 < imagePosition) setScrollReached(false);
     else setScrollReached(true);
   };
 
@@ -38,7 +38,7 @@ export default function RichImage(p: Props) {
     if (p.image.animateOnScroll) {
       const scroll = document.documentElement.scrollTop;
       const imagePosition = (refImageRoot.current as HTMLDivElement).offsetTop;
-      if (scroll + window.innerHeight * 0.8 < imagePosition) setScrollReached(false);
+      if (scroll + window.innerHeight * 0.6 < imagePosition) setScrollReached(false);
       else setScrollReached(true);
     }
 
@@ -54,7 +54,6 @@ export default function RichImage(p: Props) {
 
   useEffect(() => {
     setShouldAnimateIn(imageCached && scrollReached);
-    console.log(`11111  RUNS:  ${imageCached}  ${scrollReached}`);
   }, [imageCached, scrollReached]);
 
   return (
