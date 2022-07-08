@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { _AppContext } from "../../helpers/providers/provider_App";
 import { getActiveTab } from "../../tools/tools";
 import Achievements from "./Achievements";
-import { getAboutMeData } from "../../data/local/dataAboutMe";
+import { getAboutMeData } from "../../data/local/dataAboutMePage";
 import ReactMarkdown from "react-markdown";
 
 interface Props {}

@@ -1,4 +1,4 @@
-import { getPortfolios } from "../data/local/dataPortfolios";
+import { getPortfolios } from "../data/local/dataPortfoliosPage";
 import { cacheImage } from "../tools/tools";
 
 export const cacheImages = () => {

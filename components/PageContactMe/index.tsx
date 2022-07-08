@@ -7,7 +7,7 @@ import OneLineLink from "./OneLineLink";
 import { _AppContext } from "../../helpers/providers/provider_App";
 import { useRouter } from "next/router";
 import { getActiveTab } from "../../tools/tools";
-import { getContacts } from "../../data/local/dataContact";
+import { getContacts } from "../../data/local/dataContactPage";
 
 interface Props {}
 

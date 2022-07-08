@@ -7,7 +7,7 @@ import HeaderButton from "./HeaderButton";
 import { useRouter } from "next/router";
 import { _AppContext } from "../../helpers/providers/provider_App";
 import useWindowSize from "../../tools/hooks/useWindowSize";
-import HeaderImage from "./HeaderImage";
+import HeaderLogo from "./HeaderLogo";
 
 interface Props {
   selectedPage: string; // undefined | about-me | portfolio
@@ -111,7 +111,7 @@ export default function Header(props: Props) {
         About me
       </HeaderButton>
 
-      <HeaderImage
+      <HeaderLogo
         justLoaded={justLoaded}
         selectedPage={props.selectedPage}
         setSelectedPage={props.setSelectedPage}

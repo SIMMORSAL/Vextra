@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { css } from "@emotion/react";
-import { RichImageModel } from "../../data/models/rich-content/RichChunkModel";
+import { RichImageModel } from "../../data/models/RichChunkModel";
+import { cacheImage } from "../../tools/tools";
 
 interface Props {
   textColor: string;
@@ -8,8 +9,57 @@ interface Props {
 }
 
 export default function RichImage(p: Props) {
+  const refImageRoot = useRef();
+
+  const [imageCached, setImageCached] = useState(false);
+  const [scrollReached, setScrollReached] = useState(false);
+  const [shouldAnimateIn, setShouldAnimateIn] = useState(false);
+
+  const listenToScroll = () => {
+    const scroll = document.documentElement.scrollTop;
+    const imagePosition = (refImageRoot.current as HTMLDivElement).offsetTop;
+    // console.log(
+    //   `11111  listenToScroll: ${p.image.path.slice(
+    //     0,
+    //     25
+    //   )}  ${scroll} ${imagePosition}  ${scrollReached}  ${window.innerHeight}  ${
+    //     scroll + window.innerHeight * 0.4 < imagePosition
+    //   }`
+    // );
+    if (scroll + window.innerHeight * 0.4 < imagePosition) setScrollReached(false);
+    else setScrollReached(true);
+  };
+
+  useEffect(() => {
+    cacheImage(p.image.path).then(() => {
+      setImageCached(true);
+    });
+
+    if (p.image.animateOnScroll) {
+      const scroll = document.documentElement.scrollTop;
+      const imagePosition = (refImageRoot.current as HTMLDivElement).offsetTop;
+      if (scroll + window.innerHeight * 0.4 < imagePosition) setScrollReached(false);
+      else setScrollReached(true);
+    }
+
+    if (p.image.animateOnScroll) window.addEventListener("scroll", listenToScroll);
+    else setScrollReached(true);
+    return () => {
+      if (p.image.animateOnScroll)
+        window.removeEventListener("scroll", listenToScroll);
+    };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    setShouldAnimateIn(imageCached && scrollReached);
+    console.log(`11111  RUNS:  ${imageCached}  ${scrollReached}`);
+  }, [imageCached, scrollReached]);
+
   return (
     <div
+      ref={refImageRoot}
       css={css`
         width: 100%;
         height: 100%;
@@ -28,8 +78,21 @@ export default function RichImage(p: Props) {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          opacity: ${shouldAnimateIn ? 1 : 0};
+
+          transition: opacity 200ms ease;
         `}
       />
+      {!imageCached && p.image.aspectRatio ? (
+        <div
+          css={css`
+            width: 100%;
+            aspect-ratio: ${p.image.aspectRatio};
+          `}
+        />
+      ) : (
+        <></>
+      )}
       <p
         css={css`
           color: ${p.textColor.length === 7 ? p.textColor + "bb" : p.textColor};

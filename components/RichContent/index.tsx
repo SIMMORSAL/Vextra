@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "@emotion/react";
 import RichChunk from "./RichChunk";
-import { RichChunkModel } from "../../data/models/rich-content/RichChunkModel";
+import { RichChunkModel } from "../../data/models/RichChunkModel";
 
 interface Props {
   data: RichChunkModel[];

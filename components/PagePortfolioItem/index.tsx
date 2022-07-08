@@ -1,14 +1,14 @@
 import React from "react";
 import { css } from "@emotion/react";
 import RichContent from "../RichContent";
-import { RichChunkModel } from "../../data/models/rich-content/RichChunkModel";
+import { RichChunkModel } from "../../data/models/RichChunkModel";
 import { headerHeight } from "../Header";
-import { getDataRichChunkProject1 } from "../../data/local/portfolio/getDataRichChunkProject1";
+import { getDataProject1 } from "../../data/local/portfolio/getDataProject1";
 
 interface Props {}
 
 export default function PagePortfolioItem(p: Props) {
-  const data: RichChunkModel[] = getDataRichChunkProject1();
+  const data: RichChunkModel[] = getDataProject1();
 
   return (
     <div

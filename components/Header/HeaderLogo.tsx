@@ -12,7 +12,7 @@ interface Props {
   setSelectedPage: (page?: string) => void;
 }
 
-export default function HeaderImage(p: Props) {
+export default function HeaderLogo(p: Props) {
   const { shouldMoveToMain, setMoveToMain, setFadeOutContent, setFlashContent } =
     useContext(_AppContext);
   const [imageCached, setImageCached] = useState(false);

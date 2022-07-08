@@ -16,7 +16,7 @@ import {
 } from "../../res/colors";
 import Image from "next/image";
 import { shuffleArray } from "../../tools/tools";
-import { getContacts } from "../../data/local/dataContact";
+import { getContacts } from "../../data/local/dataContactPage";
 import { Links } from "../../data/models/local-data/contactGroup";
 
 interface Props {

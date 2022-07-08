@@ -24,4 +24,6 @@ export interface RichTextModel {
 export interface RichImageModel {
   path: string;
   subText?: string;
+  aspectRatio?: string; // you can write your image's width and height
+  animateOnScroll?: boolean;
 }

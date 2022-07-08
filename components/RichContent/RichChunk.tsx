@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "@emotion/react";
-import { RichChunkModel } from "../../data/models/rich-content/RichChunkModel";
+import { RichChunkModel } from "../../data/models/RichChunkModel";
 import RichText from "./RichText";
 import ShortImageBar from "./ShortImageBar";
 import RichImage from "./RichImage";
@@ -32,23 +32,23 @@ export default function RichChunk(props: Props) {
       {props.chunk.longTextMiddle && props.chunk.longTextMiddle.length > 0 && (
         <RichText texts={props.chunk.longTextMiddle} />
       )}
-      {(props.chunk.imageBarLeft ||
-        props.chunk.textImageBar ||
-        props.chunk.imageBarRight) && (
-        // <div
-        //   css={css`
-        //     max-width: 900px;
-        //     //padding: 32px 16px;
-        //     margin: 0 auto;
-        //   `}
-        // >
-        <ShortImageBar
-          smallImageLeft={props.chunk.imageBarLeft}
-          shortText={props.chunk.textImageBar}
-          smallImageRight={props.chunk.imageBarRight}
-        />
-        // </div>
-      )}
+      {/*{(props.chunk.imageBarLeft ||*/}
+      {/*  props.chunk.textImageBar ||*/}
+      {/*  props.chunk.imageBarRight) && (*/}
+      {/*  // <div*/}
+      {/*  //   css={css`*/}
+      {/*  //     max-width: 900px;*/}
+      {/*  //     //padding: 32px 16px;*/}
+      {/*  //     margin: 0 auto;*/}
+      {/*  //   `}*/}
+      {/*  // >*/}
+      {/*  <ShortImageBar*/}
+      {/*    smallImageLeft={props.chunk.imageBarLeft}*/}
+      {/*    shortText={props.chunk.textImageBar}*/}
+      {/*    smallImageRight={props.chunk.imageBarRight}*/}
+      {/*  />*/}
+      {/*  // </div>*/}
+      {/*)}*/}
       {props.chunk.longTextEnd && props.chunk.longTextEnd.length > 0 && (
         <RichText texts={props.chunk.longTextEnd} />
       )}

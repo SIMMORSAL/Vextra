@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "@emotion/react";
-import { getHistory } from "../../data/local/dataAboutMe";
+import { getHistory } from "../../data/local/dataAboutMePage";
 import { History } from "../../data/models/local-data/history";
 import ReactMarkdown from "react-markdown";
 
