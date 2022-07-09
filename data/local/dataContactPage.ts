@@ -3,35 +3,35 @@ import { ContactGroup } from "../models/local-data/contactGroup";
 export function getContacts(): ContactGroup[] {
   return [
     {
-      socialHandle: "mhmitra.mh@gmail.com",
+      socialHandle: "hi@janesmith.com",
       links: [
         {
           icon: "fa-solid fa-envelope",
-          href: "mailto: mhmitra.mh@gmail.com",
+          href: "mailto: hi @janesmith.com",
           showInHome: true,
         },
       ],
     },
     {
-      socialHandle: "@mhmitramh",
+      socialHandle: "@jane-smith",
       links: [
         {
           icon: "fa-brands fa-pinterest",
-          href: "https://www.pinterest.com/mhmitramh",
+          href: "https://www.pinterest.com/",
         },
         {
           icon: "fa-brands fa-behance-square",
-          href: "https://www.behance.com/mhmitramh",
+          href: "https://www.behance.com/",
           showInHome: true,
         },
         {
           icon: "fa-brands fa-linkedin",
-          href: "https://www.linkedin.com/in/mhmitramh",
+          href: "https://www.linkedin.com/",
           showInHome: true,
         },
         {
           icon: "fa-brands fa-instagram",
-          href: "https://www.instagram.com/mhmitramh",
+          href: "https://www.instagram.com/",
         },
       ],
     },
@@ -44,23 +44,23 @@ export function getContacts(): ContactGroup[] {
         },
         {
           icon: "fa-brands fa-twitch",
-          href: "https://www.pinterest.com/mhmitramh",
+          href: "https://www.pinterest.com/",
         },
         {
           icon: "fa-brands fa-snapchat",
-          href: "https://www.pinterest.com/mhmitramh",
+          href: "https://www.pinterest.com/",
         },
         {
           icon: "fa-brands fa-facebook-messenger",
-          href: "https://www.pinterest.com/mhmitramh",
+          href: "https://www.pinterest.com/",
         },
         {
           icon: "fa-brands fa-telegram",
-          href: "https://www.behance.com/mhmitramh",
+          href: "https://www.behance.com/",
         },
         {
           icon: "fa-brands fa-whatsapp",
-          href: "https://www.linkedin.com/in/mhmitramh",
+          href: "https://www.linkedin.com/",
           showInHome: true,
         },
       ],
