@@ -115,17 +115,23 @@ export default function PageAboutMe(props: Props) {
           padding: ${headerHeight}px 24px 24px;
         `}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          alt={"avatar"}
-          src={data.image}
+        <div
           css={css`
-            width: 100%;
-            max-width: 450px;
-            margin: 0 0 24px;
             padding: 0 32px 0;
           `}
-        />
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            alt={"avatar"}
+            src={data.image}
+            css={css`
+              width: 100%;
+              aspect-ratio: 1/1;
+              max-width: 450px;
+              margin: 0 0 24px;
+            `}
+          />
+        </div>
         <p
           css={css`
             font-size: 2em;

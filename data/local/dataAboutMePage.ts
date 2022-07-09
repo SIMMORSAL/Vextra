@@ -4,7 +4,8 @@ import { AboutMeData } from "../models/local-data/aboutMeData";
 export function getAboutMeData(): AboutMeData {
   return {
     image:
-      "https://avatarairlines.com/wp-content/uploads/2020/05/Female-Placeholder.png",
+      // "https://avatarairlines.com/wp-content/uploads/2020/05/Female-Placeholder.png",
+      "/images/my_image.jpg",
     name: "Jane Smith",
     textTop: `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at
