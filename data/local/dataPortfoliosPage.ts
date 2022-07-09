@@ -15,7 +15,7 @@ export function getAllPortfolios(): Portfolio[] {
       name: "One More Faucet",
       color: "#0066ff",
       backgroundColor: "#011736",
-      isBackgroundDark: false,
+      isBackgroundDark: true,
       image: "/images/portfolio/PortfolioItemTemplate1.jpg",
       // image:
       //   "https://th.bing.com/th/id/R.58cc46069f9c1bfec000c83e79721d31?rik=V6%2bwTqIO36Y40g&riu=http%3a%2f%2fwallup.net%2fwp-content%2fuploads%2f2016%2f05%2f24%2f374644-path-landscape-trees.jpg&ehk=4r8HqHCVUOTPA4f19szEL4vOhfNMFE4FPAQUSSsOg%2bA%3d&risl=&pid=ImgRaw&r=0",
@@ -28,7 +28,7 @@ export function getAllPortfolios(): Portfolio[] {
       color: "#ff00ff",
       backgroundColor: "#3a053a",
       isBackgroundDark: false,
-      image: "/images/portfolio/umbrella_2.png",
+      image: "/images/portfolio/PortfolioItemTemplate2.jpg",
       pageContent: getDataProject2(),
     },
     {
@@ -36,8 +36,8 @@ export function getAllPortfolios(): Portfolio[] {
       name: "umbrella",
       color: "#ff0000",
       backgroundColor: "#3f0101",
-      isBackgroundDark: true,
-      image: "/images/portfolio/umbrella.png",
+      isBackgroundDark: false,
+      image: "/images/portfolio/PortfolioItemTemplate3.jpg",
       award: "/images/portfolio/GDPJ_logo.png",
       pageContent: getDataProject3(),
     },
