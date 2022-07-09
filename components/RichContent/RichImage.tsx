@@ -69,21 +69,21 @@ export default function RichImage(p: Props) {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          aspect-ratio: ${p.image.aspectRatio};
           opacity: ${shouldAnimateIn ? 1 : 0};
 
           transition: opacity 350ms ease;
         `}
       />
-      {!imageCached && p.image.aspectRatio ? (
-        <div
-          css={css`
-            width: 100%;
-            aspect-ratio: ${p.image.aspectRatio};
-          `}
-        />
-      ) : (
-        <></>
-      )}
+      {/*{!imageCached && p.image.aspectRatio ? (*/}
+      {/*  <div*/}
+      {/*    css={css`*/}
+      {/*      width: 100%;*/}
+      {/*    `}*/}
+      {/*  />*/}
+      {/*) : (*/}
+      {/*  <></>*/}
+      {/*)}*/}
       <p
         css={css`
           color: ${p.textColor.length === 7 ? p.textColor + "bb" : p.textColor};
