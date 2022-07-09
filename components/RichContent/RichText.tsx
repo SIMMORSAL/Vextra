@@ -2,6 +2,7 @@ import React from "react";
 import { css } from "@emotion/react";
 import ReactMarkdown from "react-markdown";
 import { RichTextModel } from "../../data/models/RichChunkModel";
+import MarkDown from "./Markdown";
 
 interface Props {
   texts: RichTextModel[];
@@ -22,12 +23,9 @@ export default function RichText(props: Props) {
       {props.texts.map((text, index) => {
         const style = css`
           text-align: ${text.textAlign};
+          target: "_blank";
         `;
-        return (
-          <ReactMarkdown key={index} css={style}>
-            {text.text}
-          </ReactMarkdown>
-        );
+        return <MarkDown key={index} text={text.text} />;
       })}
     </div>
   );

@@ -30,6 +30,8 @@ export function getDataProject1(): RichChunkModel[] {
           text: `
 This is a full blown test on the text functionality of Rich Chunk. Lorem ipsum dolar sit amet sad fasd fasd fasdf 
 asdf asd fasd ffasd fsad fasd ffsad fasd fsd fsd sad f
+
+[example.com](https://example.com)
 `,
         },
         {

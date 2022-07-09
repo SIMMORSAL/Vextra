@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 import { getHistory } from "../../data/local/dataAboutMePage";
 import { History } from "../../data/models/local-data/history";
 import ReactMarkdown from "react-markdown";
+import MarkDown from "../RichContent/Markdown";
 
 interface Props {}
 
@@ -87,16 +88,15 @@ function Ach({ ach }: { ach: History }) {
                 </span>
               </p>
             </div>
-            <ReactMarkdown
-              css={css`
+            <MarkDown
+              text={value.description}
+              style={css`
                 padding: 0 12px;
                 font-size: 0.9em;
                 margin-top: -4px;
                 color: #151515;
               `}
-            >
-              {value.description}
-            </ReactMarkdown>
+            />
           </div>
         );
       })}
