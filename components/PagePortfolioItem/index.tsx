@@ -28,9 +28,6 @@ export default function PagePortfolioItem(p: Props) {
   }, []);
 
   useEffect(() => {
-    // console.log(
-    //   `11111  TAB:  ${initialPageChangeRequest.current !== pageChangeRequested}`
-    // );
     if (initialPageChangeRequest.current !== pageChangeRequested) {
       setIsExitingPage(true);
     } else {
@@ -38,7 +35,6 @@ export default function PagePortfolioItem(p: Props) {
     }
   }, [pageChangeRequested]);
 
-  console.log(`11111  PagePortfolioItem:  ${isExitingPage}`);
   return (
     <div
       css={css`

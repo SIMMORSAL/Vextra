@@ -28,13 +28,6 @@ export default function LandingPage({}: Props) {
     window.addEventListener("resize", () => setIsXs(window.innerWidth < 600));
     setMoveToMain(false);
 
-    // const animated = document.getElementById("icon");
-    // console.log("11111  animated:  ", animated);
-    // animated.addEventListener("animationend", () => {
-    //   console.log("11111  onanimationend:  ");
-    //   setBeginAnimationPhase2(true);
-    // });
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

@@ -22,21 +22,33 @@ export default function PortfolioItem(p: Props) {
   const [makeAwardSmall, setMakeAwardSmall] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
 
-  // * Begin animation
-  useEffect(() => {
-    cacheImage(p.portfolio.image).then(() => {
-      setBeginFadeIn(true);
-      if (p.portfolio.award) {
+  const [isImageCached, setIsImageCached] = useState(false);
+  const [isInitialRender, setIsInitialRender] = useState(true);
+
+  function beginAnimation() {
+    setBeginFadeIn(true);
+    if (p.portfolio.award) {
+      setTimeout(() => {
+        setFadeInAward(true);
         setTimeout(() => {
-          setFadeInAward(true);
-          setTimeout(() => {
-            setMakeAwardSmall(true);
-          }, 1500);
-        }, 2000 * p.awardDelayMultiplier);
-      }
+          setMakeAwardSmall(true);
+        }, 1500);
+      }, 2000 * p.awardDelayMultiplier);
+    }
+  }
+
+  useEffect(() => {
+    setIsInitialRender(false);
+    cacheImage(p.portfolio.image).then(() => {
+      setIsImageCached(true);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    if (!isInitialRender && isImageCached) beginAnimation();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isInitialRender, isImageCached]);
 
   const onClicked = () => {
     p.setSelectedItem(p.portfolio);

@@ -18,14 +18,6 @@ export default function RichImage(p: Props) {
   const listenToScroll = () => {
     const scroll = document.documentElement.scrollTop;
     const imagePosition = (refImageRoot.current as HTMLDivElement).offsetTop;
-    // console.log(
-    //   `11111  listenToScroll: ${p.image.path.slice(
-    //     0,
-    //     25
-    //   )}  ${scroll} ${imagePosition}  ${scrollReached}  ${window.innerHeight}  ${
-    //     scroll + window.innerHeight * 0.4 < imagePosition
-    //   }`
-    // );
     if (scroll + window.innerHeight * 0.6 < imagePosition) setScrollReached(false);
     else setScrollReached(true);
   };
