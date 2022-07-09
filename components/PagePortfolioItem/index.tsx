@@ -17,10 +17,6 @@ export default function PagePortfolioItem(p: Props) {
   const linkId = router.query.PortfolioID as string;
   const dataPortfolio: Portfolio = getPortfolio(linkId);
 
-  console.log(
-    `11111  PagePortfolioItem:  ${linkId} \n\n ${JSON.stringify(linkId)} \n\n`
-  );
-
   return (
     <div
       css={css`
