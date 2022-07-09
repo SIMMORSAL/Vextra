@@ -21,15 +21,9 @@ export default function PortfolioItem(p: Props) {
   const [fadeInAward, setFadeInAward] = useState(false);
   const [makeAwardSmall, setMakeAwardSmall] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
-  // const [itemClicked, setItemClicked] = useState(false);
-
-  // const initialShowDelay = 200;
-
-  // const imgPortfolioItem = cacheImage();
 
   // * Begin animation
   useEffect(() => {
-    // const imgMain =
     cacheImage(p.portfolio.image).then(() => {
       setBeginFadeIn(true);
       if (p.portfolio.award) {
@@ -41,9 +35,6 @@ export default function PortfolioItem(p: Props) {
         }, 2000 * p.awardDelayMultiplier);
       }
     });
-    return () => {
-      // imgMain. * cancel promise
-    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
