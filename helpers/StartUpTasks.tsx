@@ -1,7 +1,8 @@
 import { getAllPortfolios } from "../data/local/dataPortfoliosPage";
-import { cacheImage } from "../tools/tools";
+import { cacheImage } from "./tools/tools";
 
-export const cacheImages = () => {
+export const runStartupTasks = () => {
+  // * caching images
   getAllPortfolios().map((v) => {
     v.image &&
       cacheImage(v.image)

@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import { headerItemSelect, textOnWhite } from "../../res/colors";
 import { useRouter } from "next/router";
 import { _AppContext } from "../../helpers/providers/provider_App";
-import { getActiveTab, getSubTab } from "../../tools/tools";
+import { changePage, getActiveTab, getSubTab } from "../../helpers/tools/tools";
 
 interface Props {
   page: string;
@@ -20,7 +20,8 @@ export default function HeaderButton(p: Props) {
   const isTabRootSelected = getSubTab(router) === undefined;
 
   const [isHovering, setIsHovering] = useState(false);
-  const { setNewTabSelected, setFlashContent } = useContext(_AppContext);
+  const { setNewTabSelected, setFlashContent, setPageChangeRequested } =
+    useContext(_AppContext);
 
   return (
     <div
@@ -35,9 +36,10 @@ export default function HeaderButton(p: Props) {
             p.homeClicked();
           } else {
             setNewTabSelected(p.page);
-            setTimeout(() => {
-              router.push(`/${p.page}/`);
-            }, 100);
+            // setTimeout(() => {
+            //   router.push(`/${p.page}/`);
+            // }, 100);
+            changePage(router, `/${p.page}/`, 400, setPageChangeRequested);
           }
         }
       }}

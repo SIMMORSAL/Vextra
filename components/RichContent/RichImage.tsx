@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { css } from "@emotion/react";
 import { RichImageModel } from "../../data/models/RichChunkModel";
-import { cacheImage } from "../../tools/tools";
+import { cacheImage } from "../../helpers/tools/tools";
 
 interface Props {
   textColor: string;

@@ -6,7 +6,7 @@ import React, {
   useState,
 } from "react";
 import { useRouter } from "next/router";
-import { getActiveTab } from "../../tools/tools";
+import { getActiveTab } from "../tools/tools";
 
 const LSK_App = "_App";
 
@@ -19,6 +19,8 @@ interface _AppInterface {
   setFadeOutContent: Dispatch<SetStateAction<boolean>>;
   flashContent: boolean;
   setFlashContent: Dispatch<SetStateAction<boolean>>;
+  pageChangeRequested: number;
+  setPageChangeRequested: Dispatch<SetStateAction<number>>;
 }
 
 export const _AppContext = createContext({
@@ -30,6 +32,8 @@ export const _AppContext = createContext({
   setFadeOutContent: () => {},
   flashContent: false,
   setFlashContent: () => {},
+  pageChangeRequested: 0,
+  setPageChangeRequested: () => {},
 } as _AppInterface);
 
 interface Props {
@@ -42,6 +46,7 @@ export function _AppProvider(props: Props) {
   const [moveToMain, setMoveToMain] = useState(false);
   const [fadeOutContent, setFadeOutContent] = useState(false);
   const [flashContent, setFlashContent] = useState(false);
+  const [pageChangeRequested, setPageChangeRequested] = useState(0);
   useEffect(() => {}, []);
   return (
     <_AppContext.Provider
@@ -54,6 +59,8 @@ export function _AppProvider(props: Props) {
         setFadeOutContent,
         flashContent,
         setFlashContent,
+        pageChangeRequested,
+        setPageChangeRequested,
       }}
     >
       {props.children}

@@ -6,7 +6,7 @@ import SharedHandleLinks from "./SharedHandleLinks";
 import OneLineLink from "./OneLineLink";
 import { _AppContext } from "../../helpers/providers/provider_App";
 import { useRouter } from "next/router";
-import { getActiveTab } from "../../tools/tools";
+import { getActiveTab } from "../../helpers/tools/tools";
 import { getContacts } from "../../data/local/dataContactPage";
 
 interface Props {}

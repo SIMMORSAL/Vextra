@@ -6,7 +6,7 @@ import { getAllPortfolios } from "../../data/local/dataPortfoliosPage";
 import PortfolioItem from "./PortfolioItem";
 import { useRouter } from "next/router";
 import { _AppContext } from "../../helpers/providers/provider_App";
-import { getActiveTab } from "../../tools/tools";
+import { getActiveTab } from "../../helpers/tools/tools";
 import { Portfolio } from "../../data/models/local-data/portfolio";
 
 interface Props {}
@@ -17,11 +17,10 @@ export default function PagePortfolio(props: Props) {
   const router = useRouter();
 
   const { newTabSelected, setNewTabSelected } = useContext(_AppContext);
-  const [fadeOut, setFadeOut] = useState(false);
+  const [isExitingPage, setIsExitingPage] = useState(false);
   const [selectedItem, setSelectedItem] = useState<Portfolio | undefined>();
 
   const portfolioItems = getAllPortfolios();
-  // console.log(`11111  PagePortfolio:  ${newTabSelected}  ${getActiveTab(router)}`);
 
   useEffect(() => {
     setNewTabSelected("portfolio");
@@ -29,8 +28,8 @@ export default function PagePortfolio(props: Props) {
   }, []);
 
   useEffect(() => {
-    if (newTabSelected !== getActiveTab(router)) setFadeOut(true);
-    else setFadeOut(false);
+    if (newTabSelected !== getActiveTab(router)) setIsExitingPage(true);
+    else setIsExitingPage(false);
   }, [newTabSelected, router]);
 
   return (
@@ -47,8 +46,8 @@ export default function PagePortfolio(props: Props) {
         justify-content: center;
         align-items: center;
         padding: ${headerHeight}px 24px 24px;
-        opacity: ${fadeOut ? 0 : 1};
-        margin-top: ${fadeOut ? 12 : 0}px;
+        opacity: ${isExitingPage ? 0 : 1};
+        margin-top: ${isExitingPage ? 12 : 0}px;
 
         transition: 100ms ease;
         transition-property: opacity, margin-top;

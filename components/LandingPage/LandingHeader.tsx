@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { css } from "@emotion/react";
 import LandingHeaderButton from "./LandingHeaderButton";
 import Image from "next/image";
-import useWindowSize from "../../tools/hooks/useWindowSize";
+import useWindowSize from "../../helpers/tools/hooks/useWindowSize";
 
 interface Props {
   selectedPage?: string; // undefined | about-me | portfolio

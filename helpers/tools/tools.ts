@@ -20,6 +20,16 @@ export function getSubTab(router): string {
   return router.route.slice(1).split("/")[1];
 }
 
+export function changePage(router, path, delay, setPageChangeRequested) {
+  console.log(`11111  changePage:  ${path}`);
+  setPageChangeRequested(Math.random() * 5);
+  setTimeout(() => {
+    router.push(path);
+  }, delay);
+}
+
+/////////////////////////////////////////
+
 export const cacheImage = (path) =>
   new Promise((resolve, reject) => {
     const img = new Image();

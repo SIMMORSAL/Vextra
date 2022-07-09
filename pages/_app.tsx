@@ -7,7 +7,7 @@ import _MoveToMain from "../components/_App/_MoveToMain";
 import { useEffect, useState } from "react";
 import Head from "next/head";
 import Script from "next/script";
-import { cacheImages } from "../helpers/StartUpTasks";
+import { runStartupTasks } from "../helpers/StartUpTasks";
 import { Content } from "../components/_App/_Content";
 
 function MyApp({ Component, pageProps }) {
@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }) {
   const [selectedPage, setSelectedPage] = useState(routeRoot);
 
   useEffect(() => {
-    cacheImages();
+    runStartupTasks();
   }, []);
 
   useEffect(() => {

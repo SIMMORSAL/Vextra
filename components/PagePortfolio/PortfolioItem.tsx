@@ -5,7 +5,7 @@ import { Portfolio } from "../../data/models/local-data/portfolio";
 import Image from "next/image";
 import { _AppContext } from "../../helpers/providers/provider_App";
 import { useRouter } from "next/router";
-import { cacheAndGetImage, cacheImage } from "../../tools/tools";
+import { cacheAndGetImage, cacheImage } from "../../helpers/tools/tools";
 
 interface Props {
   portfolio: Portfolio;

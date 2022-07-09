@@ -13,7 +13,7 @@ import {
   textOnWhite,
 } from "../../res/colors";
 import Image from "next/image";
-import { shuffleArray } from "../../tools/tools";
+import { shuffleArray } from "../../helpers/tools/tools";
 import { ContactGroup } from "../../data/models/local-data/contactGroup";
 
 interface Props {
