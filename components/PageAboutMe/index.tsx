@@ -6,7 +6,7 @@ import { _AppContext } from "../../helpers/providers/provider_App";
 import { getActiveTab } from "../../helpers/tools/tools";
 import Achievements from "./Achievements";
 import { getAboutMeData } from "../../data/local/dataAboutMePage";
-import ReactMarkdown from "react-markdown";
+import Markdown from "../RichContent/Markdown";
 
 interface Props {}
 
@@ -126,21 +126,19 @@ export default function PageAboutMe(props: Props) {
             padding: 0 32px 0;
           `}
         />
-        <ReactMarkdown
-          css={css`
+        <Markdown
+          text={data.textTop}
+          style={css`
             max-width: 500px;
           `}
-        >
-          {data.textTop}
-        </ReactMarkdown>
+        />
         <Achievements />
-        <ReactMarkdown
-          css={css`
+        <Markdown
+          text={data.textBottom}
+          style={css`
             max-width: 500px;
           `}
-        >
-          {data.textBottom}
-        </ReactMarkdown>
+        />
       </div>
     </div>
   );

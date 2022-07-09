@@ -1,6 +1,5 @@
 import React from "react";
 import { css } from "@emotion/react";
-import ReactMarkdown from "react-markdown";
 import { RichTextModel } from "../../data/models/RichChunkModel";
 import MarkDown from "./Markdown";
 
