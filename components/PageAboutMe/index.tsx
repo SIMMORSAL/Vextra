@@ -126,6 +126,14 @@ export default function PageAboutMe(props: Props) {
             padding: 0 32px 0;
           `}
         />
+        <p
+          css={css`
+            font-size: 2em;
+            font-weight: bold;
+          `}
+        >
+          {data.name}
+        </p>
         <Markdown
           text={data.textTop}
           style={css`

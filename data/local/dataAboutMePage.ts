@@ -5,10 +5,8 @@ export function getAboutMeData(): AboutMeData {
   return {
     image:
       "https://avatarairlines.com/wp-content/uploads/2020/05/Female-Placeholder.png",
+    name: "Jane Smith",
     textTop: `
-I'm Mitra Sisakht ! \  
-
-
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at
 convallis velit. Nunc bibendum nibh in lectus convallis aliquam vitae id
 diam. Ut ut ante eu dui placerat sodales. Suspendisse vulputate maximus
