@@ -17,39 +17,6 @@ export function getDataProject2(): RichChunkModel[] {
         aspectRatio: "900/562",
         animateOnScroll: true,
       },
-
-      longTextMiddle: [
-        {
-          textAlign: "start",
-          text: "# aslkdfjl skdjflksdj flksdf",
-        },
-        {
-          textAlign: "end",
-          text: "# aslkdfjl skdjflksdj flksdf",
-        },
-        {
-          text: `
-This is a full blown test on the text functionality of Rich Chunk. Lorem ipsum dolar sit amet sad fasd fasd fasdf 
-asdf asd fasd ffasd fsad fasd ffsad fasd fsd fsd sad f
-`,
-        },
-        {
-          textAlign: "center",
-          text: "# aslkdfjl skdjflksdj flksdf",
-        },
-        {
-          textAlign: "center",
-          text: "# This is a full blown test on the text functionality of Rich Chunk. Lorem ipsum dolar sit amet sad fasd fasd fasdf \nasdf asd fasd ffasd fsad fasd ffsad fasd fsd fsd sad f",
-        },
-        {
-          textAlign: "center",
-          text: "# aslkdfjl skdjflksdj flksdf",
-        },
-        {
-          textAlign: "center",
-          text: "# aslkdfjl skdjflksdj flksdf",
-        },
-      ],
     },
     {
       nameId: "Third",
@@ -66,39 +33,6 @@ asdf asd fasd ffasd fsad fasd ffsad fasd fsd fsd sad f
         aspectRatio: "4500/2700",
         animateOnScroll: false,
       },
-
-      longTextMiddle: [
-        {
-          textAlign: "start",
-          text: "# aslkdfjl skdjflksdj flksdf",
-        },
-        {
-          textAlign: "end",
-          text: "# aslkdfjl skdjflksdj flksdf",
-        },
-        {
-          text: `
-This is a full blown test on the text functionality of Rich Chunk. Lorem ipsum dolar sit amet sad fasd fasd fasdf 
-asdf asd fasd ffasd fsad fasd ffsad fasd fsd fsd sad f
-`,
-        },
-        {
-          textAlign: "center",
-          text: "# aslkdfjl skdjflksdj flksdf",
-        },
-        {
-          textAlign: "center",
-          text: "# This is a full blown test on the text functionality of Rich Chunk. Lorem ipsum dolar sit amet sad fasd fasd fasdf \nasdf asd fasd ffasd fsad fasd ffsad fasd fsd fsd sad f",
-        },
-        {
-          textAlign: "center",
-          text: "# aslkdfjl skdjflksdj flksdf",
-        },
-        {
-          textAlign: "center",
-          text: "# aslkdfjl skdjflksdj flksdf",
-        },
-      ],
     },
   ];
 }

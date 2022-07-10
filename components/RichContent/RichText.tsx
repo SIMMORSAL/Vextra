@@ -24,8 +24,8 @@ export default function RichText(props: Props) {
           text-align: ${text.textAlign};
         `;
         return (
-          <div css={style}>
-            <MarkDown key={index} text={text.text} />
+          <div key={index} css={style}>
+            <MarkDown text={text.text} />
           </div>
         );
       })}
