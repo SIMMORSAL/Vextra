@@ -75,24 +75,18 @@ export default function RichImage(p: Props) {
           transition: opacity 350ms ease;
         `}
       />
-      {/*{!imageCached && p.image.aspectRatio ? (*/}
-      {/*  <div*/}
-      {/*    css={css`*/}
-      {/*      width: 100%;*/}
-      {/*    `}*/}
-      {/*  />*/}
-      {/*) : (*/}
-      {/*  <></>*/}
-      {/*)}*/}
-      <p
-        css={css`
-          color: ${p.textColor.length === 7 ? p.textColor + "bb" : p.textColor};
-          padding: 0 32px;
-          text-align: center;
-        `}
-      >
-        {p.image.subText}
-      </p>
+      {p.image.subText && p.image.subText.length !== 0 && (
+        <p
+          css={css`
+            color: ${p.textColor.length === 7 ? p.textColor + "bb" : p.textColor};
+            padding: 0 32px;
+            text-align: center;
+            margin: 0;
+          `}
+        >
+          {p.image.subText}
+        </p>
+      )}
     </div>
   );
 }

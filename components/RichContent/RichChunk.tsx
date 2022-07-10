@@ -20,16 +20,25 @@ export default function RichChunk(props: Props) {
         width: 100%;
         color: ${textColor};
         background-color: ${backgroundColor};
+        display: flex;
+        flex-direction: column;
       `}
     >
-      {props.chunk.longTextTop && props.chunk.longTextTop.length > 0 && (
-        <RichText texts={props.chunk.longTextTop} />
+      {props.chunk.longText && props.chunk.longText.length > 0 && (
+        <RichText texts={props.chunk.longText} />
       )}
       {props.chunk.bigImage && (
         <RichImage image={props.chunk.bigImage} textColor={textColor} />
       )}
-      {props.chunk.longTextMiddle && props.chunk.longTextMiddle.length > 0 && (
-        <RichText texts={props.chunk.longTextMiddle} />
+      {props.chunk.smallImage && (
+        <div
+          css={css`
+            max-width: 450px;
+            align-self: center;
+          `}
+        >
+          <RichImage image={props.chunk.smallImage} textColor={textColor} />
+        </div>
       )}
       {/*{(props.chunk.imageBarLeft ||*/}
       {/*  props.chunk.textImageBar ||*/}
@@ -48,9 +57,6 @@ export default function RichChunk(props: Props) {
       {/*  />*/}
       {/*  // </div>*/}
       {/*)}*/}
-      {props.chunk.longTextEnd && props.chunk.longTextEnd.length > 0 && (
-        <RichText texts={props.chunk.longTextEnd} />
-      )}
     </div>
   );
 }

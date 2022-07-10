@@ -16,7 +16,7 @@ export default function RichContent(p: Props) {
       `}
     >
       {p.data.map((textChunk) => {
-        return <RichChunk key={textChunk.name} chunk={textChunk} />;
+        return <RichChunk key={textChunk.nameId} chunk={textChunk} />;
       })}
     </div>
   );

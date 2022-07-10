@@ -22,9 +22,12 @@ export default function RichText(props: Props) {
       {props.texts.map((text, index) => {
         const style = css`
           text-align: ${text.textAlign};
-          target: "_blank";
         `;
-        return <MarkDown key={index} text={text.text} />;
+        return (
+          <div css={style}>
+            <MarkDown key={index} text={text.text} />
+          </div>
+        );
       })}
     </div>
   );

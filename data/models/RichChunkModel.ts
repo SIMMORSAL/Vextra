@@ -1,19 +1,19 @@
 export interface RichChunkModel {
-  name: string; //
+  nameId: string;
   backgroundColor?: string;
   textColor?: string;
-  longTextTop?: RichTextModel[];
+  longText?: RichTextModel[];
   bigImage?: RichImageModel;
+  smallImage?: RichImageModel;
   videoClip?: string;
   imageBarLeft?: RichImageModel;
-  textImageBar?: RichTextModel[];
+  imageBarLeftVideo?: string;
+  imageBarText?: RichTextModel[];
   imageBarRight?: RichImageModel;
-  longTextMiddle?: RichTextModel[];
-  longTextEnd?: RichTextModel[];
-  button1Title?: string;
-  button1Href?: string;
-  button2Title?: string;
-  button2Href?: string;
+  imageBarRightVideo?: string;
+  button1?: RichButton;
+  button2?: RichButton;
+  freeSpace?: boolean;
 }
 
 export interface RichTextModel {
@@ -26,4 +26,9 @@ export interface RichImageModel {
   subText?: string;
   aspectRatio?: string; // you can write your image's width and height
   animateOnScroll?: boolean;
+}
+
+export interface RichButton {
+  title: string;
+  href: string;
 }

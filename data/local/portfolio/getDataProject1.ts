@@ -3,8 +3,8 @@ import { RichChunkModel } from "../../models/RichChunkModel";
 export function getDataProject1(): RichChunkModel[] {
   return [
     {
-      name: "asdf",
-      longTextTop: [
+      nameId: "asdf",
+      longText: [
         {
           textAlign: "center",
           text: "# aslkdfjl skdjflksdj flksdf",
@@ -16,14 +16,12 @@ export function getDataProject1(): RichChunkModel[] {
           "asdlkfjlasdk jflaskd lsakd fflksdj lskdj fsdf df fds s f fsds  sdd   dss fd sf ",
         aspectRatio: "474/379",
       },
-
-      longTextMiddle: [
+    },
+    {
+      nameId: "sdfasdfasd",
+      longText: [
         {
-          textAlign: "start",
-          text: "# aslkdfjl skdjflksdj flksdf",
-        },
-        {
-          textAlign: "end",
+          textAlign: "center",
           text: "# aslkdfjl skdjflksdj flksdf",
         },
         {
@@ -34,31 +32,6 @@ asdf asd fasd ffasd fsad fasd ffsad fasd fsd fsd sad f
 [example.com](https://example.com)
 `,
         },
-        {
-          textAlign: "center",
-          text: "# aslkdfjl skdjflksdj flksdf",
-        },
-        {
-          textAlign: "center",
-          text: "# This is a full blown test on the text functionality of Rich Chunk. Lorem ipsum dolar sit amet sad fasd fasd fasdf \nasdf asd fasd ffasd fsad fasd ffsad fasd fsd fsd sad f",
-        },
-        {
-          textAlign: "center",
-          text: "# aslkdfjl skdjflksdj flksdf",
-        },
-        {
-          textAlign: "center",
-          text: "# aslkdfjl skdjflksdj flksdf",
-        },
-      ],
-    },
-    {
-      name: "sdfasdfasd",
-      longTextTop: [
-        {
-          textAlign: "center",
-          text: "# aslkdfjl skdjflksdj flksdf",
-        },
       ],
       bigImage: {
         path: "https://th.bing.com/th/id/OIP.FH39JpbgRZ3pozFqcE3A5AHaEo?pid=ImgDet&rs=1",
@@ -67,8 +40,14 @@ asdf asd fasd ffasd fsad fasd ffsad fasd fsd fsd sad f
         aspectRatio: "900/562",
         animateOnScroll: true,
       },
-
-      longTextMiddle: [
+    },
+    {
+      nameId: "Third",
+      longText: [
+        {
+          textAlign: "center",
+          text: "# aslkdfjl skdjflksdj flksdf",
+        },
         {
           textAlign: "start",
           text: "# aslkdfjl skdjflksdj flksdf",
@@ -95,15 +74,6 @@ asdf asd fasd ffasd fsad fasd ffsad fasd fsd fsd sad f
           textAlign: "center",
           text: "# aslkdfjl skdjflksdj flksdf",
         },
-        {
-          textAlign: "center",
-          text: "# aslkdfjl skdjflksdj flksdf",
-        },
-      ],
-    },
-    {
-      name: "Third",
-      longTextTop: [
         {
           textAlign: "center",
           text: "# aslkdfjl skdjflksdj flksdf",
@@ -116,39 +86,6 @@ asdf asd fasd ffasd fsad fasd ffsad fasd fsd fsd sad f
         aspectRatio: "4500/2700",
         animateOnScroll: false,
       },
-
-      longTextMiddle: [
-        {
-          textAlign: "start",
-          text: "# aslkdfjl skdjflksdj flksdf",
-        },
-        {
-          textAlign: "end",
-          text: "# aslkdfjl skdjflksdj flksdf",
-        },
-        {
-          text: `
-This is a full blown test on the text functionality of Rich Chunk. Lorem ipsum dolar sit amet sad fasd fasd fasdf 
-asdf asd fasd ffasd fsad fasd ffsad fasd fsd fsd sad f
-`,
-        },
-        {
-          textAlign: "center",
-          text: "# aslkdfjl skdjflksdj flksdf",
-        },
-        {
-          textAlign: "center",
-          text: "# This is a full blown test on the text functionality of Rich Chunk. Lorem ipsum dolar sit amet sad fasd fasd fasdf \nasdf asd fasd ffasd fsad fasd ffsad fasd fsd fsd sad f",
-        },
-        {
-          textAlign: "center",
-          text: "# aslkdfjl skdjflksdj flksdf",
-        },
-        {
-          textAlign: "center",
-          text: "# aslkdfjl skdjflksdj flksdf",
-        },
-      ],
     },
   ];
 }

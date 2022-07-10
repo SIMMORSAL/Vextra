@@ -3,8 +3,8 @@ import { RichChunkModel } from "../../models/RichChunkModel";
 export function getDataProject2(): RichChunkModel[] {
   return [
     {
-      name: "sdfasdfasd",
-      longTextTop: [
+      nameId: "sdfasdfasd",
+      longText: [
         {
           textAlign: "center",
           text: "# aslkdfjl skdjflksdj flksdf",
@@ -52,8 +52,8 @@ asdf asd fasd ffasd fsad fasd ffsad fasd fsd fsd sad f
       ],
     },
     {
-      name: "Third",
-      longTextTop: [
+      nameId: "Third",
+      longText: [
         {
           textAlign: "center",
           text: "# aslkdfjl skdjflksdj flksdf",
