@@ -1,9 +1,6 @@
 import React from "react";
 import { css } from "@emotion/react";
 import PagePortfolio from "../../components/PagePortfolio";
-import useWindowSize from "../../helpers/tools/hooks/useWindowSize";
-import PageAboutMe from "../../components/PageAboutMe";
-import PageContactMe from "../../components/PageContactMe";
 
 interface Props {}
 

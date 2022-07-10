@@ -1,7 +1,6 @@
 import React from "react";
 import { css } from "@emotion/react";
 import { Grid } from "@mui/material";
-import Image from "next/image";
 import { RichTextModel } from "../../data/models/RichChunkModel";
 import RichText from "./RichText";
 
@@ -35,13 +34,7 @@ export default function ShortImageBar(props: Props) {
               min-height: 300px;
             `}
           >
-            {/*<Image*/}
-            {/*  // loader={() => props.imageBarLeft!}*/}
-            {/*  src={props.imageBarLeft}*/}
-            {/*  alt={""}*/}
-            {/*  layout={"fill"}*/}
-            {/*/>*/}
-
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={props.smallImageLeft}
               alt={""}
@@ -87,6 +80,7 @@ export default function ShortImageBar(props: Props) {
             {/*  width={"100%"}*/}
             {/*  height={"100%"}*/}
             {/*/>*/}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={props.smallImageRight}
               alt={""}

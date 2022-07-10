@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { css } from "@emotion/react";
-import { Portfolio } from "../../data/models/local-data/portfolio";
 import Image from "next/image";
-import {
-  backgroundWhite,
-  headerItemSelectFilter,
-  itemOnWhite,
-} from "../../res/colors";
+import { itemOnWhite } from "../../res/colors";
 
 interface Props {
   delay: number;
@@ -15,9 +10,14 @@ interface Props {
 export default function GalleryButton(props: Props) {
   const [beginFadeIn, setBeginFadeIn] = useState(false);
 
-  setTimeout(() => {
-    setBeginFadeIn(true);
-  }, props.delay);
+  useEffect(() => {
+    const t = setTimeout(() => {
+      setBeginFadeIn(true);
+    }, props.delay);
+
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div

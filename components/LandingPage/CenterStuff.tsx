@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { css } from "@emotion/react";
 import { backgroundWhite, headerItemSelect, textOnWhite } from "../../res/colors";
 import Image from "next/image";
@@ -23,15 +23,27 @@ export default function CenterStuff({
   const durationLineAppear = 1500;
   const durationTextAppear = 500;
 
+  const timeouts = useRef([]);
+  useEffect(() => {
+    return () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      timeouts.current.forEach((value) => clearTimeout(value));
+    };
+  }, []);
+
   useEffect(() => {
     if (begin && beginNextPhase) {
-      setTimeout(() => {
+      timeouts.current.push(
         setTimeout(() => {
-          setShowText(true);
-          setPagesClickable(true);
-        }, durationTextAppear);
-        beginNextPhase(true);
-      }, durationLineAppear - durationLineAppear * 0.4);
+          timeouts.current.push(
+            setTimeout(() => {
+              setShowText(true);
+              setPagesClickable(true);
+            }, durationTextAppear)
+          );
+          beginNextPhase(true);
+        }, durationLineAppear - durationLineAppear * 0.4)
+      );
     }
   }, [begin, beginNextPhase]);
 

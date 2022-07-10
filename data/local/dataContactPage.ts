@@ -7,7 +7,7 @@ export function getContacts(): ContactGroup[] {
       links: [
         {
           icon: "fa-solid fa-envelope",
-          href: "mailto: hi @janesmith.com",
+          href: "mailto: hi@janesmith.com",
           showInHome: true,
         },
       ],

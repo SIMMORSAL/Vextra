@@ -1,7 +1,6 @@
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode } from "react";
 import { css } from "@emotion/react";
 import { headerItemSelect, textOnWhite } from "../../res/colors";
-import transform from "next/dist/build/babel/loader/transform";
 
 interface Props {
   isFirstOrLast: boolean;

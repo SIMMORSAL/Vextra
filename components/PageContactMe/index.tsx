@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import { headerHeight } from "../Header";
-import EmailIcon from "@mui/icons-material/Email";
 import SharedHandleLinks from "./SharedHandleLinks";
 import OneLineLink from "./OneLineLink";
 import { _AppContext } from "../../helpers/providers/provider_App";
@@ -27,9 +26,12 @@ export default function PageContactMe(props: Props) {
   }, []);
 
   useEffect(() => {
-    setTimeout(() => {
+    const t = setTimeout(() => {
       setFadeIn(true);
     }, 50);
+    return () => {
+      clearTimeout(t);
+    };
   }, []);
 
   useEffect(() => {

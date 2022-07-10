@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { css } from "@emotion/react";
 import { headerHeight } from "../Header";
 import { useRouter } from "next/router";
@@ -33,16 +33,27 @@ export default function PageAboutMe(props: Props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const timeouts = useRef([]);
+
   useEffect(() => {
-    setTimeout(() => {
-      setFadeIn(true);
-      setContentHeight(document.getElementById("content").clientHeight);
-      const contentHeight = document.getElementById("content").clientHeight;
-      setContentHeightSmallerThanVh(contentHeight < window.innerHeight);
+    timeouts.current.push(
       setTimeout(() => {
-        setFadeInFinish(true);
-      }, fadeInDuration);
-    }, 70);
+        setFadeIn(true);
+        setContentHeight(document.getElementById("content").clientHeight);
+        const contentHeight = document.getElementById("content").clientHeight;
+        setContentHeightSmallerThanVh(contentHeight < window.innerHeight);
+        timeouts.current.push(
+          setTimeout(() => {
+            setFadeInFinish(true);
+          }, fadeInDuration)
+        );
+      }, 70)
+    );
+
+    return () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      timeouts.current.forEach((value) => clearTimeout(value));
+    };
   }, []);
 
   useEffect(() => {

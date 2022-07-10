@@ -1,32 +1,15 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { _AppContext } from "../../helpers/providers/provider_App";
 import { useRouter } from "next/router";
 import { css } from "@emotion/react";
 import { headerHeight } from "../Header";
-import { getActiveTab, getSubTab } from "../../helpers/tools/tools";
+import { getSubTab } from "../../helpers/tools/tools";
 
 export function Content({ Component, pageProps, routeChops }) {
-  const { fadeOutContent, setFadeOutContent, flashContent, setFlashContent } =
-    useContext(_AppContext);
   const router = useRouter();
+  const { flashContent, setFlashContent } = useContext(_AppContext);
 
   const tabRootIsShowing = getSubTab(router) === undefined;
-
-  // const shouldFadeIn = routeChops.length === 1;
-  const shouldFadeIn =
-    router.route === "/about-me" ||
-    router.route === "/portfolio" ||
-    router.route === "/contact-me";
-  const [doFadeIn, setDoFadeIn] = useState(!shouldFadeIn);
-
-  useEffect(() => {
-    if (shouldFadeIn) {
-      setDoFadeIn(false);
-      setTimeout(() => {
-        setDoFadeIn(true);
-      }, 65);
-    }
-  }, [routeChops, shouldFadeIn, router.route]);
 
   useEffect(() => {
     if (flashContent)

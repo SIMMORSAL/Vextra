@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { css } from "@emotion/react";
 import { _AppContext } from "../../helpers/providers/provider_App";
-import { backgroundBlack, backgroundWhite } from "../../res/colors";
+import { backgroundBlack } from "../../res/colors";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
@@ -12,14 +12,27 @@ export default function _MoveToMain(props: Props) {
   const [beginAnimation, setBeginAnimation] = useState(false);
   const router = useRouter();
 
+  const timeouts = useRef([]);
+  useEffect(() => {
+    return () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      timeouts.current.forEach((value) => clearTimeout(value));
+    };
+  }, []);
+
   useEffect(() => {
     if (shouldMoveToMain) {
-      setTimeout(() => {
-        setBeginAnimation(true);
+      timeouts.current.push(
         setTimeout(() => {
-          router.push("/");
-        }, 800);
-      }, 50);
+          setBeginAnimation(true);
+          timeouts.current.push(
+            setTimeout(() => {
+              // noinspection JSIgnoredPromiseFromCall
+              router.push("/");
+            }, 800)
+          );
+        }, 50)
+      );
     } else {
       setBeginAnimation(false);
     }

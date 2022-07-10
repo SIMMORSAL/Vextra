@@ -1,21 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { css } from "@emotion/react";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import PinterestIcon from "@mui/icons-material/Pinterest";
-import EmailIcon from "@mui/icons-material/Email";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
-import {
-  headerItemSelect,
-  headerItemSelectFilter,
-  itemOnWhite,
-  itemOnWhiteFilter,
-  itemOnWhiteFocused,
-  itemOnWhiteFocusedFilter,
-  textOnWhite,
-} from "../../res/colors";
-import Image from "next/image";
-import { shuffleArray } from "../../helpers/tools/tools";
+import { itemOnWhite, itemOnWhiteFocused, textOnWhite } from "../../res/colors";
 import { getContacts } from "../../data/local/dataContactPage";
 import { Links } from "../../data/models/local-data/contactGroup";
 
@@ -44,20 +29,30 @@ export default function BottomContacts({ begin }: Props) {
     });
 
     setContactItems(ciPickedToShow);
-    setHasAnyContactItemLeft(true);
+    setHasAnyContactItemLeft(ciLeft);
+  }, []);
+
+  const timeouts = useRef([]);
+  useEffect(() => {
+    return () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      timeouts.current.forEach((value) => clearTimeout(value));
+    };
   }, []);
 
   useEffect(() => {
     if (begin && contactItems.length > 0)
-      setTimeout(() => {
-        setDelayPassed(true);
+      timeouts.current.push(
         setTimeout(() => {
-          setHasAnimationFinished(true);
-        }, contactItems.length * 100 + 200); // 700 is the number of items plus 200 to finish last animation
-      }, 1300);
+          setDelayPassed(true);
+          timeouts.current.push(
+            setTimeout(() => {
+              setHasAnimationFinished(true);
+            }, contactItems.length * 100 + 200)
+          ); // 700 is the number of items plus 200 to finish last animation
+        }, 1300)
+      );
   }, [begin, contactItems]);
-
-  useEffect(() => {}, [isHovering]);
 
   return (
     <div

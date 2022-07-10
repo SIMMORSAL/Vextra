@@ -1,5 +1,4 @@
 import { Portfolio } from "../models/local-data/portfolio";
-import { RichChunkModel } from "../models/RichChunkModel";
 import { getDataProject1 } from "./portfolio/getDataProject1";
 import { getDataProject2 } from "./portfolio/getDataProject2";
 import { getDataProject3 } from "./portfolio/getDataProject3";

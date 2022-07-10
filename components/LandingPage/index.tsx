@@ -1,6 +1,5 @@
 import { css } from "@emotion/react";
-import React, { useContext, useEffect, useState } from "react";
-import Image from "next/image";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { backgroundBlack, backgroundWhite } from "../../res/colors";
 import CenterStuff from "./CenterStuff";
 import BottomContacts from "./BottomContacts";
@@ -23,6 +22,14 @@ export default function LandingPage({}: Props) {
 
   const [count, setCount] = useState(0);
 
+  const timeouts = useRef([]);
+  useEffect(() => {
+    return () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      timeouts.current.forEach((value) => clearTimeout(value));
+    };
+  }, []);
+
   useEffect(() => {
     setIsXs(window.innerWidth < 600);
     window.addEventListener("resize", () => setIsXs(window.innerWidth < 600));
@@ -34,21 +41,30 @@ export default function LandingPage({}: Props) {
   useEffect(() => {
     if (selectedPage !== undefined) {
       setNewTabSelected(selectedPage);
-      setTimeout(() => {
-        if (selectedPage !== undefined) router.push(`/${selectedPage}/`);
-      }, 200);
+      timeouts.current.push(
+        setTimeout(() => {
+          if (selectedPage !== undefined) {
+            // noinspection JSIgnoredPromiseFromCall
+            router.push(`/${selectedPage}/`);
+          }
+        }, 200)
+      );
     }
   }, [router, selectedPage, setNewTabSelected]);
 
   useEffect(() => {
     setLoading(true);
     setBeginAnimationPhase2(false);
-    setTimeout(() => {
-      setLoading(false);
-      setTimeout((args) => {
-        setBeginAnimationPhase2(true);
-      }, 1000);
-    }, 700);
+    timeouts.current.push(
+      setTimeout(() => {
+        setLoading(false);
+        timeouts.current.push(
+          setTimeout((args) => {
+            setBeginAnimationPhase2(true);
+          }, 1000)
+        );
+      }, 700)
+    );
   }, [count]);
 
   return (

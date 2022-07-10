@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useContext, useEffect, useState } from "react";
 import { css } from "@emotion/react";
-import Image from "next/image";
 import { _AppContext } from "../../helpers/providers/provider_App";
 import { cacheImage } from "../../helpers/tools/tools";
 import { getGeneralData } from "../../data/local/_dataGeneral";

@@ -1,18 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { css } from "@emotion/react";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import PinterestIcon from "@mui/icons-material/Pinterest";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import {
-  headerItemSelect,
-  headerItemSelectFilter,
-  itemOnWhite,
-  itemOnWhiteFilter,
-  itemOnWhiteFocused,
-  itemOnWhiteFocusedFilter,
-  textOnWhite,
-} from "../../res/colors";
-import Image from "next/image";
+import { textOnWhite } from "../../res/colors";
 import { shuffleArray } from "../../helpers/tools/tools";
 import { ContactGroup } from "../../data/models/local-data/contactGroup";
 
@@ -28,17 +16,27 @@ export default function SharedHandleLinks(p: Props) {
 
   const delayTimes = shuffleArray(Array.from(Array(p.contact.links.length).keys()));
 
+  const timeouts = useRef([]);
+  useEffect(() => {
+    return () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      timeouts.current.forEach((value) => clearTimeout(value));
+    };
+  }, []);
+
   useEffect(() => {
     if (p.begin)
-      setTimeout(() => {
-        setDelayPassed(true);
+      timeouts.current.push(
         setTimeout(() => {
-          setHasAnimationFinished(true);
-        }, 700); // 700 is the number of items plus 200 to finish last animation
-      }, 450);
+          setDelayPassed(true);
+          timeouts.current.push(
+            setTimeout(() => {
+              setHasAnimationFinished(true);
+            }, 700)
+          ); // 700 is the number of items plus 200 to finish last animation
+        }, 450)
+      );
   }, [p.begin]);
-
-  useEffect(() => {}, [isHovering]);
 
   return (
     <div

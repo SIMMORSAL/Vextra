@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import { css } from "@emotion/react";
-import Header, { headerHeight } from "../components/Header";
+import Header from "../components/Header";
 import { useRouter } from "next/router";
 import { _AppProvider } from "../helpers/providers/provider_App";
 import _MoveToMain from "../components/_App/_MoveToMain";

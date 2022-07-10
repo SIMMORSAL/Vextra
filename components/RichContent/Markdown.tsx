@@ -1,5 +1,5 @@
 import React from "react";
-import { css, SerializedStyles } from "@emotion/react";
+import { SerializedStyles } from "@emotion/react";
 import ReactMarkdown from "react-markdown";
 
 function LinkRenderer(p: any) {

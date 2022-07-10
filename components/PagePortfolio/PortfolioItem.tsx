@@ -1,11 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { css } from "@emotion/react";
 import { Portfolio } from "../../data/models/local-data/portfolio";
-import Image from "next/image";
-import { _AppContext } from "../../helpers/providers/provider_App";
 import { useRouter } from "next/router";
-import { cacheAndGetImage, cacheImage } from "../../helpers/tools/tools";
+import { cacheImage } from "../../helpers/tools/tools";
 
 interface Props {
   portfolio: Portfolio;
@@ -25,15 +23,27 @@ export default function PortfolioItem(p: Props) {
   const [isImageCached, setIsImageCached] = useState(false);
   const [isInitialRender, setIsInitialRender] = useState(true);
 
+  const timeouts = useRef([]);
+  useEffect(() => {
+    return () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      timeouts.current.forEach((value) => clearTimeout(value));
+    };
+  }, []);
+
   function beginAnimation() {
     setBeginFadeIn(true);
     if (p.portfolio.award) {
-      setTimeout(() => {
-        setFadeInAward(true);
+      timeouts.current.push(
         setTimeout(() => {
-          setMakeAwardSmall(true);
-        }, 1500);
-      }, 2000 * p.awardDelayMultiplier);
+          setFadeInAward(true);
+          timeouts.current.push(
+            setTimeout(() => {
+              setMakeAwardSmall(true);
+            }, 1500)
+          );
+        }, 2000 * p.awardDelayMultiplier)
+      );
     }
   }
 
@@ -52,9 +62,12 @@ export default function PortfolioItem(p: Props) {
 
   const onClicked = () => {
     p.setSelectedItem(p.portfolio);
-    setTimeout(() => {
-      router.push(`/portfolio/${p.portfolio.linkId}`);
-    }, 200);
+    timeouts.current.push(
+      setTimeout(() => {
+        // noinspection JSIgnoredPromiseFromCall
+        router.push(`/portfolio/${p.portfolio.linkId}`);
+      }, 200)
+    );
   };
 
   // setTimeout(() => {

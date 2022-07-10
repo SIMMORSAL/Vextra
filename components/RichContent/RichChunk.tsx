@@ -2,7 +2,6 @@ import React from "react";
 import { css } from "@emotion/react";
 import { RichChunkModel } from "../../data/models/RichChunkModel";
 import RichText from "./RichText";
-import ShortImageBar from "./ShortImageBar";
 import RichImage from "./RichImage";
 
 interface Props {

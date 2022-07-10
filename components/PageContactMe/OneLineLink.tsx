@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { css } from "@emotion/react";
-import EmailIcon from "@mui/icons-material/Email";
 import { ContactGroup } from "../../data/models/local-data/contactGroup";
 
 interface Props {
@@ -11,9 +10,12 @@ export default function OneLineLink(props: Props) {
   const [beginAnimation, setBeginAnimation] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
+    const t = setTimeout(() => {
       setBeginAnimation(true);
     }, 350);
+    return () => {
+      clearTimeout(t);
+    };
   }, []);
 
   const _target =

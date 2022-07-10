@@ -3,7 +3,6 @@ import { css } from "@emotion/react";
 import useWindowSize from "../helpers/tools/hooks/useWindowSize";
 import PageAboutMe from "../components/PageAboutMe";
 import PageContactMe from "../components/PageContactMe";
-import { headerHeight } from "../components/Header";
 
 interface Props {}
 

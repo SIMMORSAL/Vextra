@@ -1,11 +1,8 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { css } from "@emotion/react";
 import RichContent from "../RichContent";
-import { RichChunkModel } from "../../data/models/RichChunkModel";
 import { headerHeight } from "../Header";
-import { getDataProject1 } from "../../data/local/portfolio/getDataProject1";
 import { useRouter } from "next/router";
-import { getActiveTab, getSubTab } from "../../helpers/tools/tools";
 import { Portfolio } from "../../data/models/local-data/portfolio";
 import { getPortfolio } from "../../data/local/dataPortfoliosPage";
 import { _AppContext } from "../../helpers/providers/provider_App";
