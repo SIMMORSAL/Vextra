@@ -16,10 +16,10 @@ export default function HeaderLogo(p: Props) {
     useContext(_AppContext);
   const [imageCached, setImageCached] = useState(false);
 
-  const generalData = getGeneralData();
+  const _generalData = getGeneralData();
 
   useEffect(() => {
-    cacheImage(generalData.logo).then(() => {
+    cacheImage(_generalData.logo).then(() => {
       setImageCached(true);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -53,7 +53,7 @@ export default function HeaderLogo(p: Props) {
         `}
       >
         <img
-          src={generalData.logo}
+          src={_generalData.logo}
           alt={"logo"}
           onClick={() => {
             p.setSelectedPage(undefined);

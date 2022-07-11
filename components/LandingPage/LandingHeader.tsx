@@ -3,6 +3,8 @@ import { css } from "@emotion/react";
 import LandingHeaderButton from "./LandingHeaderButton";
 import Image from "next/image";
 import useWindowSize from "../../helpers/tools/hooks/useWindowSize";
+import HeaderLogo from "../Header/HeaderLogo";
+import { getGeneralData } from "../../data/local/_dataGeneral";
 
 interface Props {
   selectedPage?: string; // undefined | about-me | portfolio
@@ -13,7 +15,7 @@ export default function LandingHeader(props: Props) {
   const windowWidth = useWindowSize();
   const isXs = windowWidth.width < 600;
 
-  const selectedPage = "portfolio";
+  const _generalData = getGeneralData();
 
   return (
     <div
@@ -39,7 +41,6 @@ export default function LandingHeader(props: Props) {
           page={"home"}
           selectedPage={props.selectedPage}
           setSelectedPage={() => props.setSelectedPage(undefined)}
-          // transform={props.selectedPage === undefined ? "translateX(-25vw)" : "none"}
         >
           Home
         </LandingHeaderButton>
@@ -72,30 +73,17 @@ export default function LandingHeader(props: Props) {
           transition: 150ms ease;
           transition-delay: 50ms;
           transition-property: width, transform, opacity;
-
-          :hover {
-            width: 80px;
-          }
         `}
       >
-        <Image
-          // id={"icon"}
-          // onClick={props.onClick}
-          src={require("../../public/images/logo_big.png")}
-          alt={""}
-          layout={"intrinsic"}
+        <img
+          src={_generalData.logo}
+          alt={"logo"}
           onClick={() => props.setSelectedPage(undefined)}
           css={css`
             cursor: pointer;
+            width: 100%;
 
-            transition: 150ms ease;
-            transition-delay: 50ms;
-            transition-property: filter, background-color, transform, opacity;
-
-            :hover {
-              filter: invert(46%) sepia(38%) saturate(1830%) hue-rotate(150deg)
-                brightness(89%) contrast(84%);
-            }
+            transition: 200ms ease;
           `}
         />
       </div>

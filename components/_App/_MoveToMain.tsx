@@ -4,6 +4,7 @@ import { _AppContext } from "../../helpers/providers/provider_App";
 import { backgroundBlack } from "../../res/colors";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { getGeneralData } from "../../data/local/_dataGeneral";
 
 interface Props {}
 
@@ -11,6 +12,8 @@ export default function _MoveToMain(props: Props) {
   const { shouldMoveToMain } = useContext(_AppContext);
   const [beginAnimation, setBeginAnimation] = useState(false);
   const router = useRouter();
+
+  const _generalData = getGeneralData();
 
   const timeouts = useRef([]);
   useEffect(() => {
@@ -66,12 +69,12 @@ export default function _MoveToMain(props: Props) {
           transition-delay: 100ms;
         `}
       >
-        <Image
-          // id={"icon"}
-          src={require("../../public/images/logo_big.png")}
-          alt={""}
-          layout={"intrinsic"}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={_generalData.logo}
+          alt={"logo"}
           css={css`
+            width: 100%;
             opacity: ${beginAnimation ? 1 : 0};
             filter: brightness(0) saturate(100%) invert(96%) sepia(97%) saturate(12%)
               hue-rotate(237deg) brightness(103%) contrast(103%);

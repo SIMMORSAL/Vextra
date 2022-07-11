@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import { headerHeight } from "../Header";
 import { useRouter } from "next/router";
 import { _AppContext } from "../../helpers/providers/provider_App";
-import { getActiveTab } from "../../helpers/tools/tools";
+import { cacheImage, getActiveTab } from "../../helpers/tools/tools";
 import Achievements from "./Achievements";
 import { getAboutMeData } from "../../data/local/dataAboutMePage";
 import Markdown from "../RichContent/Markdown";
@@ -21,6 +21,7 @@ export default function PageAboutMe(props: Props) {
   const [contentHeight, setContentHeight] = useState<undefined | number>(undefined);
   const [contentHeightSmallerThanVh, setContentHeightSmallerThanVh] =
     useState(false);
+  const [isImageCached, setIsImageCached] = useState(false);
 
   const fadeInDuration = 900;
   const rootPaddingTop = 48;
@@ -49,6 +50,10 @@ export default function PageAboutMe(props: Props) {
         );
       }, 70)
     );
+
+    cacheImage(data.image).then(() => {
+      setIsImageCached(true);
+    });
 
     return () => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -137,9 +142,12 @@ export default function PageAboutMe(props: Props) {
             src={data.image}
             css={css`
               width: 100%;
-              aspect-ratio: 1/1;
+              aspect-ratio: ${data.imageAspectRatio};
               max-width: 450px;
               margin: 0 0 24px;
+              opacity: ${isImageCached ? 1 : 0};
+
+              transition: opacity 300ms ease;
             `}
           />
         </div>

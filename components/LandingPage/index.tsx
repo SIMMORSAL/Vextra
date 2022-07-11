@@ -7,11 +7,15 @@ import LandingHeader from "./LandingHeader";
 import LandingLogo from "./LandingLogo";
 import { useRouter } from "next/router";
 import { _AppContext } from "../../helpers/providers/provider_App";
+import { getGeneralData } from "../../data/local/_dataGeneral";
+import { cacheImage } from "../../helpers/tools/tools";
 
 interface Props {}
 
 export default function LandingPage({}: Props) {
   const router = useRouter();
+
+  const _generalData = getGeneralData();
 
   const { setMoveToMain, setNewTabSelected } = useContext(_AppContext);
   const [loading, setLoading] = useState(true);
@@ -23,18 +27,34 @@ export default function LandingPage({}: Props) {
   const [count, setCount] = useState(0);
 
   const timeouts = useRef([]);
+
   useEffect(() => {
+    setMoveToMain(false);
+
+    setIsXs(window.innerWidth < 600);
+    window.addEventListener("resize", () => setIsXs(window.innerWidth < 600));
+
+    // Animations
+    setLoading(true);
+    setBeginAnimationPhase2(false);
+
+    cacheImage(_generalData.logo).then((value) => {
+      timeouts.current.push(
+        setTimeout(() => {
+          setLoading(false);
+          timeouts.current.push(
+            setTimeout((args) => {
+              setBeginAnimationPhase2(true);
+            }, 1000)
+          );
+        }, 700)
+      );
+    });
+
     return () => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
       timeouts.current.forEach((value) => clearTimeout(value));
     };
-  }, []);
-
-  useEffect(() => {
-    setIsXs(window.innerWidth < 600);
-    window.addEventListener("resize", () => setIsXs(window.innerWidth < 600));
-    setMoveToMain(false);
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -52,20 +72,7 @@ export default function LandingPage({}: Props) {
     }
   }, [router, selectedPage, setNewTabSelected]);
 
-  useEffect(() => {
-    setLoading(true);
-    setBeginAnimationPhase2(false);
-    timeouts.current.push(
-      setTimeout(() => {
-        setLoading(false);
-        timeouts.current.push(
-          setTimeout((args) => {
-            setBeginAnimationPhase2(true);
-          }, 1000)
-        );
-      }, 700)
-    );
-  }, [count]);
+  useEffect(() => {}, [count]);
 
   return (
     <div
@@ -89,6 +96,7 @@ export default function LandingPage({}: Props) {
         setSelectedPage={setSelectedPage}
       />
       <LandingLogo
+        path={_generalData.logo}
         loading={loading}
         onClick={() => setSelectedPage(undefined)}
         selectedPage={selectedPage}

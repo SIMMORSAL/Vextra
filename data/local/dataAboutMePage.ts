@@ -6,6 +6,8 @@ export function getAboutMeData(): AboutMeData {
     image:
       // "https://avatarairlines.com/wp-content/uploads/2020/05/Female-Placeholder.png",
       "/images/my_image.jpg",
+    // "https://th.bing.com/th/id/R.2e73d56c8d9e8ffa3fc6e5041bc0a5e5?rik=Aacc%2f6WK3DGu9A&pid=ImgRaw&r=0",
+    imageAspectRatio: "1/1",
     name: "Jane Smith",
     textTop: `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at
