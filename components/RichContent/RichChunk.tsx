@@ -36,6 +36,7 @@ export default function RichChunk(props: Props) {
             width: 100%;
             max-width: 450px;
             align-self: center;
+            overflow: hidden;
           `}
         >
           <RichImage image={props.chunk.smallImage} textColor={textColor} />
