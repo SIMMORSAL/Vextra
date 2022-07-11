@@ -2,7 +2,7 @@ import { RichChunkModel } from "../../models/RichChunkModel";
 import RichImage from "../../../components/RichContent/RichImage";
 
 export function getDataRichContentDemo(): RichChunkModel[] {
-  const animatedImageTypes = [
+  const translationTypes = [
     "none",
     "topRight",
     "right",
@@ -13,7 +13,8 @@ export function getDataRichContentDemo(): RichChunkModel[] {
     "topLeft",
     "top",
   ];
-  const animatedImages = animatedImageTypes.map((value) => {
+
+  const animatedImages = translationTypes.map((value) => {
     return {
       nameId: value,
       smallImage: {
