@@ -70,7 +70,13 @@ export default function PagePortfolio(props: Props) {
             <Grid
               key={value.name}
               item
-              xs={index === 0 && portfolioItems.length % 2 === 1 ? 12 : 6}
+              xs={
+                index === 0 ||
+                (index === portfolioItems.length - 1 &&
+                  portfolioItems.length % 2 === 0)
+                  ? 12
+                  : 6
+              }
               css={css`
                 display: flex;
                 justify-content: center;
