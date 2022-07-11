@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { css } from "@emotion/react";
 import RichChunk from "./RichChunk";
 import { RichChunkModel } from "../../data/models/RichChunkModel";
@@ -12,6 +12,9 @@ export default function RichContent(p: Props) {
     <div
       css={css`
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
       `}
     >
       {p.data.map((textChunk) => {

@@ -13,7 +13,7 @@ export interface RichChunkModel {
   imageBarRightVideo?: string;
   button1?: RichButton;
   button2?: RichButton;
-  freeSpace?: boolean;
+  freeSpace?: string; // e.g: "200px", or "20vh"
 }
 
 export interface RichTextModel {

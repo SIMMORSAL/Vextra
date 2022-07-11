@@ -42,7 +42,7 @@ function MyApp({ Component, pageProps }) {
       />
       <div
         css={css`
-          position: ${isLandingPage ? "fixed" : "relative"};
+          position: ${isLandingPage ? "fixed" : "inline"};
           top: 0;
           bottom: 0;
           left: 0;

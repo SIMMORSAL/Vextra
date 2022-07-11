@@ -57,6 +57,13 @@ export default function RichChunk(props: Props) {
       {/*  />*/}
       {/*  // </div>*/}
       {/*)}*/}
+      {props.chunk.freeSpace && (
+        <div
+          css={css`
+            height: ${props.chunk.freeSpace};
+          `}
+        />
+      )}
     </div>
   );
 }
