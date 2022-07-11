@@ -20,7 +20,6 @@ export default function RichChunk(props: Props) {
         width: 100%;
         color: ${textColor};
         background-color: ${backgroundColor};
-        overflow: hidden;
         display: flex;
         flex-direction: column;
       `}

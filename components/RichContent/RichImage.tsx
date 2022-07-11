@@ -80,15 +80,6 @@ export default function RichImage(p: Props) {
         })`
       : "";
 
-  // | "none"
-  //   | "top"
-  //   | "topRight"
-  //   | "right"
-  //   | "bottomRight"
-  //   | "bottom"
-  //   | "bottomLeft"
-  //   | "left"
-  //   | "topLeft";
   return (
     <div
       ref={refImageRoot}

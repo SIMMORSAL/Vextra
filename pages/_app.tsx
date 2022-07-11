@@ -48,14 +48,16 @@ function MyApp({ Component, pageProps }) {
           left: 0;
           right: 0;
           width: 100%;
-          height: 100%;
+          height: fit-content;
+          min-height: 100%;
         `}
       >
         <_AppProvider>
           <div
             css={css`
               width: 100%;
-              height: 100%;
+              height: fit-content;
+              min-height: 100%;
             `}
           >
             <div

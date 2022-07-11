@@ -12,14 +12,22 @@ export default function RichContent(p: Props) {
     <div
       css={css`
         width: 100%;
+        height: fit-content;
         display: flex;
         flex-direction: column;
-        justify-content: start;
+        //justify-content: start;
       `}
     >
-      {p.data.map((textChunk) => {
-        return <RichChunk key={textChunk.nameId} chunk={textChunk} />;
-      })}
+      <div
+        css={css`
+          width: 100%;
+          overflow: hidden;
+        `}
+      >
+        {p.data.map((textChunk) => {
+          return <RichChunk key={textChunk.nameId} chunk={textChunk} />;
+        })}
+      </div>
     </div>
   );
 }

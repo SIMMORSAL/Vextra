@@ -2,10 +2,10 @@ import { RichChunkModel } from "../../models/RichChunkModel";
 
 export function getDataProject3(): RichChunkModel[] {
   return [
-    {
-      nameId: "spaceAtTop",
-      freeSpace: "25vh",
-    },
+    // {
+    //   nameId: "spaceAtTop",
+    //   freeSpace: "25vh",
+    // },
     {
       nameId: "comingSoon",
       smallImage: {
