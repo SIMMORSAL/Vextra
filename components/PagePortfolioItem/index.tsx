@@ -32,14 +32,33 @@ export default function PagePortfolioItem(p: Props) {
     }
   }, [pageChangeRequested]);
 
+  // css={css`
+  //       width: 100%;
+  //       height: 100%;
+  //       min-height: calc(100vh - 2px);
+  //       //border: 1px solid #484848;
+  //       font-weight: bold;
+  //       text-align: center;
+  //       display: flex;
+  //       flex-direction: column;
+  //       justify-content: center;
+  //       align-items: center;
+  //       padding: ${headerHeight}px 24px 24px;
+  //       opacity: ${isExitingPage ? 0 : 1};
+  //       margin-top: ${isExitingPage ? 12 : 0}px;
+  //
+  //       transition: 100ms ease;
+  //       transition-property: opacity, margin-top;
+  //     `}
   return (
     <div
       css={css`
         width: 100%;
         height: 100%;
+        min-height: calc(100vh - 2px);
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        //justify-content: center;
         align-items: center;
         padding-top: ${headerHeight}px;
         opacity: ${isExitingPage || isInitialRender ? 0 : 1};

@@ -36,6 +36,7 @@ export default function RichImage(p: Props) {
 
     if (p.image.animateOnScroll) window.addEventListener("scroll", listenToScroll);
     else setScrollReached(true);
+
     return () => {
       if (p.image.animateOnScroll)
         window.removeEventListener("scroll", listenToScroll);
