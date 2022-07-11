@@ -6,7 +6,7 @@ export function getDataProject3(): RichChunkModel[] {
       nameId: "comingSoon",
       smallImage: {
         path: "/images/coming_soon.jpg",
-        aspectRatio: "360/360",
+        aspectRatio: "360/196",
       },
     },
     {
