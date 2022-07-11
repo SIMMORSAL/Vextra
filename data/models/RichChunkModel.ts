@@ -2,7 +2,7 @@ export interface RichChunkModel {
   nameId: string;
   backgroundColor?: string;
   textColor?: string;
-  longText?: RichTextModel[];
+  longTexts?: RichTextModel[];
   bigImage?: RichImageModel;
   smallImage?: RichImageModel;
   videoClip?: string;
@@ -53,11 +53,12 @@ export interface RichAnimation {
   animateOnScroll?: boolean;
   animateFrom?:
     | "none"
-    | "fromTop"
-    | "fromTopRight"
-    | "fromRight"
-    | "fromBottomRight"
-    | "fromBottom"
-    | "fromTopLeft"
-    | "fromLeft";
+    | "top"
+    | "topRight"
+    | "right"
+    | "bottomRight"
+    | "bottom"
+    | "bottomLeft"
+    | "left"
+    | "topLeft";
 }

@@ -15,7 +15,7 @@ export function getDataProject3(): RichChunkModel[] {
     },
     {
       nameId: "comingSoonText",
-      longText: [
+      longTexts: [
         {
           textAlign: "center",
           text: "## More of my work will be on display soon 😊",

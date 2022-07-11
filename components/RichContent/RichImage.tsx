@@ -27,18 +27,21 @@ export default function RichImage(p: Props) {
       setImageCached(true);
     });
 
-    if (p.image.animateOnScroll) {
+    // checking if on first frame scroll is reached
+    if (p.image.animation?.animateOnScroll) {
       const scroll = document.documentElement.scrollTop;
       const imagePosition = (refImageRoot.current as HTMLDivElement).offsetTop;
-      if (scroll + window.innerHeight * 0.6 < imagePosition) setScrollReached(false);
+      if (scroll + window.innerHeight * 0.57 < imagePosition)
+        setScrollReached(false);
       else setScrollReached(true);
     }
 
-    if (p.image.animateOnScroll) window.addEventListener("scroll", listenToScroll);
+    if (p.image.animation?.animateOnScroll)
+      window.addEventListener("scroll", listenToScroll);
     else setScrollReached(true);
 
     return () => {
-      if (p.image.animateOnScroll)
+      if (p.image.animation?.animateOnScroll)
         window.removeEventListener("scroll", listenToScroll);
     };
 
@@ -49,6 +52,37 @@ export default function RichImage(p: Props) {
     setShouldAnimateIn(imageCached && scrollReached);
   }, [imageCached, scrollReached]);
 
+  const pFrom = p.image.animation?.animateFrom;
+  const animateFrom =
+    pFrom && pFrom !== "none"
+      ? `translateY(${
+          shouldAnimateIn
+            ? "0"
+            : pFrom.startsWith("top")
+            ? "-15vh"
+            : pFrom.startsWith("bottom")
+            ? "15vh"
+            : "0"
+        }) translateX(${
+          shouldAnimateIn
+            ? "0"
+            : new RegExp(/right$/i).test(pFrom)
+            ? "15vw"
+            : new RegExp(/left$/i).test(pFrom)
+            ? "-15vw"
+            : "0"
+        })`
+      : "";
+
+  // | "none"
+  //   | "top"
+  //   | "topRight"
+  //   | "right"
+  //   | "bottomRight"
+  //   | "bottom"
+  //   | "bottomLeft"
+  //   | "left"
+  //   | "topLeft";
   return (
     <div
       ref={refImageRoot}
@@ -72,8 +106,10 @@ export default function RichImage(p: Props) {
           object-fit: cover;
           aspect-ratio: ${p.image.aspectRatio};
           opacity: ${shouldAnimateIn ? 1 : 0};
+          transform: ${shouldAnimateIn ? "" : animateFrom};
 
-          transition: opacity 350ms ease;
+          transition: 350ms ease;
+          transition-property: opacity, transform;
         `}
       />
       {p.image.subText && p.image.subText.length !== 0 && (

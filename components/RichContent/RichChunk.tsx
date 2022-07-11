@@ -24,8 +24,8 @@ export default function RichChunk(props: Props) {
         flex-direction: column;
       `}
     >
-      {props.chunk.longText && props.chunk.longText.length > 0 && (
-        <RichText texts={props.chunk.longText} />
+      {props.chunk.longTexts && props.chunk.longTexts.length > 0 && (
+        <RichText texts={props.chunk.longTexts} />
       )}
       {props.chunk.bigImage && (
         <RichImage image={props.chunk.bigImage} textColor={textColor} />

@@ -4,7 +4,7 @@ export function getDataProject1(): RichChunkModel[] {
   return [
     {
       nameId: "asdf",
-      longText: [
+      longTexts: [
         {
           textAlign: "center",
           text: "# aslkdfjl skdjflksdj flksdf",
@@ -19,7 +19,7 @@ export function getDataProject1(): RichChunkModel[] {
     },
     {
       nameId: "sdfasdfasd",
-      longText: [
+      longTexts: [
         {
           textAlign: "center",
           text: "# aslkdfjl skdjflksdj flksdf",
@@ -38,12 +38,15 @@ asdf asd fasd ffasd fsad fasd ffsad fasd fsd fsd sad f
         subText:
           "asdlkfjlasdk jflaskd lsakd fflksdj lskdj fsdf df fds s f fsds  sdd   dss fd sf ",
         aspectRatio: "900/562",
-        animateOnScroll: true,
+        animation: {
+          animateOnScroll: true,
+          animateFrom: "bottomRight",
+        },
       },
     },
     {
       nameId: "Third",
-      longText: [
+      longTexts: [
         {
           textAlign: "center",
           text: "# aslkdfjl skdjflksdj flksdf",
@@ -84,7 +87,6 @@ asdf asd fasd ffasd fsad fasd ffsad fasd fsd fsd sad f
         subText:
           "asdlkfjlasdk jflaskd lsakd fflksdj lskdj fsdf df fds s f fsds  sdd   dss fd sf ",
         aspectRatio: "4500/2700",
-        animateOnScroll: false,
       },
     },
   ];
