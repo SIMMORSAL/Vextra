@@ -34,23 +34,9 @@ export interface RichButton {
   href: string;
 }
 
-/**
- * Rich Animation object
- *
- * ${animateOnScroll}
- * For RichText: animateFrom won't work without animateOnScroll
- *
- * For
- *
- *
- *sadfsdf
- *
- * @param
- *
- * @param {string} animateFrom The power, must be a natural number.
- */
 export interface RichAnimation {
   animateOnScroll?: boolean;
+  translateDistance?: number; // e.g: 25vh and 25vw
   animateFrom?:
     | "none"
     | "top"

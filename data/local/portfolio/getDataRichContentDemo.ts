@@ -22,6 +22,7 @@ export function getDataRichContentDemo(): RichChunkModel[] {
         animation: {
           animateOnScroll: true,
           animateFrom: value,
+          translateDistance: 60,
         },
       },
       freeSpace: "20px",

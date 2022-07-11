@@ -52,24 +52,30 @@ export default function RichImage(p: Props) {
     setShouldAnimateIn(imageCached && scrollReached);
   }, [imageCached, scrollReached]);
 
-  const pFrom = p.image.animation?.animateFrom;
+  // * Animation setup
+  const pAnimation = p.image.animation;
+  const translateDistance = pAnimation?.translateDistance
+    ? pAnimation.translateDistance
+    : 25;
+
+  const pFrom = pAnimation?.animateFrom;
   const animateFrom =
     pFrom && pFrom !== "none"
       ? `translateY(${
           shouldAnimateIn
             ? "0"
             : pFrom.startsWith("top")
-            ? "-15vh"
+            ? `-${translateDistance}vh`
             : pFrom.startsWith("bottom")
-            ? "15vh"
+            ? `${translateDistance}vh`
             : "0"
         }) translateX(${
           shouldAnimateIn
             ? "0"
             : new RegExp(/right$/i).test(pFrom)
-            ? "15vw"
+            ? `${translateDistance}vw`
             : new RegExp(/left$/i).test(pFrom)
-            ? "-15vw"
+            ? `-${translateDistance}vw`
             : "0"
         })`
       : "";
