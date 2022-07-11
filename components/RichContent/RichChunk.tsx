@@ -20,6 +20,7 @@ export default function RichChunk(props: Props) {
         width: 100%;
         color: ${textColor};
         background-color: ${backgroundColor};
+        overflow: hidden;
         display: flex;
         flex-direction: column;
       `}
@@ -36,7 +37,7 @@ export default function RichChunk(props: Props) {
             width: 100%;
             max-width: 450px;
             align-self: center;
-            overflow: hidden;
+            padding: 0 24px;
           `}
         >
           <RichImage image={props.chunk.smallImage} textColor={textColor} />
