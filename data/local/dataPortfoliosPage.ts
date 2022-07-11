@@ -2,7 +2,7 @@ import { Portfolio } from "../models/local-data/portfolio";
 import { getDataProject1 } from "./portfolio/getDataProject1";
 import { getDataProject2 } from "./portfolio/getDataProject2";
 import { getDataProject3 } from "./portfolio/getDataProject3";
-import { getDataRichContentDemo } from "./portfolio/getDataRichContentDemo";
+import { getDataRichContentHandbook } from "./portfolio/getDataRichContentHandbook";
 
 export function getPortfolio(linkId: string): Portfolio {
   return getAllPortfolios().filter((value) => value.linkId === linkId)[0];
@@ -42,14 +42,13 @@ export function getAllPortfolios(): Portfolio[] {
       pageContent: getDataProject3(),
     },
     {
-      linkId: "rich-content-demo",
+      linkId: "rich-content-handbook",
       name: "umbrella",
       color: "#ff0000",
       backgroundColor: "#3f0101",
       isBackgroundDark: false,
-      image: "/images/portfolio/PortfolioItemTemplate3.jpg",
-      award: "/images/portfolio/GDPJ_logo.png",
-      pageContent: getDataRichContentDemo(),
+      image: "/images/portfolio/PortfolioItemRichContentHandbook.jpg",
+      pageContent: getDataRichContentHandbook(),
     },
     // {
     //   linkId: "one-more",
