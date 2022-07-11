@@ -33,6 +33,7 @@ export default function RichChunk(props: Props) {
       {props.chunk.smallImage && (
         <div
           css={css`
+            width: 100%;
             max-width: 450px;
             align-self: center;
           `}

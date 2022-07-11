@@ -19,6 +19,12 @@ export function getDataProject2(): RichChunkModel[] {
       },
     },
     {
+      nameId: "bigImageTest",
+      smallImage: {
+        path: "https://th.bing.com/th/id/R.2e73d56c8d9e8ffa3fc6e5041bc0a5e5?rik=Aacc%2f6WK3DGu9A&pid=ImgRaw&r=0",
+      },
+    },
+    {
       nameId: "Third",
       longText: [
         {
