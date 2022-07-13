@@ -91,7 +91,7 @@ The best way to learn how it work is to first look at the Models.
 # Model
 ---
 \`\`\`js
-const x = y.z;
+const x = "69" - 420;
 \`\`\`
 
 
