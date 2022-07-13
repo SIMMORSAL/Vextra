@@ -82,9 +82,11 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
 `,
         },
         {
-          text: `
+          text: `You can see the data file of this code [from this link](https://google.com)
+          
 This is a full blown test in demonstration of Rich Chunks abilities. \ 
-You can see the data file of this code [from this link](https://google.com)
+
+The best way to learn how it work is to first look at the Models.
 
 # Model
 
