@@ -1,3 +1,5 @@
+// noinspection JSUnresolvedLibraryURL
+
 import "../styles/globals.css";
 import { css } from "@emotion/react";
 import Header from "../components/Header";
@@ -30,11 +32,13 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        {/*<meta name="viewport" content="initial-scale=1.0, width=device-width" />*/}
-        {/*<meta charSet="utf-8" />*/}
-        <title>Mitra</title>
         {/*<meta name="description" content="An example of a meta description." />*/}
-        {/*<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />*/}
+        <title>Mitra</title>
+        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Dosis&family=Roboto&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <Script
         src="https://kit.fontawesome.com/195ee4c6bd.js"
@@ -42,6 +46,7 @@ function MyApp({ Component, pageProps }) {
       />
       <div
         css={css`
+          font-family: "Roboto", sans-serif;
           position: ${isLandingPage ? "fixed" : "inline"};
           top: 0;
           bottom: 0;

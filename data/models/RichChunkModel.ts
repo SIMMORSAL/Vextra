@@ -19,7 +19,7 @@ export interface RichChunkModel {
 
 export interface RichTextModel {
   text: string;
-  textAlign?: string;
+  textAlign?: "start" | "center" | "end";
   animation?: RichAnimation;
 }
 
