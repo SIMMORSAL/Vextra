@@ -1,10 +1,17 @@
 import React from "react";
-import { SerializedStyles } from "@emotion/react";
+import { css, SerializedStyles } from "@emotion/react";
 import ReactMarkdown from "react-markdown";
 
 function LinkRenderer(p: any) {
   return (
-    <a href={p.href} target="_blank" rel="noreferrer">
+    <a
+      href={p.href}
+      target="_blank"
+      rel="noreferrer"
+      css={css`
+        color: orange;
+      `}
+    >
       {p.children}
     </a>
   );

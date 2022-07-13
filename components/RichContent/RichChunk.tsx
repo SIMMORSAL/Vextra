@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 import { RichChunkModel } from "../../data/models/RichChunkModel";
 import RichText from "./RichText";
 import RichImage from "./RichImage";
+import { getPortfolio } from "../../data/local/dataPortfoliosPage";
 
 interface Props {
   chunk: RichChunkModel;
@@ -24,8 +25,18 @@ export default function RichChunk(props: Props) {
         flex-direction: column;
       `}
     >
-      {props.chunk.longTexts && props.chunk.longTexts.length > 0 && (
-        <RichText texts={props.chunk.longTexts} />
+      {props.chunk.longTextsTop && props.chunk.longTextsTop.length > 0 && (
+        <div
+        // * This is the way to get one way chunk and test against it
+        // css={css`
+        //   background-color: ${props.chunk.longTextsTop[0].text ===
+        //   getPortfolio("rich-content-handbook").pageContent[0].longTextsTop[0].text
+        //     ? "red"
+        //     : ""};
+        // `}
+        >
+          <RichText texts={props.chunk.longTextsTop} />
+        </div>
       )}
       {props.chunk.bigImage && (
         <RichImage image={props.chunk.bigImage} textColor={textColor} />

@@ -2,7 +2,7 @@ export interface RichChunkModel {
   nameId: string;
   backgroundColor?: string;
   textColor?: string;
-  longTexts?: RichTextModel[];
+  longTextsTop?: RichTextModel[];
   bigImage?: RichImageModel;
   smallImage?: RichImageModel;
   videoClip?: string;
@@ -13,6 +13,7 @@ export interface RichChunkModel {
   imageBarRightVideo?: string;
   button1?: RichButton;
   button2?: RichButton;
+  longTextsBottom?: RichTextModel[];
   freeSpace?: string; // e.g: "200px", or "20vh"
 }
 

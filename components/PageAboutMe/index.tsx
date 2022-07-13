@@ -134,6 +134,7 @@ export default function PageAboutMe(props: Props) {
         <div
           css={css`
             padding: 0 32px 0;
+            aspect-ratio: ${data.imageAspectRatio};
           `}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}

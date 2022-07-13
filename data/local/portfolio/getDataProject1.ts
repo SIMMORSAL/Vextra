@@ -4,7 +4,7 @@ export function getDataProject1(): RichChunkModel[] {
   return [
     {
       nameId: "asdf",
-      longTexts: [
+      longTextsTop: [
         {
           textAlign: "center",
           text: "# aslkdfjl skdjflksdj flksdf",
@@ -19,7 +19,7 @@ export function getDataProject1(): RichChunkModel[] {
     },
     {
       nameId: "sdfasdfasd",
-      longTexts: [
+      longTextsTop: [
         {
           textAlign: "center",
           text: "# aslkdfjl skdjflksdj flksdf",
@@ -46,7 +46,7 @@ asdf asd fasd ffasd fsad fasd ffsad fasd fsd fsd sad f
     },
     {
       nameId: "Third",
-      longTexts: [
+      longTextsTop: [
         {
           textAlign: "center",
           text: "# aslkdfjl skdjflksdj flksdf",

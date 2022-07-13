@@ -11,8 +11,8 @@ export function getPortfolio(linkId: string): Portfolio {
 export function getAllPortfolios(): Portfolio[] {
   return [
     {
-      linkId: "one-more",
-      name: "One More Faucet",
+      linkId: "X-bike",
+      name: "X|Bike",
       color: "#0066ff",
       backgroundColor: "#011736",
       isBackgroundDark: true,
@@ -23,23 +23,22 @@ export function getAllPortfolios(): Portfolio[] {
       pageContent: getDataProject1(),
     },
     {
-      linkId: "umbrella-ca",
-      name: "ab",
+      linkId: "scootify",
+      name: "Scootify",
+      color: "#ff0000",
+      backgroundColor: "#3f0101",
+      isBackgroundDark: false,
+      image: "/images/portfolio/PortfolioItemTemplate3.jpg",
+      pageContent: getDataProject3(),
+    },
+    {
+      linkId: "gallery",
+      name: "Photography",
       color: "#ff00ff",
       backgroundColor: "#3a053a",
       isBackgroundDark: false,
       image: "/images/portfolio/PortfolioItemTemplate2.jpg",
       pageContent: getDataProject2(),
-    },
-    {
-      linkId: "umbrella",
-      name: "umbrella",
-      color: "#ff0000",
-      backgroundColor: "#3f0101",
-      isBackgroundDark: false,
-      image: "/images/portfolio/PortfolioItemTemplate3.jpg",
-      award: "/images/portfolio/GDPJ_logo.png",
-      pageContent: getDataProject3(),
     },
     {
       linkId: "rich-content-handbook",
