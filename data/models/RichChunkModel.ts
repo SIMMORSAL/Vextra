@@ -20,6 +20,7 @@ export interface RichChunkModel {
 export interface RichTextModel {
   text: string;
   textAlign?: "start" | "center" | "end";
+  userSelect?: string;
   animation?: RichAnimation;
 }
 

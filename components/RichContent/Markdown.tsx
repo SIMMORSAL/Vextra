@@ -3,11 +3,8 @@ import { css, SerializedStyles } from "@emotion/react";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import {
-  vscDarkPlus,
-  coy,
-  gruvboxLight,
-} from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { themeLight } from "./MarkdownSyntaxTheme";
 
 function LinkRenderer(p: any) {
   return (
@@ -29,7 +26,7 @@ const CodeBlock = {
     const match = /language-(\w+)/.exec(className || "");
     return !inline && match ? (
       <SyntaxHighlighter
-        style={gruvboxLight}
+        style={themeLight}
         language={match[1]}
         PreTag="div"
         {...props}

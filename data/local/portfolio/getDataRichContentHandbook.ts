@@ -1,4 +1,4 @@
-import { RichChunkModel } from "../../models/RichChunkModel";
+import { RichChunkModel, RichTextModel } from "../../models/RichChunkModel";
 
 export function getDataRichContentHandbook(): RichChunkModel[] {
   const translationTypes = [
@@ -135,6 +135,11 @@ const x = "69" - 420;
     },
   ].map((v: RichChunkModel, i) => {
     if (v.nameId === undefined) v.nameId = i.toString();
+    if (v.longTextsTop !== undefined)
+      v.longTextsTop = v.longTextsTop.map((v: RichTextModel) => {
+        if (v.userSelect === undefined) v.userSelect = "text";
+        return v;
+      });
     return v;
   });
 }

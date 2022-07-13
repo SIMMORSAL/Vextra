@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { css } from "@emotion/react";
 import { RichTextModel } from "../../data/models/RichChunkModel";
 import MarkDown from "./Markdown";
+import { cacheImage } from "../../helpers/tools/tools";
 
 interface Props {
   texts: RichTextModel[];
 }
 
-export default function RichText(props: Props) {
+export default function RichText(p: Props) {
   return (
     <div
       css={css`
@@ -19,16 +20,94 @@ export default function RichText(props: Props) {
         flex-direction: column;
       `}
     >
-      {props.texts.map((text, index) => {
+      {p.texts.map((text, index) => {
         const style = css`
           text-align: ${text.textAlign};
+          user-select: ${text.userSelect ? text.userSelect : "none"};
         `;
-        return (
-          <div key={index} css={style}>
-            <MarkDown text={text.text} />
-          </div>
-        );
+        return <TextChunk key={index} text={text} />;
       })}
+    </div>
+  );
+}
+
+function TextChunk(p: { text: RichTextModel }) {
+  const refTextRoot = useRef();
+
+  // const [scrollReached, setScrollReached] = useState(false);
+  const [shouldAnimateIn, setShouldAnimateIn] = useState(false);
+
+  const listenToScroll = () => {
+    const scroll = document.documentElement.scrollTop;
+    const txt = (refTextRoot.current as HTMLDivElement).offsetTop;
+    if (scroll + window.innerHeight * 0.6 < txt) setShouldAnimateIn(false);
+    else setShouldAnimateIn(true);
+  };
+
+  useEffect(() => {
+    // checking if on first frame scroll is reached
+    if (p.text.animation?.animateOnScroll) {
+      const scroll = document.documentElement.scrollTop;
+      const imagePosition = (refTextRoot.current as HTMLDivElement).offsetTop;
+      if (scroll + window.innerHeight * 0.57 < imagePosition)
+        setShouldAnimateIn(false);
+      else setShouldAnimateIn(true);
+    }
+
+    if (p.text.animation?.animateOnScroll)
+      window.addEventListener("scroll", listenToScroll);
+    else setShouldAnimateIn(true);
+
+    return () => {
+      if (p.text.animation?.animateOnScroll)
+        window.removeEventListener("scroll", listenToScroll);
+    };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // * Animation setup
+  const pAnimation = p.text.animation;
+  const translateDistance = pAnimation?.translateDistance
+    ? pAnimation.translateDistance
+    : 25;
+
+  const pFrom = pAnimation?.animateFrom;
+  const animateFrom =
+    pFrom && pFrom !== "none"
+      ? `translateY(${
+          shouldAnimateIn
+            ? "0"
+            : pFrom.startsWith("top")
+            ? `-${translateDistance}vh`
+            : pFrom.startsWith("bottom")
+            ? `${translateDistance}vh`
+            : "0"
+        }) translateX(${
+          shouldAnimateIn
+            ? "0"
+            : new RegExp(/right$/i).test(pFrom)
+            ? `${translateDistance}vw`
+            : new RegExp(/left$/i).test(pFrom)
+            ? `-${translateDistance}vw`
+            : "0"
+        })`
+      : "";
+
+  const style = css`
+    text-align: ${p.text.textAlign};
+    user-select: ${p.text.userSelect ? p.text.userSelect : "none"};
+
+    // Animations
+    opacity: ${shouldAnimateIn ? 1 : 0};
+    transform: ${shouldAnimateIn ? "" : animateFrom};
+
+    transition: 350ms ease;
+    transition-property: opacity, transform;
+  `;
+  return (
+    <div css={style} ref={refTextRoot}>
+      <MarkDown text={p.text.text} />
     </div>
   );
 }
