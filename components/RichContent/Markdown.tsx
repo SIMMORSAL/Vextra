@@ -3,7 +3,7 @@ import { css, SerializedStyles } from "@emotion/react";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { vs } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { themeLight } from "./MarkdownSyntaxTheme";
 
 function LinkRenderer(p: any) {

@@ -1,6 +1,6 @@
 export const themeLight = {
   'code[class*="language-"]': {
-    color: "#3c3836",
+    color: "#dc4a68",
     // fontFamily: 'Consolas, Monaco, "Andale Mono", monospace',
     fontFamily: "Source Code Pro",
     fontSize: ".8em",
@@ -37,8 +37,9 @@ export const themeLight = {
     padding: "1em",
     margin: "0.5em 0",
     overflow: "auto",
-    background: "rgba(0,216,217,0.165)",
+    background: "rgba(236,213,213,0.18)",
     borderRadius: "8px",
+    border: "1px solid rgba(30,37,187,0.18)",
   },
   'pre[class*="language-"]::-moz-selection': {
     color: "#282828",
@@ -78,7 +79,7 @@ export const themeLight = {
     borderRadius: "0.3em",
   },
   comment: {
-    color: "#7c6f64",
+    color: "#707f8f",
   },
   prolog: {
     color: "#7c6f64",
@@ -129,7 +130,7 @@ export const themeLight = {
     color: "#8f3f71",
   },
   number: {
-    color: "#8f3f71",
+    color: "#980055",
   },
   symbol: {
     color: "#8f3f71",
@@ -141,10 +142,10 @@ export const themeLight = {
     color: "#9d0006",
   },
   variable: {
-    color: "#9d0006",
+    color: "#ed9801",
   },
   string: {
-    color: "#797403",
+    color: "#669801",
   },
   char: {
     color: "#797403",

@@ -34,12 +34,12 @@ function MyApp({ Component, pageProps }) {
       <Head>
         {/*<meta name="description" content="An example of a meta description." />*/}
         <title>Mitra</title>
-        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Dosis&family=Oswald:wght@300&display=swap"
-          rel="stylesheet"
-        />
       </Head>
+      {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+      <link
+        href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Dosis&family=Oswald:wght@300&display=swap"
+        rel="stylesheet"
+      />
       <Script
         src="https://kit.fontawesome.com/195ee4c6bd.js"
         crossOrigin="anonymous"
