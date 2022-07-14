@@ -37,7 +37,7 @@ export const themeLight = {
     padding: "1em",
     margin: "0.5em 0",
     overflow: "auto",
-    background: "rgba(236,213,213,0.18)",
+    background: "rgba(210,163,163,0.09)",
     borderRadius: "8px",
     border: "1px solid rgba(30,37,187,0.18)",
   },
