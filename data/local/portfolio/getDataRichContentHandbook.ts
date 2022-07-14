@@ -58,7 +58,7 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
 `,
         },
         {
-          text: `
+          text: ` 
 You can see the data file of this page [from this link](https://google.com)
 \` \`           
 \` \`           
@@ -69,6 +69,60 @@ The best way to learn how it work is to first look at the Models.
 
 \`\`\`js
 const x = "69" - 420;
+
+interface RichChunkModel {
+  nameId: string;
+  backgroundColor?: string;
+  textColor?: string;
+  longTextsTop?: RichTextModel[];
+  bigImage?: RichImageModel;
+  smallImage?: RichImageModel;
+  videoClip?: string;
+  imageBarLeft?: RichImageModel;
+  imageBarLeftVideo?: string;
+  imageBarText?: RichTextModel[];
+  imageBarRight?: RichImageModel;
+  imageBarRightVideo?: string;
+  button1?: RichButton;
+  button2?: RichButton;
+  longTextsBottom?: RichTextModel[];
+  freeSpace?: string; // e.g: "200px", or "20vh"
+}
+
+interface RichTextModel {
+  text: string;
+  textAlign?: "start" | "center" | "end";
+  userSelect?: string;
+  animation?: RichAnimation;
+}
+
+interface RichImageModel {
+  path: string;
+  subText?: string;
+  aspectRatio?: string; // you can write your image's width and height. e.g: "800/600". if you provide this, content won't jump when image starts loading
+  animation?: RichAnimation;
+}
+
+interface RichButton {
+  title: string;
+  href: string;
+}
+
+interface RichAnimation {
+  animateOnScroll?: boolean;
+  translateDistance?: number; // e.g: 25vh and 25vw
+  animateFrom?:
+    | "none"
+    | "top"
+    | "topRight"
+    | "right"
+    | "bottomRight"
+    | "bottom"
+    | "bottomLeft"
+    | "left"
+    | "topLeft";
+}
+
 \`\`\`
 
 
