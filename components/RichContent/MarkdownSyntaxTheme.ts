@@ -3,7 +3,7 @@ export const themeLight = {
     color: "#3c3836",
     // fontFamily: 'Consolas, Monaco, "Andale Mono", monospace',
     fontFamily: "Source Code Pro",
-    fontSize: ".9em",
+    fontSize: ".8em",
     direction: "ltr",
     textAlign: "left",
     whiteSpace: "pre",
@@ -37,7 +37,7 @@ export const themeLight = {
     padding: "1em",
     margin: "0.5em 0",
     overflow: "auto",
-    background: "rgba(53,229,189,0.317)",
+    background: "rgba(53,229,rgba(110,203,255,0.145),0.317)",
     borderRadius: "8px",
   },
   'pre[class*="language-"]::-moz-selection': {
