@@ -68,8 +68,6 @@ The best way to learn how it work is to first look at the Models.
 ## Model
 
 \`\`\`birb
-const x = "69" - 420;
-
 interface RichChunkModel {
   nameId: string;
   backgroundColor?: string;
@@ -99,7 +97,7 @@ interface RichTextModel {
 interface RichImageModel {
   path: string;
   subText?: string;
-  aspectRatio?: string; // you can write your image's width and height. e.g: "800/600". if you provide this, content won't jump when image starts loading
+  aspectRatio?: string; 
   animation?: RichAnimation;
 }
 
