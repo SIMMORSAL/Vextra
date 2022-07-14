@@ -13,30 +13,6 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
     "top",
   ];
 
-  // const texts = [
-  //   "### coming from none",
-  //   "### coming from topRight",
-  //   "### coming from right",
-  //   "### coming from bottomRight",
-  //   "### coming from bottom",
-  //   "### coming from bottomLeft",
-  //   "### coming from left",
-  //   "### coming from topLeft",
-  //   "### coming from top",
-  // ];
-
-  // const images = [
-  //   "https://th.bing.com/th/id/OIP.XInPSfSw_KKOcuwTSDbW1AHaF7?pid=ImgDet&rs=1",
-  //   "https://th.bing.com/th/id/OIP.XInPSfSw_KKOcuwTSDbW1AHaF7?pid=ImgDet&rs=1",
-  //   "https://th.bing.com/th/id/OIP.XInPSfSw_KKOcuwTSDbW1AHaF7?pid=ImgDet&rs=1",
-  //   "https://th.bing.com/th/id/OIP.XInPSfSw_KKOcuwTSDbW1AHaF7?pid=ImgDet&rs=1",
-  //   "https://th.bing.com/th/id/OIP.XInPSfSw_KKOcuwTSDbW1AHaF7?pid=ImgDet&rs=1",
-  //   "https://th.bing.com/th/id/OIP.XInPSfSw_KKOcuwTSDbW1AHaF7?pid=ImgDet&rs=1",
-  //   "https://th.bing.com/th/id/OIP.XInPSfSw_KKOcuwTSDbW1AHaF7?pid=ImgDet&rs=1",
-  //   "https://th.bing.com/th/id/OIP.XInPSfSw_KKOcuwTSDbW1AHaF7?pid=ImgDet&rs=1",
-  //   "https://th.bing.com/th/id/OIP.XInPSfSw_KKOcuwTSDbW1AHaF7?pid=ImgDet&rs=1",
-  // ];
-
   const animatedTexts = translationTypes.map((value, index) => {
     return {
       longTextsTop: [
@@ -87,8 +63,11 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
 This is a full blown test in demonstration of Rich Chunks abilities. \ 
 
 The best way to learn how it work is to first look at the Models.
+\` \`  
+\` \`  
+\` \`  
 
-# Model
+## Model
 ---
 \`\`\`js
 const x = "69" - 420;

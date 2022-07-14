@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps }) {
         <title>Mitra</title>
         {/* eslint-disable-next-line @next/next/no-page-custom-font */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Dosis&family=Roboto&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Dosis&family=Edu+SA+Beginner&display=swap"
           rel="stylesheet"
         />
       </Head>
@@ -46,7 +46,7 @@ function MyApp({ Component, pageProps }) {
       />
       <div
         css={css`
-          font-family: "Roboto", sans-serif;
+          font-family: "Edu SA Beginner", sans-serif;
           position: ${isLandingPage ? "fixed" : "inline"};
           top: 0;
           bottom: 0;
