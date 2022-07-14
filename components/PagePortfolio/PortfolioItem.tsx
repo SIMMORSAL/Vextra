@@ -48,10 +48,13 @@ export default function PortfolioItem(p: Props) {
   }
 
   useEffect(() => {
-    setIsInitialRender(false);
-    cacheImage(p.portfolio.image).then(() => {
-      setIsImageCached(true);
-    });
+    setTimeout(() => {
+      // ! timeout exists because sometimes on phones mostly, I think chrome doesn't show the animation
+      setIsInitialRender(false);
+      cacheImage(p.portfolio.image).then(() => {
+        setIsImageCached(true);
+      });
+    }, 50);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
