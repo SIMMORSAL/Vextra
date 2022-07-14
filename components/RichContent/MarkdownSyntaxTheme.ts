@@ -1,7 +1,8 @@
 export const themeLight = {
   'code[class*="language-"]': {
     color: "#3c3836",
-    fontFamily: 'Consolas, Monaco, "Andale Mono", monospace',
+    // fontFamily: 'Consolas, Monaco, "Andale Mono", monospace',
+    fontFamily: "Source Code Pro",
     direction: "ltr",
     textAlign: "left",
     whiteSpace: "pre",

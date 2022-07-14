@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps }) {
         <title>Mitra</title>
         {/* eslint-disable-next-line @next/next/no-page-custom-font */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Dosis&family=Edu+SA+Beginner&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Dosis&family=Edu+SA+Beginner&display=swap"
           rel="stylesheet"
         />
       </Head>
