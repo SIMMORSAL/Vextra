@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps }) {
         <title>Mitra</title>
         {/* eslint-disable-next-line @next/next/no-page-custom-font */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Dosis&family=Edu+SA+Beginner&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Dosis&family=Oswald:wght@300&display=swap"
           rel="stylesheet"
         />
       </Head>
@@ -46,7 +46,9 @@ function MyApp({ Component, pageProps }) {
       />
       <div
         css={css`
-          font-family: "Edu SA Beginner", sans-serif;
+          font-family: "Oswald", sans-serif;
+          //font-family: "Dosis", sans-serif;
+          font-weight: 300;
           position: ${isLandingPage ? "fixed" : "inline"};
           top: 0;
           bottom: 0;

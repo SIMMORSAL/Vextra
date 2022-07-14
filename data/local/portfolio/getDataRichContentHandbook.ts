@@ -58,17 +58,15 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
 `,
         },
         {
-          text: `You can see the data file of this code [from this link](https://google.com)
-          
+          text: `
+You can see the data file of this page [from this link](https://google.com)
+\` \`           
+\` \`           
 This is a full blown test in demonstration of Rich Chunks abilities. \ 
-
 The best way to learn how it work is to first look at the Models.
-\` \`  
-\` \`  
-\` \`  
 
 ## Model
----
+
 \`\`\`js
 const x = "69" - 420;
 \`\`\`
