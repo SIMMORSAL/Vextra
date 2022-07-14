@@ -67,7 +67,7 @@ The best way to learn how it work is to first look at the Models.
 
 ## Model
 
-\`\`\`json
+\`\`\`birb
 const x = "69" - 420;
 
 interface RichChunkModel {
