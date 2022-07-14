@@ -37,7 +37,7 @@ export const themeLight = {
     padding: "1em",
     margin: "0.5em 0",
     overflow: "auto",
-    background: "rgba(243,64,116,0.318)",
+    background: "rgba(0,55,217,0.166)",
     borderRadius: "8px",
   },
   'pre[class*="language-"]::-moz-selection': {
