@@ -49,6 +49,7 @@ function MyApp({ Component, pageProps }) {
           font-family: "Oswald", sans-serif;
           //font-family: "Dosis", sans-serif;
           font-weight: 300;
+          font-size: 1.1em;
           position: ${isLandingPage ? "fixed" : "inline"};
           top: 0;
           bottom: 0;
