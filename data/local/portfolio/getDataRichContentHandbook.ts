@@ -38,8 +38,8 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
   const animatedImages = translationTypes.map((value, index) => {
     return {
       smallImage: {
-        // path: images[index],
-        path: "https://th.bing.com/th/id/OIP.XInPSfSw_KKOcuwTSDbW1AHaF7?pid=ImgDet&rs=1",
+        path: `/images/portfolio/fireball_${index}.gif`,
+        // path: "https://th.bing.com/th/id/OIP.XInPSfSw_KKOcuwTSDbW1AHaF7?pid=ImgDet&rs=1",
         aspectRatio: "474/379",
         animation: {
           animateOnScroll: true,
@@ -210,8 +210,8 @@ _More on ${getInlineCode("animation", "#9d0006")} below._
 
 All the texts are rendered as Markdown for easy and fast typing.
 
-If you need to edit code-block and it's syntax highlighting, you can do so by changing the values 
-in ${getInlineCode(
+If you need to edit code-block and it's syntax highlighting, you can do so by 
+editing ${getInlineCode(
             "/components/RichContent/Markdown/MarkdownSyntaxTheme.ts ",
             "green"
           )}.
