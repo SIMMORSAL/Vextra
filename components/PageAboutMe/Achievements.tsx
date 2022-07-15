@@ -2,7 +2,7 @@ import React from "react";
 import { css } from "@emotion/react";
 import { getHistory } from "../../data/local/dataAboutMePage";
 import { History } from "../../data/models/local-data/history";
-import MarkDown from "../RichContent/Markdown";
+import MarkDown from "../RichContent/Markdown/Markdown";
 
 interface Props {}
 

@@ -6,7 +6,7 @@ import { _AppContext } from "../../helpers/providers/provider_App";
 import { cacheImage, getActiveTab } from "../../helpers/tools/tools";
 import Achievements from "./Achievements";
 import { getAboutMeData } from "../../data/local/dataAboutMePage";
-import Markdown from "../RichContent/Markdown";
+import Markdown from "../RichContent/Markdown/Markdown";
 
 interface Props {}
 

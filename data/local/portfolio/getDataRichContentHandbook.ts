@@ -2,6 +2,7 @@ import {
   RichChunkModel,
   RichTextModel,
 } from "../../models/rich-chunk/RichChunkModel";
+import { getInlineCode } from "../../../components/RichContent/Markdown/MarkdownTools";
 
 export function getDataRichContentHandbook(): RichChunkModel[] {
   const translationTypes = [
@@ -62,13 +63,34 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
         },
         {
           text: ` 
-You can see the data file of this page [from this link](https://google.com)
+
+This is a full blown test in demonstration of Rich Chunks abilities. You can see the data file of this page [from this link](https://google.com).
 \` \`           
 \` \`           
-This is a full blown test in demonstration of Rich Chunks abilities. \ 
+
+Each portfolio page is dynamically created by reading a list 
+of ${getInlineCode("RichChunkModel")} items provided in your portfolio object:
+
+\`\`\`birb(2)
+interface Portfolio {
+  ...
+  pageRichContent: RichChunkModel[];
+  headerColor: string;
+  headerItemsColor: string;
+}
+\`\`\`
+_The two color properties work when inside the page._
+\` \`           
+\` \`           
+\` \`           
+
+
+Rich Content gives you the ability to beautiful and animated pages very quickly. 
 The best way to learn how it work is to first look at the Models.
 
 ## Model
+
+
 
 \`\`\`birb
 interface RichChunkModel {
@@ -79,13 +101,11 @@ interface RichChunkModel {
   bigImage?: RichImageModel;
   smallImage?: RichImageModel;
   videoClip?: string;
-  imageBarLeft?: RichImageModel;
-  imageBarLeftVideo?: string;
-  imageBarText?: RichTextModel[];
-  imageBarRight?: RichImageModel;
-  imageBarRightVideo?: string;
-  button1?: RichButton;
-  button2?: RichButton;
+  mediaBarLeftImage?: RichImageModel;
+  mediaBarLeftVideo?: string;
+  mediaBarText?: RichTextModel[];
+  mediaBarRightImage?: RichImageModel;
+  mediaBarRightVideo?: string;
   longTextsBottom?: RichTextModel[];
   freeSpace?: string; // e.g: "200px", or "20vh"
 }
@@ -104,11 +124,6 @@ interface RichImageModel {
   animation?: RichAnimation;
 }
 
-interface RichButton {
-  title: string;
-  href: string;
-}
-
 interface RichAnimation {
   animateOnScroll?: boolean;
   translateDistance?: number; // e.g: 25vh and 25vw
@@ -123,7 +138,6 @@ interface RichAnimation {
     | "left"
     | "topLeft";
 }
-
 \`\`\`
 
 
