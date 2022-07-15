@@ -56,7 +56,7 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
       nameId: "intro",
       longTextsTop: [
         {
-          textAlign: "center",
+          align: "center",
           text: `
 # Rich Content Handbook
 `,
@@ -79,13 +79,14 @@ interface Portfolio {
   headerItemsColor: string;
 }
 \`\`\`
-_The two color properties work when inside the page._
+_The two color properties are used by other parts of the website to style the page, 
+and they are unrelated to Rich Content._
 \` \`           
 \` \`           
 \` \`           
 
 
-Rich Content gives you the ability to beautiful and animated pages very quickly. 
+Rich Content gives you the ability to create beautiful and animated pages very quickly. 
 The best way to learn how it work is to first look at the Models.
 
 # Model
@@ -170,6 +171,64 @@ Let's go through all of the features with examples
         {
           text: `
 # Rich Text
+The way Rich Text is intended to work, is by having a list of it that work 
+independently of each other. This way a part of the text can be centered, 
+or animated individually.
+
+Example:
+\`\`\`js
+
+    {
+      nameId: "textTest",
+      longTextsTop: [
+        {
+          text: "First text part",
+          align: "center",
+        },
+        {
+          text: \`
+# Test Text
+
+This is a loooong text
+... 
+\`,
+        },
+        {
+          text: "Animated text part",
+          animation: {
+            animateOnScroll: true,
+            animateFrom: "bottomLeft",
+            translateDistance: 30,
+          },
+        },
+      ],
+    },
+\`\`\`
+_More on ${getInlineCode("animation", "#9d0006")} below._
+
+## Markdown
+
+All the texts are rendered as Markdown for easy and fast typing.
+
+If you need to edit code-block and it's syntax highlighting, you can do so by changing the values 
+in ${getInlineCode(
+            "/components/RichContent/Markdown/MarkdownSyntaxTheme.ts ",
+            "green"
+          )}.
+          
+To write inline-code, we suggest using ${getInlineCode(
+            "getInlineCode(text, color)"
+          )} in 
+your markdown for better styling: 
+
+\`\`\`js
+text: \`
+...
+This is \${getInlineCode("anInlineCode", "#1140b2"}.
+... 
+\`,
+\`\`\`
+
 
 ## Animated Texts
 `,
