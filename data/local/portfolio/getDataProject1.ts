@@ -1,4 +1,4 @@
-import { RichChunkModel } from "../../models/RichChunkModel";
+import { RichChunkModel } from "../../models/rich-chunk/RichChunkModel";
 
 export function getDataProject1(): RichChunkModel[] {
   return [

@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "@emotion/react";
 import { Grid } from "@mui/material";
-import { RichTextModel } from "../../data/models/RichChunkModel";
+import { RichTextModel } from "../../data/models/rich-chunk/RichChunkModel";
 import RichText from "./RichText";
 
 interface Props {

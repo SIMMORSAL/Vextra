@@ -1,4 +1,7 @@
-import { RichChunkModel, RichTextModel } from "../../models/RichChunkModel";
+import {
+  RichChunkModel,
+  RichTextModel,
+} from "../../models/rich-chunk/RichChunkModel";
 
 export function getDataRichContentHandbook(): RichChunkModel[] {
   const translationTypes = [

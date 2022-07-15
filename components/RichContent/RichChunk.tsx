@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "@emotion/react";
-import { RichChunkModel } from "../../data/models/RichChunkModel";
+import { RichChunkModel } from "../../data/models/rich-chunk/RichChunkModel";
 import RichText from "./RichText";
 import RichImage from "./RichImage";
 import { getPortfolio } from "../../data/local/dataPortfoliosPage";

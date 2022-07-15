@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { css } from "@emotion/react";
-import { RichTextModel } from "../../data/models/RichChunkModel";
+import { RichTextModel } from "../../data/models/rich-chunk/RichChunkModel";
 import MarkDown from "./Markdown";
 import { cacheImage } from "../../helpers/tools/tools";
 

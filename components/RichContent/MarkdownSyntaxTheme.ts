@@ -1,6 +1,6 @@
 export const themeLight = {
   'code[class*="language-"]': {
-    color: "#dc4a68",
+    color: "#e0002f",
     // fontFamily: 'Consolas, Monaco, "Andale Mono", monospace',
     fontFamily: "Source Code Pro",
     fontSize: ".8em",
@@ -37,7 +37,7 @@ export const themeLight = {
     padding: "1em",
     margin: "0.5em 0",
     overflow: "auto",
-    background: "rgba(210,163,163,0.09)",
+    background: "rgba(147,179,255,0.18)",
     borderRadius: "8px",
     border: "1px solid rgba(30,37,187,0.18)",
   },
@@ -142,10 +142,10 @@ export const themeLight = {
     color: "#9d0006",
   },
   variable: {
-    color: "#ed9801",
+    color: "#e19400",
   },
   string: {
-    color: "#669801",
+    color: "#5a8800",
   },
   char: {
     color: "#797403",

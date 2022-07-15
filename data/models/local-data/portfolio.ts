@@ -1,4 +1,4 @@
-import { RichChunkModel } from "../RichChunkModel";
+import { RichChunkModel } from "../rich-chunk/RichChunkModel";
 
 export interface Portfolio {
   linkId: string;
