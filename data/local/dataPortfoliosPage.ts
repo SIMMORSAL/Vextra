@@ -13,19 +13,19 @@ export function getAllPortfolios(): Portfolio[] {
     {
       linkId: "X-bike",
       name: "X|Bike",
-      color: "#0066ff",
+      backgroundColor: "#0066ff",
       headerColor: "#011736",
       isBackgroundDark: true,
       image: "/images/portfolio/PortfolioItemTemplate1.jpg",
       // image:
       //   "https://th.bing.com/th/id/R.58cc46069f9c1bfec000c83e79721d31?rik=V6%2bwTqIO36Y40g&riu=http%3a%2f%2fwallup.net%2fwp-content%2fuploads%2f2016%2f05%2f24%2f374644-path-landscape-trees.jpg&ehk=4r8HqHCVUOTPA4f19szEL4vOhfNMFE4FPAQUSSsOg%2bA%3d&risl=&pid=ImgRaw&r=0",
-      award: "/images/portfolio/a_design_award.gif",
+      awardImage: "/images/portfolio/a_design_award.gif",
       pageRichContent: getDataProject1(),
     },
     {
       linkId: "scootify",
       name: "Scootify",
-      color: "#ff0000",
+      backgroundColor: "#ff0000",
       headerColor: "#3f0101",
       isBackgroundDark: false,
       image: "/images/portfolio/PortfolioItemTemplate3.jpg",
@@ -34,7 +34,7 @@ export function getAllPortfolios(): Portfolio[] {
     {
       linkId: "gallery",
       name: "Photography",
-      color: "#ff00ff",
+      backgroundColor: "#ff00ff",
       headerColor: "#3a053a",
       isBackgroundDark: false,
       image: "/images/portfolio/PortfolioItemTemplate2.jpg",
@@ -43,7 +43,7 @@ export function getAllPortfolios(): Portfolio[] {
     {
       linkId: "rich-content-handbook",
       name: "umbrella",
-      color: "#ff0000",
+      backgroundColor: "#ff0000",
       headerColor: "#3f0101",
       isBackgroundDark: false,
       image: "/images/portfolio/PortfolioItemRichContentHandbook.jpg",

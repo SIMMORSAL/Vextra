@@ -12,9 +12,9 @@ export const runStartupTasks = () => {
         .catch((reason) =>
           console.log(`Image Caching Failed:  ${v.image}\n${reason}`)
         );
-    v.award &&
-      cacheImage(v.award).catch((reason) =>
-        console.log(`Image Caching Failed:  ${v.award}\n${reason}`)
+    v.awardImage &&
+      cacheImage(v.awardImage).catch((reason) =>
+        console.log(`Image Caching Failed:  ${v.awardImage}\n${reason}`)
       );
   });
   cacheImage(

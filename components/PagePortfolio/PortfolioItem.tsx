@@ -33,7 +33,7 @@ export default function PortfolioItem(p: Props) {
 
   function beginAnimation() {
     setBeginFadeIn(true);
-    if (p.portfolio.award) {
+    if (p.portfolio.awardImage) {
       timeouts.current.push(
         setTimeout(() => {
           setFadeInAward(true);
@@ -170,7 +170,7 @@ export default function PortfolioItem(p: Props) {
               `}
             />
           </div>
-          {p.portfolio.award ? (
+          {p.portfolio.awardImage ? (
             <div
               onClick={onClicked}
               onMouseEnter={() => setIsHovering(true)}
@@ -216,7 +216,7 @@ export default function PortfolioItem(p: Props) {
                 {/*  quality={100}*/}
                 {/*/>*/}
                 <img
-                  src={p.portfolio.award}
+                  src={p.portfolio.awardImage}
                   width={"100%"}
                   loading={"eager"}
                   alt={""}

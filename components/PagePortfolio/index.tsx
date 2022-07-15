@@ -64,7 +64,7 @@ export default function PagePortfolio(props: Props) {
       >
         {`${(awardCounts = 0).toString().slice(0, 0)}`}
         {portfolioItems.map((value, index) => {
-          if (value.award) awardCounts++;
+          if (value.awardImage) awardCounts++;
 
           return (
             <Grid

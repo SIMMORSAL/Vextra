@@ -12,14 +12,6 @@ export interface RichChunkModel {
   freeSpace?: string; // e.g: "200px", or "20vh"
 }
 
-export interface MediaBarModel {
-  leftImage?: RichImageModel;
-  leftVideo?: string;
-  text?: RichTextModel[];
-  rightImage?: RichImageModel;
-  rightVideo?: string;
-}
-
 export interface RichTextModel {
   text: string;
   align?: "start" | "center" | "end";
@@ -40,6 +32,14 @@ export interface RichVideoModel {
   align?: "start" | "center" | "end"; // works only if small
   aspectRatio?: string;
   animation?: RichAnimation;
+}
+
+export interface MediaBarModel {
+  leftImage?: RichImageModel;
+  leftVideo?: RichVideoModel;
+  text?: RichTextModel[];
+  rightImage?: RichImageModel;
+  rightVideo?: RichVideoModel;
 }
 
 export interface RichAnimation {

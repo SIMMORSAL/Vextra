@@ -4,10 +4,10 @@ export interface Portfolio {
   linkId: string;
   name: string;
   image: string;
-  color: string;
-  isBackgroundDark: boolean;
-  award?: string;
+  awardImage?: string;
+  backgroundColor?: string;
+  isBackgroundDark?: boolean;
   pageRichContent: RichChunkModel[];
-  headerColor: string;
-  headerItemsColor: string;
+  headerColor?: string;
+  headerItemsColor?: string;
 }

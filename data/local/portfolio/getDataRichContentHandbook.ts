@@ -131,10 +131,10 @@ interface RichVideoModel {
 
 interface MediaBarModel {
   leftImage?: RichImageModel;
-  leftVideo?: string;
+  leftVideo?: RichVideoModel;
   text?: RichTextModel[];
   rightImage?: RichImageModel;
-  rightVideo?: string;
+  rightVideo?: RichVideoModel;
 }
 
 interface RichAnimation {
@@ -156,10 +156,11 @@ interface RichAnimation {
 
 You can create a page by chaining multiple Chunks together, while making each
 of them look and feel unique. Each chunk can hold one or more rich element in it.
-This page is fully created by using Rich Content. you can check it's data
-file from the link at the top.
-
-Let's go through all of them with examples. 
+This page is entirely rendered using Rich Content. you can check it's data
+file from the link at the top of the page.
+\` \`        
+\` \`        
+Let's go through all of the features with examples
 `,
         },
       ],
@@ -199,9 +200,9 @@ Let's go through all of them with examples.
   ].map((v: RichChunkModel, i) => {
     if (v.nameId === undefined) v.nameId = i.toString();
     if (v.longTextsTop !== undefined)
-      v.longTextsTop = v.longTextsTop.map((v: RichTextModel) => {
-        if (v.userSelect === undefined) v.userSelect = "text";
-        return v;
+      v.longTextsTop = v.longTextsTop.map((vv: RichTextModel) => {
+        if (vv.userSelect === undefined) vv.userSelect = "text";
+        return vv;
       });
     return v;
   });
