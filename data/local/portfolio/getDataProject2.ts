@@ -6,7 +6,7 @@ export function getDataProject2(): RichChunkModel[] {
       nameId: "sdfasdfasd",
       longTextsTop: [
         {
-          textAlign: "center",
+          align: "center",
           text: "# aslkdfjl skdjflksdj flksdf",
         },
       ],
@@ -27,7 +27,7 @@ export function getDataProject2(): RichChunkModel[] {
       nameId: "Third",
       longTextsTop: [
         {
-          textAlign: "center",
+          align: "center",
           text: "# aslkdfjl skdjflksdj flksdf",
         },
       ],

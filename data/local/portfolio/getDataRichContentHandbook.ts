@@ -21,7 +21,7 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
     return {
       longTextsTop: [
         {
-          textAlign: "center",
+          align: "center",
           // text: texts[index].toUpperCase(),
           text: "### coming from " + translationTypes[index].toUpperCase(),
           animation: {
@@ -88,7 +88,7 @@ _The two color properties work when inside the page._
 Rich Content gives you the ability to beautiful and animated pages very quickly. 
 The best way to learn how it work is to first look at the Models.
 
-## Model
+# Model
 
 
 
@@ -100,19 +100,16 @@ interface RichChunkModel {
   longTextsTop?: RichTextModel[];
   bigImage?: RichImageModel;
   smallImage?: RichImageModel;
-  videoClip?: string;
-  mediaBarLeftImage?: RichImageModel;
-  mediaBarLeftVideo?: string;
-  mediaBarText?: RichTextModel[];
-  mediaBarRightImage?: RichImageModel;
-  mediaBarRightVideo?: string;
+  bigVideo?: RichVideoModel;
+  smallVideo?: RichVideoModel;
+  mediaBar?: MediaBarModel;
   longTextsBottom?: RichTextModel[];
   freeSpace?: string; // e.g: "200px", or "20vh"
 }
 
 interface RichTextModel {
   text: string;
-  textAlign?: "start" | "center" | "end";
+  align?: "start" | "center" | "end";
   userSelect?: string;
   animation?: RichAnimation;
 }
@@ -120,8 +117,24 @@ interface RichTextModel {
 interface RichImageModel {
   path: string;
   subText?: string;
-  aspectRatio?: string; 
+  align?: "start" | "center" | "end"; // works only if small
+  aspectRatio?: string;
   animation?: RichAnimation;
+}
+
+interface RichVideoModel {
+  path: string;
+  align?: "start" | "center" | "end"; // works only if small
+  aspectRatio?: string;
+  animation?: RichAnimation;
+}
+
+interface MediaBarModel {
+  leftImage?: RichImageModel;
+  leftVideo?: string;
+  text?: RichTextModel[];
+  rightImage?: RichImageModel;
+  rightVideo?: string;
 }
 
 interface RichAnimation {
@@ -141,11 +154,12 @@ interface RichAnimation {
 \`\`\`
 
 
+You can create a page by chaining multiple Chunks together, while making each
+of them look and feel unique. Each chunk can hold one or more rich element in it.
+This page is fully created by using Rich Content. you can check it's data
+file from the link at the top.
 
-
-### Basic tools at your disposal:
-
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis urna et scelerisque. Nulla dignissim ac eros ut lobortis. Donec eleifend quis nisi in fringilla. Integer rhoncus, leo vulputate dictum elementum, odio velit condimentum massa, a eleifend orci tellus sed ligula. Duis convallis volutpat augue, id volutpat augue porttitor eu. Donec risus mi, semper non dictum finibus, efficitur nec nunc. Sed iaculis odio nec efficitur posuere. Aliquam porta lectus orci, vel cursus sem laoreet sit amet. Ut viverra nulla at scelerisque aliquam. Duis venenatis arcu nunc, sit amet luctus augue egestas sit amet. Sed eget est est. Proin quis lectus eget magna volutpat consequat at luctus ex. Quisque posuere iaculis vestibulum. Phasellus non interdum nibh. Ut nisi orci, cursus nec euismod at, pharetra quis massa." 
+Let's go through all of them with examples. 
 `,
         },
       ],
@@ -154,8 +168,9 @@ interface RichAnimation {
       longTextsTop: [
         {
           text: `
+# Rich Text
+
 ## Animated Texts
---- 
 `,
         },
       ],
@@ -169,6 +184,8 @@ interface RichAnimation {
       longTextsTop: [
         {
           text: `
+# Rich Images
+
 ## Animated Images
 --- 
 `,

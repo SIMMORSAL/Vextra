@@ -6,7 +6,7 @@ export function getDataProject1(): RichChunkModel[] {
       nameId: "asdf",
       longTextsTop: [
         {
-          textAlign: "center",
+          align: "center",
           text: "# aslkdfjl skdjflksdj flksdf",
         },
       ],
@@ -21,7 +21,7 @@ export function getDataProject1(): RichChunkModel[] {
       nameId: "sdfasdfasd",
       longTextsTop: [
         {
-          textAlign: "center",
+          align: "center",
           text: "# aslkdfjl skdjflksdj flksdf",
         },
         {
@@ -48,15 +48,15 @@ asdf asd fasd ffasd fsad fasd ffsad fasd fsd fsd sad f
       nameId: "Third",
       longTextsTop: [
         {
-          textAlign: "center",
+          align: "center",
           text: "# aslkdfjl skdjflksdj flksdf",
         },
         {
-          textAlign: "start",
+          align: "start",
           text: "# aslkdfjl skdjflksdj flksdf",
         },
         {
-          textAlign: "end",
+          align: "end",
           text: "# aslkdfjl skdjflksdj flksdf",
         },
         {
@@ -66,19 +66,19 @@ asdf asd fasd ffasd fsad fasd ffsad fasd fsd fsd sad f
 `,
         },
         {
-          textAlign: "center",
+          align: "center",
           text: "# aslkdfjl skdjflksdj flksdf",
         },
         {
-          textAlign: "center",
+          align: "center",
           text: "# This is a full blown test on the text functionality of Rich Chunk. Lorem ipsum dolar sit amet sad fasd fasd fasdf \nasdf asd fasd ffasd fsad fasd ffsad fasd fsd fsd sad f",
         },
         {
-          textAlign: "center",
+          align: "center",
           text: "# aslkdfjl skdjflksdj flksdf",
         },
         {
-          textAlign: "center",
+          align: "center",
           text: "# aslkdfjl skdjflksdj flksdf",
         },
       ],
