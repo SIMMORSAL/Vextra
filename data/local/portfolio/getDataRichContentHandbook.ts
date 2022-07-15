@@ -155,8 +155,8 @@ interface RichAnimation {
 
 
 You can create a page by chaining multiple Chunks together, while making each
-of them look and feel unique. Each chunk can hold one or more rich element in it.
-This page is entirely rendered using Rich Content. you can check it's data
+of them look and feel unique. Each chunk can hold one or more rich elements in it.
+This page you're reading is entirely rendered using Rich Content. you can check it's data
 file from the link at the top of the page.
 \` \`        
 \` \`        
