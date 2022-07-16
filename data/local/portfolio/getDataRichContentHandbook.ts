@@ -220,7 +220,7 @@ All the texts are rendered as Markdown for easy and fast typing.
 
 If you need to edit code-block and it's syntax highlighting, you can do so by 
 editing ${getInlineCode(
-            "/components/RichContent/Markdown/MarkdownSyntaxTheme.ts ",
+            "/components/RichContent/&#8291;Markdown/MarkdownSyntaxTheme.ts ",
             "green"
           )}.
           
