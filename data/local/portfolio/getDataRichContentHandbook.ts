@@ -269,9 +269,8 @@ and ${getInlineCode("mediaBar", "#e19400")}.
 
 \`\`\`
 
-${getInlineCode(
-  "aspectRatio"
-)}: It is not important no provide this, but if you do, content won't jump down when image starts loading.
+${getInlineCode("aspectRatio", "#9d0006")}: It is 
+not important no provide this, but if you do, content won't jump down when image starts loading.
 
 `,
         },
