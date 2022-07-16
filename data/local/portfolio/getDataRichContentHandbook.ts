@@ -184,7 +184,7 @@ The way Rich Text is intended to work, is by having a list of it that work
 independently of each other. This way a part of the text can be centered, 
 or animated individually.
 
-Example:
+###### Example:
 \`\`\`js
 {
   nameId: "textTest",
@@ -246,6 +246,8 @@ This is \${getInlineCode("anInlineCode", "#1140b2")}.
           text: `
 # Rich Image 
 
+You can use an instance of Rich Image in multiple places, like 
+
 ###### Example:
 
 \`\`\`js
@@ -285,25 +287,26 @@ ${getInlineCode(
           text: `
 # Rich Animation
 
-Many Rich elements accept an animation object.
+RichImage and RichText elements accept an animation object.
 
-    interface RichAnimation {
-      animateOnScroll?: boolean;
-      translateDistance?: number; // e.g: 25vh and 25vw
-      animateFrom?:
-        | "none"
-        | "top"
-        | "topRight"
-        | "right"
-        | "bottomRight"
-        | "bottom"
-        | "bottomLeft"
-        | "left"
-        | "topLeft";
-    }
 
-Example:
+###### Example:
 \`\`\`js
+interface RichAnimation {
+  animateOnScroll?: boolean;
+  translateDistance?: number; // e.g: 25vh and 25vw
+  animateFrom?:
+    | "none"
+    | "top"
+    | "topRight"
+    | "right"
+    | "bottomRight"
+    | "bottom"
+    | "bottomLeft"
+    | "left"
+    | "topLeft";
+}
+    
 {
   ...
   animation: {
@@ -335,6 +338,15 @@ Example:
       ],
     },
     ...animatedImages,
+    {
+      longTextsTop: [
+        {
+          text: `
+# Media Bar
+`,
+        },
+      ],
+    },
     {
       freeSpace: "30vh",
     },
