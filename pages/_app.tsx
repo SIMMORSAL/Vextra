@@ -37,7 +37,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       {/* eslint-disable-next-line @next/next/no-page-custom-font */}
       <link
-        href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Dosis&family=Oswald:wght@300&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Dosis&family=Raleway:wght@300&display=swap"
         rel="stylesheet"
       />
       <Script
@@ -46,7 +46,7 @@ function MyApp({ Component, pageProps }) {
       />
       <div
         css={css`
-          font-family: "Oswald", sans-serif;
+          font-family: "Raleway", sans-serif;
           //font-family: "Dosis", sans-serif;
           font-weight: 300;
           font-size: 1.1em;
