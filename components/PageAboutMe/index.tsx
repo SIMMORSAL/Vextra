@@ -148,7 +148,7 @@ export default function PageAboutMe(props: Props) {
               width: 100%;
               aspect-ratio: ${data.imageAspectRatio};
               max-width: 500px;
-              margin: 0 0 24px;
+              margin: 0 0 12px;
               opacity: ${isImageCached ? 1 : 0};
 
               transition: opacity 300ms ease;
