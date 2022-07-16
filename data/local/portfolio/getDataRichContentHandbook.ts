@@ -257,7 +257,7 @@ You can use an instance of Rich Image in multiple places, like
     aspectRatio: "800/600",
     animation: {
       animateOnScroll: true,
-      animateFrom: "bottomRight",
+      animateFrom: "bottom",
     },
   },
 },
@@ -274,10 +274,10 @@ ${getInlineCode(
       bigImage: {
         path: "/images/sample.jpg",
         subText: "Image by [Mark Harpur](https://unsplash.com/@luckybeanz)",
-        aspectRatio: "800/600",
         animation: {
           animateOnScroll: true,
           animateFrom: "bottom",
+          translateDistance: 10,
         },
       },
     },
