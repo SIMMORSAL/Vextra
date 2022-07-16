@@ -272,8 +272,8 @@ ${getInlineCode(
         },
       ],
       bigImage: {
-        path: "https://th.bing.com/th/id/OIP.FH39JpbgRZ3pozFqcE3A5AHaEo?pid=ImgDet&rs=1",
-        subText: "This is the optional text",
+        path: "/images/sample.jpg",
+        subText: "Image by [Mark Harpur](https://unsplash.com/@luckybeanz)",
         aspectRatio: "800/600",
         animation: {
           animateOnScroll: true,

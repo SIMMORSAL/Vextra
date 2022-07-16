@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { css } from "@emotion/react";
 import { RichImageModel } from "../../data/models/rich-chunk/RichChunkModel";
 import { cacheImage } from "../../helpers/tools/tools";
+import MarkDown from "./Markdown/Markdown";
 
 interface Props {
   textColor: string;
@@ -110,16 +111,15 @@ export default function RichImage(p: Props) {
         `}
       />
       {p.image.subText && p.image.subText.length !== 0 && (
-        <p
-          css={css`
+        <MarkDown
+          text={p.image.subText}
+          style={css`
             color: ${p.textColor.length === 7 ? p.textColor + "cc" : p.textColor};
-            padding: 6px 32px;
+            padding: 0 32px;
             text-align: center;
             margin: 0;
           `}
-        >
-          {p.image.subText}
-        </p>
+        />
       )}
     </div>
   );
