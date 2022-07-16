@@ -23,6 +23,11 @@ export default function RichChunk(props: Props) {
         background-color: ${backgroundColor};
         display: flex;
         flex-direction: column;
+        background-image: url("https://img.freepik.com/premium-vector/cartoon-landscape-mountains-bright-morning-with-trees-mountain_288411-1415.jpg?w=2000");
+        //background-repeat: space;
+        background-size: cover;
+        //background-attachment: fixed;
+        background-position: center;
       `}
     >
       {props.chunk.longTextsTop && props.chunk.longTextsTop.length > 0 && (

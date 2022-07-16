@@ -87,7 +87,7 @@ export default function RichImage(p: Props) {
       css={css`
         width: 100%;
         height: 100%;
-        max-width: 900px;
+        max-width: 1100px;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
