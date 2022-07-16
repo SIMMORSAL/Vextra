@@ -92,6 +92,11 @@ export default function RichImage(p: Props) {
         display: flex;
         flex-direction: column;
         align-items: center;
+        opacity: ${shouldAnimateIn ? 1 : 0};
+        transform: ${shouldAnimateIn ? "" : animateFrom};
+
+        transition: 350ms ease;
+        transition-property: opacity, transform;
       `}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -103,11 +108,6 @@ export default function RichImage(p: Props) {
           height: 100%;
           object-fit: cover;
           aspect-ratio: ${p.image.aspectRatio};
-          opacity: ${shouldAnimateIn ? 1 : 0};
-          transform: ${shouldAnimateIn ? "" : animateFrom};
-
-          transition: 350ms ease;
-          transition-property: opacity, transform;
         `}
       />
       {p.image.subText && p.image.subText.length !== 0 && (
