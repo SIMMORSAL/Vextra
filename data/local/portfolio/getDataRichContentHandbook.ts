@@ -170,6 +170,15 @@ Let's go through all of the features with examples
       longTextsTop: [
         {
           text: `
+# Rich Chunk
+`,
+        },
+      ],
+    },
+    {
+      longTextsTop: [
+        {
+          text: `
 # Rich Text
 The way Rich Text is intended to work, is by having a list of it that work 
 independently of each other. This way a part of the text can be centered, 
@@ -177,32 +186,31 @@ or animated individually.
 
 Example:
 \`\`\`js
-
+{
+  nameId: "textTest",
+  longTextsTop: [
     {
-      nameId: "textTest",
-      longTextsTop: [
-        {
-          text: "First text part",
-          align: "center",
-        },
-        {
-          text: \`
+      text: "First text part",
+      align: "center",
+    },
+    {
+      text: \`
 # Test Text
 
 This is a loooong text
 ... 
 \`,
-        },
-        {
-          text: "Animated text part",
-          animation: {
-            animateOnScroll: true,
-            animateFrom: "bottomLeft",
-            translateDistance: 30,
-          },
-        },
-      ],
     },
+    {
+      text: "Animated text part",
+      animation: {
+        animateOnScroll: true,
+        animateFrom: "bottomLeft",
+        translateDistance: 30,
+      },
+    },
+  ],
+},
 \`\`\`
 _More on ${getInlineCode("animation", "#9d0006")} below._
 
@@ -216,7 +224,7 @@ editing ${getInlineCode(
             "green"
           )}.
           
-To write inline-code, we suggest using ${getInlineCode(
+To write inline-code, it's better to use ${getInlineCode(
             "getInlineCode(text, color)"
           )} in 
 your markdown for better styling: 
@@ -224,13 +232,89 @@ your markdown for better styling:
 \`\`\`js
 text: \`
 ...
-This is \${getInlineCode("anInlineCode", "#1140b2"}.
+This is \${getInlineCode("anInlineCode", "#1140b2")}.
 ... 
 \`,
 \`\`\`
+`,
+        },
+      ],
+    },
+    {
+      longTextsTop: [
+        {
+          text: `
+# Rich Image 
 
+###### Example:
+
+\`\`\`js
+{
+    path: "/images/myImage.jpg",
+    subText: "Optional text at the bottom of image",
+    aspectRatio: "800/600",
+    animation: {
+      animateOnScroll: true,
+      animateFrom: "bottomRight",
+    },
+  },
+},
+
+\`\`\`
+
+${getInlineCode(
+  "aspectRatio"
+)}: It is not important no provide this, but if you do, content won't jump down when image starts loading.
+
+`,
+        },
+      ],
+      bigImage: {
+        path: "https://th.bing.com/th/id/OIP.FH39JpbgRZ3pozFqcE3A5AHaEo?pid=ImgDet&rs=1",
+        subText: "This is the optional text",
+        aspectRatio: "800/600",
+        animation: {
+          animateOnScroll: true,
+          animateFrom: "bottom",
+        },
+      },
+    },
+    {
+      longTextsTop: [
+        {
+          text: `
+# Rich Animation
+
+Many Rich elements accept an animation object.
+
+    interface RichAnimation {
+      animateOnScroll?: boolean;
+      translateDistance?: number; // e.g: 25vh and 25vw
+      animateFrom?:
+        | "none"
+        | "top"
+        | "topRight"
+        | "right"
+        | "bottomRight"
+        | "bottom"
+        | "bottomLeft"
+        | "left"
+        | "topLeft";
+    }
+
+Example:
+\`\`\`js
+{
+  ...
+  animation: {
+    
+  }
+}
+\`\`\`
 
 ## Animated Texts
+
+
 `,
         },
       ],
@@ -244,10 +328,8 @@ This is \${getInlineCode("anInlineCode", "#1140b2"}.
       longTextsTop: [
         {
           text: `
-# Rich Images
 
 ## Animated Images
---- 
 `,
         },
       ],

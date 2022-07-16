@@ -46,7 +46,7 @@ function MyApp({ Component, pageProps }) {
       />
       <div
         css={css`
-          font-family: "Raleway", sans-serif;
+          font-family: Raleway, sans-serif;
           //font-family: "Dosis", sans-serif;
           font-weight: 300;
           //font-size: 1.1em;

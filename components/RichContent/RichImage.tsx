@@ -112,8 +112,8 @@ export default function RichImage(p: Props) {
       {p.image.subText && p.image.subText.length !== 0 && (
         <p
           css={css`
-            color: ${p.textColor.length === 7 ? p.textColor + "bb" : p.textColor};
-            padding: 0 32px;
+            color: ${p.textColor.length === 7 ? p.textColor + "cc" : p.textColor};
+            padding: 6px 32px;
             text-align: center;
             margin: 0;
           `}

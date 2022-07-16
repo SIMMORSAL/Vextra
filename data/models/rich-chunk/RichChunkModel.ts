@@ -1,7 +1,8 @@
 export interface RichChunkModel {
   nameId: string;
-  backgroundColor?: string;
   textColor?: string;
+  backgroundColor?: string | string[]; // TODO
+  backgroundImage?: string; // TODO
   longTextsTop?: RichTextModel[];
   bigImage?: RichImageModel;
   smallImage?: RichImageModel;
@@ -17,16 +18,18 @@ export interface RichTextModel {
   align?: "start" | "center" | "end";
   userSelect?: string;
   animation?: RichAnimation;
+  fontFamily?: string; // TODO
 }
 
 export interface RichImageModel {
   path: string;
   subText?: string;
-  align?: "start" | "center" | "end"; // works only if small
-  aspectRatio?: string; // you can write your image's width and height. e.g: "800/600". if you provide this, content won't jump when image starts loading
+  align?: "start" | "center" | "end"; // works only if small // TODO
+  aspectRatio?: string; // you can write your image's width and height
   animation?: RichAnimation;
 }
 
+// TODO
 export interface RichVideoModel {
   path: string;
   align?: "start" | "center" | "end"; // works only if small
@@ -34,6 +37,7 @@ export interface RichVideoModel {
   animation?: RichAnimation;
 }
 
+// TODO
 export interface MediaBarModel {
   leftImage?: RichImageModel;
   leftVideo?: RichVideoModel;
@@ -45,6 +49,7 @@ export interface MediaBarModel {
 export interface RichAnimation {
   animateOnScroll?: boolean;
   translateDistance?: number; // e.g: 25vh and 25vw
+  duration?: number; // in milliseconds  // TODO
   animateFrom?:
     | "none"
     | "top"
