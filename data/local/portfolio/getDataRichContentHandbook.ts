@@ -246,7 +246,10 @@ This is \${getInlineCode("anInlineCode", "#1140b2")}.
           text: `
 # Rich Image 
 
-You can use an instance of Rich Image in multiple places, like 
+You can use an instance of Rich Image in multiple places, such 
+as ${getInlineCode("bigImage", "#e19400")}
+, ${getInlineCode("smallImage", "#e19400")}, 
+and ${getInlineCode("mediaBar", "#e19400")}.
 
 ###### Example:
 
