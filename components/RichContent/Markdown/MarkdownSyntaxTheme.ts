@@ -3,7 +3,7 @@ export const themeLight = {
     color: "#e0002f",
     // fontFamily: 'Consolas, Monaco, "Andale Mono", monospace',
     fontFamily: "Source Code Pro",
-    fontSize: ".8em",
+    fontSize: ".9em",
     direction: "ltr",
     textAlign: "left",
     whiteSpace: "pre",
