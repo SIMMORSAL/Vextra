@@ -37,20 +37,6 @@ export default function PageAboutMe(props: Props) {
   const timeouts = useRef([]);
 
   useEffect(() => {
-    timeouts.current.push(
-      setTimeout(() => {
-        setFadeIn(true);
-        setContentHeight(document.getElementById("content").clientHeight);
-        const contentHeight = document.getElementById("content").clientHeight;
-        setContentHeightSmallerThanVh(contentHeight < window.innerHeight);
-        timeouts.current.push(
-          setTimeout(() => {
-            setFadeInFinish(true);
-          }, fadeInDuration)
-        );
-      }, 70)
-    );
-
     cacheImage(data.image).then(() => {
       setIsImageCached(true);
     });
@@ -60,6 +46,23 @@ export default function PageAboutMe(props: Props) {
       timeouts.current.forEach((value) => clearTimeout(value));
     };
   }, []);
+
+  useEffect(() => {
+    if (isImageCached)
+      timeouts.current.push(
+        setTimeout(() => {
+          setFadeIn(true);
+          setContentHeight(document.getElementById("content").clientHeight);
+          const contentHeight = document.getElementById("content").clientHeight;
+          setContentHeightSmallerThanVh(contentHeight < window.innerHeight);
+          timeouts.current.push(
+            setTimeout(() => {
+              setFadeInFinish(true);
+            }, fadeInDuration)
+          );
+        }, 70)
+      );
+  }, [isImageCached]);
 
   useEffect(() => {
     if (newTabSelected !== getActiveTab(router)) setFadeOut(true);
