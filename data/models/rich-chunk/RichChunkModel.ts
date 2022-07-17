@@ -4,7 +4,7 @@ export interface RichChunkModel {
   backgroundColor?: string;
   gradient?: string[]; // TODO
   gradientDegree?: number;
-  backgroundImage?: string; // TODO
+  backgroundImage?: string;
   freeSpaceTop?: string; // e.g: "200px", or "20vh" // TODO
   freeSpaceBottom?: string;
   minHeight?: string; // e.g: "500px", or "80vh" // TODO

@@ -18,10 +18,10 @@ export default function RichChunk(p: Props) {
 
   const bgImage = p.chunk.backgroundImage
     ? `url(${p.chunk.backgroundImage})`
-    : p.chunk.backgroundColor !== undefined && Array.isArray(p.chunk.backgroundColor)
-    ? `linear-gradient(${p.chunk.gradientDegree ? p.chunk.gradientDegree : 25} deg,
-        ${p.chunk.backgroundColor.reduce((p, c) => p + ", " + c)}
-        )`
+    : p.chunk.gradient
+    ? `linear-gradient(${p.chunk.gradientDegree ? p.chunk.gradientDegree : 25}deg,
+        ${p.chunk.gradient.reduce((p, c) => p + ", " + c)}
+      )`
     : "";
 
   return (

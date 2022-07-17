@@ -190,7 +190,7 @@ file from the link at the top of the page.
 ]
 \`\`\`
 
-Below is an example of chunk with image as it's background , and it 
+Below is an example of a chunk with image as it's background. It 
 utilizes ${getInlineCode("backgroundImage", "#9d0006")} &#8291;
 and ${getInlineCode("minHeight", "#9d0006")}:
 `,
@@ -207,11 +207,14 @@ and ${getInlineCode("minHeight", "#9d0006")}:
           color: "#eeeeee",
           size: "2em",
           fontFamily: "'Rubik Moonrocks', cursive",
+          userSelect: "none",
           text: "## Nebuland",
         },
         {
           align: "center",
           color: "#eeeeee",
+          userSelect: "none",
+          freeSpaceBottom: "500px",
           text: `
 This image will always fill the entire width of the screen, 
 and stretch or shrink depending on the space it has
@@ -219,6 +222,7 @@ and stretch or shrink depending on the space it has
         },
       ],
     },
+    {},
     {
       longTextsTop: [
         {
