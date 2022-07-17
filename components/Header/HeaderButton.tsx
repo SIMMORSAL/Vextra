@@ -12,6 +12,7 @@ interface Props {
   setSelectedPage: (page: string) => void;
   children?: ReactNode;
   homeClicked?: () => void;
+  showDev: boolean;
 }
 
 export default function HeaderButton(p: Props) {
@@ -51,9 +52,9 @@ export default function HeaderButton(p: Props) {
         align-items: center;
         justify-content: end;
         cursor: pointer;
-        opacity: ${p.justLoaded ? 0 : 1};
+        opacity: ${p.justLoaded || p.showDev ? 0 : 1};
         transition: opacity 1000ms ease;
-        transition-delay: 500ms;
+        transition-delay: ${p.showDev ? 0 : 500}ms;
       `}
     >
       <p

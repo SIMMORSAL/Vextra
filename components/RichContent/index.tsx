@@ -19,6 +19,7 @@ export default function RichContent(p: Props) {
       `}
     >
       <div
+        id={"pageRichContent"}
         css={css`
           width: 100%;
           overflow: hidden;

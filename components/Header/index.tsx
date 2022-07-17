@@ -4,16 +4,17 @@ import HeaderButton from "./HeaderButton";
 import { _AppContext } from "../../helpers/providers/provider_App";
 import useWindowSize from "../../helpers/tools/hooks/useWindowSize";
 import HeaderLogo from "./HeaderLogo";
+import { useRouter } from "next/router";
 
 interface Props {
   selectedPage: string; // undefined | about-me | portfolio
   setSelectedPage: (page?: string) => void;
-  // route: string;
 }
 
 export const headerHeight = 70;
 
 export default function Header(props: Props) {
+  const router = useRouter();
   const { setMoveToMain } = useContext(_AppContext);
 
   const windowWidth = useWindowSize();
@@ -21,6 +22,7 @@ export default function Header(props: Props) {
 
   const [shouldBlur, setShouldBlur] = useState(false);
   const [justLoaded, setJustLoaded] = useState(true);
+  const [showDev, setShowDev] = useState(false);
 
   useEffect(() => {
     setJustLoaded(false);
@@ -31,12 +33,29 @@ export default function Header(props: Props) {
     }
   }, []);
 
-  const listenToScroll = () => {
-    // const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    // const height =
-    //   document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    // const normalizedScroll = winScroll / height;
+  useEffect(() => {
+    if (
+      router.query.PortfolioID !== undefined &&
+      router.query.PortfolioID === "rich-content-handbook"
+    ) {
+      window.addEventListener("scroll", SIMMORSAL);
+    } else {
+      window.removeEventListener("scroll", SIMMORSAL);
+    }
+  }, [router.query]);
 
+  const SIMMORSAL = () => {
+    if (
+      window.scrollY + window.innerHeight >
+      document.getElementById("pageRichContent")?.clientHeight
+    ) {
+      setShowDev(true);
+    } else {
+      setShowDev(false);
+    }
+  };
+
+  const listenToScroll = () => {
     const scroll = document.documentElement.scrollTop;
     if (scroll > 24) {
       setShouldBlur(true);
@@ -72,7 +91,7 @@ export default function Header(props: Props) {
         -webkit-backdrop-filter: blur(${shouldBlur ? 3 : 0}px);
 
         border-bottom-width: 1px;
-        border-bottom-color: ${shouldBlur ? "#00000033" : "transparent"};
+        border-bottom-color: ${shouldBlur && !showDev ? "#00000033" : "transparent"};
         border-bottom-style: solid;
 
         transition: ${shouldBlur ? 300 : 200}ms ease;
@@ -88,6 +107,7 @@ export default function Header(props: Props) {
           selectedPage={props.selectedPage}
           setSelectedPage={() => props.setSelectedPage(undefined)}
           homeClicked={() => setMoveToMain(true)}
+          showDev={showDev}
         >
           Home
         </HeaderButton>
@@ -103,11 +123,13 @@ export default function Header(props: Props) {
         justLoaded={justLoaded}
         selectedPage={props.selectedPage}
         setSelectedPage={props.setSelectedPage}
+        showDev={showDev}
       >
         About me
       </HeaderButton>
 
       <HeaderLogo
+        showDev={showDev}
         justLoaded={justLoaded}
         selectedPage={props.selectedPage}
         setSelectedPage={props.setSelectedPage}
@@ -118,6 +140,7 @@ export default function Header(props: Props) {
         justLoaded={justLoaded}
         selectedPage={props.selectedPage}
         setSelectedPage={props.setSelectedPage}
+        showDev={showDev}
       >
         Portfolio
       </HeaderButton>
@@ -129,6 +152,7 @@ export default function Header(props: Props) {
           justLoaded={justLoaded}
           selectedPage={props.selectedPage}
           setSelectedPage={props.setSelectedPage}
+          showDev={showDev}
         >
           Contact Me
         </HeaderButton>

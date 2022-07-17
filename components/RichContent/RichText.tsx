@@ -40,7 +40,7 @@ function TextChunk(p: { text: RichTextModel }) {
 
   const listenToScroll = () => {
     const scroll = document.documentElement.scrollTop;
-    const txt = (refTextRoot.current as HTMLDivElement).offsetTop;
+    const txt = (refTextRoot.current as HTMLDivElement)?.offsetTop;
     if (scroll + window.innerHeight * scrollThreshold < txt)
       setShouldAnimateIn(false);
     else setShouldAnimateIn(true);

@@ -75,17 +75,22 @@ export default function LandingHeader(props: Props) {
           transition-property: width, transform, opacity;
         `}
       >
-        <img
-          src={_generalData.logo}
-          alt={"logo"}
-          onClick={() => props.setSelectedPage(undefined)}
+        <div
           css={css`
-            cursor: pointer;
-            width: 100%;
-
-            transition: 200ms ease;
+            display: grid;
           `}
-        />
+        >
+          <img
+            src={_generalData.logo}
+            alt={"logo"}
+            onClick={() => props.setSelectedPage(undefined)}
+            css={css`
+              cursor: pointer;
+              width: 100%;
+              margin-bottom: 1px;
+            `}
+          />
+        </div>
       </div>
       <LandingHeaderButton
         isFirstOrLast={false}

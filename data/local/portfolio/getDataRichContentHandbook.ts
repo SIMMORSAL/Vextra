@@ -499,6 +499,9 @@ interface RichAnimation {
         ],
       },
       {
+        minHeight: headerHeight + "px",
+      },
+      {
         nameId: "SIMMORSAL",
         minHeight: `calc(100vh - ${headerHeight}px)`,
         smallImage: {
@@ -523,7 +526,7 @@ cover, hit me up. I give discounts on my own work ;)
             text: `
                   
 <a href="mailto: soheil.sisakht@gmail.com">
-  <div style="
+  <div id="sim" style="
     display: flex; 
     flex-direction: row; 
     color: #002349; 
@@ -540,6 +543,7 @@ cover, hit me up. I give discounts on my own work ;)
         padding: 0;
         text-align: center;
         font-size: 150%;
+        font-weight: bold;
         transition: 140ms ease;
         transition-property: width, transform, opacity;
         :hover {

@@ -37,7 +37,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       {/* eslint-disable-next-line @next/next/no-page-custom-font */}
       <link
-        href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Dosis&family=Raleway:wght@300&family=Rubik+Moonrocks&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Dosis&family=Raleway:ital,wght@0,300;0,400;0,700;1,400&family=Rubik+Moonrocks&display=swap"
         rel="stylesheet"
       />
       <Script
@@ -48,7 +48,7 @@ function MyApp({ Component, pageProps }) {
         css={css`
           font-family: Raleway, sans-serif;
           //font-family: "Dosis", sans-serif;
-          font-weight: 300;
+          font-weight: 400;
           //font-size: 1.1em;
           position: ${isLandingPage ? "fixed" : "inline"};
           top: 0;
