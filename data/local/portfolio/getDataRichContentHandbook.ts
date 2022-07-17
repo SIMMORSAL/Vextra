@@ -154,11 +154,6 @@ interface RichAnimation {
 }
 \`\`\`
 
-
-You can create a page by chaining multiple Chunks together, while making each
-of them look and feel unique. Each chunk can hold one or more rich elements in it.
-This page you're reading is entirely rendered using Rich Content. you can check it's data
-file from the link at the top of the page.
 \` \`        
 \` \`        
 Let's go through all of the features with examples
@@ -171,21 +166,53 @@ Let's go through all of the features with examples
         {
           text: `
 # Rich Chunk
+
+You can create a page by chaining multiple Chunks together, while making each
+of them look and feel unique. Each chunk can hold one or more rich elements in it.
+This page you're reading is entirely rendered using Rich Content. you can check it's data
+file from the link at the top of the page.
+
+###### Example
+
+\`\`\`js
+[
+  {
+    nameId: "projectImage#3",
+    textColor: black,
+    backgroundColor: "#eaeaea",
+    gradient: [blue, pink],
+    gradientDegree: 45,
+    backgroundImage: "/bgImage3".
+    freeSpaceTop: "200px",
+    freeSpaceBottom: "10vh",
+    minHeight: "80vh",
+  }
+]
+\`\`\`
+
+Below is an example of chunk with image as it's background , and it 
+utilizes ${getInlineCode("backgroundImage", "#9d0006")} &#8291;
+and ${getInlineCode("minHeight", "#9d0006")}:
 `,
         },
       ],
     },
+    {},
     {
       minHeight: "80vh",
       backgroundImage: "/images/portfolio/handbook/bg_sample.jpg",
       longTextsTop: [
         {
           align: "center",
+          color: "#eeeeee",
+          size: "2em",
+          fontFamily: "'Rubik Moonrocks', cursive",
+          text: "## Nebuland",
+        },
+        {
+          align: "center",
+          color: "#eeeeee",
           text: `
-## Background Image
-
-This is an image set as the background of a whole chunk.
-
 This image will always fill the entire width of the screen, 
 and stretch or shrink depending on the space it has
 `,

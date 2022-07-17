@@ -37,7 +37,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       {/* eslint-disable-next-line @next/next/no-page-custom-font */}
       <link
-        href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Dosis&family=Raleway:wght@300&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Dosis&family=Raleway:wght@300&family=Rubik+Moonrocks&display=swap"
         rel="stylesheet"
       />
       <Script

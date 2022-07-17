@@ -97,8 +97,9 @@ function TextChunk(p: { text: RichTextModel }) {
   const style = css`
     text-align: ${p.text.align};
     user-select: ${p.text.userSelect ? p.text.userSelect : "none"};
-
-    // Animations
+    color: ${p.text.color ? p.text.color : ""};
+    font-size: ${p.text.size ? p.text.size : ""};
+    font-family: ${p.text.fontFamily ? p.text.fontFamily : ""};
     opacity: ${shouldAnimateIn ? 1 : 0};
     transform: ${shouldAnimateIn ? "" : animateFrom};
 
