@@ -180,7 +180,7 @@ Let's go through all of the features with examples
 
 You can create a page by chaining multiple Chunks together, while making each
 of them look and feel unique. Each chunk can hold one or more rich elements in it.
-This page you're reading is entirely rendered using Rich Content. you can check it's data
+This page you're reading is entirely rendered using Rich Chunks. you can check it's data
 file from the link at the top of the page.
 
 ###### Example
@@ -197,6 +197,7 @@ file from the link at the top of the page.
     freeSpaceTop: "200px",
     freeSpaceBottom: "10vh",
     minHeight: "80vh",
+    ...
   }
 ]
 \`\`\`
@@ -227,7 +228,7 @@ and ${getInlineCode("minHeight", "#9d0006")}:
           userSelect: "none",
           text: `
 This image will always fill the entire width of the screen, 
-and stretch or shrink depending on the space it has
+and expand or shrink depending on the space it has
 `,
         },
       ],
