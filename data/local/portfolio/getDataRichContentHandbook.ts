@@ -529,21 +529,21 @@ cover, hit me up. I give discounts on my own work ;)
   <div id="sim" style="
     display: flex; 
     flex-direction: row; 
-    color: #002349; 
+    color: #232323; 
     align-items: center; 
+    font-weight: bold;
     justify-content: center;
   ">
     <i
       class="fa-solid fa-envelope"
       style="
         width: 30px;
-        color: #c72929; 
+        color: #000000; 
         cursor: pointer;
         margin: 16px 8px;
         padding: 0;
         text-align: center;
         font-size: 150%;
-        font-weight: bold;
         transition: 140ms ease;
         transition-property: width, transform, opacity;
         :hover {
