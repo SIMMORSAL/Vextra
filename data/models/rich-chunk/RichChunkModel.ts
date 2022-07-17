@@ -2,7 +2,7 @@ export interface RichChunkModel {
   nameId: string;
   textColor?: string;
   backgroundColor?: string;
-  gradient?: string[]; // TODO
+  gradient?: string[];
   gradientDegree?: number;
   backgroundImage?: string;
   freeSpaceTop?: string; // e.g: "200px", or "20vh" // TODO

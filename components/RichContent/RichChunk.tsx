@@ -19,7 +19,7 @@ export default function RichChunk(p: Props) {
   const bgImage = p.chunk.backgroundImage
     ? `url(${p.chunk.backgroundImage})`
     : p.chunk.gradient
-    ? `linear-gradient(${p.chunk.gradientDegree ? p.chunk.gradientDegree : 25}deg,
+    ? `linear-gradient(${p.chunk.gradientDegree ? p.chunk.gradientDegree : 165}deg,
         ${p.chunk.gradient.reduce((p, c) => p + ", " + c)}
       )`
     : "";
@@ -39,6 +39,13 @@ export default function RichChunk(p: Props) {
         background-position: center;
       `}
     >
+      {p.chunk.freeSpaceTop && (
+        <div
+          css={css`
+            height: ${p.chunk.freeSpaceTop};
+          `}
+        />
+      )}
       {p.chunk.longTextsTop && p.chunk.longTextsTop.length > 0 && (
         <div
         // * This is the way to get one way chunk and test against it

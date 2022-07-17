@@ -96,8 +96,14 @@ The best way to learn how it work is to first look at the Models.
 \`\`\`birb
 interface RichChunkModel {
   nameId: string;
-  backgroundColor?: string;
   textColor?: string;
+  backgroundColor?: string;
+  gradient?: string[];
+  gradientDegree?: number;
+  backgroundImage?: string;
+  freeSpaceTop?: string; // e.g: "200px", or "20vh" // TODO
+  freeSpaceBottom?: string;
+  minHeight?: string; // e.g: "500px", or "80vh"
   longTextsTop?: RichTextModel[];
   bigImage?: RichImageModel;
   smallImage?: RichImageModel;
@@ -105,24 +111,27 @@ interface RichChunkModel {
   smallVideo?: RichVideoModel;
   mediaBar?: MediaBarModel;
   longTextsBottom?: RichTextModel[];
-  freeSpace?: string; // e.g: "200px", or "20vh"
 }
 
 interface RichTextModel {
   text: string;
   align?: "start" | "center" | "end";
   userSelect?: string;
+  color?: string;
+  size?: string; // eg: "2em" or "25px"
+  fontFamily?: string;
   animation?: RichAnimation;
 }
 
 interface RichImageModel {
   path: string;
   subText?: string;
-  align?: "start" | "center" | "end"; // works only if small
-  aspectRatio?: string;
+  align?: "start" | "center" | "end"; // works only if small // TODO
+  aspectRatio?: string; // you can write your image's width and height
   animation?: RichAnimation;
 }
 
+// TODO
 interface RichVideoModel {
   path: string;
   align?: "start" | "center" | "end"; // works only if small
@@ -130,6 +139,7 @@ interface RichVideoModel {
   animation?: RichAnimation;
 }
 
+// TODO
 interface MediaBarModel {
   leftImage?: RichImageModel;
   leftVideo?: RichVideoModel;
@@ -141,6 +151,7 @@ interface MediaBarModel {
 interface RichAnimation {
   animateOnScroll?: boolean;
   translateDistance?: number; // e.g: 25vh and 25vw
+  duration?: number; // in milliseconds  // TODO
   animateFrom?:
     | "none"
     | "top"
@@ -214,7 +225,6 @@ and ${getInlineCode("minHeight", "#9d0006")}:
           align: "center",
           color: "#eeeeee",
           userSelect: "none",
-          freeSpaceBottom: "500px",
           text: `
 This image will always fill the entire width of the screen, 
 and stretch or shrink depending on the space it has
@@ -222,7 +232,59 @@ and stretch or shrink depending on the space it has
         },
       ],
     },
-    {},
+    {
+      minHeight: "100px",
+      longTextsTop: [
+        {
+          text: `
+Below is what you get when you give some colors to ${getInlineCode(
+            "gradient",
+            "#9d0006"
+          )} property:
+`,
+        },
+      ],
+    },
+    {
+      minHeight: "60vh",
+      freeSpaceTop: "5vh",
+      freeSpaceBottom: "10vh",
+      gradient: [
+        "#ff0000",
+        "#ff5a00",
+        "#ff9a00",
+        "#ffce00 25%",
+        "#ffce00 75%",
+        "#ff9a00",
+        "#ff5a00",
+        "#ff0000",
+      ],
+      longTextsTop: [
+        {
+          align: "center",
+          color: "black",
+          text: `
+          
+### This is how you make this gradient:
+
+\`\`\`js
+{
+  gradient: [
+    "#ff0000",
+    "#ff5a00",
+    "#ff9a00",
+    "#ffce00 25%",
+    "#ffce00 75%",
+    "#ff9a00",
+    "#ff5a00",
+    "#ff0000",
+  ],
+},
+\`\`\`
+`,
+        },
+      ],
+    },
     {
       longTextsTop: [
         {
