@@ -52,18 +52,19 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
     } as RichChunkModel;
   });
 
-  return [
-    {
-      nameId: "intro",
-      longTextsTop: [
-        {
-          align: "center",
-          text: `
+  return (
+    [
+      {
+        nameId: "intro",
+        longTextsTop: [
+          {
+            align: "center",
+            text: `
 # Rich Content Handbook
 `,
-        },
-        {
-          text: ` 
+          },
+          {
+            text: ` 
 
 This is a full blown test in demonstration of Rich Chunks abilities. You can see the data file of this page [from this link](https://google.com).
 \` \`           
@@ -170,13 +171,13 @@ interface RichAnimation {
 \` \`        
 Let's go through all of the features with examples
 `,
-        },
-      ],
-    },
-    {
-      longTextsTop: [
-        {
-          text: `
+          },
+        ],
+      },
+      {
+        longTextsTop: [
+          {
+            text: `
 # Rich Chunk
 
 You can create a page by chaining multiple Chunks together, while making each
@@ -209,36 +210,36 @@ Below is an example of a chunk with image as it's background. It
 utilizes ${getInlineCode("backgroundImage", "#9d0006")} &#8291;
 and ${getInlineCode("minHeight", "#9d0006")}:
 `,
-        },
-      ],
-    },
-    {},
-    {
-      minHeight: `calc(100vh - ${headerHeight}px)`,
-      freeSpaceTop: "30vh",
-      backgroundImage: "/images/portfolio/handbook/bg_sample.jpg",
-      longTextsTop: [
-        {
-          align: "center",
-          color: "#eeeeee",
-          size: "2em",
-          fontFamily: "'Rubik Moonrocks', cursive",
-          userSelect: "none",
-          animation: {
-            animateOnScroll: true,
           },
-          text: "## Nebuland",
-        },
-        {
-          align: "center",
-          color: "#eeeeee",
-          userSelect: "none",
-          animation: {
-            animateOnScroll: true,
-            animateFrom: "top",
-            translateDistance: 10,
+        ],
+      },
+      {},
+      {
+        minHeight: `calc(100vh - ${headerHeight}px)`,
+        freeSpaceTop: "30vh",
+        backgroundImage: "/images/portfolio/handbook/bg_sample.jpg",
+        longTextsTop: [
+          {
+            align: "center",
+            color: "#eeeeee",
+            size: "2em",
+            fontFamily: "'Rubik Moonrocks', cursive",
+            userSelect: "none",
+            animation: {
+              animateOnScroll: true,
+            },
+            text: "## Nebuland",
           },
-          text: `
+          {
+            align: "center",
+            color: "#eeeeee",
+            userSelect: "none",
+            animation: {
+              animateOnScroll: true,
+              animateFrom: "top",
+              translateDistance: 10,
+            },
+            text: `
 This image will always fill the entire width of the screen, 
 and expand or shrink depending on the space it has, or how much space it's content need
 
@@ -252,49 +253,49 @@ and expand or shrink depending on the space it has, or how much space it's conte
 
 &#8291;
 `,
-        },
-        {
-          color: "#eeeeee",
-          text: "Image by [Javier Miranda](https://unsplash.com/@nuvaproductions)",
-          animation: {
-            animateOnScroll: true,
-            animateFrom: "left",
           },
-        },
-      ],
-    },
-    {
-      minHeight: "100px",
-      longTextsTop: [
-        {
-          text: `
+          {
+            color: "#eeeeee",
+            text: "Image by [Javier Miranda](https://unsplash.com/@nuvaproductions)",
+            animation: {
+              animateOnScroll: true,
+              animateFrom: "left",
+            },
+          },
+        ],
+      },
+      {
+        minHeight: "100px",
+        longTextsTop: [
+          {
+            text: `
 Below is what you get when you give some colors to ${getInlineCode(
-            "gradient",
-            "#9d0006"
-          )} property:
+              "gradient",
+              "#9d0006"
+            )} property:
 `,
-        },
-      ],
-    },
-    {
-      minHeight: "60vh",
-      freeSpaceTop: "5vh",
-      freeSpaceBottom: "10vh",
-      gradient: [
-        "#ff0000",
-        "#ff5a00",
-        "#ff9a00",
-        "#ffce00 25%",
-        "#ffce00 75%",
-        "#ff9a00",
-        "#ff5a00",
-        "#ff0000",
-      ],
-      longTextsTop: [
-        {
-          align: "center",
-          color: "black",
-          text: `
+          },
+        ],
+      },
+      {
+        minHeight: "60vh",
+        freeSpaceTop: "5vh",
+        freeSpaceBottom: "10vh",
+        gradient: [
+          "#ff0000",
+          "#ff5a00",
+          "#ff9a00",
+          "#ffce00 25%",
+          "#ffce00 75%",
+          "#ff9a00",
+          "#ff5a00",
+          "#ff0000",
+        ],
+        longTextsTop: [
+          {
+            align: "center",
+            color: "black",
+            text: `
           
 ### This is how you make this gradient:
 
@@ -313,13 +314,13 @@ Below is what you get when you give some colors to ${getInlineCode(
 },
 \`\`\`
 `,
-        },
-      ],
-    },
-    {
-      longTextsTop: [
-        {
-          text: `
+          },
+        ],
+      },
+      {
+        longTextsTop: [
+          {
+            text: `
 # Rich Text
 The way Rich Text is intended to work, is by having a list of it that work 
 independently of each other. This way a part of the text can be centered, 
@@ -361,13 +362,13 @@ All the texts are rendered as Markdown for easy and fast typing.
 
 If you need to edit code-block and it's syntax highlighting, you can do so by 
 editing ${getInlineCode(
-            "/components/RichContent/&#8291;Markdown/MarkdownSyntaxTheme.ts ",
-            "green"
-          )}.
+              "/components/RichContent/&#8291;Markdown/MarkdownSyntaxTheme.ts ",
+              "green"
+            )}.
           
 To write inline-code, it's better to use ${getInlineCode(
-            "getInlineCode(text, color)"
-          )} in 
+              "getInlineCode(text, color)"
+            )} in 
 your markdown for better styling: 
 
 \`\`\`js
@@ -378,20 +379,20 @@ This is \${getInlineCode("anInlineCode", "#1140b2")}.
 \`,
 \`\`\`
 `,
-        },
-      ],
-    },
-    {
-      longTextsTop: [
-        {
-          text: `
+          },
+        ],
+      },
+      {
+        longTextsTop: [
+          {
+            text: `
 # Rich Image 
 
 You can use an instance of Rich Image in multiple places, such 
 as ${getInlineCode("bigImage", "#e19400")}, ${getInlineCode(
-            "smallImage",
-            "#e19400"
-          )}, 
+              "smallImage",
+              "#e19400"
+            )}, 
 and ${getInlineCode("mediaBar", "#e19400")}.
 
 ###### Example:
@@ -419,22 +420,22 @@ not important no provide this, but if you do, content won't jump down when image
 ${getInlineCode("align", "#9d0006")} only works 
 in ${getInlineCode("smallImage ", "#e19400")}.
 `,
-        },
-      ],
-      bigImage: {
-        path: "/images/portfolio/handbook/sample.jpg",
-        subText: "Image by [Mark Harpur](https://unsplash.com/@luckybeanz)",
-        animation: {
-          animateOnScroll: true,
-          animateFrom: "bottom",
-          translateDistance: 10,
+          },
+        ],
+        bigImage: {
+          path: "/images/portfolio/handbook/sample.jpg",
+          subText: "Image by [Mark Harpur](https://unsplash.com/@luckybeanz)",
+          animation: {
+            animateOnScroll: true,
+            animateFrom: "bottom",
+            translateDistance: 10,
+          },
         },
       },
-    },
-    {
-      longTextsTop: [
-        {
-          text: `
+      {
+        longTextsTop: [
+          {
+            text: `
 # Rich Animation
 
 RichImage and RichText elements accept an animation object.
@@ -469,38 +470,94 @@ interface RichAnimation {
 
 
 `,
-        },
-      ],
-    },
-    ...animatedTexts,
-    {
-      nameId: "freeSpace",
-      freeSpace: "5vh",
-    },
-    {
-      longTextsTop: [
-        {
-          text: `
+          },
+        ],
+      },
+      ...animatedTexts,
+      {
+        nameId: "freeSpace",
+        freeSpace: "5vh",
+      },
+      {
+        longTextsTop: [
+          {
+            text: `
 
 ## Animated Images
 `,
-        },
-      ],
-    },
-    ...animatedImages,
-    {
-      longTextsTop: [
-        {
-          text: `
+          },
+        ],
+      },
+      ...animatedImages,
+      {
+        longTextsTop: [
+          {
+            text: `
 # Media Bar
 `,
+          },
+        ],
+      },
+      {
+        nameId: "SIMMORSAL",
+        minHeight: `calc(100vh - ${headerHeight}px)`,
+        smallImage: {
+          path: "/images/logo_big.png",
+          animation: {
+            animateOnScroll: true,
+          },
         },
-      ],
-    },
-    {
-      freeSpace: "30vh",
-    },
-  ].map((v: RichChunkModel, i) => {
+        longTextsBottom: [
+          {
+            align: "center",
+            text: `
+If there's something extra that you need that [this](linkToStore) package doesn't 
+cover, hit me up. I give discounts on my own work ;)
+`,
+          },
+          {
+            align: "center",
+            animation: {
+              animateOnScroll: true,
+            },
+            text: `
+                  
+<a href="mailto: soheil.sisakht@gmail.com">
+  <div style="
+    display: flex; 
+    flex-direction: row; 
+    color: #002349; 
+    align-items: center; 
+    justify-content: center;
+  ">
+    <i
+      class="fa-solid fa-envelope"
+      style="
+        width: 30px;
+        color: #c72929; 
+        cursor: pointer;
+        margin: 16px 8px;
+        padding: 0;
+        text-align: center;
+        font-size: 150%;
+        transition: 140ms ease;
+        transition-property: width, transform, opacity;
+        :hover {
+          transform: scale(1.3) translateX(0.1em);
+          width: 42px;
+        }
+      ">
+    </i>
+    soheil.sisakht@gmail.com
+  </div>
+</a>
+
+`,
+          },
+        ],
+      },
+    ] as RichChunkModel[]
+  ).map((v: RichChunkModel, i) => {
     if (v.nameId === undefined) v.nameId = i.toString();
     if (v.longTextsTop !== undefined)
       v.longTextsTop = v.longTextsTop.map((vv: RichTextModel) => {

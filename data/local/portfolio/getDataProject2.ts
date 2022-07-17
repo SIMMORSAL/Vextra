@@ -38,5 +38,5 @@ export function getDataProject2(): RichChunkModel[] {
         aspectRatio: "4500/2700",
       },
     },
-  ];
+  ] as RichChunkModel[];
 }

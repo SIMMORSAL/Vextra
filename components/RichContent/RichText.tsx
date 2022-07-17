@@ -104,6 +104,7 @@ function TextChunk(p: { text: RichTextModel }) {
     font-family: ${p.text.fontFamily ? p.text.fontFamily : ""};
     opacity: ${shouldAnimateIn ? 1 : 0};
     transform: ${shouldAnimateIn ? "" : animateFrom};
+    padding: 0 ${p.text.align === "center" ? 32 : 0}px;
 
     transition: 350ms ease;
     transition-property: opacity, transform;

@@ -91,6 +91,19 @@ export default function RichChunk(p: Props) {
       {/*  />*/}
       {/*  // </div>*/}
       {/*)}*/}
+      {p.chunk.longTextsBottom && p.chunk.longTextsBottom.length > 0 && (
+        <div
+        // * This is the way to get one way chunk and test against it
+        // css={css`
+        //   background-color: ${p.chunk.longTextsTop[0].text ===
+        //   getPortfolio("rich-content-handbook").pageContent[0].longTextsTop[0].text
+        //     ? "red"
+        //     : ""};
+        // `}
+        >
+          <RichText texts={p.chunk.longTextsBottom} />
+        </div>
+      )}
       {p.chunk.freeSpaceBottom && (
         <div
           css={css`

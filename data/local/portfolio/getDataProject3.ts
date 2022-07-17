@@ -22,5 +22,5 @@ export function getDataProject3(): RichChunkModel[] {
         },
       ],
     },
-  ];
+  ] as RichChunkModel[];
 }

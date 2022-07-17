@@ -89,5 +89,5 @@ asdf asd fasd ffasd fsad fasd ffsad fasd fsd fsd sad f
         aspectRatio: "4500/2700",
       },
     },
-  ];
+  ] as RichChunkModel[];
 }
