@@ -504,12 +504,12 @@ interface RichAnimation {
       {
         nameId: "SIMMORSAL",
         minHeight: `calc(100vh - ${headerHeight}px)`,
-        smallImage: {
-          path: "/images/logo_big.png",
-          animation: {
-            animateOnScroll: true,
-          },
-        },
+        // smallImage: {
+        //   path: "/images/logo_big.png",
+        //   animation: {
+        //     animateOnScroll: true,
+        //   },
+        // },
         longTextsBottom: [
           {
             align: "center",
