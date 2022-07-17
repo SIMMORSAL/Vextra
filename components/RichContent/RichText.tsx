@@ -49,7 +49,7 @@ function TextChunk(p: { text: RichTextModel }) {
     if (p.text.animation?.animateOnScroll) {
       const scroll = document.documentElement.scrollTop;
       const imagePosition = (refTextRoot.current as HTMLDivElement).offsetTop;
-      if (scroll + window.innerHeight * 0.57 < imagePosition)
+      if (scroll + window.innerHeight * 0.6 < imagePosition)
         setShouldAnimateIn(false);
       else setShouldAnimateIn(true);
     }

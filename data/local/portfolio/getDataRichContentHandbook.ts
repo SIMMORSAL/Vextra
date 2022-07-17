@@ -220,12 +220,20 @@ and ${getInlineCode("minHeight", "#9d0006")}:
           size: "2em",
           fontFamily: "'Rubik Moonrocks', cursive",
           userSelect: "none",
+          animation: {
+            animateOnScroll: true,
+          },
           text: "## Nebuland",
         },
         {
           align: "center",
           color: "#eeeeee",
           userSelect: "none",
+          animation: {
+            animateOnScroll: true,
+            animateFrom: "top",
+            translateDistance: 10,
+          },
           text: `
 This image will always fill the entire width of the screen, 
 and expand or shrink depending on the space it has
