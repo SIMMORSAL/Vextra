@@ -94,7 +94,7 @@ export default function HeaderLogo(p: Props) {
               alt={"SIMMORSAL"}
               css={css`
                 opacity: ${p.showDev ? 1 : 0};
-                filter: blur(${p.showDev ? 0 : 8}px);
+                filter: blur(${p.showDev ? 0 : 24}px);
                 width: 100%;
                 padding: 0 12%;
 
