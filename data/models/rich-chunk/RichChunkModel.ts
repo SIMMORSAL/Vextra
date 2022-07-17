@@ -20,7 +20,7 @@ export interface RichChunkModel {
 export interface RichTextModel {
   text: string;
   align?: "start" | "center" | "end";
-  userSelect?: string;
+  userSelect?: string; // eg: "none" or "text"
   color?: string;
   size?: string; // eg: "2em" or "25px"
   fontFamily?: string;
@@ -31,7 +31,7 @@ export interface RichImageModel {
   path: string;
   subText?: string;
   align?: "start" | "center" | "end"; // works only if small // TODO
-  aspectRatio?: string; // you can write your image's width and height
+  aspectRatio?: string; // eg: 800/600 you can write your image's width and height
   animation?: RichAnimation;
 }
 

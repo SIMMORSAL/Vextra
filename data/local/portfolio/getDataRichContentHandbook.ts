@@ -3,6 +3,7 @@ import {
   RichTextModel,
 } from "../../models/rich-chunk/RichChunkModel";
 import { getInlineCode } from "../../../components/RichContent/Markdown/MarkdownTools";
+import { headerHeight } from "../../../components/Header";
 
 export function getDataRichContentHandbook(): RichChunkModel[] {
   const translationTypes = [
@@ -211,7 +212,7 @@ and ${getInlineCode("minHeight", "#9d0006")}:
     },
     {},
     {
-      minHeight: "80vh",
+      minHeight: `calc(100vh - ${headerHeight}px)`,
       freeSpaceTop: "30vh",
       backgroundImage: "/images/portfolio/handbook/bg_sample.jpg",
       longTextsTop: [
