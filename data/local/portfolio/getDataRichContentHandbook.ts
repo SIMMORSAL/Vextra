@@ -31,14 +31,14 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
           },
         },
       ],
-      freeSpace: "20px",
+      freeSpaceBottom: "20px",
     } as RichChunkModel;
   });
 
   const animatedImages = translationTypes.map((value, index) => {
     return {
       smallImage: {
-        path: `/images/portfolio/fireball_${index}.gif`,
+        path: `/images/portfolio/handbook/fireball_${index}.gif`,
         // path: "https://th.bing.com/th/id/OIP.XInPSfSw_KKOcuwTSDbW1AHaF7?pid=ImgDet&rs=1",
         aspectRatio: "474/379",
         animation: {
@@ -47,7 +47,7 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
           translateDistance: 30,
         },
       },
-      freeSpace: "20px",
+      // freeSpace: "20px",
     } as RichChunkModel;
   });
 
@@ -71,7 +71,7 @@ This is a full blown test in demonstration of Rich Chunks abilities. You can see
 Each portfolio page is dynamically created by reading a list 
 of ${getInlineCode("RichChunkModel")} items provided in your portfolio object:
 
-\`\`\`birb(2)
+\`\`\`birb
 interface Portfolio {
   ...
   pageRichContent: RichChunkModel[];
@@ -176,6 +176,23 @@ Let's go through all of the features with examples
       ],
     },
     {
+      minHeight: "80vh",
+      backgroundImage: "/images/portfolio/handbook/bg_sample.jpg",
+      longTextsTop: [
+        {
+          align: "center",
+          text: `
+## Background Image
+
+This is an image set as the background of a whole chunk.
+
+This image will always fill the entire width of the screen, 
+and stretch or shrink depending on the space it has
+`,
+        },
+      ],
+    },
+    {
       longTextsTop: [
         {
           text: `
@@ -187,7 +204,7 @@ or animated individually.
 ###### Example:
 \`\`\`js
 {
-  nameId: "textTest",
+  ...
   longTextsTop: [
     {
       text: "First text part",
@@ -257,16 +274,18 @@ and ${getInlineCode("mediaBar", "#e19400")}.
 
 \`\`\`js
 {
-    path: "/images/myImage.jpg",
-    subText: "Optional text at the bottom of image",
-    aspectRatio: "800/600",
-    animation: {
-      animateOnScroll: true,
-      animateFrom: "bottom",
+  ...
+  bigImage: {
+      path: "/images/myImage.jpg",
+      subText: "Optional text at the bottom of image",
+      aspectRatio: "800/600",
+      animation: {
+        animateOnScroll: true,
+        animateFrom: "bottom",
+      },
     },
   },
-},
-
+}
 \`\`\`
 
 ${getInlineCode("aspectRatio", "#9d0006")}: It is 
@@ -276,7 +295,7 @@ not important no provide this, but if you do, content won't jump down when image
         },
       ],
       bigImage: {
-        path: "/images/sample.jpg",
+        path: "/images/portfolio/handbook/sample.jpg",
         subText: "Image by [Mark Harpur](https://unsplash.com/@luckybeanz)",
         animation: {
           animateOnScroll: true,

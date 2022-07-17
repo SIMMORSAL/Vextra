@@ -4,7 +4,7 @@ export function getDataProject3(): RichChunkModel[] {
   return [
     {
       nameId: "spaceAtTop",
-      freeSpace: "25vh",
+      freeSpaceBottom: "25vh",
     },
     {
       nameId: "comingSoon",

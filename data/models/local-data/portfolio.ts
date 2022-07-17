@@ -8,6 +8,5 @@ export interface Portfolio {
   backgroundColor?: string;
   isBackgroundDark?: boolean;
   pageRichContent: RichChunkModel[];
-  headerColor?: string;
   headerItemsColor?: string;
 }
