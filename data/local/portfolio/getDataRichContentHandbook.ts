@@ -184,6 +184,8 @@ of them look and feel unique. Each chunk can hold one or more rich elements in i
 This page you're reading is entirely rendered using Rich Chunks. you can check it's data
 file and see how everything here is created from the link at the top.
 
+Here's a diagram of how things are drawn:
+
 ###### Example
 
 \`\`\`js
@@ -194,7 +196,7 @@ file and see how everything here is created from the link at the top.
     backgroundColor: "#eaeaea",
     gradient: [blue, pink],
     gradientDegree: 45,
-    backgroundImage: "/bgImage3".
+    backgroundImage: "/images/bgImage3".
     freeSpaceTop: "200px",
     freeSpaceBottom: "10vh",
     minHeight: "80vh",
@@ -238,7 +240,7 @@ and ${getInlineCode("minHeight", "#9d0006")}:
           },
           text: `
 This image will always fill the entire width of the screen, 
-and expand or shrink depending on the space it has 
+and expand or shrink depending on the space it has, or how much space it's content need
 
 \` \`  
 \` \`  
@@ -400,6 +402,7 @@ and ${getInlineCode("mediaBar", "#e19400")}.
   bigImage: {
       path: "/images/myImage.jpg",
       subText: "Optional text at the bottom of image",
+      align: "end",
       aspectRatio: "800/600",
       animation: {
         animateOnScroll: true,
@@ -413,6 +416,8 @@ and ${getInlineCode("mediaBar", "#e19400")}.
 ${getInlineCode("aspectRatio", "#9d0006")}: It is 
 not important no provide this, but if you do, content won't jump down when image starts loading.
 
+${getInlineCode("align", "#9d0006")} only works 
+in ${getInlineCode("smallImage ", "#e19400")}.
 `,
         },
       ],
