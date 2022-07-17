@@ -4,44 +4,58 @@ import { RichChunkModel } from "../../data/models/rich-chunk/RichChunkModel";
 import RichText from "./RichText";
 import RichImage from "./RichImage";
 import { getPortfolio } from "../../data/local/dataPortfoliosPage";
+import { backgroundWhite } from "../../res/colors";
 
 interface Props {
   chunk: RichChunkModel;
 }
 
-export default function RichChunk(props: Props) {
-  const textColor = props.chunk.textColor ? props.chunk.textColor : "#1e1e1e";
-  const backgroundColor = props.chunk.backgroundColor
-    ? props.chunk.backgroundColor
-    : "#ffffff";
+export default function RichChunk(p: Props) {
+  const textColor = p.chunk.textColor ? p.chunk.textColor : "#1e1e1e";
+  const backgroundColor = p.chunk.backgroundColor
+    ? p.chunk.backgroundColor
+    : backgroundWhite;
+
+  const bgImage = p.chunk.backgroundImage
+    ? `url(${p.chunk.backgroundImage})`
+    : p.chunk.backgroundColor !== undefined && Array.isArray(p.chunk.backgroundColor)
+    ? `linear-gradient(${p.chunk.gradientDegree ? p.chunk.gradientDegree : 25} deg,
+        ${p.chunk.backgroundColor.reduce((p, c) => p + ", " + c)}
+        )`
+    : "";
 
   return (
     <div
       css={css`
         width: 100%;
         color: ${textColor};
+        min-height: ${p.chunk.minHeight};
         background-color: ${backgroundColor};
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        background-image: ${bgImage};
+        background-size: cover;
+        background-position: center;
       `}
     >
-      {props.chunk.longTextsTop && props.chunk.longTextsTop.length > 0 && (
+      {p.chunk.longTextsTop && p.chunk.longTextsTop.length > 0 && (
         <div
         // * This is the way to get one way chunk and test against it
         // css={css`
-        //   background-color: ${props.chunk.longTextsTop[0].text ===
+        //   background-color: ${p.chunk.longTextsTop[0].text ===
         //   getPortfolio("rich-content-handbook").pageContent[0].longTextsTop[0].text
         //     ? "red"
         //     : ""};
         // `}
         >
-          <RichText texts={props.chunk.longTextsTop} />
+          <RichText texts={p.chunk.longTextsTop} />
         </div>
       )}
-      {props.chunk.bigImage && (
-        <RichImage image={props.chunk.bigImage} textColor={textColor} />
+      {p.chunk.bigImage && (
+        <RichImage image={p.chunk.bigImage} textColor={textColor} />
       )}
-      {props.chunk.smallImage && (
+      {p.chunk.smallImage && (
         <div
           css={css`
             width: 100%;
@@ -50,12 +64,12 @@ export default function RichChunk(props: Props) {
             padding: 0 24px;
           `}
         >
-          <RichImage image={props.chunk.smallImage} textColor={textColor} />
+          <RichImage image={p.chunk.smallImage} textColor={textColor} />
         </div>
       )}
-      {/*{(props.chunk.imageBarLeft ||*/}
-      {/*  props.chunk.textImageBar ||*/}
-      {/*  props.chunk.imageBarRight) && (*/}
+      {/*{(p.chunk.imageBarLeft ||*/}
+      {/*  p.chunk.textImageBar ||*/}
+      {/*  p.chunk.imageBarRight) && (*/}
       {/*  // <div*/}
       {/*  //   css={css`*/}
       {/*  //     max-width: 900px;*/}
@@ -64,16 +78,16 @@ export default function RichChunk(props: Props) {
       {/*  //   `}*/}
       {/*  // >*/}
       {/*  <ShortImageBar*/}
-      {/*    smallImageLeft={props.chunk.imageBarLeft}*/}
-      {/*    shortText={props.chunk.textImageBar}*/}
-      {/*    smallImageRight={props.chunk.imageBarRight}*/}
+      {/*    smallImageLeft={p.chunk.imageBarLeft}*/}
+      {/*    shortText={p.chunk.textImageBar}*/}
+      {/*    smallImageRight={p.chunk.imageBarRight}*/}
       {/*  />*/}
       {/*  // </div>*/}
       {/*)}*/}
-      {props.chunk.freeSpace && (
+      {p.chunk.freeSpaceBottom && (
         <div
           css={css`
-            height: ${props.chunk.freeSpace};
+            height: ${p.chunk.freeSpaceBottom};
           `}
         />
       )}

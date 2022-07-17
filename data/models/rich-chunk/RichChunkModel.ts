@@ -2,6 +2,7 @@ export interface RichChunkModel {
   nameId: string;
   textColor?: string;
   backgroundColor?: string | string[]; // TODO
+  gradientDegree?: number;
   backgroundImage?: string; // TODO
   longTextsTop?: RichTextModel[];
   bigImage?: RichImageModel;
@@ -10,15 +11,18 @@ export interface RichChunkModel {
   smallVideo?: RichVideoModel;
   mediaBar?: MediaBarModel;
   longTextsBottom?: RichTextModel[];
-  freeSpace?: string; // e.g: "200px", or "20vh"
+  freeSpaceTop?: string; // e.g: "200px", or "20vh" // TODO
+  freeSpaceBottom?: string;
+  minHeight?: string; // e.g: "500px", or "80vh" // TODO
 }
 
 export interface RichTextModel {
   text: string;
   align?: "start" | "center" | "end";
   userSelect?: string;
-  animation?: RichAnimation;
+  color?: string; // TODO
   fontFamily?: string; // TODO
+  animation?: RichAnimation;
 }
 
 export interface RichImageModel {
