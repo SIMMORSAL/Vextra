@@ -9,6 +9,7 @@ interface Props {
   image: RichImageModel;
 }
 
+const scrollThreshold = 0.57;
 export default function RichImage(p: Props) {
   const refImageRoot = useRef();
 
@@ -19,7 +20,8 @@ export default function RichImage(p: Props) {
   const listenToScroll = () => {
     const scroll = document.documentElement.scrollTop;
     const imagePosition = (refImageRoot.current as HTMLDivElement).offsetTop;
-    if (scroll + window.innerHeight * 0.6 < imagePosition) setScrollReached(false);
+    if (scroll + window.innerHeight * scrollThreshold < imagePosition)
+      setScrollReached(false);
     else setScrollReached(true);
   };
 
@@ -32,7 +34,7 @@ export default function RichImage(p: Props) {
     if (p.image.animation?.animateOnScroll) {
       const scroll = document.documentElement.scrollTop;
       const imagePosition = (refImageRoot.current as HTMLDivElement).offsetTop;
-      if (scroll + window.innerHeight * 0.57 < imagePosition)
+      if (scroll + window.innerHeight * scrollThreshold < imagePosition)
         setScrollReached(false);
       else setScrollReached(true);
     }

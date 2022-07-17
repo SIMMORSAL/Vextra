@@ -212,6 +212,7 @@ and ${getInlineCode("minHeight", "#9d0006")}:
     {},
     {
       minHeight: "80vh",
+      freeSpaceTop: "30vh",
       backgroundImage: "/images/portfolio/handbook/bg_sample.jpg",
       longTextsTop: [
         {
@@ -236,8 +237,26 @@ and ${getInlineCode("minHeight", "#9d0006")}:
           },
           text: `
 This image will always fill the entire width of the screen, 
-and expand or shrink depending on the space it has
+and expand or shrink depending on the space it has 
+
+\` \`  
+\` \`  
+\` \`  
+\` \`  
+\` \`  
+\` \`  
+\` \`  
+
+&#8291;
 `,
+        },
+        {
+          color: "#eeeeee",
+          text: "Image by [Javier Miranda](https://unsplash.com/@nuvaproductions)",
+          animation: {
+            animateOnScroll: true,
+            animateFrom: "left",
+          },
         },
       ],
     },

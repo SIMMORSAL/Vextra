@@ -31,6 +31,7 @@ export default function RichText(p: Props) {
   );
 }
 
+const scrollThreshold = 0.8;
 function TextChunk(p: { text: RichTextModel }) {
   const refTextRoot = useRef();
 
@@ -40,7 +41,8 @@ function TextChunk(p: { text: RichTextModel }) {
   const listenToScroll = () => {
     const scroll = document.documentElement.scrollTop;
     const txt = (refTextRoot.current as HTMLDivElement).offsetTop;
-    if (scroll + window.innerHeight * 0.6 < txt) setShouldAnimateIn(false);
+    if (scroll + window.innerHeight * scrollThreshold < txt)
+      setShouldAnimateIn(false);
     else setShouldAnimateIn(true);
   };
 
@@ -49,7 +51,7 @@ function TextChunk(p: { text: RichTextModel }) {
     if (p.text.animation?.animateOnScroll) {
       const scroll = document.documentElement.scrollTop;
       const imagePosition = (refTextRoot.current as HTMLDivElement).offsetTop;
-      if (scroll + window.innerHeight * 0.6 < imagePosition)
+      if (scroll + window.innerHeight * scrollThreshold < imagePosition)
         setShouldAnimateIn(false);
       else setShouldAnimateIn(true);
     }
