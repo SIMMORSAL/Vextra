@@ -182,7 +182,7 @@ Let's go through all of the features with examples
 You can create a page by chaining multiple Chunks together, while making each
 of them look and feel unique. Each chunk can hold one or more rich elements in it.
 This page you're reading is entirely rendered using Rich Chunks. you can check it's data
-file from the link at the top of the page.
+file and see how everything here is created from the link at the top.
 
 ###### Example
 
