@@ -220,7 +220,7 @@ and ${getInlineCode("minHeight", "#9d0006")}:
       },
       {},
       {
-        minHeight: `calc(100vh - ${headerHeight}px)`,
+        minHeight: `100vh`,
         freeSpaceTop: "30vh",
         backgroundImage: "/images/portfolio/handbook/bg_sample.jpg",
         longTextsTop: [
