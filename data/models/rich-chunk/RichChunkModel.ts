@@ -32,14 +32,17 @@ export interface RichImageModel {
   subText?: string;
   align?: "start" | "center" | "end"; // works only in smallImage
   aspectRatio?: string; // eg: 800/600 you can write your image's width and height
+  placeHolderImage?: string;
   animation?: RichAnimation;
 }
 
-// TODO
 export interface RichVideoModel {
   path: string;
   align?: "start" | "center" | "end"; // works only in smallVideo
   aspectRatio?: string;
+  autoPlay?: boolean;
+  loop?: boolean;
+  controls?: boolean;
   animation?: RichAnimation;
 }
 

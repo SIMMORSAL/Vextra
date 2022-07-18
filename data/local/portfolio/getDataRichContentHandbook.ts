@@ -403,14 +403,13 @@ and ${getInlineCode("mediaBar", "#e19400")}.
 {
   ...
   bigImage: {
-      path: "/images/myImage.jpg",
-      subText: "Optional text at the bottom of image",
-      align: "end",
-      aspectRatio: "800/600",
-      animation: {
-        animateOnScroll: true,
-        animateFrom: "bottom",
-      },
+    path: "/images/myImage.jpg",
+    subText: "Optional text at the bottom of image",
+    align: "end",
+    aspectRatio: "800/600",
+    animation: {
+      animateOnScroll: true,
+      animateFrom: "bottom",
     },
   },
 }
@@ -435,12 +434,71 @@ in ${getInlineCode("smallImage ", "#e19400")}.
         },
       },
       {
+        freeSpaceTop: "50px",
+        longTextsTop: [
+          {
+            text: `
+# Rich Video
+
+Like Rich Image, you can use this in multiple places such 
+as ${getInlineCode("bigVideo", "#e19400")}, ${getInlineCode(
+              "smallVideo",
+              "#e19400"
+            )}, 
+and ${getInlineCode("mediaBar", "#e19400")}.
+
+###### Example
+\`\`\`js
+{
+  ...
+  smallVideo: {
+    path: "https://www.youtube.com/watch?v=FK3HyJglFQ0",
+    align: "end",
+    aspectRatio: "16/9",
+    autoPlay: true,
+    loop: true,
+    controls: false,
+    animation: {
+      ...
+    },
+  }
+}
+\`\`\`
+
+${getInlineCode("aspectRatio", "#9d0006")}: Unlike 
+Rich Image, **setting this in videos is rather very important** unless your video's
+aspect ratio is '16/9', as this number will determine how much of the available space 
+the video player will cover. By default this number is set to '16/9', and you can
+again put your videos width and height as this.
+
+${getInlineCode("autoPlay", "#9d0006")}: By setting this to true, 
+videos will start playing as soon as you enter the page, however bear in mind
+that modern browsers won't allow sound to be played when a video autoplays. 
+Therefore the sound will be muted.
+`,
+          },
+        ],
+        // bigVideo: {
+        //   path: "https://marketplace.canva.com/EAE9rt2GfSQ/1/0/800w/canva-black-youth-modern-fashion-and-style-square-video-ArL61CA1F-c.mp4",
+        //   aspectRatio: "1/1",
+        //   loop: true,
+        //   controls: false,
+        //   autoPlay: true,
+        // },
+        smallVideo: {
+          path: "https://www.youtube.com/watch?v=FK3HyJglFQ0",
+          aspectRatio: "16/9",
+          loop: true,
+        },
+        freeSpaceBottom: "100px",
+      },
+      {
         longTextsTop: [
           {
             text: `
 # Rich Animation
 
-RichImage and RichText elements accept an animation object.
+RichText, RichImage, and RichVideo elements accept an animation object.
 
 
 ###### Example:

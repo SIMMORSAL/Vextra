@@ -38,16 +38,13 @@ export default function Header(props: Props) {
       router.query.PortfolioID !== undefined &&
       router.query.PortfolioID === "rich-content-handbook"
     ) {
-      console.log(`11111  Added listener:  `);
       window.addEventListener("scroll", SIMMORSAL, true);
     } else {
-      console.log(`11111  Removed listener:  `);
       window.removeEventListener("scroll", SIMMORSAL, true);
     }
   }, [router.query]);
 
   const SIMMORSAL = useCallback(() => {
-    console.log(`11111  SIMMORSAL:  `);
     if (
       window.scrollY + window.innerHeight >
       document.getElementById("pageRichContent")?.clientHeight

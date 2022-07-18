@@ -33,7 +33,7 @@ export default function RichText(p: Props) {
   );
 }
 
-const scrollThreshold = 0.8;
+const scrollThreshold = 0.8; // of screen height
 function TextChunk(p: { text: RichTextModel }) {
   const refTextRoot = useRef();
 

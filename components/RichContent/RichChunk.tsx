@@ -5,6 +5,7 @@ import RichText from "./RichText";
 import RichImage from "./RichImage";
 import { getPortfolio } from "../../data/local/dataPortfoliosPage";
 import { backgroundWhite } from "../../res/colors";
+import RichVideo from "./RichVideo";
 
 interface Props {
   chunk: RichChunkModel;
@@ -66,14 +67,29 @@ export default function RichChunk(p: Props) {
         <div
           css={css`
             width: 100%;
-            max-width: 450px;
+            max-width: 500px;
             align-self: ${p.chunk.smallImage.align
               ? p.chunk.smallImage.align
               : "center"};
-            padding: 0 24px;
+            padding: 0 16px;
           `}
         >
           <RichImage image={p.chunk.smallImage} textColor={textColor} />
+        </div>
+      )}
+      {p.chunk.bigVideo && <RichVideo video={p.chunk.bigVideo} />}
+      {p.chunk.smallVideo && (
+        <div
+          css={css`
+            width: 100%;
+            max-width: 500px;
+            align-self: ${p.chunk.smallVideo.align
+              ? p.chunk.smallVideo.align
+              : "center"};
+            padding: 0 16px;
+          `}
+        >
+          <RichVideo video={p.chunk.smallVideo} />
         </div>
       )}
       {/*{(p.chunk.imageBarLeft ||*/}
