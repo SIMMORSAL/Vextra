@@ -1,3 +1,5 @@
+// noinspection DuplicatedCode
+
 import React, { useEffect, useRef, useState } from "react";
 import { css } from "@emotion/react";
 import { RichImageModel } from "../../data/models/rich-chunk/RichChunkModel";
@@ -97,7 +99,7 @@ export default function RichImage(p: Props) {
         opacity: ${shouldAnimateIn ? 1 : 0};
         transform: ${shouldAnimateIn ? "" : animateFrom};
 
-        transition: 350ms ease;
+        transition: ${pAnimation?.duration ? pAnimation.duration : 350}ms ease;
         transition-property: opacity, transform;
       `}
     >

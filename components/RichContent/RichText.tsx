@@ -1,3 +1,5 @@
+// noinspection DuplicatedCode
+
 import React, { useEffect, useRef, useState } from "react";
 import { css } from "@emotion/react";
 import { RichTextModel } from "../../data/models/rich-chunk/RichChunkModel";
@@ -106,7 +108,7 @@ function TextChunk(p: { text: RichTextModel }) {
     transform: ${shouldAnimateIn ? "" : animateFrom};
     padding: 0 ${p.text.align === "center" ? 32 : 0}px;
 
-    transition: 350ms ease;
+    transition: ${pAnimation?.duration ? pAnimation.duration : 350}ms ease;
     transition-property: opacity, transform;
   `;
   return (

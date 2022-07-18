@@ -67,7 +67,9 @@ export default function RichChunk(p: Props) {
           css={css`
             width: 100%;
             max-width: 450px;
-            align-self: center;
+            align-self: ${p.chunk.smallImage.align
+              ? p.chunk.smallImage.align
+              : "center"};
             padding: 0 24px;
           `}
         >

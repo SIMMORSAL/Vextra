@@ -5,9 +5,9 @@ export interface RichChunkModel {
   gradient?: string[];
   gradientDegree?: number;
   backgroundImage?: string;
-  freeSpaceTop?: string; // e.g: "200px", or "20vh" // TODO
+  freeSpaceTop?: string; // e.g: "200px", or "20vh"
   freeSpaceBottom?: string;
-  minHeight?: string; // e.g: "500px", or "80vh" // TODO
+  minHeight?: string; // e.g: "500px", or "80vh"
   longTextsTop?: RichTextModel[];
   bigImage?: RichImageModel;
   smallImage?: RichImageModel;
@@ -30,7 +30,7 @@ export interface RichTextModel {
 export interface RichImageModel {
   path: string;
   subText?: string;
-  align?: "start" | "center" | "end"; // works only if small // TODO
+  align?: "start" | "center" | "end"; // works only in smallImage
   aspectRatio?: string; // eg: 800/600 you can write your image's width and height
   animation?: RichAnimation;
 }
@@ -38,7 +38,7 @@ export interface RichImageModel {
 // TODO
 export interface RichVideoModel {
   path: string;
-  align?: "start" | "center" | "end"; // works only if small
+  align?: "start" | "center" | "end"; // works only in smallVideo
   aspectRatio?: string;
   animation?: RichAnimation;
 }
@@ -55,7 +55,7 @@ export interface MediaBarModel {
 export interface RichAnimation {
   animateOnScroll?: boolean;
   translateDistance?: number; // e.g: 25vh and 25vw
-  duration?: number; // in milliseconds  // TODO
+  duration?: number; // in milliseconds
   animateFrom?:
     | "none"
     | "top"

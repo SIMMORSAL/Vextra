@@ -237,7 +237,8 @@ and ${getInlineCode("minHeight", "#9d0006")}:
             animation: {
               animateOnScroll: true,
               animateFrom: "top",
-              translateDistance: 10,
+              translateDistance: 6,
+              duration: 500,
             },
             text: `
 This image will always fill the entire width of the screen, 
@@ -260,6 +261,7 @@ and expand or shrink depending on the space it has, or how much space it's conte
             animation: {
               animateOnScroll: true,
               animateFrom: "left",
+              duration: 600,
             },
           },
         ],
@@ -417,7 +419,7 @@ and ${getInlineCode("mediaBar", "#e19400")}.
 ${getInlineCode("aspectRatio", "#9d0006")}: It is 
 not important no provide this, but if you do, content won't jump down when image starts loading.
 
-${getInlineCode("align", "#9d0006")} only works 
+${getInlineCode("align", "#9d0006")}: only works 
 in ${getInlineCode("smallImage ", "#e19400")}.
 `,
           },
@@ -442,29 +444,23 @@ RichImage and RichText elements accept an animation object.
 
 
 ###### Example:
-\`\`\`js
-interface RichAnimation {
-  animateOnScroll?: boolean;
-  translateDistance?: number; // e.g: 25vh and 25vw
-  animateFrom?:
-    | "none"
-    | "top"
-    | "topRight"
-    | "right"
-    | "bottomRight"
-    | "bottom"
-    | "bottomLeft"
-    | "left"
-    | "topLeft";
-}
-    
+\`\`\`js    
 {
   ...
   animation: {
-    
+    animateOnScroll: true,
+    translateDistance: 15,
+    duration: 500,
+    animateFrom: "topLeft",
   }
 }
 \`\`\`
+
+As you've seen so far, by playing around with Rich Animations you can create compelling
+and beautiful experiences in no time that would otherwise take hours to do from scratch.
+
+Here are some more animation to display different directions that texts and images
+can animate from:
 
 ## Animated Texts
 
@@ -516,6 +512,7 @@ interface RichAnimation {
             animation: {
               animateOnScroll: true,
               animateFrom: "bottom",
+              duration: 500,
             },
             text: `
 If there's something extra that you need that [this](linkToStore) package doesn't 
@@ -528,6 +525,7 @@ I give discounts on my own work ;)
             animation: {
               animateOnScroll: true,
               animateFrom: "bottom",
+              duration: 700,
             },
             text: `
                   
