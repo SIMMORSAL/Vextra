@@ -169,7 +169,7 @@ interface RichAnimation {
 
 \` \`        
 \` \`        
-Let's go through all of the features with examples
+Let's go through the features with examples
 `,
           },
         ],
@@ -205,6 +205,11 @@ Here's a diagram of how things are drawn:
   }
 ]
 \`\`\`
+
+\` \`  
+\` \`  
+\` \`  
+\` \`  
 
 Below is an example of a chunk with image as it's background. It 
 utilizes ${getInlineCode("backgroundImage", "#9d0006")} &#8291;
@@ -271,6 +276,8 @@ and expand or shrink depending on the space it has, or how much space it's conte
         longTextsTop: [
           {
             text: `
+\` \`  
+\` \`  
 Below is what you get when you give some colors to ${getInlineCode(
               "gradient",
               "#9d0006"
@@ -434,7 +441,6 @@ in ${getInlineCode("smallImage ", "#e19400")}.
         },
       },
       {
-        freeSpaceTop: "50px",
         longTextsTop: [
           {
             text: `
@@ -466,15 +472,18 @@ and ${getInlineCode("mediaBar", "#e19400")}.
 \`\`\`
 
 ${getInlineCode("aspectRatio", "#9d0006")}: Unlike 
-Rich Image, **setting this in videos is rather very important** unless your video's
+Rich Image, **setting this in videos is rather important** unless your video's
 aspect ratio is '16/9', as this number will determine how much of the available space 
 the video player will cover. By default this number is set to '16/9', and you can
 again put your videos width and height as this.
 
 ${getInlineCode("autoPlay", "#9d0006")}: By setting this to true, 
 videos will start playing as soon as you enter the page, however bear in mind
-that modern browsers won't allow sound to be played when a video autoplays. 
+that modern browsers won't allow videos to autoplay with sound. 
 Therefore the sound will be muted.
+
+${getInlineCode("align", "#9d0006")}: only works 
+in ${getInlineCode("smallVideo ", "#e19400")}.
 `,
           },
         ],
@@ -490,7 +499,8 @@ Therefore the sound will be muted.
           aspectRatio: "16/9",
           loop: true,
         },
-        freeSpaceBottom: "100px",
+        freeSpaceTop: "30px",
+        freeSpaceBottom: "40px",
       },
       {
         longTextsTop: [
