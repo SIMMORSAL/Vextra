@@ -85,8 +85,9 @@ export default function HeaderLogo(p: Props) {
               grid-row: 1;
               grid-column: 1;
               cursor: pointer;
-              transform: translateY(${p.showDev ? 0 : -headerHeight}px);
-              transition: 600ms ease;
+              transform: translateY(${p.showDev ? "8vh" : -headerHeight + "px"})
+                scale(${p.showDev ? 2 : 1});
+              transition: transform 600ms ease;
             `}
           >
             <img
@@ -99,6 +100,7 @@ export default function HeaderLogo(p: Props) {
                 padding: 0 12%;
 
                 transition: 600ms ease;
+                transition-property: opacity, filter;
                 transition-delay: ${p.showDev ? 300 : 0}ms;
               `}
             />

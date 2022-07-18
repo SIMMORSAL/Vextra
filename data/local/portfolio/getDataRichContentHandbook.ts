@@ -519,7 +519,8 @@ interface RichAnimation {
             },
             text: `
 If there's something extra that you need that [this](linkToStore) package doesn't 
-cover, hit me up. I give discounts on my own work ;)
+cover, hit me up.\  
+I give discounts on my own work ;)
 `,
           },
           {

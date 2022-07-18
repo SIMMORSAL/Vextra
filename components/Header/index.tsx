@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import HeaderButton from "./HeaderButton";
 import { _AppContext } from "../../helpers/providers/provider_App";
@@ -38,13 +38,16 @@ export default function Header(props: Props) {
       router.query.PortfolioID !== undefined &&
       router.query.PortfolioID === "rich-content-handbook"
     ) {
-      window.addEventListener("scroll", SIMMORSAL);
+      console.log(`11111  Added listener:  `);
+      window.addEventListener("scroll", SIMMORSAL, true);
     } else {
-      window.removeEventListener("scroll", SIMMORSAL);
+      console.log(`11111  Removed listener:  `);
+      window.removeEventListener("scroll", SIMMORSAL, true);
     }
   }, [router.query]);
 
-  const SIMMORSAL = () => {
+  const SIMMORSAL = useCallback(() => {
+    console.log(`11111  SIMMORSAL:  `);
     if (
       window.scrollY + window.innerHeight >
       document.getElementById("pageRichContent")?.clientHeight
@@ -53,21 +56,21 @@ export default function Header(props: Props) {
     } else {
       setShowDev(false);
     }
-  };
+  }, []);
 
-  const listenToScroll = () => {
+  const listenToScroll = useCallback(() => {
     const scroll = document.documentElement.scrollTop;
     if (scroll > 24) {
       setShouldBlur(true);
     } else {
       setShouldBlur(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
-    window.addEventListener("scroll", listenToScroll);
+    window.addEventListener("scroll", listenToScroll, true);
     return () => {
-      window.removeEventListener("scroll", listenToScroll);
+      window.removeEventListener("scroll", listenToScroll, true);
     };
   }, []);
 
