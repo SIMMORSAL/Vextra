@@ -455,6 +455,10 @@ RichImage and RichText elements accept an animation object.
   }
 }
 \`\`\`
+${getInlineCode("translateDistance", "#9d0006")}: For left and right 
+translations, the number 15 written above will be counted 
+as ${getInlineCode("∓15vw")} and for up and down
+as ${getInlineCode("∓15vh")} .
 
 As you've seen so far, by playing around with Rich Animations you can create compelling
 and beautiful experiences in no time that would otherwise take hours to do from scratch.

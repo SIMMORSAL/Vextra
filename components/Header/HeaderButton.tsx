@@ -53,7 +53,7 @@ export default function HeaderButton(p: Props) {
         justify-content: end;
         cursor: pointer;
         opacity: ${p.justLoaded || p.showDev ? 0 : 1};
-        transition: opacity 1000ms ease;
+        transition: opacity ${p.showDev ? 600 : 1000}ms ease;
         transition-delay: ${p.showDev ? 0 : 500}ms;
       `}
     >
