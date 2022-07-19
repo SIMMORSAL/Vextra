@@ -66,7 +66,12 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
           {
             text: ` 
 
-This is a full blown test in demonstration of Rich Chunks abilities. You can see the data file of this page [from this link](https://google.com).
+This is a full blown test in demonstration of Rich Chunks abilities. 
+You can find the data file of this page 
+in ${getInlineCode(
+              "/data/local/portfolio/&#8291;getDataRichContentHandbook.ts",
+              "green"
+            )}.
 \` \`           
 \` \`           
 
@@ -471,6 +476,8 @@ and ${getInlineCode("mediaBar", "#e19400")}.
 }
 \`\`\`
 
+${getInlineCode("path", "#9d0006")}: TODO
+
 ${getInlineCode("aspectRatio", "#9d0006")}: Unlike 
 Rich Image, **setting this in videos is rather important** unless your video's
 aspect ratio is '16/9', as this number will determine how much of the available space 
@@ -523,6 +530,7 @@ RichText, RichImage, and RichVideo elements accept an animation object.
   }
 }
 \`\`\`
+
 ${getInlineCode("translateDistance", "#9d0006")}: For left and right 
 translations, the number 15 written above will be counted 
 as ${getInlineCode("∓15vw")} and for up and down
@@ -557,6 +565,17 @@ can animate from:
         ],
       },
       ...animatedImages,
+      {
+        longTextsTop: [
+          {
+            text: `
+## Animated Videos
+
+You get the gist!
+`,
+          },
+        ],
+      },
       {
         longTextsTop: [
           {
