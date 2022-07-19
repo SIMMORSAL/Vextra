@@ -425,7 +425,7 @@ and ${getInlineCode("mediaBar", "#e19400")}.
 ${getInlineCode("aspectRatio", "#9d0006")}: It is 
 not important no provide this, but if you do, content won't jump down when image starts loading.
 
-${getInlineCode("align", "#9d0006")}: only works 
+${getInlineCode("align", "#9d0006")}: Only works 
 in ${getInlineCode("smallImage ", "#e19400")}.
 `,
           },
@@ -482,7 +482,7 @@ videos will start playing as soon as you enter the page, however bear in mind
 that modern browsers won't allow videos to autoplay with sound. 
 Therefore the sound will be muted.
 
-${getInlineCode("align", "#9d0006")}: only works 
+${getInlineCode("align", "#9d0006")}: Only works 
 in ${getInlineCode("smallVideo ", "#e19400")}.
 `,
           },
