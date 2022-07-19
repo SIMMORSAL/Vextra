@@ -42,8 +42,13 @@ export default function RichVideo(p: Props) {
     window.addEventListener("scroll", listenToScroll);
 
     return () => {
-      if (p.video.animation?.animateOnScroll)
-        window.removeEventListener("scroll", listenToScroll);
+      // if (p.video.animation?.animateOnScroll)
+      console.log(
+        `11111  Kill Listener:  ${window.removeEventListener(
+          "scroll",
+          listenToScroll
+        )}`
+      );
     };
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
