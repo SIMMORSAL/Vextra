@@ -11,14 +11,20 @@ interface Props {
 
 const scrollThreshold = 0.57;
 export default function RichVideo(p: Props) {
-  const refImageRoot = useRef();
+  const refVideoRoot = useRef();
 
   const [shouldAnimateIn, setShouldAnimateIn] = useState(false);
 
   const listenToScroll = () => {
     const scroll = document.documentElement.scrollTop;
-    const imagePosition = (refImageRoot.current as HTMLDivElement).offsetTop;
-    if (scroll + window.innerHeight * scrollThreshold < imagePosition)
+    const imagePosition = (refVideoRoot.current as HTMLDivElement).offsetTop;
+    console.log(
+      `11111  listenToScroll:  ${imagePosition}  ${scroll}  ${scrollThreshold}`
+    );
+    if (
+      p.video.animation?.animateOnScroll &&
+      scroll + window.innerHeight * scrollThreshold < imagePosition
+    )
       setShouldAnimateIn(false);
     else setShouldAnimateIn(true);
   };
@@ -27,15 +33,13 @@ export default function RichVideo(p: Props) {
     // checking if on first frame scroll is reached
     if (p.video.animation?.animateOnScroll) {
       const scroll = document.documentElement.scrollTop;
-      const imagePosition = (refImageRoot.current as HTMLDivElement).offsetTop;
+      const imagePosition = (refVideoRoot.current as HTMLDivElement).offsetTop;
       if (scroll + window.innerHeight * scrollThreshold < imagePosition)
         setShouldAnimateIn(false);
       else setShouldAnimateIn(true);
-    }
+    } else setShouldAnimateIn(true);
 
-    if (p.video.animation?.animateOnScroll)
-      window.addEventListener("scroll", listenToScroll);
-    else setShouldAnimateIn(true);
+    window.addEventListener("scroll", listenToScroll);
 
     return () => {
       if (p.video.animation?.animateOnScroll)
@@ -76,7 +80,7 @@ export default function RichVideo(p: Props) {
   console.log(`11111  RichVideo:  ${"TRIES LOADING"}`);
   return (
     <div
-      ref={refImageRoot}
+      ref={refVideoRoot}
       css={css`
         width: 100%;
         height: 100%;

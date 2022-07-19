@@ -225,7 +225,7 @@ and ${getInlineCode("minHeight", "#9d0006")}:
       },
       {},
       {
-        minHeight: `100vh`,
+        minHeight: `200vh`,
         freeSpaceTop: "30vh",
         backgroundImage: "/images/portfolio/handbook/bg_sample.jpg",
         longTextsTop: [
@@ -252,7 +252,7 @@ and ${getInlineCode("minHeight", "#9d0006")}:
             },
             text: `
 This image will always fill the entire width of the screen, 
-and expand or shrink depending on the space it has, or how much space it's content need
+and expand or shrink depending on the size that was given min height, or how much space it's content need
 
 \` \`  
 \` \`  
