@@ -23,10 +23,6 @@ export default function RichText(p: Props) {
       `}
     >
       {p.texts.map((text, index) => {
-        const style = css`
-          text-align: ${text.align};
-          user-select: ${text.userSelect ? text.userSelect : "none"};
-        `;
         return <TextChunk key={index} text={text} />;
       })}
     </div>

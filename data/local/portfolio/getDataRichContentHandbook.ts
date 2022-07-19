@@ -252,8 +252,20 @@ and ${getInlineCode("minHeight", "#9d0006")}:
             },
             text: `
 This image will always fill the entire width of the screen, 
-and expand or shrink depending on the size that was given min height, or how much space it's content need
+and expand or shrink depending on the size that is given min height, or how much space it's content need
 
+\` \`  
+\` \`  
+\` \`  
+\` \`  
+\` \`  
+\` \`  
+\` \`  
+\` \`  
+\` \`  
+\` \`  
+\` \`  
+\` \`  
 \` \`  
 \` \`  
 \` \`  
@@ -476,7 +488,11 @@ and ${getInlineCode("mediaBar", "#e19400")}.
 }
 \`\`\`
 
-${getInlineCode("path", "#9d0006")}: TODO
+${getInlineCode("path", "#9d0006")}: Rich Video 
+uses [ReactPlayer](https://github.com/CookPete/react-player) under the hood which is
+able to recognize the path you give it and load an appropriate player based on it.
+It can recognize YouTube, Facebook, SoundCloud, Vimeo, Twitch and ...
+
 
 ${getInlineCode("aspectRatio", "#9d0006")}: Unlike 
 Rich Image, **setting this in videos is rather important** unless your video's
@@ -505,6 +521,10 @@ in ${getInlineCode("smallVideo ", "#e19400")}.
           path: "https://www.youtube.com/watch?v=FK3HyJglFQ0",
           aspectRatio: "16/9",
           loop: true,
+          animation: {
+            animateOnScroll: true,
+            animateFrom: "left",
+          },
         },
         freeSpaceTop: "30px",
         freeSpaceBottom: "40px",

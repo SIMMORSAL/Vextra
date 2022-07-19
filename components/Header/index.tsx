@@ -41,7 +41,9 @@ export default function Header(props: Props) {
       window.addEventListener("scroll", SIMMORSAL, true);
     } else {
       window.removeEventListener("scroll", SIMMORSAL, true);
+      showDev && setShowDev(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router.query]);
 
   const SIMMORSAL = useCallback(() => {

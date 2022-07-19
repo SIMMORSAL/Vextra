@@ -1,6 +1,9 @@
 import React from "react";
 import { css } from "@emotion/react";
-import { RichChunkModel } from "../../data/models/rich-chunk/RichChunkModel";
+import {
+  RichChunkModel,
+  RichTextModel,
+} from "../../data/models/rich-chunk/RichChunkModel";
 import RichText from "./RichText";
 import RichImage from "./RichImage";
 import { getPortfolio } from "../../data/local/dataPortfoliosPage";
@@ -47,7 +50,7 @@ export default function RichChunk(p: Props) {
           `}
         />
       )}
-      {p.chunk.longTextsTop && p.chunk.longTextsTop.length > 0 && (
+      {p.chunk.longTextsTop && (
         <div
         // * This is the way to get one way chunk and test against it
         // css={css`

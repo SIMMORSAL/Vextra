@@ -46,15 +46,6 @@ export interface RichVideoModel {
   animation?: RichAnimation;
 }
 
-// TODO
-export interface MediaBarModel {
-  leftImage?: RichImageModel;
-  leftVideo?: RichVideoModel;
-  text?: RichTextModel[];
-  rightImage?: RichImageModel;
-  rightVideo?: RichVideoModel;
-}
-
 export interface RichAnimation {
   animateOnScroll?: boolean;
   translateDistance?: number; // e.g: 25vh and 25vw
@@ -69,4 +60,13 @@ export interface RichAnimation {
     | "bottomLeft"
     | "left"
     | "topLeft";
+}
+
+// TODO
+export interface MediaBarModel {
+  leftImage?: RichImageModel;
+  leftVideo?: RichVideoModel;
+  text?: RichTextModel[];
+  rightImage?: RichImageModel;
+  rightVideo?: RichVideoModel;
 }
