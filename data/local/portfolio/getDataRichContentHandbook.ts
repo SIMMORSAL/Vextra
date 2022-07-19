@@ -174,8 +174,16 @@ interface RichAnimation {
 
 \` \`        
 \` \`        
-Let's go through the features with examples
+And here's a diagram of how everything is placed:
 `,
+          },
+        ],
+        smallImage: {
+          path: "/images/portfolio/handbook/overall_layout.png",
+        },
+        longTextsBottom: [
+          {
+            text: "Let's go through the features with examples",
           },
         ],
       },
