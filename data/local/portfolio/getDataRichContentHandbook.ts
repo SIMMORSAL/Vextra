@@ -179,7 +179,7 @@ And here's a diagram of how everything is placed:
           },
         ],
         smallImage: {
-          path: "/images/portfolio/handbook/overall_layout.png",
+          path: "/images/portfolio/handbook/chunk_layout.png",
         },
         longTextsBottom: [
           {
