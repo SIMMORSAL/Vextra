@@ -20,7 +20,7 @@ export interface RichChunkModel {
 export interface RichTextModel {
   text: string;
   align?: "start" | "center" | "end";
-  userSelect?: string; // eg: "none" or "text"
+  userSelect?: string; // eg: "none" or "texts"
   color?: string;
   size?: string; // eg: "2.1em" or "25px"
   fontFamily?: string;
@@ -66,7 +66,7 @@ export interface RichAnimation {
 export interface MediaBarModel {
   leftImage?: RichImageModel;
   leftVideo?: RichVideoModel;
-  text?: RichTextModel[];
+  texts?: RichTextModel[];
   rightImage?: RichImageModel;
   rightVideo?: RichVideoModel;
 }

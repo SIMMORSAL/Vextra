@@ -54,8 +54,8 @@ export default function RichChunk(p: Props) {
         <div
         // * This is the way to get one way chunk and test against it
         // css={css`
-        //   background-color: ${p.chunk.longTextsTop[0].text ===
-        //   getPortfolio("rich-content-handbook").pageContent[0].longTextsTop[0].text
+        //   background-color: ${p.chunk.longTextsTop[0].texts ===
+        //   getPortfolio("rich-content-handbook").pageContent[0].longTextsTop[0].texts
         //     ? "red"
         //     : ""};
         // `}
@@ -116,8 +116,8 @@ export default function RichChunk(p: Props) {
         <div
         // * This is the way to get one way chunk and test against it
         // css={css`
-        //   background-color: ${p.chunk.longTextsTop[0].text ===
-        //   getPortfolio("rich-content-handbook").pageContent[0].longTextsTop[0].text
+        //   background-color: ${p.chunk.longTextsTop[0].texts ===
+        //   getPortfolio("rich-content-handbook").pageContent[0].longTextsTop[0].texts
         //     ? "red"
         //     : ""};
         // `}

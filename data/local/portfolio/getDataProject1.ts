@@ -71,7 +71,7 @@ asdf asd fasd ffasd fsad fasd ffsad fasd fsd fsd sad f
         },
         {
           align: "center",
-          text: "# This is a full blown test on the text functionality of Rich Chunk. Lorem ipsum dolar sit amet sad fasd fasd fasdf \nasdf asd fasd ffasd fsad fasd ffsad fasd fsd fsd sad f",
+          text: "# This is a full blown test on the texts functionality of Rich Chunk. Lorem ipsum dolar sit amet sad fasd fasd fasdf \nasdf asd fasd ffasd fsad fasd ffsad fasd fsd fsd sad f",
         },
         {
           align: "center",

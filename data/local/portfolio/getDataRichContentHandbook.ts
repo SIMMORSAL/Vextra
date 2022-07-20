@@ -23,7 +23,7 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
       longTextsTop: [
         {
           align: "center",
-          // text: texts[index].toUpperCase(),
+          // texts: texts[index].toUpperCase(),
           text: "### coming from " + translationTypes[index].toUpperCase(),
           animation: {
             animateOnScroll: true,
@@ -411,7 +411,7 @@ and once you find the icon you want, copy the **HTML** code
 an paste it in your text. 
           
 To write inline-code, it's better to use ${getInlineCode(
-              "getInlineCode(text, color)"
+              "getInlineCode(texts, color)"
             )} in 
 your markdown for better styling: 
 

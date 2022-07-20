@@ -38,7 +38,7 @@ export default function PagePortfolioItem(p: Props) {
   //       min-height: calc(100vh - 2px);
   //       //border: 1px solid #484848;
   //       font-weight: bold;
-  //       text-align: center;
+  //       texts-align: center;
   //       display: flex;
   //       flex-direction: column;
   //       justify-content: center;
