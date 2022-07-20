@@ -234,7 +234,7 @@ and ${getInlineCode("minHeight", "#9d0006")}:
       {},
       {
         minHeight: `200vh`,
-        freeSpaceTop: "30vh",
+        freeSpaceTop: "10vh",
         backgroundImage: "/images/portfolio/handbook/bg_sample.jpg",
         longTextsTop: [
           {
@@ -509,7 +509,7 @@ the video player will cover. By default this number is set to '16/9', and you ca
 again put your videos width and height as this.
 
 ${getInlineCode("autoPlay", "#9d0006")}: By setting this to true, 
-videos will start playing as soon as you enter the page, however bear in mind
+videos will start playing as soon as you scroll to the video, however bear in mind
 that modern browsers won't allow videos to autoplay with sound. 
 Therefore the sound will be muted.
 

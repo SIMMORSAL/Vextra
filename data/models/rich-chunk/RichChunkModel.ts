@@ -22,7 +22,7 @@ export interface RichTextModel {
   align?: "start" | "center" | "end";
   userSelect?: string; // eg: "none" or "text"
   color?: string;
-  size?: string; // eg: "2em" or "25px"
+  size?: string; // eg: "2.1em" or "25px"
   fontFamily?: string;
   animation?: RichAnimation;
 }
