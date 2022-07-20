@@ -259,6 +259,10 @@ and ${getInlineCode("minHeight", "#9d0006")}:
               duration: 500,
             },
             text: `
+\` \`  
+\` \`  
+\` \`  
+
 This image will always fill the entire width of the screen, 
 and expand or shrink depending on the size that is given min height, or how much space it's content need
 
@@ -374,7 +378,7 @@ or animated individually.
 # Test Text
 
 This is a loooong text
-Etceteratext.
+Etcetera <i class="fa-solid fa-fire"></i> text.
 \`,
     },
     {
@@ -392,13 +396,19 @@ _More on ${getInlineCode("animation", "#9d0006")} below._
 
 ## Markdown
 
-All the texts are rendered as Markdown for easy and fast typing.
-
+All the texts are rendered as Markdown for easy 
+and fast typing.
+        
 If you need to edit code-block and it's syntax highlighting, you can do so by 
 editing ${getInlineCode(
               "/components/RichContent/&#8291;Markdown/MarkdownSyntaxTheme.ts ",
               "green"
             )}.
+            
+<i class="fa-solid fa-fire"></i>  To use fonts in you text, go 
+to [fontawesome.com/icons](https://fontawesome.com/icons)
+and once you find the icon you want, copy the **HTML** code 
+an paste it in your text. 
           
 To write inline-code, it's better to use ${getInlineCode(
               "getInlineCode(text, color)"
@@ -527,16 +537,16 @@ in ${getInlineCode("smallVideo ", "#e19400")}.
           controls: false,
           autoPlay: true,
         },
-        smallVideo: {
-          path: "https://www.youtube.com/watch?v=FK3HyJglFQ0",
-          aspectRatio: "16/9",
-          loop: true,
-          autoPlay: true,
-          animation: {
-            animateOnScroll: true,
-            animateFrom: "left",
-          },
-        },
+        // smallVideo: {
+        //   path: "https://www.youtube.com/watch?v=FK3HyJglFQ0",
+        //   aspectRatio: "16/9",
+        //   loop: true,
+        //   autoPlay: true,
+        //   animation: {
+        //     animateOnScroll: true,
+        //     animateFrom: "left",
+        //   },
+        // },
         freeSpaceTop: "30px",
         freeSpaceBottom: "40px",
       },
