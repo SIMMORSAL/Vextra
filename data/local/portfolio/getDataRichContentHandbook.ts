@@ -527,16 +527,16 @@ in ${getInlineCode("smallVideo ", "#e19400")}.
           controls: false,
           autoPlay: true,
         },
-        smallVideo: {
-          path: "https://www.youtube.com/watch?v=FK3HyJglFQ0",
-          aspectRatio: "16/9",
-          loop: true,
-          autoPlay: true,
-          animation: {
-            animateOnScroll: true,
-            animateFrom: "left",
-          },
-        },
+        // smallVideo: {
+        //   path: "https://www.youtube.com/watch?v=FK3HyJglFQ0",
+        //   aspectRatio: "16/9",
+        //   loop: true,
+        //   autoPlay: true,
+        //   animation: {
+        //     animateOnScroll: true,
+        //     animateFrom: "left",
+        //   },
+        // },
         freeSpaceTop: "30px",
         freeSpaceBottom: "40px",
       },
