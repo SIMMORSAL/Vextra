@@ -12,18 +12,37 @@ interface Props {
 const scrollThreshold = 0.57;
 export default function RichVideo(p: Props) {
   const refVideoRoot = useRef();
+  // const refVideoEnd = useRef();
 
   const [shouldAnimateIn, setShouldAnimateIn] = useState(false);
+  const [isVideoVisible, setIsVideoVisible] = useState(false);
 
   const listenToScroll = () => {
     const scroll = document.documentElement.scrollTop;
-    const imagePosition = (refVideoRoot.current as HTMLDivElement).offsetTop;
+    const videoPosition = (refVideoRoot.current as HTMLDivElement).offsetTop;
+    const videoHeight = (refVideoRoot.current as HTMLDivElement).clientHeight;
+    // const videoEndPosition = (refVideoEnd.current as HTMLDivElement).offsetTop;
     console.log(
-      `11111  listenToScroll:  ${imagePosition}  ${scroll}  ${scrollThreshold}`
+      `11111  listenToScroll:  ${videoPosition.toFixed()}  ${scroll.toFixed()}  ${(
+        scroll + window.innerHeight
+      ).toFixed()}  
+      ${"// videoEndPosition.toFixed()"}`
     );
+
+    // Autoplay
+    if (p.video.autoPlay) {
+      if (
+        scroll + window.innerHeight > videoPosition &&
+        scroll < videoPosition + videoHeight
+      )
+        setIsVideoVisible(true);
+      else setIsVideoVisible(false);
+    }
+
+    // Animation on scroll
     if (
       p.video.animation?.animateOnScroll &&
-      scroll + window.innerHeight * scrollThreshold < imagePosition
+      scroll + window.innerHeight * scrollThreshold < videoPosition
     )
       setShouldAnimateIn(false);
     else setShouldAnimateIn(true);
@@ -31,24 +50,19 @@ export default function RichVideo(p: Props) {
 
   useEffect(() => {
     // checking if on first frame scroll is reached
-    if (p.video.animation?.animateOnScroll) {
-      const scroll = document.documentElement.scrollTop;
-      const imagePosition = (refVideoRoot.current as HTMLDivElement).offsetTop;
-      if (scroll + window.innerHeight * scrollThreshold < imagePosition)
-        setShouldAnimateIn(false);
-      else setShouldAnimateIn(true);
-    } else setShouldAnimateIn(true);
+    const scroll = document.documentElement.scrollTop;
+    const videoPosition = (refVideoRoot.current as HTMLDivElement).offsetTop;
+    if (
+      p.video.animation?.animateOnScroll &&
+      scroll + window.innerHeight * scrollThreshold < videoPosition
+    )
+      setShouldAnimateIn(false);
+    else setShouldAnimateIn(true);
 
     window.addEventListener("scroll", listenToScroll);
 
     return () => {
-      // if (p.video.animation?.animateOnScroll)
-      console.log(
-        `11111  Kill Listener:  ${window.removeEventListener(
-          "scroll",
-          listenToScroll
-        )}`
-      );
+      window.removeEventListener("scroll", listenToScroll);
     };
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -82,7 +96,6 @@ export default function RichVideo(p: Props) {
         })`
       : "";
 
-  console.log(`11111  RichVideo:  ${"TRIES LOADING"}`);
   return (
     <div
       ref={refVideoRoot}
@@ -105,13 +118,22 @@ export default function RichVideo(p: Props) {
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <ReactPlayer
         url={p.video.path}
-        playing={p.video.autoPlay}
+        playing={p.video.autoPlay && isVideoVisible && shouldAnimateIn}
         muted={p.video.autoPlay}
         controls={p.video.controls !== undefined ? p.video.controls : true}
         loop={p.video.loop}
         width={"100%"}
         height={"100%"}
       />
+      {/*<div*/}
+      {/*  ref={refVideoEnd}*/}
+      {/*  onClick={() => setIsVideoVisible(!isVideoVisible)}*/}
+      {/*  // css={css`*/}
+      {/*  //   width: 100px;*/}
+      {/*  //   height: 100px;*/}
+      {/*  //   background-color: red;*/}
+      {/*  // `}*/}
+      {/*/>*/}
     </div>
   );
 }

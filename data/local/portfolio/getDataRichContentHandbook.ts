@@ -509,7 +509,9 @@ the video player will cover. By default this number is set to '16/9', and you ca
 again put your videos width and height as this.
 
 ${getInlineCode("autoPlay", "#9d0006")}: By setting this to true, 
-videos will start playing as soon as you scroll to the video, however bear in mind
+videos will start playing as soon as you scroll to them or they animate in 
+on scroll, and will pause when they're out of the view. 
+However bear in mind
 that modern browsers won't allow videos to autoplay with sound. 
 Therefore the sound will be muted.
 
@@ -518,17 +520,18 @@ in ${getInlineCode("smallVideo ", "#e19400")}.
 `,
           },
         ],
-        // bigVideo: {
-        //   path: "https://marketplace.canva.com/EAE9rt2GfSQ/1/0/800w/canva-black-youth-modern-fashion-and-style-square-video-ArL61CA1F-c.mp4",
-        //   aspectRatio: "1/1",
-        //   loop: true,
-        //   controls: false,
-        //   autoPlay: true,
-        // },
+        bigVideo: {
+          path: "https://marketplace.canva.com/EAE9rt2GfSQ/1/0/800w/canva-black-youth-modern-fashion-and-style-square-video-ArL61CA1F-c.mp4",
+          aspectRatio: "1/1",
+          loop: true,
+          controls: false,
+          autoPlay: true,
+        },
         smallVideo: {
           path: "https://www.youtube.com/watch?v=FK3HyJglFQ0",
           aspectRatio: "16/9",
           loop: true,
+          autoPlay: true,
           animation: {
             animateOnScroll: true,
             animateFrom: "left",
