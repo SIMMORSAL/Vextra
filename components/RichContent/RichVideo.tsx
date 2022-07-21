@@ -84,7 +84,7 @@ export default function RichVideo(p: Props) {
       ref={refVideoRoot}
       css={css`
         width: 100%;
-        height: 100%;
+        //height: 100%;
         max-width: 1100px;
         margin: 0 auto;
         display: flex;

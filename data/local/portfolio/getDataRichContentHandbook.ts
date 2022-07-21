@@ -676,23 +676,38 @@ this is how things will look on different screen sizes
         ],
       },
       {
+        freeSpaceTop: "40px",
+        freeSpaceBottom: "40px",
         mediaBar: {
-          leftVideo: {
-            path: "/path/to/video",
-            autoPlay: true,
+          leftImage: {
+            path: "/images/portfolio/handbook/flowers.jpg",
+            // aspectRatio: "597/895",
+            animation: {
+              animateOnScroll: true,
+              animateFrom: "left",
+              duration: 800,
+            },
           },
           texts: [
             {
-              text: "lorem ipsum",
+              align: "center",
+              text: "### Thank you for reaching this far ❤️",
+              animation: {
+                animateOnScroll: true,
+                animateFrom: "right",
+                duration: 600,
+              },
+            },
+            {
+              align: "center",
+              text: "May your chunks be plenty and beautiful!",
+              animation: {
+                animateOnScroll: true,
+                animateFrom: "right",
+                duration: 600,
+              },
             },
           ],
-          rightImage: {
-            path: "/path/to/image",
-            animation: {
-              animateOnScroll: true,
-              animateFrom: "right",
-            },
-          },
         },
       },
       {

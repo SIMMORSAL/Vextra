@@ -7,8 +7,8 @@ import { cacheImage } from "../../helpers/tools/tools";
 import MarkDown from "./Markdown/Markdown";
 
 interface Props {
-  textColor: string;
   image: RichImageModel;
+  textColor: string;
 }
 
 const scrollThreshold = 0.57;

@@ -9,13 +9,14 @@ import RichImage from "./RichImage";
 import { getPortfolio } from "../../data/local/dataPortfoliosPage";
 import { backgroundWhite } from "../../res/colors";
 import RichVideo from "./RichVideo";
+import MediaBar from "./MediaBar";
 
 interface Props {
   chunk: RichChunkModel;
 }
 
 export default function RichChunk(p: Props) {
-  const textColor = p.chunk.textColor ? p.chunk.textColor : "#1e1e1e";
+  const textColor = p.chunk.textColor ? p.chunk.textColor : "#1e1e1e"; // Todo
   const backgroundColor = p.chunk.backgroundColor
     ? p.chunk.backgroundColor
     : backgroundWhite;
@@ -95,23 +96,9 @@ export default function RichChunk(p: Props) {
           <RichVideo video={p.chunk.smallVideo} />
         </div>
       )}
-      {/*{(p.chunk.imageBarLeft ||*/}
-      {/*  p.chunk.textImageBar ||*/}
-      {/*  p.chunk.imageBarRight) && (*/}
-      {/*  // <div*/}
-      {/*  //   css={css`*/}
-      {/*  //     max-width: 900px;*/}
-      {/*  //     //padding: 32px 16px;*/}
-      {/*  //     margin: 0 auto;*/}
-      {/*  //   `}*/}
-      {/*  // >*/}
-      {/*  <ShortImageBar*/}
-      {/*    smallImageLeft={p.chunk.imageBarLeft}*/}
-      {/*    shortText={p.chunk.textImageBar}*/}
-      {/*    smallImageRight={p.chunk.imageBarRight}*/}
-      {/*  />*/}
-      {/*  // </div>*/}
-      {/*)}*/}
+      {p.chunk.mediaBar && (
+        <MediaBar mediaBar={p.chunk.mediaBar} textColor={textColor} />
+      )}
       {p.chunk.longTextsBottom && p.chunk.longTextsBottom.length > 0 && (
         <div
         // * This is the way to get one way chunk and test against it
