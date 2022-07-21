@@ -234,7 +234,7 @@ and ${getInlineCode("minHeight", "#9d0006")}:
       {},
       {
         minHeight: `200vh`,
-        freeSpaceTop: "10vh",
+        freeSpaceTop: "20vh",
         backgroundImage: "/images/portfolio/handbook/bg_sample.jpg",
         longTextsTop: [
           {
@@ -520,7 +520,7 @@ again put your videos width and height as this.
 
 ${getInlineCode("autoPlay", "#9d0006")}: By setting this to true, 
 videos will start playing as soon as you scroll to them or they animate in 
-on scroll, and will pause when they're out of the view. 
+on scroll, and will pause when they're out of view. 
 However bear in mind
 that modern browsers won't allow videos to autoplay with sound. 
 Therefore the sound will be muted.
@@ -635,9 +635,8 @@ Media Bar is basically a collection of Rich elements, laid horizontally.
         longTextsTop: [
           {
             text: `
-Consider the 
-            
-This is how Media Bar will look on different screen sizes
+If we break up the Media Bar to three columns, then
+this is how things will look on different screen sizes
 `,
           },
         ],
@@ -648,12 +647,56 @@ This is how Media Bar will look on different screen sizes
           {
             text: `
 ###### Example
+
+\`\`\`js
+{
+  ...
+  mediaBar: {
+    leftVideo: {
+      path: "/path/to/video",
+      autoPlay: true,
+    },
+    texts: [
+      {
+        text: "lorem ipsum",
+      },
+    ],
+    rightImage: {
+      path: "/path/to/image",
+      animation: {
+        animateOnScroll: true,
+        animateFrom: "right",
+      },
+    },
+  },
+},
+\`\`\`
 `,
           },
         ],
       },
       {
-        minHeight: headerHeight + "px",
+        mediaBar: {
+          leftVideo: {
+            path: "/path/to/video",
+            autoPlay: true,
+          },
+          texts: [
+            {
+              text: "lorem ipsum",
+            },
+          ],
+          rightImage: {
+            path: "/path/to/image",
+            animation: {
+              animateOnScroll: true,
+              animateFrom: "right",
+            },
+          },
+        },
+      },
+      {
+        minHeight: "200px",
       },
       {
         nameId: "SIMMORSAL",
@@ -706,12 +749,6 @@ I give discounts on my own work ;)
         padding: 0;
         text-align: center;
         font-size: 150%;
-        transition: 140ms ease;
-        transition-property: width, transform, opacity;
-        :hover {
-          transform: scale(1.3) translateX(0.1em);
-          width: 42px;
-        }
       ">
     </i>
     soheil.sisakht@gmail.com
