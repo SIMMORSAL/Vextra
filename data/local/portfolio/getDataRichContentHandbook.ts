@@ -580,7 +580,7 @@ as ${getInlineCode("∓15vh")} .
 As you've seen so far, by playing around with Rich Animations you can create compelling
 and beautiful experiences in no time that would otherwise take hours to do from scratch.
 
-Here are some more animation to display different directions that texts and images
+Here are some more animation to display different directions that elements
 can animate from:
 
 ## Animated Texts
@@ -635,6 +635,8 @@ Media Bar is basically a collection of Rich elements, laid horizontally.
         longTextsTop: [
           {
             text: `
+Consider the 
+            
 This is how Media Bar will look on different screen sizes
 `,
           },
