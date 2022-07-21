@@ -622,6 +622,30 @@ You get the gist!
           {
             text: `
 # Media Bar
+
+Media Bar is basically a collection of Rich elements, laid horizontally. 
+`,
+          },
+        ],
+        smallImage: {
+          path: "/images/portfolio/handbook/handbook_mediabar_1.png",
+        },
+      },
+      {
+        longTextsTop: [
+          {
+            text: `
+This is how Media Bar will look on different screen sizes
+`,
+          },
+        ],
+        smallImage: {
+          path: "/images/portfolio/handbook/handbook_mediabar_responsiveness.png",
+        },
+        longTextsBottom: [
+          {
+            text: `
+###### Example
 `,
           },
         ],
