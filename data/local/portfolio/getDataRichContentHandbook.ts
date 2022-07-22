@@ -679,7 +679,7 @@ this is how things will look on different screen sizes
         freeSpaceTop: "40px",
         freeSpaceBottom: "40px",
         // backgroundColor: "#eceaed",
-        gradient: ["#e9e1df", "#eae6e7"],
+        gradient: ["#f4f2f3", "#eeeced"],
         mediaBar: {
           leftImage: {
             path: "/images/portfolio/handbook/flowers.jpg",
