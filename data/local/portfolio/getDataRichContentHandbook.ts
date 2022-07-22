@@ -678,6 +678,7 @@ this is how things will look on different screen sizes
       {
         freeSpaceTop: "40px",
         freeSpaceBottom: "40px",
+        backgroundColor: "#eceaed",
         mediaBar: {
           leftImage: {
             path: "/images/portfolio/handbook/flowers.jpg",
