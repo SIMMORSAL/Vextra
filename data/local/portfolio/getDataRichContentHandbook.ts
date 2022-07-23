@@ -693,7 +693,7 @@ this is how things will look on different screen sizes
           texts: [
             {
               align: "center",
-              text: "### Thank you for reaching this far ❤️",
+              text: "### Thank you for reading this far ❤️",
               animation: {
                 animateOnScroll: true,
                 animateFrom: "right",
@@ -702,7 +702,7 @@ this is how things will look on different screen sizes
             },
             {
               align: "center",
-              text: "May your chunks be plenty and beautiful!",
+              text: "May your chunks be rich and beautiful!",
               animation: {
                 animateOnScroll: true,
                 animateFrom: "right",
