@@ -29,7 +29,7 @@ export default function LandingHeaderButton(props: Props) {
         css={css`
           cursor: pointer;
           //margin: 0 16px;
-          height: 12px;
+          height: 14px;
           font-family: Righteous, cursive;
           color: ${buttonSelected ? headerItemSelect : headerColor};
           transform: ${props.transform};
