@@ -29,7 +29,7 @@ export function getAllPortfolios(): Portfolio[] {
       headerItemsColor: "#3f0101",
       isBackgroundDark: false,
       image: "/images/portfolio/PortfolioItemTemplate3.jpg",
-      pageRichContent: getDataProject3(),
+      pageRichContent: getDataProject2(),
     },
     {
       linkId: "gallery",
