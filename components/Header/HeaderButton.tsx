@@ -60,14 +60,14 @@ export default function HeaderButton(p: Props) {
       <p
         css={css`
           height: 12px;
+          font-family: Righteous, cursive;
+          font-size: 1.2em;
           color: ${buttonSelected && isTabRootSelected
             ? headerItemSelect
             : headerColor};
-          font-family: "Passion One", cursive;
           opacity: ${p.selectedPage === undefined ? 0 : 1};
           padding: ${buttonSelected || isHovering ? 9 : 0}px 16px 0;
           text-shadow: ${isHovering ? `0 0 12px ${headerItemSelect}40` : ""};
-          font-size: 1.2em;
 
           transition: 200ms ease;
           transition-property: color, opacity, padding-top;

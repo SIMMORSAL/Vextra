@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { css } from "@emotion/react";
-import { headerItemSelect, textOnWhite } from "../../res/colors";
+import { headerColor, headerItemSelect, textOnWhite } from "../../res/colors";
 
 interface Props {
   isFirstOrLast: boolean;
@@ -29,8 +29,10 @@ export default function LandingHeaderButton(props: Props) {
         css={css`
           cursor: pointer;
           //margin: 0 16px;
-          height: 14px;
-          color: ${buttonSelected ? headerItemSelect : textOnWhite};
+          height: 12px;
+          font-family: Righteous, cursive;
+          font-size: 1.2em;
+          color: ${buttonSelected ? headerItemSelect : headerColor};
           transform: ${props.transform};
           opacity: ${props.selectedPage === undefined ? 0 : 1};
           padding: ${buttonSelected ? 6 : 0}px 16px 0;
