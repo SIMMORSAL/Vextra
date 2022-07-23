@@ -1,3 +1,4 @@
+export const headerColor = "#444444";
 export const textOnWhite = "#707070";
 export const textOnBlack = "#fdfdfe";
 export const backgroundWhite = "#fdfdfe";
