@@ -10,6 +10,13 @@ export function getDataProject2(): RichChunkModel[] {
   return (
     [
       {
+        nameId: "bigImage",
+        bigImage: {
+          path: getImage("scooter_red.jpg"),
+          aspectRatio: "2000/1360",
+        },
+      },
+      {
         nameId: "sdfsdf",
         gradient: ["#fcc3a788", "#e0500088"],
         freeSpaceTop: "15vh",
@@ -29,6 +36,10 @@ and we named it
             text: `<i class="fa-solid fa-shuttle-space"></i> **VESPIA**`,
           },
         ],
+        // smallImage: {
+        //   path: getImage("vespia_name.png"),
+        //   align: "start",
+        // },
       },
       {
         minHeight: "80vh",
@@ -36,10 +47,6 @@ and we named it
         bigImage: {
           path: getImage("vespia.png"),
         },
-        //smallImage: {
-        // path: getImage("vespia_name.png"),
-        // align: "start",
-        // },
       },
     ] as RichChunkModel[]
   ).map((v: RichChunkModel, i) => {

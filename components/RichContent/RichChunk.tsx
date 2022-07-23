@@ -71,29 +71,45 @@ export default function RichChunk(p: Props) {
         <div
           css={css`
             width: 100%;
-            max-width: 500px;
-            align-self: ${p.chunk.smallImage.align
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: ${p.chunk.smallImage.align
               ? p.chunk.smallImage.align
               : "center"};
-            padding: 0 16px;
           `}
         >
-          <RichImage image={p.chunk.smallImage} textColor={textColor} />
+          <div
+            css={css`
+              width: 100%;
+              max-width: 500px;
+              padding: 0 16px;
+            `}
+          >
+            <RichImage image={p.chunk.smallImage} textColor={textColor} />
+          </div>
         </div>
       )}
       {p.chunk.bigVideo && <RichVideo video={p.chunk.bigVideo} />}
       {p.chunk.smallVideo && (
         <div
           css={css`
-            width: 100%;
-            max-width: 500px;
-            align-self: ${p.chunk.smallVideo.align
-              ? p.chunk.smallVideo.align
+            max-width: 1100px;
+            display: flex;
+            justify-content: ${p.chunk.smallImage.align
+              ? p.chunk.smallImage.align
               : "center"};
-            padding: 0 16px;
           `}
         >
-          <RichVideo video={p.chunk.smallVideo} />
+          <div
+            css={css`
+              width: 100%;
+              max-width: 500px;
+              padding: 0 16px;
+            `}
+          >
+            <RichVideo video={p.chunk.smallVideo} />
+          </div>
         </div>
       )}
       {p.chunk.mediaBar && (
