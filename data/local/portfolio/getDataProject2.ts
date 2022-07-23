@@ -10,16 +10,17 @@ export function getDataProject2(): RichChunkModel[] {
   return (
     [
       {
+        nameId: "sdfsdf",
         minHeight: "200px",
         gradient: ["#fcc3a7", "#e05000a8"],
         longTextsTop: [
-            {
-              text: `
+          {
+            text: `
 For two years I worked with SpaceX and some brilliant Italian engineers
 and together we made a Vespa, capable of driving on Mars
 `,
-            }
-          ]
+          },
+        ],
       },
       {
         minHeight: "80vh",
@@ -38,11 +39,10 @@ and together we made a Vespa, capable of driving on Mars
           path: getImage("vespia.png"),
         },
         //smallImage: {
-         // path: getImage("vespia_name.png"),
-         // align: "start",
-       // },
+        // path: getImage("vespia_name.png"),
+        // align: "start",
+        // },
       },
-      {},
     ] as RichChunkModel[]
   ).map((v: RichChunkModel, i) => {
     if (v.nameId === undefined) v.nameId = i.toString();
