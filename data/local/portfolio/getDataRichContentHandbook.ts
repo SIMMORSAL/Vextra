@@ -654,7 +654,7 @@ this is how things will look on different screen sizes
   ...
   mediaBar: {
     leftVideo: {
-      path: "/path/to/video",
+      path: "/videos/myVideo.mp4",
       autoPlay: true,
     },
     texts: [
@@ -663,7 +663,7 @@ this is how things will look on different screen sizes
       },
     ],
     rightImage: {
-      path: "/path/to/image",
+      path: "/images/myImage.png",
       animation: {
         animateOnScroll: true,
         animateFrom: "right",
