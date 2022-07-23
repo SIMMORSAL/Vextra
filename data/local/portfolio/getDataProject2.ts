@@ -25,7 +25,9 @@ export function getDataProject2(): RichChunkModel[] {
         longTextsTop: [
           {
             text: `
-For two years I worked with SpaceX and some brilliant Italian engineers
+For two years I worked 
+with  <img alt="SpaceX" src="/images/portfolio/scooter/spacex_logo.png" width="100px"/> and 
+some brilliant Italian engineers
 and together we made a Vespa, capable of driving on Mars, 
 and we named it 
 `,
@@ -50,7 +52,7 @@ and we named it
           animation: {
             animateOnScroll: true,
             animateFrom: "right",
-          }
+          },
         },
       },
     ] as RichChunkModel[]
