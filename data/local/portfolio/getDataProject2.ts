@@ -10,6 +10,18 @@ export function getDataProject2(): RichChunkModel[] {
   return (
     [
       {
+        minHeight: "200px",
+        gradient: ["#fcc3a7", "#e05000a8"],
+        longTextsTop: [
+            {
+              text: `
+For two years I worked with SpaceX and some brilliant Italian engineers
+and together we made a Vespa, capable of driving on Mars
+`,
+            }
+          ]
+      },
+      {
         minHeight: "80vh",
         backgroundImage: getImage("mars_bg.jpg"),
         // freeSpaceTop: "30vh",
