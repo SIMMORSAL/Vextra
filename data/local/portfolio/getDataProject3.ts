@@ -13,14 +13,5 @@ export function getDataProject3(): RichChunkModel[] {
         aspectRatio: "360/196",
       },
     },
-    {
-      nameId: "comingSoonText",
-      longTextsTop: [
-        {
-          align: "center",
-          text: "## More of my work will be on display soon 😊",
-        },
-      ],
-    },
   ] as RichChunkModel[];
 }
