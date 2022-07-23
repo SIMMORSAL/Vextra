@@ -11,6 +11,7 @@ export function getDataProject2(): RichChunkModel[] {
     [
       {
         nameId: "bigImage",
+        gradient: ["#ee644e", "#b94134"],
         bigImage: {
           path: getImage("scooter_red.jpg"),
           aspectRatio: "2000/1360",
