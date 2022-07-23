@@ -11,8 +11,9 @@ export function getDataProject2(): RichChunkModel[] {
     [
       {
         nameId: "sdfsdf",
-        minHeight: "200px",
         gradient: ["#fcc3a788", "#e0500088"],
+        freeSpaceTop: "15vh",
+        freeSpaceBottom: "15vh",
         longTextsTop: [
           {
             text: `
