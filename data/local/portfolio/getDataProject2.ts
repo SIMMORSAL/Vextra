@@ -47,6 +47,10 @@ and we named it
         backgroundImage: getImage("mars_bg.jpg"),
         bigImage: {
           path: getImage("vespia.png"),
+          animation: {
+            animateOnScroll: true,
+            animateFrom: "right",
+          }
         },
       },
     ] as RichChunkModel[]
