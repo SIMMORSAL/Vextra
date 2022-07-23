@@ -509,7 +509,7 @@ and ${getInlineCode("mediaBar", "#e19400")}.
 ${getInlineCode("path", "#9d0006")}: Rich Video 
 uses [ReactPlayer](https://github.com/CookPete/react-player) under the hood which is
 able to recognize the path you give it and load an appropriate player based on it.
-It can recognize YouTube, Facebook, SoundCloud, Vimeo, Twitch, DailyMotion, Kaltura, Mixcloud, Vidyars, Wistia, and loads their own players. \ 
+It can recognize YouTube, Facebook, SoundCloud, Vimeo, Twitch, DailyMotion, Kaltura, Mixcloud, Vidyars, Wistia. \ 
 Otherwise it loads an standard player.
 
 
