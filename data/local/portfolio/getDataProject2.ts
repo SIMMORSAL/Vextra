@@ -17,24 +17,21 @@ export function getDataProject2(): RichChunkModel[] {
           {
             text: `
 For two years I worked with SpaceX and some brilliant Italian engineers
-and together we made a Vespa, capable of driving on Mars
+and together we made a Vespa, capable of driving on Mars, 
+and we named it 
 `,
+          },
+          {
+            align: "center",
+            size: "2em",
+            color: "#b23500",
+            text: `<i class="fa-solid fa-shuttle-space"></i> **VESPIA**`,
           },
         ],
       },
       {
         minHeight: "80vh",
         backgroundImage: getImage("mars_bg.jpg"),
-        // freeSpaceTop: "30vh",
-        //       longTextsBottom: [
-        //         {
-        //           color: "#d9ae8b",
-        //           size: "3em",
-        //           text: `
-        // # Scootify
-        // `,
-        //         },
-        //       ],,
         bigImage: {
           path: getImage("vespia.png"),
         },
