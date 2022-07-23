@@ -25,10 +25,10 @@ export function getDataProject2(): RichChunkModel[] {
         bigImage: {
           path: getImage("vespia.png"),
         },
-        smallImage: {
-          path: getImage("vespia_name.png"),
-          align: "start",
-        },
+        //smallImage: {
+         // path: getImage("vespia_name.png"),
+         // align: "start",
+       // },
       },
       {},
     ] as RichChunkModel[]
