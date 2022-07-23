@@ -408,10 +408,10 @@ editing ${getInlineCode(
 <i class="fa-solid fa-fire"></i>  To use fonts in you text, go 
 to [fontawesome.com/icons](https://fontawesome.com/icons)
 and once you find the icon you want, copy the **HTML** code 
-an paste it in your text. 
+then paste it in your text (like in the example above).
           
 To write inline-code, it's better to use ${getInlineCode(
-              "getInlineCode(texts, color)"
+              "getInlineCode(text, color)"
             )} in 
 your markdown for better styling: 
 
