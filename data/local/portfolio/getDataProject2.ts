@@ -10,6 +10,7 @@ export function getDataProject2(): RichChunkModel[] {
   return (
     [
       {
+        minHeight: "80vh",
         backgroundImage: getImage("mars_bg.jpg"),
         // freeSpaceTop: "30vh",
         //       longTextsBottom: [
