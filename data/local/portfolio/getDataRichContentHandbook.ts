@@ -75,7 +75,7 @@ in ${getInlineCode(
 \` \`           
 \` \`           
 
-Each portfolio page is dynamically created by reading a list 
+Each portfolio page is dynamically created by reading a JavaScript List 
 of ${getInlineCode("RichChunkModel")} items provided in your portfolio object:
 
 \`\`\`birb
