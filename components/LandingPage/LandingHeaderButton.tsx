@@ -31,7 +31,6 @@ export default function LandingHeaderButton(props: Props) {
           //margin: 0 16px;
           height: 12px;
           font-family: Righteous, cursive;
-          font-size: 1.2em;
           color: ${buttonSelected ? headerItemSelect : headerColor};
           transform: ${props.transform};
           opacity: ${props.selectedPage === undefined ? 0 : 1};

@@ -61,7 +61,6 @@ export default function HeaderButton(p: Props) {
         css={css`
           height: 12px;
           font-family: Righteous, cursive;
-          font-size: 1.2em;
           color: ${buttonSelected && isTabRootSelected
             ? headerItemSelect
             : headerColor};
