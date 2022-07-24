@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import { Portfolio } from "../../data/models/local-data/portfolio";
 import { getPortfolio } from "../../data/local/dataPortfoliosPage";
 import { _AppContext } from "../../helpers/providers/provider_App";
-import { backgroundWhite, headerItemColor } from "../../res/colors";
+import { colorBackground, colorHeaderItem } from "../../data/colors";
 
 interface Props {}
 
@@ -37,12 +37,10 @@ export default function PagePortfolioItem(p: Props) {
       setPortfolioBgColor(
         dataPortfolio.backgroundColor
           ? dataPortfolio.backgroundColor
-          : backgroundWhite
+          : colorBackground
       );
       setPortfolioHeaderItemColor(
-        dataPortfolio.headerItemsColor
-          ? dataPortfolio.headerItemsColor
-          : headerItemColor
+        dataPortfolio.headerItemsColor ? dataPortfolio.headerItemsColor : ""
       );
     }
   }, [dataPortfolio]);

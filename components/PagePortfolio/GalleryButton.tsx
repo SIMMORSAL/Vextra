@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import Image from "next/image";
-import { itemOnWhite } from "../../res/colors";
+import { colorItemOnWhite } from "../../data/colors";
 
 interface Props {
   delay: number;
@@ -37,7 +37,7 @@ export default function GalleryButton(props: Props) {
           border-left-color, border-right-color;
 
         :hover {
-          border: 1px solid ${itemOnWhite};
+          border: 1px solid ${colorItemOnWhite};
         }
       `}
     >

@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { css } from "@emotion/react";
 import LandingHeaderButton from "./LandingHeaderButton";
 import Image from "next/image";
 import useWindowSize from "../../helpers/tools/hooks/useWindowSize";
 import HeaderLogo from "../Header/HeaderLogo";
-import { getGeneralData } from "../../data/local/_dataGeneral";
+import { _AppContext } from "../../helpers/providers/provider_App";
+import { hexToCSSFilter } from "hex-to-css-filter";
+import { colorLogoNormal } from "../../data/colors";
 
 interface Props {
   selectedPage?: string; // undefined | about-me | portfolio
@@ -15,7 +17,7 @@ export default function LandingHeader(props: Props) {
   const windowWidth = useWindowSize();
   const isXs = windowWidth.width < 600;
 
-  const _generalData = getGeneralData();
+  const { generalData } = useContext(_AppContext);
 
   return (
     <div
@@ -26,7 +28,6 @@ export default function LandingHeader(props: Props) {
         height: 70px;
         z-index: 1000;
         align-self: start;
-        //overflow: hidden;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -81,13 +82,16 @@ export default function LandingHeader(props: Props) {
           `}
         >
           <img
-            src={_generalData.logo}
+            src={generalData.logo}
             alt={"logo"}
             onClick={() => props.setSelectedPage(undefined)}
             css={css`
               cursor: pointer;
               width: 100%;
               margin-bottom: 1px;
+              filter: ${generalData.applyColorOnLogo
+                ? hexToCSSFilter(colorLogoNormal).filter
+                : ""};
             `}
           />
         </div>

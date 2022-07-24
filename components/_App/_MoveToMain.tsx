@@ -1,19 +1,17 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { css } from "@emotion/react";
 import { _AppContext } from "../../helpers/providers/provider_App";
-import { backgroundBlack } from "../../res/colors";
+import { colorLogoSplash, colorSplash } from "../../data/colors";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { getGeneralData } from "../../data/local/_dataGeneral";
+import { hexToCSSFilter } from "hex-to-css-filter";
 
 interface Props {}
 
 export default function _MoveToMain(props: Props) {
-  const { shouldMoveToMain } = useContext(_AppContext);
+  const { generalData, shouldMoveToMain } = useContext(_AppContext);
   const [beginAnimation, setBeginAnimation] = useState(false);
   const router = useRouter();
-
-  const _generalData = getGeneralData();
 
   const timeouts = useRef([]);
   useEffect(() => {
@@ -51,7 +49,7 @@ export default function _MoveToMain(props: Props) {
         align-items: center;
         justify-content: center;
         display: ${shouldMoveToMain ? "flex" : "none"};
-        background-color: ${beginAnimation ? backgroundBlack : "transparent"};
+        background-color: ${beginAnimation ? colorSplash : "transparent"};
 
         transition: 100ms ease;
         transition-property: background-color;
@@ -71,13 +69,14 @@ export default function _MoveToMain(props: Props) {
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={_generalData.logo}
+          src={generalData.logo}
           alt={"logo"}
           css={css`
             width: 100%;
             opacity: ${beginAnimation ? 1 : 0};
-            filter: brightness(0) saturate(100%) invert(96%) sepia(97%) saturate(12%)
-              hue-rotate(237deg) brightness(103%) contrast(103%);
+            filter: ${generalData.applyColorOnLogo
+              ? hexToCSSFilter(colorLogoSplash).filter
+              : ""};
 
             transition: opacity 500ms ease;
             transition-delay: 300ms;

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { css } from "@emotion/react";
-import { textOnWhite } from "../../res/colors";
+import { colorText } from "../../data/colors";
 import { shuffleArray } from "../../helpers/tools/tools";
 import { ContactGroup } from "../../data/models/local-data/contactGroup";
 
@@ -72,7 +72,7 @@ export default function SharedHandleLinks(p: Props) {
             flex-direction: row;
             align-items: start;
             overflow: hidden;
-            // color: ${textOnWhite};
+            // color: ${colorText};
             color: black;
           `}
         >

@@ -1,6 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { css } from "@emotion/react";
-import { itemOnWhite, itemOnWhiteFocused, textOnWhite } from "../../res/colors";
+import {
+  colorItemOnWhite,
+  colorItemOnWhiteFocused,
+  colorText,
+} from "../../data/colors";
 import { getContacts } from "../../data/local/dataContactPage";
 import { Links } from "../../data/models/local-data/contactGroup";
 
@@ -66,7 +70,7 @@ export default function BottomContacts({ begin }: Props) {
           align-items: end;
           padding: 0 24px;
           overflow: hidden;
-          // color: ${textOnWhite};
+          // color: ${colorText};
           color: black;
         `}
       >
@@ -100,7 +104,9 @@ export default function BottomContacts({ begin }: Props) {
                       transform: translateY(${delayPassed ? 0 : "-50%"});
                       text-align: center;
                       font-size: 150%;
-                      color: ${isHovering ? itemOnWhiteFocused : itemOnWhite};
+                      color: ${isHovering
+                        ? colorItemOnWhiteFocused
+                        : colorItemOnWhite};
 
                       transition: 140ms ease;
                       transition-property: width, height, margin-top, opacity,

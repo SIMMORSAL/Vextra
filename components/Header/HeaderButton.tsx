@@ -1,6 +1,10 @@
 import React, { ReactNode, useContext, useState } from "react";
 import { css } from "@emotion/react";
-import { headerItemColor, headerItemSelect, textOnWhite } from "../../res/colors";
+import {
+  colorHeaderItem,
+  colorHeaderItemSelect,
+  colorText,
+} from "../../data/colors";
 import { useRouter } from "next/router";
 import { _AppContext } from "../../helpers/providers/provider_App";
 import { changePage, getActiveTab, getSubTab } from "../../helpers/tools/tools";
@@ -62,10 +66,12 @@ export default function HeaderButton(p: Props) {
         css={css`
           height: 12px;
           font-family: Righteous, cursive;
-          color: ${buttonSelected && isTabRootSelected ? headerItemSelect : p.color};
+          color: ${buttonSelected && isTabRootSelected
+            ? colorHeaderItemSelect
+            : p.color};
           opacity: ${p.selectedPage === undefined ? 0 : 1};
           padding: ${buttonSelected || isHovering ? 9 : 0}px 16px 0;
-          text-shadow: ${isHovering ? `0 0 12px ${headerItemSelect}40` : ""};
+          text-shadow: ${isHovering ? `0 0 12px ${colorHeaderItemSelect}40` : ""};
 
           transition: 200ms ease;
           transition-property: color, opacity, padding-top;

@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { css } from "@emotion/react";
 import Image from "next/image";
+import { hexToCSSFilter } from "hex-to-css-filter";
+import { colorLogoNormal, colorLogoSplash } from "../../data/colors";
+import { _AppContext } from "../../helpers/providers/provider_App";
 
 interface Props {
   path: string;
@@ -11,6 +14,8 @@ interface Props {
 
 export default function LandingLogo(p: Props) {
   const noPageSelected = p.selectedPage === undefined;
+  const { generalData } = useContext(_AppContext);
+
   return (
     <div
       css={css`
@@ -33,9 +38,11 @@ export default function LandingLogo(p: Props) {
         alt={"logo"}
         css={css`
           width: 100%;
-          filter: ${p.loading
-            ? "brightness(0) saturate(100%) invert(96%) sepia(97%) saturate(12%) hue-rotate(237deg) brightness(103%) contrast(103%)"
-            : "brightness(0) saturate(100%) invert(0%) sepia(98%) saturate(9%) hue-rotate(344deg) brightness(102%) contrast(100%)"};
+          filter: ${generalData.applyColorOnLogo
+            ? p.loading
+              ? hexToCSSFilter(colorLogoSplash).filter
+              : hexToCSSFilter(colorLogoNormal).filter
+            : ""};
 
           transition: filter 1000ms ease;
         `}

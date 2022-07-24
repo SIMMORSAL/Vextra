@@ -1,13 +1,12 @@
 import { css } from "@emotion/react";
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { backgroundBlack, backgroundWhite } from "../../res/colors";
+import { colorBackground, colorSplash } from "../../data/colors";
 import CenterStuff from "./CenterStuff";
 import BottomContacts from "./BottomContacts";
 import LandingHeader from "./LandingHeader";
 import LandingLogo from "./LandingLogo";
 import { useRouter } from "next/router";
 import { _AppContext } from "../../helpers/providers/provider_App";
-import { getGeneralData } from "../../data/local/_dataGeneral";
 import { cacheImage } from "../../helpers/tools/tools";
 
 interface Props {}
@@ -15,9 +14,7 @@ interface Props {}
 export default function LandingPage({}: Props) {
   const router = useRouter();
 
-  const _generalData = getGeneralData();
-
-  const { setMoveToMain, setNewTabSelected } = useContext(_AppContext);
+  const { generalData, setMoveToMain, setNewTabSelected } = useContext(_AppContext);
   const [loading, setLoading] = useState(true);
   const [isXs, setIsXs] = useState(false);
   const [beginAnimationPhase2, setBeginAnimationPhase2] = useState(false);
@@ -38,7 +35,7 @@ export default function LandingPage({}: Props) {
     setLoading(true);
     setBeginAnimationPhase2(false);
 
-    cacheImage(_generalData.logo).then((value) => {
+    cacheImage(generalData.logo).then((value) => {
       timeouts.current.push(
         setTimeout(() => {
           setLoading(false);
@@ -83,7 +80,7 @@ export default function LandingPage({}: Props) {
         display: grid;
         place-items: center;
         /* background-color: red; */
-        background-color: ${loading ? backgroundBlack : backgroundWhite};
+        background-color: ${loading ? colorSplash : colorBackground};
 
         transition: background-color 500ms ease;
       `}
@@ -96,7 +93,7 @@ export default function LandingPage({}: Props) {
         setSelectedPage={setSelectedPage}
       />
       <LandingLogo
-        path={_generalData.logo}
+        path={generalData.logo}
         loading={loading}
         onClick={() => setSelectedPage(undefined)}
         selectedPage={selectedPage}

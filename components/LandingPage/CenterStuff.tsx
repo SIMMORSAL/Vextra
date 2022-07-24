@@ -1,6 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { css } from "@emotion/react";
-import { backgroundWhite, headerItemSelect, textOnWhite } from "../../res/colors";
+import {
+  colorBackground,
+  colorHeaderItemSelect,
+  colorText,
+} from "../../data/colors";
 import Image from "next/image";
 
 interface Props {
@@ -106,7 +110,7 @@ export default function CenterStuff({
           css={css`
             height: 100%;
             width: 50%;
-            background-color: ${begin ? backgroundWhite : "transparent"};
+            background-color: ${begin ? colorBackground : "transparent"};
             transform: translateX(${begin ? "-100%" : "0"});
 
             transition: transform ${durationLineAppear}ms ease-in-out;
@@ -116,7 +120,7 @@ export default function CenterStuff({
           css={css`
             height: 100%;
             width: 50%;
-            background-color: ${begin ? backgroundWhite : "transparent"};
+            background-color: ${begin ? colorBackground : "transparent"};
             transform: translateX(${begin ? "100%" : "0"});
 
             transition: transform ${durationLineAppear}ms ease-in-out;
@@ -137,7 +141,7 @@ export default function CenterStuff({
           padding: 0 32px;
           display: flex;
           flex-direction: row;
-          color: ${textOnWhite};
+          color: ${colorText};
           font-size: ${width * 0.03}px;
           text-align: center;
 
@@ -155,7 +159,9 @@ export default function CenterStuff({
             css={css`
               cursor: ${pagesClickable ? "pointer" : "default"};
               margin: 0;
-              color: ${selectedPage === "about-me" ? headerItemSelect : textOnWhite};
+              color: ${selectedPage === "about-me"
+                ? colorHeaderItemSelect
+                : colorText};
               transform: ${selectedPage === undefined
                 ? "none"
                 : "translateY(-15vh) translateX(4vw)"};
@@ -167,8 +173,8 @@ export default function CenterStuff({
                 padding-top;
 
               :hover {
-                color: ${headerItemSelect};
-                text-shadow: 0 0 12px ${headerItemSelect}40;
+                color: ${colorHeaderItemSelect};
+                text-shadow: 0 0 12px ${colorHeaderItemSelect}40;
                 font-size: 1.05em;
                 padding-top: 6px;
               }
@@ -193,8 +199,8 @@ export default function CenterStuff({
               cursor: ${pagesClickable ? "pointer" : "default"};
               margin: 0;
               color: ${selectedPage === "portfolio"
-                ? headerItemSelect
-                : textOnWhite};
+                ? colorHeaderItemSelect
+                : colorText};
               transform: ${selectedPage === undefined
                 ? "none"
                 : "translateY(-15vh) translateX(-4vw)"};
@@ -205,8 +211,8 @@ export default function CenterStuff({
                 font-weight, font-size, padding-top;
 
               :hover {
-                color: ${headerItemSelect};
-                text-shadow: 0 0 12px ${headerItemSelect}40;
+                color: ${colorHeaderItemSelect};
+                text-shadow: 0 0 12px ${colorHeaderItemSelect}40;
                 font-size: 1.05em;
                 padding-top: 6px;
               }

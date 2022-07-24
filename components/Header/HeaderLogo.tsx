@@ -3,10 +3,12 @@ import React, { useContext, useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import { _AppContext } from "../../helpers/providers/provider_App";
 import { cacheImage } from "../../helpers/tools/tools";
-import { getGeneralData } from "../../data/local/_dataGeneral";
 import { headerHeight } from "./index";
+import { hexToCSSFilter } from "hex-to-css-filter";
+import { colorLogoNormal } from "../../data/colors";
 
 interface Props {
+  color: string;
   justLoaded: boolean;
   selectedPage: string; // undefined | about-me | portfolio
   setSelectedPage: (page?: string) => void;
@@ -14,15 +16,12 @@ interface Props {
 }
 
 export default function HeaderLogo(p: Props) {
-  const { shouldMoveToMain, setMoveToMain, setFadeOutContent, setFlashContent } =
-    useContext(_AppContext);
+  const { generalData, shouldMoveToMain, setMoveToMain } = useContext(_AppContext);
   const [imageCached, setImageCached] = useState(false);
   const [isMouseOver, setIsMouseOver] = useState(false);
 
-  const _generalData = getGeneralData();
-
   useEffect(() => {
-    cacheImage(_generalData.logo).then(() => {
+    cacheImage(generalData.logo).then(() => {
       setImageCached(true);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -61,7 +60,7 @@ export default function HeaderLogo(p: Props) {
           <img
             onMouseEnter={() => setIsMouseOver(true)}
             onMouseLeave={() => setIsMouseOver(false)}
-            src={_generalData.logo}
+            src={generalData.logo}
             alt={"logo"}
             onClick={() => {
               p.setSelectedPage(undefined);
@@ -73,6 +72,9 @@ export default function HeaderLogo(p: Props) {
               cursor: pointer;
               width: 100%;
               opacity: ${p.showDev ? 0 : 1};
+              filter: ${generalData.applyColorOnLogo
+                ? hexToCSSFilter(p.color ? p.color : colorLogoNormal).filter
+                : ""};
 
               transition: 200ms ease;
             `}

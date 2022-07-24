@@ -5,7 +5,11 @@ import { _AppContext } from "../../helpers/providers/provider_App";
 import useWindowSize from "../../helpers/tools/hooks/useWindowSize";
 import HeaderLogo from "./HeaderLogo";
 import { useRouter } from "next/router";
-import { backgroundWhite, headerItemColor } from "../../res/colors";
+import {
+  colorBackground,
+  colorHeaderItem,
+  colorLogoNormal,
+} from "../../data/colors";
 
 interface Props {
   selectedPage: string; // undefined | about-me | portfolio
@@ -22,8 +26,9 @@ export default function Header(props: Props) {
   const windowWidth = useWindowSize();
   const isXs = windowWidth.width < 600;
 
-  const [bgColor, setBgColor] = useState(backgroundWhite);
-  const [itemColor, setItemColor] = useState(headerItemColor);
+  const [bgColor, setBgColor] = useState(colorBackground);
+  const [logoColor, setLogoColor] = useState(colorHeaderItem);
+  const [itemColor, setItemColor] = useState(colorHeaderItem);
   const [shouldBlur, setShouldBlur] = useState(false);
   const [justLoaded, setJustLoaded] = useState(true);
   const [showDev, setShowDev] = useState(false);
@@ -38,12 +43,18 @@ export default function Header(props: Props) {
   }, []);
 
   useEffect(() => {
-    if (router.query.PortfolioID !== undefined) {
+    console.log(`11111  sdfasdf:  ${portfolioHeaderItemColor}`);
+    if (
+      router.query.PortfolioID !== undefined &&
+      portfolioHeaderItemColor.length > 0
+    ) {
       setBgColor(portfolioBgColor);
+      setLogoColor(portfolioHeaderItemColor);
       setItemColor(portfolioHeaderItemColor);
     } else {
-      setBgColor(backgroundWhite);
-      setItemColor(headerItemColor);
+      setBgColor(colorBackground);
+      setLogoColor(colorLogoNormal);
+      setItemColor(colorHeaderItem);
     }
   }, [router.query, portfolioBgColor, portfolioHeaderItemColor]);
 
@@ -147,7 +158,7 @@ export default function Header(props: Props) {
       </HeaderButton>
 
       <HeaderLogo
-        // color={itemColor}
+        color={logoColor}
         showDev={showDev}
         justLoaded={justLoaded}
         selectedPage={props.selectedPage}

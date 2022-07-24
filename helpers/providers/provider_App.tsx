@@ -7,10 +7,12 @@ import React, {
 } from "react";
 import { useRouter } from "next/router";
 import { getActiveTab } from "../tools/tools";
+import { _GeneralDataModel, getGeneralData } from "../../data/local/_dataGeneral";
 
 const LSK_App = "_App";
 
 interface _AppInterface {
+  generalData: _GeneralDataModel;
   newTabSelected: string;
   setNewTabSelected: Dispatch<SetStateAction<string>>;
   shouldMoveToMain: boolean;
@@ -29,6 +31,7 @@ interface _AppInterface {
 }
 
 export const _AppContext = createContext({
+  generalData: {} as _GeneralDataModel,
   newTabSelected: "/inContext",
   setNewTabSelected: () => {},
   shouldMoveToMain: false,
@@ -51,6 +54,8 @@ interface Props {
 
 export function _AppProvider(props: Props) {
   const router = useRouter();
+  const generalData = getGeneralData();
+
   const [newTabSelected, setNewTabSelected] = useState(getActiveTab(router));
   const [moveToMain, setMoveToMain] = useState(false);
   const [fadeOutContent, setFadeOutContent] = useState(false);
@@ -62,6 +67,7 @@ export function _AppProvider(props: Props) {
   return (
     <_AppContext.Provider
       value={{
+        generalData,
         newTabSelected,
         setNewTabSelected,
         shouldMoveToMain: moveToMain,

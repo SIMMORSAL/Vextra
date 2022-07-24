@@ -7,7 +7,7 @@ import {
 import RichText from "./RichText";
 import RichImage from "./RichImage";
 import { getPortfolio } from "../../data/local/dataPortfoliosPage";
-import { backgroundWhite } from "../../res/colors";
+import { colorBackground } from "../../data/colors";
 import RichVideo from "./RichVideo";
 import MediaBar from "./MediaBar";
 
