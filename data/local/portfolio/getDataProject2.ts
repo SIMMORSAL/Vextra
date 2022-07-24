@@ -83,12 +83,12 @@ This product comes in a variety of colors
       },
       {
         // freeSpaceTop: "300px",
-        freeSpaceBottom: "500px",
+        freeSpaceBottom: "800px",
         backgroundImage: getImage("vespia_purple.jpg"),
         longTextsTop: [
           {
-            align: "center",
-            text: "I like the purple color more than red and blue combined",
+            align: "end",
+            text: "#### I like the purple color more than red and blue combined",
             color: "#fff",
           },
         ],
