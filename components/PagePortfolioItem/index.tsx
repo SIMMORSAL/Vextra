@@ -77,7 +77,12 @@ export default function PagePortfolioItem(p: Props) {
         transition-property: opacity, margin-top;
       `}
     >
-      {dataPortfolio && <RichContent data={dataPortfolio.pageRichContent} />}
+      {dataPortfolio && (
+        <RichContent
+          data={dataPortfolio.pageRichContent}
+          backgroundColor={dataPortfolio.backgroundColor}
+        />
+      )}
     </div>
   );
 }

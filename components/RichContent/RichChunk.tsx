@@ -13,13 +13,11 @@ import MediaBar from "./MediaBar";
 
 interface Props {
   chunk: RichChunkModel;
+  backgroundColor: string;
 }
 
 export default function RichChunk(p: Props) {
-  const textColor = p.chunk.textColor ? p.chunk.textColor : "#1e1e1e"; // Todo
-  const backgroundColor = p.chunk.backgroundColor
-    ? p.chunk.backgroundColor
-    : "transparent";
+  const textColor = p.chunk.textColor ? p.chunk.textColor : "#1e1e1e";
 
   const bgImage = p.chunk.backgroundImage
     ? `url(${p.chunk.backgroundImage})`
@@ -28,6 +26,13 @@ export default function RichChunk(p: Props) {
         ${p.chunk.gradient.reduce((p, c) => p + ", " + c)}
       )`
     : "";
+
+  const backgroundColor =
+    bgImage === ""
+      ? p.chunk.backgroundColor
+        ? p.chunk.backgroundColor
+        : p.backgroundColor
+      : backgroundWhite;
 
   return (
     <div

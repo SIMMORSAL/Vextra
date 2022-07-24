@@ -12,7 +12,9 @@ export function getDataProject2(): RichChunkModel[] {
       {
         longTextsTop: [
           {
-            text: "Scootify",
+            align: "center",
+            text: "# Scootify",
+            color: "#e3d9d9",
           },
         ],
       },
@@ -23,13 +25,6 @@ export function getDataProject2(): RichChunkModel[] {
           path: getImage("scooter_red.jpg"),
           aspectRatio: "2000/1660",
         },
-      },
-      {
-        longTextsTop: [
-          {
-            text: "Scootify",
-          },
-        ],
       },
       {
         nameId: "sdfsdf",
@@ -70,7 +65,6 @@ and we named it
         },
       },
       {
-        backgroundColor: "#ee644e",
         textColor: "#fff",
         freeSpaceTop: "50px",
         freeSpaceBottom: "70px",

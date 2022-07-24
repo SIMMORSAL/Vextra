@@ -17,6 +17,7 @@ export default function HeaderLogo(p: Props) {
   const { shouldMoveToMain, setMoveToMain, setFadeOutContent, setFlashContent } =
     useContext(_AppContext);
   const [imageCached, setImageCached] = useState(false);
+  const [isMouseOver, setIsMouseOver] = useState(false);
 
   const _generalData = getGeneralData();
 
@@ -39,7 +40,8 @@ export default function HeaderLogo(p: Props) {
     >
       <div
         css={css`
-          width: 70px;
+          width: ${isMouseOver ? 80 : 70}px;
+          height: min-content;
           margin-top: 20px;
           margin-left: 8px;
           margin-right: 8px;
@@ -48,10 +50,6 @@ export default function HeaderLogo(p: Props) {
 
           transition: 100ms ease;
           transition-property: width, transform, opacity;
-
-          :hover {
-            width: 80px;
-          }
         `}
       >
         <div
@@ -61,6 +59,8 @@ export default function HeaderLogo(p: Props) {
           `}
         >
           <img
+            onMouseEnter={() => setIsMouseOver(true)}
+            onMouseLeave={() => setIsMouseOver(false)}
             src={_generalData.logo}
             alt={"logo"}
             onClick={() => {
@@ -91,6 +91,8 @@ export default function HeaderLogo(p: Props) {
             `}
           >
             <img
+              onMouseEnter={() => setIsMouseOver(true)}
+              onMouseLeave={() => setIsMouseOver(false)}
               src={"https://avatars.githubusercontent.com/u/24822099"}
               alt={"SIMMORSAL"}
               css={css`

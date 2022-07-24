@@ -5,6 +5,7 @@ import { RichChunkModel } from "../../data/models/rich-chunk/RichChunkModel";
 
 interface Props {
   data: RichChunkModel[];
+  backgroundColor: string;
 }
 
 export default function RichContent(p: Props) {
@@ -28,7 +29,13 @@ export default function RichContent(p: Props) {
         `}
       >
         {p.data.map((textChunk) => {
-          return <RichChunk key={textChunk.nameId} chunk={textChunk} />;
+          return (
+            <RichChunk
+              key={textChunk.nameId}
+              chunk={textChunk}
+              backgroundColor={p.backgroundColor}
+            />
+          );
         })}
       </div>
     </div>
