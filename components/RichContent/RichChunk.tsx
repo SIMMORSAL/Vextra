@@ -27,12 +27,11 @@ export default function RichChunk(p: Props) {
       )`
     : "";
 
-  const backgroundColor =
-    bgImage === ""
+  const backgroundColor = !bgImage.startsWith("linear-gradient")
+    ? p.chunk.backgroundColor
       ? p.chunk.backgroundColor
-        ? p.chunk.backgroundColor
-        : p.backgroundColor
-      : backgroundWhite;
+      : p.backgroundColor
+    : "#ffffff";
 
   return (
     <div
