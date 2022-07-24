@@ -13,7 +13,7 @@ function LinkRenderer(p: any) {
       target="_blank"
       rel="noreferrer"
       css={css`
-        color: #rgb(248,165,125);
+        color: rgb(248,165,125);
       `}
     >
       {p.children}
