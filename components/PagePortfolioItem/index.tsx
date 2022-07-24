@@ -6,50 +6,58 @@ import { useRouter } from "next/router";
 import { Portfolio } from "../../data/models/local-data/portfolio";
 import { getPortfolio } from "../../data/local/dataPortfoliosPage";
 import { _AppContext } from "../../helpers/providers/provider_App";
+import { backgroundWhite, headerItemColor } from "../../res/colors";
 
 interface Props {}
 
 export default function PagePortfolioItem(p: Props) {
   const router = useRouter();
-  const { pageChangeRequested } = useContext(_AppContext);
+  const { pageChangeRequested, setPortfolioBgColor, setPortfolioHeaderItemColor } =
+    useContext(_AppContext);
   const initialPageChangeRequest = useRef(pageChangeRequested);
 
   const [isExitingPage, setIsExitingPage] = useState(false);
   const [isInitialRender, setIsInitialRender] = useState(true);
 
-  const linkId = router.query.PortfolioID as string;
-  const dataPortfolio: Portfolio = getPortfolio(linkId);
+  // const dataPortfolio: Portfolio = getPortfolio(linkId);
+  const [dataPortfolio, setDataPortfolio] = useState<Portfolio | undefined>();
 
   useEffect(() => {
     setIsInitialRender(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    const linkId = router.query.PortfolioID as string;
+    setDataPortfolio(getPortfolio(linkId));
+  }, [router.query]);
+
+  useEffect(() => {
+    if (dataPortfolio) {
+      setPortfolioBgColor(
+        dataPortfolio.backgroundColor
+          ? dataPortfolio.backgroundColor
+          : backgroundWhite
+      );
+      setPortfolioHeaderItemColor(
+        dataPortfolio.headerItemsColor
+          ? dataPortfolio.headerItemsColor
+          : headerItemColor
+      );
+    }
+  }, [dataPortfolio]);
 
   useEffect(() => {
     if (initialPageChangeRequest.current !== pageChangeRequested) {
       setIsExitingPage(true);
+
+      setPortfolioBgColor("");
+      setPortfolioHeaderItemColor("");
     } else {
       setIsExitingPage(false);
     }
   }, [pageChangeRequested]);
 
-  // css={css`
-  //       width: 100%;
-  //       height: 100%;
-  //       min-height: calc(100vh - 2px);
-  //       //border: 1px solid #484848;
-  //       font-weight: bold;
-  //       texts-align: center;
-  //       display: flex;
-  //       flex-direction: column;
-  //       justify-content: center;
-  //       align-items: center;
-  //       padding: ${headerHeight}px 24px 24px;
-  //       opacity: ${isExitingPage ? 0 : 1};
-  //       margin-top: ${isExitingPage ? 12 : 0}px;
-  //
-  //       transition: 100ms ease;
-  //       transition-property: opacity, margin-top;
-  //     `}
   return (
     <div
       css={css`
@@ -63,6 +71,7 @@ export default function PagePortfolioItem(p: Props) {
         padding-top: ${headerHeight}px;
         opacity: ${isExitingPage || isInitialRender ? 0 : 1};
         margin-top: ${isExitingPage ? 12 : 0}px;
+        background-color: ${dataPortfolio?.backgroundColor};
 
         transition: ${isExitingPage ? 100 : 200}ms ease;
         transition-property: opacity, margin-top;

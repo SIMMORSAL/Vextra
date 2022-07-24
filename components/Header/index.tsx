@@ -5,6 +5,7 @@ import { _AppContext } from "../../helpers/providers/provider_App";
 import useWindowSize from "../../helpers/tools/hooks/useWindowSize";
 import HeaderLogo from "./HeaderLogo";
 import { useRouter } from "next/router";
+import { backgroundWhite, headerItemColor } from "../../res/colors";
 
 interface Props {
   selectedPage: string; // undefined | about-me | portfolio
@@ -15,11 +16,14 @@ export const headerHeight = 70;
 
 export default function Header(props: Props) {
   const router = useRouter();
-  const { setMoveToMain } = useContext(_AppContext);
+  const { setMoveToMain, portfolioBgColor, portfolioHeaderItemColor } =
+    useContext(_AppContext);
 
   const windowWidth = useWindowSize();
   const isXs = windowWidth.width < 600;
 
+  const [bgColor, setBgColor] = useState(backgroundWhite);
+  const [itemColor, setItemColor] = useState(headerItemColor);
   const [shouldBlur, setShouldBlur] = useState(false);
   const [justLoaded, setJustLoaded] = useState(true);
   const [showDev, setShowDev] = useState(false);
@@ -32,6 +36,16 @@ export default function Header(props: Props) {
       setShouldBlur(false);
     }
   }, []);
+
+  useEffect(() => {
+    if (router.query.PortfolioID !== undefined) {
+      setBgColor(portfolioBgColor);
+      setItemColor(portfolioHeaderItemColor);
+    } else {
+      setBgColor(backgroundWhite);
+      setItemColor(headerItemColor);
+    }
+  }, [router.query, portfolioBgColor, portfolioHeaderItemColor]);
 
   useEffect(() => {
     if (
@@ -87,7 +101,7 @@ export default function Header(props: Props) {
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        background-color: ${shouldBlur ? "#ffffffcc" : "transparent"};
+        background-color: ${shouldBlur ? `${bgColor}cc` : "transparent"};
         padding-bottom: ${shouldBlur ? 20 : 0}px;
         backdrop-filter: blur(${shouldBlur ? 3 : 0}px);
         -webkit-backdrop-filter: blur(${shouldBlur ? 3 : 0}px);
@@ -106,6 +120,7 @@ export default function Header(props: Props) {
         <HeaderButton
           page={"home"}
           justLoaded={justLoaded}
+          color={itemColor}
           selectedPage={props.selectedPage}
           setSelectedPage={() => props.setSelectedPage(undefined)}
           homeClicked={() => setMoveToMain(true)}
@@ -122,6 +137,7 @@ export default function Header(props: Props) {
             ? "contact-me"
             : "about-me"
         }
+        color={itemColor}
         justLoaded={justLoaded}
         selectedPage={props.selectedPage}
         setSelectedPage={props.setSelectedPage}
@@ -131,6 +147,7 @@ export default function Header(props: Props) {
       </HeaderButton>
 
       <HeaderLogo
+        // color={itemColor}
         showDev={showDev}
         justLoaded={justLoaded}
         selectedPage={props.selectedPage}
@@ -139,6 +156,7 @@ export default function Header(props: Props) {
 
       <HeaderButton
         page={"portfolio"}
+        color={itemColor}
         justLoaded={justLoaded}
         selectedPage={props.selectedPage}
         setSelectedPage={props.setSelectedPage}
@@ -151,6 +169,7 @@ export default function Header(props: Props) {
       ) : (
         <HeaderButton
           page={"contact-me"}
+          color={itemColor}
           justLoaded={justLoaded}
           selectedPage={props.selectedPage}
           setSelectedPage={props.setSelectedPage}

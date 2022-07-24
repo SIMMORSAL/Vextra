@@ -21,6 +21,11 @@ interface _AppInterface {
   setFlashContent: Dispatch<SetStateAction<boolean>>;
   pageChangeRequested: number;
   setPageChangeRequested: Dispatch<SetStateAction<number>>;
+  //
+  portfolioBgColor: string;
+  setPortfolioBgColor: Dispatch<SetStateAction<string>>;
+  portfolioHeaderItemColor: string;
+  setPortfolioHeaderItemColor: Dispatch<SetStateAction<string>>;
 }
 
 export const _AppContext = createContext({
@@ -34,6 +39,10 @@ export const _AppContext = createContext({
   setFlashContent: () => {},
   pageChangeRequested: 0,
   setPageChangeRequested: () => {},
+  portfolioBgColor: "",
+  setPortfolioBgColor: () => {},
+  portfolioHeaderItemColor: "",
+  setPortfolioHeaderItemColor: () => {},
 } as _AppInterface);
 
 interface Props {
@@ -47,6 +56,8 @@ export function _AppProvider(props: Props) {
   const [fadeOutContent, setFadeOutContent] = useState(false);
   const [flashContent, setFlashContent] = useState(false);
   const [pageChangeRequested, setPageChangeRequested] = useState(0);
+  const [portfolioBgColor, setPortfolioBgColor] = useState("");
+  const [portfolioHeaderItemColor, setPortfolioHeaderItemColor] = useState("");
   useEffect(() => {}, []);
   return (
     <_AppContext.Provider
@@ -61,6 +72,10 @@ export function _AppProvider(props: Props) {
         setFlashContent,
         pageChangeRequested,
         setPageChangeRequested,
+        portfolioBgColor,
+        setPortfolioBgColor,
+        portfolioHeaderItemColor,
+        setPortfolioHeaderItemColor,
       }}
     >
       {props.children}
