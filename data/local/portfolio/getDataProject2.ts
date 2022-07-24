@@ -104,26 +104,50 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis u
         ],
       },
       {
-        backgroundImage: getImage("vespia_boop.jpg")
+        backgroundImage: getImage("vespia_boop.jpg"),
         minHeight: "70vh",
-        longTextsTop: [
+        // longTextsTop: [
+        //   {
+        //     text: "                            BEEP",
+        //     color: "red",
+        //     animation: {
+        //       animateOnScroll: true,
+        //       animateFrom: "right",
+        //       duration: 500,
+        //     },
+        //   },
+        //   {
+        //     color: "red",
+        //     text: "                            BEEEEEP",
+        //     animation: {
+        //       animateOnScroll: true,
+        //       animateFrom: "right",
+        //       duration: 1100,
+        //     },
+        //   },
+        // ],
+        mediaBar: {
+          texts: [
             {
-              text: "BEEP",
+              text: "### BEEP",
+              color: "#bc9141",
               animation: {
                 animateOnScroll: true,
                 animateFrom: "right",
                 duration: 500,
-              }
+              },
             },
             {
-              text: "BEEEEEP",
+              color: "#bc9141",
+              text: "### BEEEEEP",
               animation: {
                 animateOnScroll: true,
                 animateFrom: "right",
                 duration: 1100,
-              }
-            }
-          ]
+              },
+            },
+          ],
+        },
       },
       {
         minHeight: "100vh",
