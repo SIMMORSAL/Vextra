@@ -99,6 +99,8 @@ This product comes in a variety of colors
           {
             text: `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis urna et scelerisque. Nulla dignissim ac eros ut lobortis. Donec eleifend quis nisi in fringilla. Integer rhoncus, leo vulputate dictum elementum, odio velit condimentum massa, a eleifend orci tellus sed ligula. Duis convallis volutpat augue, id volutpat augue porttitor eu. Donec risus mi, semper non dictum finibus, efficitur nec nunc. Sed iaculis odio nec efficitur posuere. Aliquam porta lectus orci, vel cursus sem laoreet sit amet. Ut viverra nulla at scelerisque aliquam. Duis venenatis arcu nunc, sit amet luctus augue egestas sit amet. Sed eget est est. Proin quis lectus eget magna volutpat consequat at luctus ex. Quisque posuere iaculis vestibulum. Phasellus non interdum nibh. Ut nisi orci, cursus nec euismod at, pharetra quis massa.
+
+Donec eleifend quis nisi in fringilla. Integer rhoncus, leo vulputate dictum elementum, odio velit condimentum massa, a eleifend orci tellus sed ligula. Duis convallis volutpat augue, id volutpat augue porttitor eu. Donec risus mi, semper non dictum finibus, efficitur nec nunc. Sed iaculis odio nec efficitur posuere. Aliquam porta lectus orci, vel cursus sem laoreet sit amet. Ut viverra nulla at scelerisque aliquam. Duis venenatis arcu nunc, sit amet luctus augue egestas sit amet. Sed eget est est. Proin quis lectus eget magna volutpat consequat at luctus ex. Quisque posuere iaculis vestibulum. Phasellus non interdum nibh. Ut nisi orci, cursus nec euismod at.
 `,
           },
         ],
@@ -106,26 +108,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis u
       {
         backgroundImage: getImage("vespia_boop.jpg"),
         minHeight: "70vh",
-        // longTextsTop: [
-        //   {
-        //     text: "                            BEEP",
-        //     color: "red",
-        //     animation: {
-        //       animateOnScroll: true,
-        //       animateFrom: "right",
-        //       duration: 500,
-        //     },
-        //   },
-        //   {
-        //     color: "red",
-        //     text: "                            BEEEEEP",
-        //     animation: {
-        //       animateOnScroll: true,
-        //       animateFrom: "right",
-        //       duration: 1100,
-        //     },
-        //   },
-        // ],
         mediaBar: {
           texts: [
             {
