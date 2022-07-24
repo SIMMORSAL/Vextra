@@ -20,7 +20,6 @@ export default function RichChunk(p: Props) {
   const backgroundColor = p.chunk.backgroundColor
     ? p.chunk.backgroundColor
     : "transparent";
-  console.log(`11111  RichChunk:  ${p.chunk.nameId}  ${backgroundColor}`);
 
   const bgImage = p.chunk.backgroundImage
     ? `url(${p.chunk.backgroundImage})`

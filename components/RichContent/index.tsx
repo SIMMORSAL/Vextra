@@ -16,7 +16,7 @@ export default function RichContent(p: Props) {
         display: flex;
         flex-direction: column;
         //justify-content: start;
-        //background-color: red;
+        background-color: transparent;
       `}
     >
       <div
@@ -24,6 +24,7 @@ export default function RichContent(p: Props) {
         css={css`
           width: 100%;
           overflow: hidden;
+          background-color: transparent;
         `}
       >
         {p.data.map((textChunk) => {
