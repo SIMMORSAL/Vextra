@@ -13,5 +13,12 @@ export function getDataProject3(): RichChunkModel[] {
         aspectRatio: "360/196",
       },
     },
+    {
+      longTextsTop: [
+        {
+          text: "asdfasdfasdfsdf",
+        },
+      ],
+    },
   ] as RichChunkModel[];
 }

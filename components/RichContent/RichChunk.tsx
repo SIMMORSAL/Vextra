@@ -19,7 +19,8 @@ export default function RichChunk(p: Props) {
   const textColor = p.chunk.textColor ? p.chunk.textColor : "#1e1e1e"; // Todo
   const backgroundColor = p.chunk.backgroundColor
     ? p.chunk.backgroundColor
-    : backgroundWhite;
+    : "transparent";
+  console.log(`11111  RichChunk:  ${p.chunk.nameId}  ${backgroundColor}`);
 
   const bgImage = p.chunk.backgroundImage
     ? `url(${p.chunk.backgroundImage})`
@@ -53,7 +54,7 @@ export default function RichChunk(p: Props) {
       )}
       {p.chunk.longTextsTop && (
         <div
-        // * This is the way to get one way chunk and test against it
+        // * This is the way to get one way chunk and test it
         // css={css`
         //   background-color: ${p.chunk.longTextsTop[0].texts ===
         //   getPortfolio("rich-content-handbook").pageContent[0].longTextsTop[0].texts

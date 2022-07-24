@@ -16,6 +16,7 @@ export default function RichContent(p: Props) {
         display: flex;
         flex-direction: column;
         //justify-content: start;
+        //background-color: red;
       `}
     >
       <div

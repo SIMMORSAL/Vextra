@@ -101,7 +101,7 @@ export default function Header(props: Props) {
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        background-color: ${shouldBlur ? `${bgColor}cc` : "transparent"};
+        background-color: ${shouldBlur ? `${bgColor}88` : "transparent"};
         padding-bottom: ${shouldBlur ? 20 : 0}px;
         backdrop-filter: blur(${shouldBlur ? 3 : 0}px);
         -webkit-backdrop-filter: blur(${shouldBlur ? 3 : 0}px);

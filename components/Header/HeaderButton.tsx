@@ -78,7 +78,7 @@ export default function HeaderButton(p: Props) {
           width: 100%;
           height: 1.5px;
           margin-bottom: 5px;
-          background-color: ${p.color};
+          background-color: ${p.color}88;
           align-self: end;
           opacity: ${p.selectedPage === undefined ? 0 : 1};
 

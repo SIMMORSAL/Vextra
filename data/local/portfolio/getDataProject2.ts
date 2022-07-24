@@ -10,12 +10,26 @@ export function getDataProject2(): RichChunkModel[] {
   return (
     [
       {
+        longTextsTop: [
+          {
+            text: "Scootify",
+          },
+        ],
+      },
+      {
         nameId: "bigImage",
         gradient: ["#ee644e", "#b94134"],
         bigImage: {
           path: getImage("scooter_red.jpg"),
           aspectRatio: "2000/1660",
         },
+      },
+      {
+        longTextsTop: [
+          {
+            text: "Scootify",
+          },
+        ],
       },
       {
         nameId: "sdfsdf",
@@ -54,6 +68,26 @@ and we named it
             animateFrom: "right",
           },
         },
+      },
+      {
+        freeSpaceTop: "300px",
+        longTextsTop: [
+          {
+            text: "This product comes in a variety of colors",
+          },
+        ],
+      },
+      {
+        // freeSpaceTop: "300px",
+        freeSpaceBottom: "500px",
+        backgroundImage: getImage("vespia_purple.jpg"),
+        longTextsTop: [
+          {
+            align: "center",
+            text: "I like the purple color more than red and blue combined",
+            color: "#fff",
+          },
+        ],
       },
     ] as RichChunkModel[]
   ).map((v: RichChunkModel, i) => {
