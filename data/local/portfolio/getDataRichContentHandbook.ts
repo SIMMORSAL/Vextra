@@ -580,6 +580,9 @@ translations, the number 15 written above will be counted
 as ${getInlineCode("∓15vw")} and for up and down
 as ${getInlineCode("∓15vh")} .
 
+* if you add a new animation object to an element, you might need to refresh
+the page for the changes to take effect.
+
 As you've seen so far, by playing around with Rich Animations you can create compelling
 and beautiful experiences in no time that would otherwise take hours to do from scratch.
 
@@ -714,19 +717,21 @@ this is how things will look on different screen sizes
             },
           ],
         },
-      },{
+      },
+      {
         minHeight: "60vh",
         longTextsTop: [
           {
             text: `
 # Have this anywhere
 
-you can have all of this anywhere you want by copying  ${
-  getInlineCode("/components/RichContent", "green")
-} package.
-`
+you can have all of this anywhere you want by copying  ${getInlineCode(
+              "/components/RichContent",
+              "green"
+            )} package.
+`,
           },
-          ]
+        ],
       },
       {
         minHeight: "200px",

@@ -63,29 +63,33 @@ able to have the finished product in multiple colors
       },
       {
         smallImage: {
-          path: getImagePath("Scootify_green.jpg"),
+          path: getImagePath("scootify_green.jpg"),
+          aspectRatio: "1000/680",
           animation: {
             animateOnScroll: true,
-          }
-        }
+          },
+        },
       },
       {
+        freeSpaceTop: "20px",
         smallImage: {
-          path: getImagePath("Scootify_yellow.jpg"),
+          path: getImagePath("scootify_yellow.jpg"),
+          aspectRatio: "1000/680",
           animation: {
             animateOnScroll: true,
-          }
-        }
+          },
+        },
       },
       {
         textsTop: [
-            {
-              text: `
+          {
+            color: "rgba(255,255,255,0.91)",
+            text: `
 ### Other notable features
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis urna et scelerisque. Nulla dignissim ac eros ut lobortis. Donec eleifend quis nisi in fringilla. Integer rhoncus, leo vulputate dictum elementum, odio velit condimentum massa, a eleifend orci tellus sed ligula. Duis convallis volutpat augue, id volutpat augue porttitor eu. Donec risus mi, semper non dictum finibus, efficitur nec nunc. Sed iaculis odio nec efficitur posuere. Aliquam porta lectus orci, vel cursus sem laoreet sit amet. Ut viverra nulla at scelerisque aliquam. Duis venenatis arcu nunc, sit amet luctus augue egestas sit amet. Sed eget est est. Proin quis lectus eget magna volutpat consequat at luctus ex. Quisque posuere iaculis vestibulum. Phasellus non interdum nibh. Ut nisi orci, cursus nec euismod at, pharetra quis massa.
 `,
-            }
-          ],
+          },
+        ],
       },
       {
         backgroundColor: "#212121",
@@ -191,7 +195,31 @@ This product comes in a variety of colors as well
           {
             text: `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis urna et scelerisque. Nulla dignissim ac eros ut lobortis. Donec eleifend quis nisi in fringilla. Integer rhoncus, leo vulputate dictum elementum, odio velit condimentum massa, a eleifend orci tellus sed ligula. Duis convallis volutpat augue, id volutpat augue porttitor eu. Donec risus mi, semper non dictum finibus, efficitur nec nunc. Sed iaculis odio nec efficitur posuere. Aliquam porta lectus orci, vel cursus sem laoreet sit amet. Ut viverra nulla at scelerisque aliquam. Duis venenatis arcu nunc, sit amet luctus augue egestas sit amet. Sed eget est est. Proin quis lectus eget magna volutpat consequat at luctus ex. Quisque posuere iaculis vestibulum. Phasellus non interdum nibh. Ut nisi orci, cursus nec euismod at, pharetra quis massa.
+`,
+          },
+        ],
+      },
 
+      {
+        freeSpaceTop: "20px",
+        gradient: ["#a64bef", "#a34cf1"],
+        textColor: "#fff",
+        smallImage: {
+          path: getImagePath("vespia_purpleSmall.jpg"),
+          aspectRatio: "1000/680",
+          animation: {
+            animateOnScroll: true,
+            animateFrom: "left",
+          },
+        },
+      },
+
+      {
+        gradient: ["#aa64d5", "#a948eb"],
+        textColor: "#fff",
+        textsBottom: [
+          {
+            text: `
 Donec eleifend quis nisi in fringilla. Integer rhoncus, leo vulputate dictum elementum, odio velit condimentum massa, a eleifend orci tellus sed ligula. Duis convallis volutpat augue, id volutpat augue porttitor eu. Donec risus mi, semper non dictum finibus, efficitur nec nunc. Sed iaculis odio nec efficitur posuere. Aliquam porta lectus orci, vel cursus sem laoreet sit amet. Ut viverra nulla at scelerisque aliquam. Duis venenatis arcu nunc, sit amet luctus augue egestas sit amet. Sed eget est est. Proin quis lectus eget magna volutpat consequat at luctus ex. Quisque posuere iaculis vestibulum. Phasellus non interdum nibh. Ut nisi orci, cursus nec euismod at.
 `,
           },
