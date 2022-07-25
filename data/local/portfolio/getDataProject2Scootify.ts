@@ -11,24 +11,87 @@ export function getDataProject2Scootify(): RichChunkModel[] {
     [
       {
         nameId: "project-name",
+        textColor: "#e3d9d9",
         textsTop: [
           {
             align: "center",
             text: "# Scootify",
-            color: "#e3d9d9",
+          },
+          {
+            align: "center",
+            animation: {
+              animateOnScroll: false,
+              duration: 3000,
+            },
+            text: `
+Scootify is protected by Carbon-Ceramic runs on Quantized-hydroxium
+`,
           },
         ],
       },
       {
-        nameId: "bigImage",
         gradient: ["#ee644e", "#b94134"],
         bigImage: {
-          path: getImagePath("scooter_red.jpg"),
+          path: getImagePath("scootify_red.jpg"),
           aspectRatio: "2000/1660",
         },
       },
       {
-        nameId: "sdfsdf",
+        minHeight: "400px",
+        textsTop: [
+          {
+            color: "rgba(255,255,255,0.91)",
+            text: `
+## Structure:
+
+
+
+## Fuel:
+
+Scootify runs on **Quantized-hydroxium** which is such a potent energy source that it
+gives minor floating abilities to scootify. This makes this scooter drivable even when
+stranded by death.
+            
+### Other notable features
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis urna et scelerisque. Nulla dignissim ac eros ut lobortis. Donec eleifend quis nisi in fringilla. Integer rhoncus, leo vulputate dictum elementum, odio velit condimentum massa, a eleifend orci tellus sed ligula. Duis convallis volutpat augue, id volutpat augue porttitor eu. Donec risus mi, semper non dictum finibus, efficitur nec nunc. Sed iaculis odio nec efficitur posuere. Aliquam porta lectus orci, vel cursus sem laoreet sit amet. Ut viverra nulla at scelerisque aliquam. Duis venenatis arcu nunc, sit amet luctus augue egestas sit amet. Sed eget est est. Proin quis lectus eget magna volutpat consequat at luctus ex. Quisque posuere iaculis vestibulum. Phasellus non interdum nibh. Ut nisi orci, cursus nec euismod at, pharetra quis massa.
+`,
+          },
+        ],
+      },
+      {
+        backgroundColor: "#212121",
+        minHeight: "40vh",
+        textColor: "white",
+        mediaBar: {
+          leftImage: { path: getImagePath("scootify_redOnBlack.jpg") },
+          texts: [
+            {
+              align: "center",
+              animation: {
+                animateOnScroll: true,
+                animateFrom: "right",
+              },
+              text: `
+### Look On Fleek
+`,
+            },
+          ],
+        },
+      },
+      {
+        backgroundColor: "#101010",
+        minHeight: "55vh",
+        textColor: "white",
+        textsBottom: [
+          {
+            align: "center",
+            text: `
+That's not all I've brought to life in the world of transportation
+`,
+          },
+        ],
+      },
+      {
         gradient: ["#fcc3a788", "#e0500088"],
         freeSpaceTop: "15vh",
         freeSpaceBottom: "15vh",
