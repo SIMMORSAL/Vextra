@@ -720,7 +720,7 @@ this is how things will look on different screen sizes
 # Have this anywhere
 
 you can have all of this anywhere by copying  ${
-  getInlineCode("/components/RichContent", "green"), 
+  getInlineCode("/components/RichContent", "green")
 } package.
 `
           },
