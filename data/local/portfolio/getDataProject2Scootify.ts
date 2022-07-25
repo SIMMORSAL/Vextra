@@ -3,7 +3,7 @@ import {
   RichTextModel,
 } from "../../models/rich-chunk/RichChunkModel";
 
-export function getDataProject2(): RichChunkModel[] {
+export function getDataProject2Scootify(): RichChunkModel[] {
   const getImagePath = (name: string) => {
     return `/images/portfolio/scooter/${name}`;
   };

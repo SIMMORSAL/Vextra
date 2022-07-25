@@ -1,6 +1,6 @@
 import { Portfolio } from "../models/local-data/portfolio";
 import { getDataProject1 } from "./portfolio/getDataProject1";
-import { getDataProject2 } from "./portfolio/getDataProject2";
+import { getDataProject2Scootify } from "./portfolio/getDataProject2Scootify";
 import { getDataProject3 } from "./portfolio/getDataProject3";
 import { getDataRichContentHandbook } from "./portfolio/getDataRichContentHandbook";
 import { getDataScootifyObject } from "./portfolio/getDataScootifyObject";
@@ -30,7 +30,7 @@ export function getAllPortfolios(): Portfolio[] {
       headerItemsColor: "#d2d2d2",
       isBackgroundDark: false,
       image: "/images/portfolio/PortfolioItemTemplate2.jpg",
-      pageRichContent: getDataProject2(),
+      pageRichContent: getDataProject2Scootify(),
     },
     {
       linkId: "gallery",
@@ -79,7 +79,7 @@ export function getAllPortfolios(): Portfolio[] {
     //   backgroundColor: "#3a053a",
     //   isBackgroundDark: false,
     //   image: "/images/portfolio/umbrella_2.png",
-    //   pageContent: getDataProject2(),
+    //   pageContent: getDataProject2Scootify(),
     // },
     // {
     //   linkId: "umbrella",
