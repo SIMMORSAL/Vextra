@@ -696,7 +696,7 @@ this is how things will look on different screen sizes
           texts: [
             {
               align: "center",
-              text: "#### Thank you for reading this far ❤️",
+              text: "#### Thank you for reading this ❤️",
               animation: {
                 animateOnScroll: true,
                 animateFrom: "right",
@@ -714,6 +714,19 @@ this is how things will look on different screen sizes
             },
           ],
         },
+      },{
+        minHeight: "60vh",
+        longTextsTop: [
+          {
+            text: `
+# Have this anywhere
+
+you can have all of this anywhere you want by copying  ${
+  getInlineCode("/components/RichContent", "green")
+} package.
+`
+          },
+          ]
       },
       {
         minHeight: "200px",
