@@ -81,6 +81,7 @@ able to have the finished product in multiple colors
         },
       },
       {
+        freeSpaceBottom: "70px",
         textsTop: [
           {
             color: "rgba(255,255,255,0.91)",
