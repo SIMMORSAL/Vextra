@@ -24,7 +24,7 @@ export function getDataProject3Gallery(): RichChunkModel[] {
             {
               align: "center",
               site: "2em",
-              text: "# gallery",
+              text: "# Gallery",
             }
           ],
       },
