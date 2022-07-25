@@ -14,30 +14,127 @@ export function getDataScootifyObject(): RichChunkModel[] {
             text: `
 This is all you need to write to make the scootify page
 
-\`\`\`js
+\`\`\`ts
 const getImagePath = (name: string) => {
-  return \`/images/portfolio/scooter/\${name}\`;
+  return \`/images/portfolio/scootify/\${name}\`;
 };
 
 return (
   [
-    nameId: "project-name",
     {
+      nameId: "project-name",
       textsTop: [
         {
           align: "center",
           text: "# Scootify",
           color: "#e3d9d9",
         },
+        {
+          align: "center",
+          animation: {
+            animateOnScroll: false,
+            duration: 3000,
+          },
+          text: \`
+Scootify is protected by Carbon-Ceramic and runs on Quantized-hydroxium
+\`,
+        },
       ],
     },
+    // ---
     {
       gradient: ["#ee644e", "#b94134"],
       bigImage: {
-        path: getImagePath("scooter_red.jpg"),
+        path: getImagePath("scootify_red.jpg"),
         aspectRatio: "2000/1660",
       },
     },
+    // ---
+    {
+      minHeight: "400px",
+      textsTop: [
+        {
+          color: "rgba(255,255,255,0.91)",
+          text: \`
+## Structure:
+
+Protected by **Carbon-Ceramic**...
+
+## Fuel: ...
+\`,
+        },
+      ],
+    },
+    // ---
+    {
+      smallImage: {
+        path: getImagePath("scootify_green.jpg"),
+        aspectRatio: "1000/680",
+        animation: {
+          animateOnScroll: true,
+        },
+      },
+    },
+    // ---
+    {
+      freeSpaceTop: "20px",
+      smallImage: {
+        path: getImagePath("scootify_yellow.jpg"),
+        aspectRatio: "1000/680",
+        animation: {
+          animateOnScroll: true,
+        },
+      },
+    },
+    // ---
+    {
+      freeSpaceBottom: "70px",
+      textsTop: [
+        {
+          color: "rgba(255,255,255,0.91)",
+          text: \`
+### Other notable features
+Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+\`,
+        },
+      ],
+    },
+    // ---
+    {
+      gradient: ["rgb(18,18,18)", "#212121"],
+      minHeight: "40vh",
+      textColor: "white",
+      mediaBar: {
+        leftImage: { path: getImagePath("scootify_redOnBlack.jpg") },
+        texts: [
+          {
+            align: "center",
+            animation: {
+              animateOnScroll: true,
+              animateFrom: "right",
+            },
+            text: \`
+### Look On Fleek
+\`,
+          },
+        ],
+      },
+    },
+    // ---
+    {
+      backgroundColor: "#101010",
+      minHeight: "90vh",
+      textColor: "white",
+      textsBottom: [
+        {
+          align: "center",
+          text: \`
+That's not all I've brought to life in the world of transportation
+\`,
+        },
+      ],
+    },
+    // ---
     {
       gradient: ["#fcc3a788", "#e0500088"],
       freeSpaceTop: "15vh",
@@ -46,7 +143,7 @@ return (
         {
           text: \`
 For two years I worked 
-with  <img alt="SpaceX" src="/images/portfolio/scooter/spacex_logo.png" width="100px"/> and 
+with  <img alt="SpaceX" src="/images/portfolio/scootify/spacex_logo.png" width="100px"/> and 
 some brilliant Italian engineers,
 and together we made a Vespa capable of driving on Mars, 
 and we named it 
@@ -59,7 +156,9 @@ and we named it
           text: \`<i class="fa-solid fa-shuttle-space"></i> **VESPIA**\`,
         },
       ],
-    },{
+    },
+    // ---
+    {
       minHeight: "80vh",
       backgroundImage: getImagePath("mars_bg.jpg"),
       bigImage: {
@@ -70,6 +169,7 @@ and we named it
         },
       },
     },
+    // ---
     {
       textColor: "#fff",
       freeSpaceTop: "50px",
@@ -87,6 +187,7 @@ This product comes in a variety of colors
         },
       ],
     },
+    // ---
     {
       freeSpaceBottom: "800px",
       backgroundImage: getImagePath("vespia_purple.jpg"),
@@ -98,6 +199,7 @@ This product comes in a variety of colors
         },
       ],
     },
+    // ---
     {
       freeSpaceTop: "100px",
       freeSpaceBottom: "200px",
@@ -113,6 +215,7 @@ Donec eleifend quis nisi in fringilla. Integer rhoncus, leo...
         },
       ],
     },
+    // ---
     {
       backgroundImage: getImagePath("vespia_boop.jpg"),
       minHeight: "70vh",
@@ -139,6 +242,7 @@ Donec eleifend quis nisi in fringilla. Integer rhoncus, leo...
         ],
       },
     },
+    // ---
     {
       minHeight: "100vh",
       textColor: "#fff",
@@ -153,8 +257,8 @@ Donec eleifend quis nisi in fringilla. Integer rhoncus, leo...
           text: \`
 Special thanks to
 
-#### <a href="https://...">Rochak Shukla</a> for Scootify and Vespia images
-#### <a href="https://...">Marek Piwnicki</a> for the glimpse into Mars
+#### [Rochak Shukla](https://www.freepik.com/photos/moped) for Scootify and Vespia images
+#### [Marek Piwnicki](https://unsplash.com/@marekpiwnicki) for the glimpse into Mars
 \`,
         },
       ],

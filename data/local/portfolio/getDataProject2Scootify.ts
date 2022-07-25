@@ -29,13 +29,15 @@ Scootify is protected by Carbon-Ceramic and runs on Quantized-hydroxium
           },
         ],
       },
+      // ---
       {
-        gradient: ["#ee644e", "#b94134"],
+        gradient: ["#b94335", "#b94134"],
         bigImage: {
           path: getImagePath("scootify_red.jpg"),
           aspectRatio: "2000/1660",
         },
       },
+      // ---
       {
         minHeight: "400px",
         textsTop: [
@@ -61,6 +63,7 @@ able to have the finished product in multiple colors
           },
         ],
       },
+      // ---
       {
         smallImage: {
           path: getImagePath("scootify_green.jpg"),
@@ -70,6 +73,7 @@ able to have the finished product in multiple colors
           },
         },
       },
+      // ---
       {
         freeSpaceTop: "20px",
         smallImage: {
@@ -80,6 +84,7 @@ able to have the finished product in multiple colors
           },
         },
       },
+      // ---
       {
         freeSpaceBottom: "70px",
         textsTop: [
@@ -92,6 +97,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis u
           },
         ],
       },
+      // ---
       {
         gradient: ["rgb(18,18,18)", "#212121"],
         minHeight: "40vh",
@@ -112,9 +118,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis u
           ],
         },
       },
+      // ---
       {
         backgroundColor: "#101010",
-        minHeight: "80vh",
+        minHeight: "90vh",
         textColor: "white",
         textsBottom: [
           {
@@ -125,6 +132,7 @@ That's not all I've brought to life in the world of transportation
           },
         ],
       },
+      // ---
       {
         gradient: ["#fcc3a788", "#e0500088"],
         freeSpaceTop: "15vh",
@@ -133,7 +141,7 @@ That's not all I've brought to life in the world of transportation
           {
             text: `
 For two years I worked 
-with  <img alt="SpaceX" src="/images/portfolio/scooter/spacex_logo.png" width="100px"/> and 
+with  <img alt="SpaceX" src="/images/portfolio/scootify/spacex_logo.png" width="100px"/> and 
 some brilliant Italian engineers,
 and together we made a Vespa capable of driving on Mars, 
 and we named it 
@@ -147,6 +155,7 @@ and we named it
           },
         ],
       },
+      // ---
       {
         minHeight: "80vh",
         backgroundImage: getImagePath("mars_bg.jpg"),
@@ -158,6 +167,7 @@ and we named it
           },
         },
       },
+      // ---
       {
         textColor: "#fff",
         freeSpaceTop: "50px",
@@ -175,6 +185,7 @@ This product comes in a variety of colors as well
           },
         ],
       },
+      // ---
       {
         // freeSpaceTop: "300px",
         freeSpaceBottom: "800px",
@@ -187,6 +198,7 @@ This product comes in a variety of colors as well
           },
         ],
       },
+      // ---
       {
         freeSpaceTop: "100px",
         freeSpaceBottom: "200px",
@@ -200,10 +212,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis u
           },
         ],
       },
-
+      // ---
       {
         freeSpaceTop: "20px",
-        gradient: ["#a64bef", "#a34cf1"],
+        gradient: ["#a948eb", "#a34cf1 30%", "#a34cf1 70%", "#aa64d5"],
         textColor: "#fff",
         smallImage: {
           path: getImagePath("vespia_purpleSmall.jpg"),
@@ -214,7 +226,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis u
           },
         },
       },
-
+      // ---
       {
         gradient: ["#aa64d5", "#a948eb"],
         textColor: "#fff",
@@ -226,6 +238,7 @@ Donec eleifend quis nisi in fringilla. Integer rhoncus, leo vulputate dictum ele
           },
         ],
       },
+      // ---
       {
         backgroundImage: getImagePath("vespia_boop.jpg"),
         minHeight: "70vh",
@@ -256,6 +269,7 @@ Donec eleifend quis nisi in fringilla. Integer rhoncus, leo vulputate dictum ele
           ],
         },
       },
+      // ---
       {
         minHeight: "100vh",
         textColor: "#fff",
@@ -270,8 +284,8 @@ Donec eleifend quis nisi in fringilla. Integer rhoncus, leo vulputate dictum ele
             text: `
 Special thanks to
 
-#### <a href="https://www.freepik.com/photos/moped">Rochak Shukla</a> for Scootify and Vespia images
-#### <a href="https://unsplash.com/@marekpiwnicki">Marek Piwnicki</a> for the glimpse into Mars
+#### [Rochak Shukla](https://www.freepik.com/photos/moped) for Scootify and Vespia images
+#### [Marek Piwnicki](https://unsplash.com/@marekpiwnicki) for the glimpse into Mars
 `,
           },
         ],

@@ -11,8 +11,6 @@ import { Portfolio } from "../../data/models/local-data/portfolio";
 
 interface Props {}
 
-let awardCounts = 0;
-
 export default function PagePortfolio(props: Props) {
   const router = useRouter();
 
@@ -31,6 +29,9 @@ export default function PagePortfolio(props: Props) {
     if (newTabSelected !== getActiveTab(router)) setIsExitingPage(true);
     else setIsExitingPage(false);
   }, [newTabSelected, router]);
+
+  let awardCounts = 0;
+  let smallsSinceLastBig = 0;
 
   return (
     <div
@@ -62,22 +63,26 @@ export default function PagePortfolio(props: Props) {
           justify-content: center;
         `}
       >
-        {`${(awardCounts = 0).toString().slice(0, 0)}`}
         {portfolioItems.map((value, index) => {
           if (value.awardImage) awardCounts++;
+
+          if (index === 0 || value.isBig) smallsSinceLastBig = 0;
+          else smallsSinceLastBig++;
+
+          const xsSize =
+            index === 0
+              ? 12
+              : value.isBig
+              ? 12
+              : index === portfolioItems.length - 1 && smallsSinceLastBig % 2 === 1
+              ? 7.3
+              : 6;
 
           return (
             <Grid
               key={value.name}
               item
-              xs={
-                // index === 0 ||
-                // (index === portfolioItems.length - 1 &&
-                //   portfolioItems.length % 2 === 0)
-                //   ? 12
-                //   : 6
-                index === 0 ? 12 : value.isBig ? 12 : 6
-              }
+              xs={xsSize}
               css={css`
                 display: flex;
                 justify-content: center;
