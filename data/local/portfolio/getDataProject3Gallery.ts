@@ -2,14 +2,18 @@ import { RichChunkModel } from "../../models/rich-chunk/RichChunkModel";
 
 export function getDataProject3Gallery(): RichChunkModel[] {
   const images = Array(9).fill(0).map((_, i) => {
-    smallImage: {
-      path: `/images/portfolio/gallery/g${i}.jpg`,
-      animation: {
-        animateOnScroll: true,
-        animateFrom: "bottom",
-      }
+      return {
+        smallImage: {
+          path: `/images/portfolio/gallery/g${i}.jpg`,
+          animation: {
+            animateOnScroll: true,
+            animateFrom: "bottom",
+          }
+        }
+      } as RichChunkModel;
     }
-  } as RichChunkModel);
+  );
+  
   return (
     [
       {
