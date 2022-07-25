@@ -55,17 +55,17 @@ export default function RichChunk(p: Props) {
           `}
         />
       )}
-      {p.chunk.longTextsTop && (
+      {p.chunk.textsTop && (
         <div
         // * This is the way to get one way chunk and test it
         // css={css`
-        //   background-color: ${p.chunk.longTextsTop[0].texts ===
-        //   getPortfolio("rich-content-handbook").pageContent[0].longTextsTop[0].texts
+        //   background-color: ${p.chunk.textsTop[0].texts ===
+        //   getPortfolio("rich-content-handbook").pageContent[0].textsTop[0].texts
         //     ? "red"
         //     : ""};
         // `}
         >
-          <RichText texts={p.chunk.longTextsTop} />
+          <RichText texts={p.chunk.textsTop} />
         </div>
       )}
       {p.chunk.bigImage && (
@@ -119,17 +119,17 @@ export default function RichChunk(p: Props) {
       {p.chunk.mediaBar && (
         <MediaBar mediaBar={p.chunk.mediaBar} textColor={textColor} />
       )}
-      {p.chunk.longTextsBottom && p.chunk.longTextsBottom.length > 0 && (
+      {p.chunk.textsBottom && p.chunk.textsBottom.length > 0 && (
         <div
         // * This is the way to get one way chunk and test against it
         // css={css`
-        //   background-color: ${p.chunk.longTextsTop[0].texts ===
-        //   getPortfolio("rich-content-handbook").pageContent[0].longTextsTop[0].texts
+        //   background-color: ${p.chunk.textsTop[0].texts ===
+        //   getPortfolio("rich-content-handbook").pageContent[0].textsTop[0].texts
         //     ? "red"
         //     : ""};
         // `}
         >
-          <RichText texts={p.chunk.longTextsBottom} />
+          <RichText texts={p.chunk.textsBottom} />
         </div>
       )}
       {p.chunk.freeSpaceBottom && (

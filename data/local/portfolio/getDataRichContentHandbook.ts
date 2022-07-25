@@ -1,3 +1,5 @@
+// noinspection DuplicatedCode
+
 import {
   RichChunkModel,
   RichTextModel,
@@ -20,7 +22,7 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
 
   const animatedTexts = translationTypes.map((value, index) => {
     return {
-      longTextsTop: [
+      textsTop: [
         {
           align: "center",
           // texts: texts[index].toUpperCase(),
@@ -56,7 +58,7 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
     [
       {
         nameId: "intro",
-        longTextsTop: [
+        textsTop: [
           {
             align: "center",
             text: `
@@ -109,15 +111,15 @@ interface RichChunkModel {
   gradientDegree?: number;
   backgroundImage?: string;
   freeSpaceTop?: string; // e.g: "200px", or "20vh" // TODO
-  freeSpaceBottom?: string;
   minHeight?: string; // e.g: "500px", or "80vh"
-  longTextsTop?: RichTextModel[];
+  textsTop?: RichTextModel[];
   bigImage?: RichImageModel;
   smallImage?: RichImageModel;
   bigVideo?: RichVideoModel;
   smallVideo?: RichVideoModel;
   mediaBar?: MediaBarModel;
-  longTextsBottom?: RichTextModel[];
+  textsBottom?: RichTextModel[];
+  freeSpaceBottom?: string;
 }
 
 interface RichTextModel {
@@ -181,14 +183,14 @@ And here's a diagram of how everything is placed:
         smallImage: {
           path: "/images/portfolio/handbook/chunk_layout.png",
         },
-        longTextsBottom: [
+        textsBottom: [
           {
             text: "Let's go through the features with examples",
           },
         ],
       },
       {
-        longTextsTop: [
+        textsTop: [
           {
             text: `
 # Rich Chunk
@@ -236,7 +238,7 @@ and ${getInlineCode("minHeight", "#9d0006")}:
         minHeight: `200vh`,
         freeSpaceTop: "20vh",
         backgroundImage: "/images/portfolio/handbook/bg_sample.jpg",
-        longTextsTop: [
+        textsTop: [
           {
             align: "center",
             color: "#eeeeee",
@@ -302,7 +304,7 @@ and expand or shrink depending on the size that is given min height, or how much
       },
       {
         minHeight: "100px",
-        longTextsTop: [
+        textsTop: [
           {
             text: `
 \` \`  
@@ -329,7 +331,7 @@ Below is what you get when you give some colors to ${getInlineCode(
           "#ff5a00",
           "#ff0000",
         ],
-        longTextsTop: [
+        textsTop: [
           {
             align: "center",
             color: "black",
@@ -356,7 +358,7 @@ Below is what you get when you give some colors to ${getInlineCode(
         ],
       },
       {
-        longTextsTop: [
+        textsTop: [
           {
             text: `
 # Rich Text
@@ -368,7 +370,7 @@ or animated individually.
 \`\`\`js
 {
   ...
-  longTextsTop: [
+  textsTop: [
     {
       text: "First text part",
       align: "center",
@@ -427,7 +429,7 @@ This is \${getInlineCode("anInlineCode", "#1140b2")}.
         ],
       },
       {
-        longTextsTop: [
+        textsTop: [
           {
             text: `
 # Rich Image 
@@ -476,7 +478,7 @@ in ${getInlineCode("smallImage ", "#e19400")}.
         },
       },
       {
-        longTextsTop: [
+        textsTop: [
           {
             text: `
 # Rich Video
@@ -552,7 +554,7 @@ in ${getInlineCode("smallVideo ", "#e19400")}.
         freeSpaceBottom: "40px",
       },
       {
-        longTextsTop: [
+        textsTop: [
           {
             text: `
 # Rich Animation
@@ -597,7 +599,7 @@ can animate from:
         freeSpace: "5vh",
       },
       {
-        longTextsTop: [
+        textsTop: [
           {
             text: `
 
@@ -608,7 +610,7 @@ can animate from:
       },
       ...animatedImages,
       {
-        longTextsTop: [
+        textsTop: [
           {
             text: `
 ## Animated Videos
@@ -619,7 +621,7 @@ You get the gist!
         ],
       },
       {
-        longTextsTop: [
+        textsTop: [
           {
             text: `
 # Media Bar
@@ -633,7 +635,7 @@ Media Bar is basically a collection of Rich elements, laid horizontally.
         },
       },
       {
-        longTextsTop: [
+        textsTop: [
           {
             text: `
 If we break up the Media Bar to three columns, then
@@ -644,7 +646,7 @@ this is how things will look on different screen sizes
         smallImage: {
           path: "/images/portfolio/handbook/handbook_mediabar_responsiveness.png",
         },
-        longTextsBottom: [
+        textsBottom: [
           {
             text: `
 ###### Example
@@ -725,7 +727,7 @@ this is how things will look on different screen sizes
         //     animateOnScroll: true,
         //   },
         // },
-        longTextsBottom: [
+        textsBottom: [
           {
             align: "center",
             animation: {
@@ -780,8 +782,8 @@ I give discounts on my own work ;)
     ] as RichChunkModel[]
   ).map((v: RichChunkModel, i) => {
     if (v.nameId === undefined) v.nameId = i.toString();
-    if (v.longTextsTop !== undefined)
-      v.longTextsTop = v.longTextsTop.map((vv: RichTextModel) => {
+    if (v.textsTop !== undefined)
+      v.textsTop = v.textsTop.map((vv: RichTextModel) => {
         if (vv.userSelect === undefined) vv.userSelect = "text";
         return vv;
       });

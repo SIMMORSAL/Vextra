@@ -14,7 +14,7 @@ export function getDataProject3(): RichChunkModel[] {
       },
     },
     {
-      longTextsTop: [
+      textsTop: [
         {
           text: "asdfasdfasdfsdf",
         },

@@ -3,6 +3,7 @@ import { getDataProject1 } from "./portfolio/getDataProject1";
 import { getDataProject2 } from "./portfolio/getDataProject2";
 import { getDataProject3 } from "./portfolio/getDataProject3";
 import { getDataRichContentHandbook } from "./portfolio/getDataRichContentHandbook";
+import { getDataScootifyObject } from "./portfolio/getDataScootifyObject";
 
 export function getPortfolio(linkId: string): Portfolio {
   return getAllPortfolios().filter((value) => value.linkId === linkId)[0];
@@ -32,6 +33,25 @@ export function getAllPortfolios(): Portfolio[] {
       pageRichContent: getDataProject2(),
     },
     {
+      linkId: "scootify-object",
+      name: "Scootify Object",
+      // backgroundColor: "#ff0000",
+      // headerItemsColor: "#3f0101",
+      isBackgroundDark: false,
+      image: "/images/portfolio/PortfolioItemScooterObject.jpg",
+      pageRichContent: getDataScootifyObject(),
+    },
+    {
+      linkId: "rich-content-handbook",
+      name: "Rich Content Handbook",
+      isBig: true,
+      // backgroundColor: "#ff0000",
+      // headerItemsColor: "#3f0101",
+      isBackgroundDark: false,
+      image: "/images/portfolio/PortfolioItemRichContentHandbook.jpg",
+      pageRichContent: getDataRichContentHandbook(),
+    },
+    {
       linkId: "gallery",
       name: "Photography",
       backgroundColor: "#ff00ff",
@@ -39,15 +59,6 @@ export function getAllPortfolios(): Portfolio[] {
       isBackgroundDark: false,
       image: "/images/portfolio/PortfolioItemTemplate3.jpg",
       pageRichContent: getDataProject3(),
-    },
-    {
-      linkId: "rich-content-handbook",
-      name: "umbrella",
-      // backgroundColor: "#ff0000",
-      // headerItemsColor: "#3f0101",
-      isBackgroundDark: false,
-      image: "/images/portfolio/PortfolioItemRichContentHandbook.jpg",
-      pageRichContent: getDataRichContentHandbook(),
     },
     // {
     //   linkId: "one-more",

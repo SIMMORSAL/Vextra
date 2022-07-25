@@ -10,7 +10,8 @@ export function getDataProject2(): RichChunkModel[] {
   return (
     [
       {
-        longTextsTop: [
+        nameId: "project-name",
+        textsTop: [
           {
             align: "center",
             text: "# Scootify",
@@ -31,7 +32,7 @@ export function getDataProject2(): RichChunkModel[] {
         gradient: ["#fcc3a788", "#e0500088"],
         freeSpaceTop: "15vh",
         freeSpaceBottom: "15vh",
-        longTextsTop: [
+        textsTop: [
           {
             text: `
 For two years I worked 
@@ -48,10 +49,6 @@ and we named it
             text: `<i class="fa-solid fa-shuttle-space"></i> **VESPIA**`,
           },
         ],
-        // smallImage: {
-        //   path: getImage("vespia_name.png"),
-        //   align: "start",
-        // },
       },
       {
         minHeight: "80vh",
@@ -68,7 +65,7 @@ and we named it
         textColor: "#fff",
         freeSpaceTop: "50px",
         freeSpaceBottom: "70px",
-        longTextsTop: [
+        textsTop: [
           {
             text: `
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis urna et scelerisque. Nulla dignissim ac eros ut lobortis. Donec eleifend quis nisi in fringilla. Integer rhoncus, leo vulputate dictum elementum, odio velit condimentum massa, a eleifend orci tellus sed ligula. Duis convallis volutpat augue, id volutpat augue porttitor eu. Donec risus mi, semper non dictum finibus, efficitur nec nunc. Sed iaculis odio nec efficitur posuere. Aliquam porta lectus orci, vel cursus sem laoreet sit amet. Ut viverra nulla at scelerisque aliquam. Duis venenatis arcu nunc, sit amet luctus augue egestas sit amet. Sed eget est est. Proin quis lectus eget magna volutpat consequat at luctus ex. Quisque posuere iaculis vestibulum. Phasellus non interdum nibh. Ut nisi orci, cursus nec euismod at, pharetra quis massa."
@@ -85,7 +82,7 @@ This product comes in a variety of colors
         // freeSpaceTop: "300px",
         freeSpaceBottom: "800px",
         backgroundImage: getImage("vespia_purple.jpg"),
-        longTextsTop: [
+        textsTop: [
           {
             align: "end",
             text: "#### I like the purple color more than red and blue combined",
@@ -98,7 +95,7 @@ This product comes in a variety of colors
         freeSpaceBottom: "200px",
         gradient: ["#aa64d5", "#a948eb"],
         textColor: "#fff",
-        longTextsTop: [
+        textsTop: [
           {
             text: `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis urna et scelerisque. Nulla dignissim ac eros ut lobortis. Donec eleifend quis nisi in fringilla. Integer rhoncus, leo vulputate dictum elementum, odio velit condimentum massa, a eleifend orci tellus sed ligula. Duis convallis volutpat augue, id volutpat augue porttitor eu. Donec risus mi, semper non dictum finibus, efficitur nec nunc. Sed iaculis odio nec efficitur posuere. Aliquam porta lectus orci, vel cursus sem laoreet sit amet. Ut viverra nulla at scelerisque aliquam. Duis venenatis arcu nunc, sit amet luctus augue egestas sit amet. Sed eget est est. Proin quis lectus eget magna volutpat consequat at luctus ex. Quisque posuere iaculis vestibulum. Phasellus non interdum nibh. Ut nisi orci, cursus nec euismod at, pharetra quis massa.
@@ -138,7 +135,7 @@ Donec eleifend quis nisi in fringilla. Integer rhoncus, leo vulputate dictum ele
         minHeight: "100vh",
         textColor: "#fff",
         backgroundColor: "#b53f32",
-        longTextsTop: [
+        textsTop: [
           {
             animation: {
               animateOnScroll: true,

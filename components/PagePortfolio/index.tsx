@@ -71,11 +71,12 @@ export default function PagePortfolio(props: Props) {
               key={value.name}
               item
               xs={
-                index === 0 ||
-                (index === portfolioItems.length - 1 &&
-                  portfolioItems.length % 2 === 0)
-                  ? 12
-                  : 6
+                // index === 0 ||
+                // (index === portfolioItems.length - 1 &&
+                //   portfolioItems.length % 2 === 0)
+                //   ? 12
+                //   : 6
+                index === 0 ? 12 : value.isBig ? 12 : 6
               }
               css={css`
                 display: flex;

@@ -8,13 +8,13 @@ export interface RichChunkModel {
   freeSpaceTop?: string; // e.g: "200px", or "20vh"
   freeSpaceBottom?: string;
   minHeight?: string; // e.g: "500px", or "80vh"
-  longTextsTop?: RichTextModel[];
+  textsTop?: RichTextModel[];
   bigImage?: RichImageModel;
   smallImage?: RichImageModel;
   bigVideo?: RichVideoModel;
   smallVideo?: RichVideoModel;
   mediaBar?: MediaBarModel;
-  longTextsBottom?: RichTextModel[];
+  textsBottom?: RichTextModel[];
 }
 
 export interface RichTextModel {
