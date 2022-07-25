@@ -19,10 +19,17 @@ export function getDataProject3Gallery(): RichChunkModel[] {
   return (
     [
       {
-        nameId: "spaceAtTop",
-        freeSpaceBottom: "25vh",
+        minHeight: "35vh",
+        textsTop: [
+            {
+              align: "center",
+              site: "2em",
+              text: "# gallery",
+            }
+          ],
       },
       {
+        backgroundColor: "#eee",
         textsTop: [
             {
               align: "center",
