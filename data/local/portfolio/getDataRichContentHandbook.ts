@@ -720,7 +720,7 @@ this is how things will look on different screen sizes
         },
       },
       {
-        textColor: "#111111"
+        textColor: "#111111",
         minHeight: "60vh",
         longTextsTop: [
           {
