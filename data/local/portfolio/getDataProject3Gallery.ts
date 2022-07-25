@@ -10,7 +10,7 @@ export function getDataProject3Gallery(): RichChunkModel[] {
       {
         nameId: "comingSoon",
         smallImage: {
-          path: "https://www.instagram.com/p/CBV0FrEnM5X/?utm_source=ig_web_copy_link",
+          path: "https://www.instagram.com/p/CBV0FrEnM5X/media/?size=l",
           aspectRatio: "360/196",
         },
         textsTop: [
