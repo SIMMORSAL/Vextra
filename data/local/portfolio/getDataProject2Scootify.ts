@@ -93,7 +93,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis u
         ],
       },
       {
-        backgroundColor: "#212121",
+        gradient: ["rgb(18,18,18)", "#212121"],
         minHeight: "40vh",
         textColor: "white",
         mediaBar: {
