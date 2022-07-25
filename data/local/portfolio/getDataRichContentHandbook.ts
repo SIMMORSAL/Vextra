@@ -694,7 +694,7 @@ this is how things will look on different screen sizes
           texts: [
             {
               align: "center",
-              text: "#### Thank you for reading this far ❤️",
+              text: "#### Thank you for reading this ❤️",
               animation: {
                 animateOnScroll: true,
                 animateFrom: "right",
