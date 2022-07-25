@@ -148,7 +148,7 @@ This product comes in a variety of colors
         textsTop: [
           {
             align: "end",
-            text: "#### I like the purple color more than red and blue combined",
+            text: "**I like the purple color**  \n**more than red and blue combined**",
             color: "#fff",
           },
         ],
