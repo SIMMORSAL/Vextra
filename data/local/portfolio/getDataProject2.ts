@@ -4,7 +4,7 @@ import {
 } from "../../models/rich-chunk/RichChunkModel";
 
 export function getDataProject2(): RichChunkModel[] {
-  const getImage = (name: string) => {
+  const getImagePath = (name: string) => {
     return `/images/portfolio/scooter/${name}`;
   };
   return (
@@ -23,7 +23,7 @@ export function getDataProject2(): RichChunkModel[] {
         nameId: "bigImage",
         gradient: ["#ee644e", "#b94134"],
         bigImage: {
-          path: getImage("scooter_red.jpg"),
+          path: getImagePath("scooter_red.jpg"),
           aspectRatio: "2000/1660",
         },
       },
@@ -52,9 +52,9 @@ and we named it
       },
       {
         minHeight: "80vh",
-        backgroundImage: getImage("mars_bg.jpg"),
+        backgroundImage: getImagePath("mars_bg.jpg"),
         bigImage: {
-          path: getImage("vespia.png"),
+          path: getImagePath("vespia.png"),
           animation: {
             animateOnScroll: true,
             animateFrom: "right",
@@ -81,7 +81,7 @@ This product comes in a variety of colors
       {
         // freeSpaceTop: "300px",
         freeSpaceBottom: "800px",
-        backgroundImage: getImage("vespia_purple.jpg"),
+        backgroundImage: getImagePath("vespia_purple.jpg"),
         textsTop: [
           {
             align: "end",
@@ -106,7 +106,7 @@ Donec eleifend quis nisi in fringilla. Integer rhoncus, leo vulputate dictum ele
         ],
       },
       {
-        backgroundImage: getImage("vespia_boop.jpg"),
+        backgroundImage: getImagePath("vespia_boop.jpg"),
         minHeight: "70vh",
         mediaBar: {
           texts: [

@@ -15,7 +15,7 @@ export function getDataScootifyObject(): RichChunkModel[] {
 This is all you need to write to make the scootify page
 
 \`\`\`js
-const getImage = (name: string) => {
+const getImagePath = (name: string) => {
   return \`/images/portfolio/scooter/\${name}\`;
 };
 
@@ -34,7 +34,7 @@ return (
     {
       gradient: ["#ee644e", "#b94134"],
       bigImage: {
-        path: getImage("scooter_red.jpg"),
+        path: getImagePath("scooter_red.jpg"),
         aspectRatio: "2000/1660",
       },
     },
@@ -61,9 +61,9 @@ and we named it
       ],
     },{
       minHeight: "80vh",
-      backgroundImage: getImage("mars_bg.jpg"),
+      backgroundImage: getImagePath("mars_bg.jpg"),
       bigImage: {
-        path: getImage("vespia.png"),
+        path: getImagePath("vespia.png"),
         animation: {
           animateOnScroll: true,
           animateFrom: "right",
@@ -89,7 +89,7 @@ This product comes in a variety of colors
     },
     {
       freeSpaceBottom: "800px",
-      backgroundImage: getImage("vespia_purple.jpg"),
+      backgroundImage: getImagePath("vespia_purple.jpg"),
       textsTop: [
         {
           align: "end",
@@ -114,7 +114,7 @@ Donec eleifend quis nisi in fringilla. Integer rhoncus, leo...
       ],
     },
     {
-      backgroundImage: getImage("vespia_boop.jpg"),
+      backgroundImage: getImagePath("vespia_boop.jpg"),
       minHeight: "70vh",
       mediaBar: {
         texts: [
