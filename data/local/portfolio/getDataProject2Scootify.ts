@@ -245,7 +245,7 @@ Donec eleifend quis nisi in fringilla. Integer rhoncus, leo vulputate dictum ele
             {
               color: "#bc9141",
               text: `
-### BEEEEEP <i class="fa-solid fa-speaker" style="transform: scaleX(-1);"></i>
+### BEEEEEP <i class="fa-solid fa-volume-off" style="transform: scaleX(-1);"></i>
 `,
               animation: {
                 animateOnScroll: true,
