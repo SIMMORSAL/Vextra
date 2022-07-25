@@ -44,7 +44,7 @@ function MyApp({ Component, pageProps }) {
         src="https://kit.fontawesome.com/195ee4c6bd.js"
         crossOrigin="anonymous"
       />
-      // <Script async src="//www.instagram.com/embed.js"/>
+      {/* <Script async src="//www.instagram.com/embed.js"/>*/}
       <div
         css={css`
           font-family: Raleway, sans-serif;
