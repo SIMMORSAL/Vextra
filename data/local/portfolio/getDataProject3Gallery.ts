@@ -3,12 +3,12 @@ import { RichChunkModel } from "../../models/rich-chunk/RichChunkModel";
 export function getDataProject3Gallery(): RichChunkModel[] {
   const images = Array(9).fill(0).map((_, i) => {
       return {
-        freeSpaceBottom: "24px",
+        freeSpaceTop: "24px",
         smallImage: {
           path: `/images/portfolio/gallery/g${i}.jpg`,
           aspectRatio: "1",
           animation: {
-            animateOnScroll: true,
+            animateOnScroll: index !== 0,
             animateFrom: "bottom",
           }
         }
