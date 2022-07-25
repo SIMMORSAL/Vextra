@@ -233,7 +233,7 @@ Donec eleifend quis nisi in fringilla. Integer rhoncus, leo vulputate dictum ele
           texts: [
             {
               text: `
-### BEEP <i class="fa-solid fa-volume" style="transform: scaleX(-1);"></i>
+### BEEP <i class="fa-solid fa-file" style="transform: scaleX(-1);"></i>
 `,
               color: "#bc9141",
               animation: {
@@ -245,7 +245,7 @@ Donec eleifend quis nisi in fringilla. Integer rhoncus, leo vulputate dictum ele
             {
               color: "#bc9141",
               text: `
-### BEEEEEP <i class="fa-solid fa-volume"></i>
+### BEEEEEP <i class="fa-solid fa-speaker"></i>
 `,
               animation: {
                 animateOnScroll: true,
