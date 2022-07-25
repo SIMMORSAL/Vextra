@@ -23,13 +23,11 @@ export function getDataProject3Gallery(): RichChunkModel[] {
         freeSpaceBottom: "25vh",
       },
       {
-        nameId: "comingSoon",
-        smallImage: {
-          path: "https://www.instagram.com/p/CBV0FrEnM5X/media/?size=l",
-        },
         textsTop: [
             {
+              align: "center",
               text: `
+One of my hobbies is climbing mountains and taking pictures. Please enjoy some of them
 `,
             }
           ],
