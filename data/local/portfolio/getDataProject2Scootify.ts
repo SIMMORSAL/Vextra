@@ -11,7 +11,7 @@ export function getDataProject2Scootify(): RichChunkModel[] {
     [
       {
         nameId: "project-name",
-        textColor: "#e3d9d9",
+        textColor: "rgb(233,227,227)",
         textsTop: [
           {
             align: "center",
@@ -24,7 +24,7 @@ export function getDataProject2Scootify(): RichChunkModel[] {
               duration: 3000,
             },
             text: `
-Scootify is protected by Carbon-Ceramic and runs on Quantized-hydroxium
+Scootify is covered in Carbon-Ceramic and runs on Quantized-hydroxium
 `,
           },
         ],
