@@ -232,7 +232,9 @@ Donec eleifend quis nisi in fringilla. Integer rhoncus, leo vulputate dictum ele
         mediaBar: {
           texts: [
             {
-              text: "### BEEP",
+              text: `
+### BEEP <i class="fa-solid fa-volume" style="transform: scaleX(-1);"></i>
+`,
               color: "#bc9141",
               animation: {
                 animateOnScroll: true,
@@ -242,7 +244,9 @@ Donec eleifend quis nisi in fringilla. Integer rhoncus, leo vulputate dictum ele
             },
             {
               color: "#bc9141",
-              text: "### BEEEEEP",
+              text: `
+### BEEEEEP <i class="fa-solid fa-volume" style="transform: scaleX(-1);"></i>
+`,
               animation: {
                 animateOnScroll: true,
                 animateFrom: "right",
