@@ -24,7 +24,7 @@ export function getDataProject2Scootify(): RichChunkModel[] {
               duration: 3000,
             },
             text: `
-Scootify is protected by Carbon-Ceramic runs on Quantized-hydroxium
+Scootify is protected by Carbon-Ceramic and runs on Quantized-hydroxium
 `,
           },
         ],
@@ -44,7 +44,7 @@ Scootify is protected by Carbon-Ceramic runs on Quantized-hydroxium
             text: `
 ## Structure:
 
-
+Protected by **Carbon-Ceramic**, Scootify is able to withstand 10,000k N/m<sup>3</sup>
 
 ## Fuel:
 
