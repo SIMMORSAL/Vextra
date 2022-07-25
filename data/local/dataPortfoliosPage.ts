@@ -1,7 +1,7 @@
 import { Portfolio } from "../models/local-data/portfolio";
 import { getDataProject1 } from "./portfolio/getDataProject1";
 import { getDataProject2Scootify } from "./portfolio/getDataProject2Scootify";
-import { getDataProject3 } from "./portfolio/getDataProject3";
+import { getDataProject3Gallery } from "./portfolio/getDataProject3Gallery";
 import { getDataRichContentHandbook } from "./portfolio/getDataRichContentHandbook";
 import { getDataScootifyObject } from "./portfolio/getDataScootifyObject";
 
@@ -21,7 +21,7 @@ export function getAllPortfolios(): Portfolio[] {
       // image:
       //   "https://th.bing.com/th/id/R.58cc46069f9c1bfec000c83e79721d31?rik=V6%2bwTqIO36Y40g&riu=http%3a%2f%2fwallup.net%2fwp-content%2fuploads%2f2016%2f05%2f24%2f374644-path-landscape-trees.jpg&ehk=4r8HqHCVUOTPA4f19szEL4vOhfNMFE4FPAQUSSsOg%2bA%3d&risl=&pid=ImgRaw&r=0",
       awardImage: "/images/portfolio/a_design_award.gif",
-      pageRichContent: getDataProject3(),
+      pageRichContent: getDataProject3Gallery(),
     },
     {
       linkId: "scootify",
@@ -34,12 +34,12 @@ export function getAllPortfolios(): Portfolio[] {
     },
     {
       linkId: "gallery",
-      name: "Photography",
-      backgroundColor: "#ff00ff",
-      headerItemsColor: "#3a053a",
+      name: "Gallery",
+      // backgroundColor: "#bfd2cb",
+      headerItemsColor: "#500650",
       isBackgroundDark: false,
       image: "/images/portfolio/PortfolioItemTemplate3.jpg",
-      pageRichContent: getDataProject3(),
+      pageRichContent: getDataProject3Gallery(),
     },
     {
       linkId: "rich-content-handbook",
@@ -57,7 +57,7 @@ export function getAllPortfolios(): Portfolio[] {
       backgroundColor: "#e0e0e0",
       headerItemsColor: "#313141",
       isBackgroundDark: false,
-      image: "/images/portfolio/PortfolioItemScooterObject.jpg",
+      image: "/images/portfolio/PortfolioItemScootifyObject.jpg",
       pageRichContent: getDataScootifyObject(),
     },
     // {

@@ -5,7 +5,7 @@ import {
 
 export function getDataProject2Scootify(): RichChunkModel[] {
   const getImagePath = (name: string) => {
-    return `/images/portfolio/scooter/${name}`;
+    return `/images/portfolio/scootify/${name}`;
   };
   return (
     [

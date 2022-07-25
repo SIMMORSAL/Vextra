@@ -18,6 +18,8 @@ export function Content({ Component, pageProps, routeChops }) {
       }, 200);
   }, [flashContent, setFlashContent]);
 
+  console.log(`11111  Content:  ${flashContent}`);
+
   return (
     <div
       css={css`

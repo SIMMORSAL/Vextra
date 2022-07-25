@@ -460,7 +460,8 @@ and ${getInlineCode("mediaBar", "#e19400")}.
 \`\`\`
 
 ${getInlineCode("aspectRatio", "#9d0006")}: It is 
-not important no provide this, but if you do, content won't jump down when image starts loading.
+not important no provide this, but if you do, content won't jump down when image starts loading.\  
+You may also play with this number and crop images.
 
 ${getInlineCode("align", "#9d0006")}: Only works 
 in ${getInlineCode("smallImage ", "#e19400")}.
@@ -534,7 +535,7 @@ in ${getInlineCode("smallVideo ", "#e19400")}.
           },
         ],
         bigVideo: {
-          path: "https://marketplace.canva.com/EAE9rt2GfSQ/1/0/800w/canva-black-youth-modern-fashion-and-style-square-video-ArL61CA1F-c.mp4",
+          path: "/videos/vextra.mp4",
           aspectRatio: "1/1",
           loop: true,
           controls: false,
