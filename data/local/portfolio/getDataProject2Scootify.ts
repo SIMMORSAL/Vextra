@@ -113,7 +113,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis u
       },
       {
         backgroundColor: "#101010",
-        minHeight: "55vh",
+        minHeight: "80vh",
         textColor: "white",
         textsBottom: [
           {
