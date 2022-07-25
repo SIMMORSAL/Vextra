@@ -68,7 +68,7 @@ export default function HeaderButton(p: Props) {
           font-family: Righteous, cursive;
           color: ${buttonSelected && isTabRootSelected
             ? colorHeaderItemSelect
-            : p.color};
+            : p.color + "cc"};
           opacity: ${p.selectedPage === undefined ? 0 : 1};
           padding: ${buttonSelected || isHovering ? 9 : 0}px 16px 0;
           text-shadow: ${isHovering ? `0 0 12px ${colorHeaderItemSelect}40` : ""};
