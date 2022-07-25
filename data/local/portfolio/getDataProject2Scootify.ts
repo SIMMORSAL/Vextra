@@ -44,19 +44,48 @@ Scootify is protected by Carbon-Ceramic and runs on Quantized-hydroxium
             text: `
 ## Structure:
 
-Protected by **Carbon-Ceramic**, Scootify is able to withstand 10,000k N/m<sup>3</sup>
+Protected by **Carbon-Ceramic**, Scootify is able to withstand 10,000k N/m<sup>3</sup> on direct impact, which makes it virtually indestructable.
 
 ## Fuel:
 
 Scootify runs on **Quantized-hydroxium** which is such a potent energy source that it
 gives minor floating abilities to scootify. This makes this scooter drivable even when
 stranded by death.
-            
-### Other notable features
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis urna et scelerisque. Nulla dignissim ac eros ut lobortis. Donec eleifend quis nisi in fringilla. Integer rhoncus, leo vulputate dictum elementum, odio velit condimentum massa, a eleifend orci tellus sed ligula. Duis convallis volutpat augue, id volutpat augue porttitor eu. Donec risus mi, semper non dictum finibus, efficitur nec nunc. Sed iaculis odio nec efficitur posuere. Aliquam porta lectus orci, vel cursus sem laoreet sit amet. Ut viverra nulla at scelerisque aliquam. Duis venenatis arcu nunc, sit amet luctus augue egestas sit amet. Sed eget est est. Proin quis lectus eget magna volutpat consequat at luctus ex. Quisque posuere iaculis vestibulum. Phasellus non interdum nibh. Ut nisi orci, cursus nec euismod at, pharetra quis massa.
+
+
+## Customizable:
+
+The way production plans for this product is planned, makes us 
+able to have the finished product in multiple colors
 `,
           },
         ],
+      },
+      {
+        smallImage: {
+          path: getImagePath("Scootify_green.jpg"),
+          animation: {
+            animateOnScroll: true,
+          }
+        }
+      },
+      {
+        smallImage: {
+          path: getImagePath("Scootify_yellow.jpg"),
+          animation: {
+            animateOnScroll: true,
+          }
+        }
+      },
+      {
+        textsTop: [
+            {
+              text: `
+### Other notable features
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis urna et scelerisque. Nulla dignissim ac eros ut lobortis. Donec eleifend quis nisi in fringilla. Integer rhoncus, leo vulputate dictum elementum, odio velit condimentum massa, a eleifend orci tellus sed ligula. Duis convallis volutpat augue, id volutpat augue porttitor eu. Donec risus mi, semper non dictum finibus, efficitur nec nunc. Sed iaculis odio nec efficitur posuere. Aliquam porta lectus orci, vel cursus sem laoreet sit amet. Ut viverra nulla at scelerisque aliquam. Duis venenatis arcu nunc, sit amet luctus augue egestas sit amet. Sed eget est est. Proin quis lectus eget magna volutpat consequat at luctus ex. Quisque posuere iaculis vestibulum. Phasellus non interdum nibh. Ut nisi orci, cursus nec euismod at, pharetra quis massa.
+`,
+            }
+          ],
       },
       {
         backgroundColor: "#212121",
@@ -136,7 +165,7 @@ and we named it
   &minus; Cisero
 
 \` \`  
-This product comes in a variety of colors
+This product comes in a variety of colors as well
 `,
           },
         ],
