@@ -197,6 +197,7 @@ export default function Header(props: Props) {
           z-index: 1001;
           position: fixed;
           width: 100%;
+          padding: 0;
           color: #000000;
           margin: 0 0 0 0;
           text-align: center;

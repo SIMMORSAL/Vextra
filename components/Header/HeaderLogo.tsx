@@ -84,8 +84,8 @@ export default function HeaderLogo(p: Props) {
             target={"_blank"}
             rel={"noreferrer"}
             css={css`
-              grid-row: 1;
               z-index: 1002;
+              grid-row: 1;
               grid-column: 1;
               cursor: pointer;
               transform: translateY(${p.showDev ? "39px" : -headerHeight + "px"})
