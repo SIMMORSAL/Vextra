@@ -17,7 +17,6 @@ export const themeLight = {
     MozHyphens: "none",
     msHyphens: "none",
     hyphens: "none",
-    border: "1px solid #2F2218",
   },
   'pre[class*="language-"]': {
     color: "#3c3836",
@@ -41,6 +40,7 @@ export const themeLight = {
     background: "#50321c",
     // background: "rgb(188,130,82)",
     borderRadius: "4px",
+    border: "1px solid #2F2218",
   },
   'pre[class*="language-"]::-moz-selection': {
     color: "#282828",
