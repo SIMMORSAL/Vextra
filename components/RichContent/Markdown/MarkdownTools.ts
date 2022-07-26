@@ -5,7 +5,7 @@ export function getInlineCode(text, color?) {
       color: ${color ? color : "#e32352"}; 
       font-family: 'Source Code Pro', monospace; 
       font-size: .8em; 
-      background-color: rgba(147,179,255,0.18);
+      background-color: rgba(214,143,96,0.16);
       border-left: 1px solid rgba(187,119,30,0.18);
       border-right: 1px solid rgba(187,119,30,0.18);
       padding: 1px 0 1px 8px;

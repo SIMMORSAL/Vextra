@@ -45,7 +45,7 @@ export function getAllPortfolios(): Portfolio[] {
       linkId: "rich-content-handbook",
       name: "Rich Content Handbook",
       isBig: true,
-      backgroundColor: "#8f3a00",
+      backgroundColor: "#a86048",
       headerItemsColor: "#fff3ee",
       isBackgroundDark: false,
       image: "/images/portfolio/PortfolioItemRichContentHandbook.jpg",

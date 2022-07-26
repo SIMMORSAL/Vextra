@@ -1,6 +1,6 @@
 export const themeLight = {
   'code[class*="language-"]': {
-    color: "#e0002f",
+    color: "#c92525",
     // fontFamily: 'Consolas, Monaco, "Andale Mono", monospace',
     fontFamily: "Source Code Pro",
     fontSize: ".9em",
@@ -37,7 +37,8 @@ export const themeLight = {
     padding: "1em",
     margin: "0.5em 0",
     overflow: "auto",
-    background: "rgba(147,179,255,0.18)",
+    background: "#d89060",
+    // background: "rgb(188,130,82)",
     borderRadius: "8px",
     border: "1px solid rgba(30,37,187,0.18)",
   },
@@ -79,7 +80,7 @@ export const themeLight = {
     borderRadius: "0.3em",
   },
   comment: {
-    color: "#707f8f",
+    color: "#b44102",
   },
   prolog: {
     color: "#7c6f64",
@@ -106,10 +107,10 @@ export const themeLight = {
     color: "#9d0006",
   },
   operator: {
-    color: "#7c6f64",
+    color: "#732c06",
   },
   punctuation: {
-    color: "#7c6f64",
+    color: "#732c06",
   },
   "attr-name": {
     color: "#7c6f64",
@@ -142,10 +143,10 @@ export const themeLight = {
     color: "#9d0006",
   },
   variable: {
-    color: "#e19400",
+    color: "#794d00",
   },
   string: {
-    color: "#5a8800",
+    color: "#136e00",
   },
   char: {
     color: "#797403",

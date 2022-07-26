@@ -58,7 +58,7 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
     [
       {
         minHeight: "16px",
-        backgroundColor: "#8e3a01",
+        backgroundColor: "#a86048",
       },
       {
         nameId: "intro",
@@ -439,11 +439,11 @@ This is \${getInlineCode("anInlineCode", "#1140b2")}.
 # Rich Image 
 
 You can use an instance of Rich Image in multiple places, such 
-as ${getInlineCode("bigImage", "#e19400")}, ${getInlineCode(
+as ${getInlineCode("bigImage", "#794d00")}, ${getInlineCode(
               "smallImage",
-              "#e19400"
+              "#794d00"
             )}, 
-and ${getInlineCode("mediaBar", "#e19400")}.
+and ${getInlineCode("mediaBar", "#794d00")}.
 
 ###### Example:
 
@@ -468,7 +468,7 @@ not important no provide this, but if you do, content won't jump down when image
 You may also play with this number and crop images.
 
 ${getInlineCode("align", "#9d0006")}: Only works 
-in ${getInlineCode("smallImage ", "#e19400")}.
+in ${getInlineCode("smallImage ", "#794d00")}.
 `,
           },
         ],
@@ -489,11 +489,11 @@ in ${getInlineCode("smallImage ", "#e19400")}.
 # Rich Video
 
 Like Rich Image, you can use this in multiple places such 
-as ${getInlineCode("bigVideo", "#e19400")}, ${getInlineCode(
+as ${getInlineCode("bigVideo", "#794d00")}, ${getInlineCode(
               "smallVideo",
-              "#e19400"
+              "#794d00"
             )}, 
-and ${getInlineCode("mediaBar", "#e19400")}.
+and ${getInlineCode("mediaBar", "#794d00")}.
 
 ###### Example
 \`\`\`js
@@ -534,7 +534,7 @@ that modern browsers won't allow videos to autoplay with sound.
 Therefore the sound will be muted.
 
 ${getInlineCode("align", "#9d0006")}: Only works 
-in ${getInlineCode("smallVideo ", "#e19400")}.
+in ${getInlineCode("smallVideo ", "#794d00")}.
 `,
           },
         ],
