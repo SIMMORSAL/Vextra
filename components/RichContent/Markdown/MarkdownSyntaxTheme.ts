@@ -1,6 +1,6 @@
 export const themeLight = {
   'code[class*="language-"]': {
-    color: "#c92525",
+    color: "#ff4d74",
     // fontFamily: 'Consolas, Monaco, "Andale Mono", monospace',
     fontFamily: "Source Code Pro",
     fontSize: ".9em",
@@ -37,10 +37,10 @@ export const themeLight = {
     padding: "1em",
     margin: "0.5em 0",
     overflow: "auto",
-    background: "#d89060",
+    background: "#50321c",
     // background: "rgb(188,130,82)",
     borderRadius: "8px",
-    border: "1px solid rgba(30,37,187,0.18)",
+    border: "2.5px solid #2F2218",
   },
   'pre[class*="language-"]::-moz-selection': {
     color: "#282828",
@@ -80,7 +80,7 @@ export const themeLight = {
     borderRadius: "0.3em",
   },
   comment: {
-    color: "#b44102",
+    color: "#af9785",
   },
   prolog: {
     color: "#7c6f64",
@@ -89,28 +89,28 @@ export const themeLight = {
     color: "#7c6f64",
   },
   delimiter: {
-    color: "#9d0006",
+    color: "#dec1ac",
   },
   boolean: {
-    color: "#9d0006",
+    color: "#60b2cc",
   },
   keyword: {
-    color: "#9d0006",
+    color: "#dec1ac",
   },
   selector: {
-    color: "#9d0006",
+    color: "#dec1ac",
   },
   important: {
-    color: "#9d0006",
+    color: "#dec1ac",
   },
   atrule: {
-    color: "#9d0006",
+    color: "#dec1ac",
   },
   operator: {
-    color: "#732c06",
+    color: "#ff7529",
   },
   punctuation: {
-    color: "#732c06",
+    color: "#ec6522",
   },
   "attr-name": {
     color: "#7c6f64",
@@ -125,28 +125,28 @@ export const themeLight = {
     color: "#984971",
   },
   builtin: {
-    color: "#984971",
+    color: "#f57db0",
   },
   entity: {
     color: "#8f3f71",
   },
   number: {
-    color: "#980055",
+    color: "#e85fff",
   },
   symbol: {
     color: "#8f3f71",
   },
   property: {
-    color: "#9d0006",
+    color: "#ff414d",
   },
   constant: {
-    color: "#9d0006",
+    color: "#ff414d",
   },
   variable: {
-    color: "#794d00",
+    color: "#ffc059",
   },
   string: {
-    color: "#166906",
+    color: "#2ece11",
   },
   char: {
     color: "#797403",
@@ -162,7 +162,7 @@ export const themeLight = {
     textDecoration: "underline",
   },
   function: {
-    color: "#5f4c80",
+    color: "#b082fd",
   },
   regex: {
     background: "#797403",
