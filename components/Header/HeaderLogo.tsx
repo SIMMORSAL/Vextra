@@ -85,9 +85,10 @@ export default function HeaderLogo(p: Props) {
             rel={"noreferrer"}
             css={css`
               grid-row: 1;
+              z-index: 1002;
               grid-column: 1;
               cursor: pointer;
-              transform: translateY(${p.showDev ? "8vh" : -headerHeight + "px"})
+              transform: translateY(${p.showDev ? "39px" : -headerHeight + "px"})
                 scale(${p.showDev ? 2 : 1});
               transition: transform 600ms ease;
             `}

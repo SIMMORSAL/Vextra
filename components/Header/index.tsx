@@ -111,7 +111,11 @@ export default function Header(props: Props) {
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        background-color: ${shouldBlur ? `${bgColor}88` : "transparent"};
+        background-color: ${showDev
+          ? "#0056b7"
+          : shouldBlur
+          ? `${bgColor}${bgColor.length === 7 ? "88" : ""}`
+          : "transparent"};
         padding-bottom: ${shouldBlur ? 20 : 0}px;
         backdrop-filter: blur(${shouldBlur ? 3 : 0}px);
         -webkit-backdrop-filter: blur(${shouldBlur ? 3 : 0}px);
@@ -188,6 +192,26 @@ export default function Header(props: Props) {
           Contact Me
         </HeaderButton>
       )}
+      <p
+        css={css`
+          z-index: 1001;
+          position: fixed;
+          width: 100%;
+          color: #000000;
+          margin: 0 0 0 0;
+          text-align: center;
+          font-size: 0.9em;
+          font-weight: bold;
+          opacity: ${showDev ? 1 : 0};
+          filter: blur(${showDev ? 0 : 24}px);
+          transform: translateY(${showDev ? "140px" : headerHeight + "px"});
+          transition: 600ms ease;
+          transition-property: opacity, filter, transform;
+          transition-delay: 200ms;
+        `}
+      >
+        WE STAND WITH UKRAINE
+      </p>
     </div>
   );
 }

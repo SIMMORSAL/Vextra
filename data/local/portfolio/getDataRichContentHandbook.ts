@@ -740,6 +740,8 @@ you can have all of this anywhere you want by copying  ${getInlineCode(
       {
         nameId: "SIMMORSAL",
         minHeight: `calc(100vh - ${headerHeight}px)`,
+        textColor: "#000000",
+        backgroundColor: "#fdd403",
         // smallImage: {
         //   path: "/images/logo_big.png",
         //   animation: {
@@ -773,7 +775,7 @@ I give discounts on my own work ;)
   <div id="sim" style="
     display: flex; 
     flex-direction: row; 
-    color: #232323; 
+    color: #5d3600; 
     align-items: center; 
     font-weight: bold;
     justify-content: center;
@@ -782,7 +784,7 @@ I give discounts on my own work ;)
       class="fa-solid fa-envelope"
       style="
         width: 30px;
-        color: #000000; 
+        color: #5d3600; 
         cursor: pointer;
         margin: 16px 8px;
         padding: 0;
@@ -801,11 +803,15 @@ I give discounts on my own work ;)
     ] as RichChunkModel[]
   ).map((v: RichChunkModel, i) => {
     if (v.nameId === undefined) v.nameId = i.toString();
-    if (v.textsTop !== undefined)
+    if (v.textsTop !== undefined) {
       v.textsTop = v.textsTop.map((vv: RichTextModel) => {
         if (vv.userSelect === undefined) vv.userSelect = "text";
         return vv;
       });
+    }
+    if (v.backgroundColor === undefined && v.gradient === undefined)
+      v.backgroundColor = "#f5d7af";
+
     return v;
   });
 }
