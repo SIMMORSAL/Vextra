@@ -207,7 +207,7 @@ export default function Header(props: Props) {
           transform: translateY(${showDev ? "140px" : headerHeight + "px"});
           transition: 600ms ease;
           transition-property: opacity, filter, transform;
-          transition-delay: 200ms;
+          transition-delay: ${showDev ? 800 : 200}ms;
         `}
       >
         WE STAND WITH UKRAINE

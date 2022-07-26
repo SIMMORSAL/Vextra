@@ -57,6 +57,10 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
   return (
     [
       {
+        minHeight: "16px",
+        backgroundColor: "#8e3a01",
+      },
+      {
         nameId: "intro",
         textsTop: [
           {
