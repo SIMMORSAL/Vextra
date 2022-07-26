@@ -19,7 +19,7 @@ export function getDataProject3Gallery(): RichChunkModel[] {
   return (
     [
       {
-        minHeight: "35vh",
+        minHeight: "20vh",
         textsTop: [
             {
               align: "center",
