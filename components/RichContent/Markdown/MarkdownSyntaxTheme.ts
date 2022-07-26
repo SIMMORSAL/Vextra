@@ -39,7 +39,7 @@ export const themeLight = {
     overflow: "auto",
     background: "#50321c",
     // background: "rgb(188,130,82)",
-    borderRadius: "8px",
+    borderRadius: "12px",
     border: "1px solid #2F2218",
   },
   'pre[class*="language-"]::-moz-selection': {
