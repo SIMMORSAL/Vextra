@@ -40,7 +40,7 @@ export const themeLight = {
     background: "#50321c",
     // background: "rgb(188,130,82)",
     borderRadius: "8px",
-    border: "3px solid #2F2218",
+    border: "1px solid #2F2218",
   },
   'pre[class*="language-"]::-moz-selection': {
     color: "#282828",
