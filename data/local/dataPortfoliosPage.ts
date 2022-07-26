@@ -54,7 +54,7 @@ export function getAllPortfolios(): Portfolio[] {
     {
       linkId: "scootify-object",
       name: "Scootify Object",
-      backgroundColor: "#e0e0e0",
+      backgroundColor: "#f5d7af",
       headerItemsColor: "#313141",
       isBackgroundDark: false,
       image: "/images/portfolio/PortfolioItemScootifyObject.jpg",
