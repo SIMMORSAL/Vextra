@@ -116,16 +116,16 @@ export const themeLight = {
     color: "#7c6f64",
   },
   tag: {
-    color: "#b57614",
+    color: "#984971",
   },
   "tag.punctuation": {
-    color: "#b57614",
+    color: "#984971",
   },
   doctype: {
-    color: "#b57614",
+    color: "#984971",
   },
   builtin: {
-    color: "#b57614",
+    color: "#984971",
   },
   entity: {
     color: "#8f3f71",
@@ -146,7 +146,7 @@ export const themeLight = {
     color: "#794d00",
   },
   string: {
-    color: "#136e00",
+    color: "#166906",
   },
   char: {
     color: "#797403",
@@ -162,7 +162,7 @@ export const themeLight = {
     textDecoration: "underline",
   },
   function: {
-    color: "#b57614",
+    color: "#5f4c80",
   },
   regex: {
     background: "#797403",

@@ -35,9 +35,7 @@ return (
             animateOnScroll: false,
             duration: 3000,
           },
-          text: \`
-Scootify is protected by Carbon-Ceramic and runs on Quantized-hydroxium
-\`,
+          text: \`...\`,
         },
       ],
     },
@@ -55,13 +53,7 @@ Scootify is protected by Carbon-Ceramic and runs on Quantized-hydroxium
       textsTop: [
         {
           color: "rgba(255,255,255,0.91)",
-          text: \`
-## Structure:
-
-Protected by **Carbon-Ceramic**...
-
-## Fuel: ...
-\`,
+          text: \`...\`,
         },
       ],
     },
@@ -92,10 +84,7 @@ Protected by **Carbon-Ceramic**...
       textsTop: [
         {
           color: "rgba(255,255,255,0.91)",
-          text: \`
-### Other notable features
-Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-\`,
+          text: \`...\`,
         },
       ],
     },
@@ -113,9 +102,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit...
               animateOnScroll: true,
               animateFrom: "right",
             },
-            text: \`
-### Look On Fleek
-\`,
+            text: \`...\`,
           },
         ],
       },
@@ -128,9 +115,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit...
       textsBottom: [
         {
           align: "center",
-          text: \`
-That's not all I've brought to life in the world of transportation
-\`,
+          text: \`...\`,
         },
       ],
     },
@@ -141,13 +126,7 @@ That's not all I've brought to life in the world of transportation
       freeSpaceBottom: "15vh",
       textsTop: [
         {
-          text: \`
-For two years I worked 
-with  <img alt="SpaceX" src="/images/portfolio/scootify/spacex_logo.png" width="100px"/> and 
-some brilliant Italian engineers,
-and together we made a Vespa capable of driving on Mars, 
-and we named it 
-\`,
+          text: \`...\`,
         },
         {
           align: "center",
@@ -176,14 +155,7 @@ and we named it
       freeSpaceBottom: "70px",
       textsTop: [
         {
-          text: \`
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit ..."
-
-&minus; Cisero
-
-
-This product comes in a variety of colors
-\`,
+          text: \`...\`,
         },
       ],
     },
@@ -194,7 +166,7 @@ This product comes in a variety of colors
       textsTop: [
         {
           align: "end",
-          text: "#### I like the purple color more than red and blue combined",
+          text: "...",
           color: "#fff",
         },
       ],
@@ -207,11 +179,7 @@ This product comes in a variety of colors
       textColor: "#fff",
       textsTop: [
         {
-          text: \`
-Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-
-Donec eleifend quis nisi in fringilla. Integer rhoncus, leo...
-\`,
+          text: \`...\`,
         },
       ],
     },
@@ -254,12 +222,7 @@ Donec eleifend quis nisi in fringilla. Integer rhoncus, leo...
             animateFrom: "top",
             translateDistance: 10,
           },
-          text: \`
-Special thanks to
-
-#### [Rochak Shukla](https://www.freepik.com/photos/moped) for Scootify and Vespia images
-#### [Marek Piwnicki](https://unsplash.com/@marekpiwnicki) for the glimpse into Mars
-\`,
+          text: \`...\`,
         },
       ],
     },
