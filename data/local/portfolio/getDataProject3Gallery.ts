@@ -4,7 +4,7 @@ export function getDataProject3Gallery(): RichChunkModel[] {
   const images = Array(18).fill(0).map((_, i) => {
       return {
         freeSpaceTop: "24px",
-        smallImage: {
+        bigImage: {
           path: `/images/portfolio/gallery/g${i}.jpg`,
           aspectRatio: "1",
           animation: {
