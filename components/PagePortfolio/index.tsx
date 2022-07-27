@@ -16,13 +16,19 @@ export default function PagePortfolio(props: Props) {
   const router = useRouter();
   const portfolioItems = getAllPortfolios();
 
-  const { newTabSelected, setNewTabSelected } = useContext(_AppContext);
+  const {
+    newTabSelected,
+    setNewTabSelected,
+    setPortfolioBgColor,
+    setPortfolioHeaderItemColor,
+  } = useContext(_AppContext);
   const [isExitingPage, setIsExitingPage] = useState(false);
   const [selectedItem, setSelectedItem] = useState<Portfolio | undefined>();
 
   useEffect(() => {
     setNewTabSelected("portfolio");
-    // setBgColor(colorBackground)
+    setPortfolioBgColor("");
+    setPortfolioHeaderItemColor("");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -40,6 +46,7 @@ export default function PagePortfolio(props: Props) {
         width: 100%;
         height: 100%;
         min-height: calc(100vh - 2px);
+        padding: ${headerHeight}px 24px 24px;
         //border: 1px solid #484848;
         font-weight: bold;
         text-align: center;
@@ -54,65 +61,51 @@ export default function PagePortfolio(props: Props) {
         transition-property: opacity, margin-top;
       `}
     >
-      <div
+      <Grid
+        container
         css={css`
-          background-color: ${selectedItem !== undefined &&
-          selectedItem.backgroundColor !== undefined
-            ? selectedItem.backgroundColor
-            : colorBackground};
-          //background-color: red;
-          width: 100%;
-          padding: ${headerHeight}px 24px 24px;
-
-          transition: background-color 300ms ease;
+          max-width: 600px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         `}
       >
-        <Grid
-          container
-          css={css`
-            max-width: 600px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          `}
-        >
-          {portfolioItems.map((value, index) => {
-            if (value.awardImage) awardCounts++;
+        {portfolioItems.map((value, index) => {
+          if (value.awardImage) awardCounts++;
 
-            if (index === 0 || value.isBig) smallsSinceLastBig = 0;
-            else smallsSinceLastBig++;
+          if (index === 0 || value.isBig) smallsSinceLastBig = 0;
+          else smallsSinceLastBig++;
 
-            const xsSize =
-              index === 0
-                ? 12
-                : value.isBig
-                ? 12
-                : index === portfolioItems.length - 1 && smallsSinceLastBig % 2 === 1
-                ? 7.3
-                : 6;
+          const xsSize =
+            index === 0
+              ? 12
+              : value.isBig
+              ? 12
+              : index === portfolioItems.length - 1 && smallsSinceLastBig % 2 === 1
+              ? 7.3
+              : 6;
 
-            return (
-              <Grid
-                key={value.name}
-                item
-                xs={xsSize}
-                css={css`
-                  display: flex;
-                  justify-content: center;
-                `}
-              >
-                <PortfolioItem
-                  portfolio={value}
-                  index={index}
-                  awardDelayMultiplier={awardCounts}
-                  selectedItem={selectedItem}
-                  setSelectedItem={setSelectedItem}
-                />
-              </Grid>
-            );
-          })}
-        </Grid>
-      </div>
+          return (
+            <Grid
+              key={value.name}
+              item
+              xs={xsSize}
+              css={css`
+                display: flex;
+                justify-content: center;
+              `}
+            >
+              <PortfolioItem
+                portfolio={value}
+                index={index}
+                awardDelayMultiplier={awardCounts}
+                selectedItem={selectedItem}
+                setSelectedItem={setSelectedItem}
+              />
+            </Grid>
+          );
+        })}
+      </Grid>
       {/*<GalleryButton delay={portfolioItems.length * 150 + 200} />*/}
     </div>
   );

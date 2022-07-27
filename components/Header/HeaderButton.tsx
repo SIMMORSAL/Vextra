@@ -26,7 +26,7 @@ export default function HeaderButton(p: Props) {
   const isTabRootSelected = getSubTab(router) === undefined;
 
   const [isHovering, setIsHovering] = useState(false);
-  const { setNewTabSelected, setFlashContent, setPageChangeRequested } =
+  const { setNewTabSelected, setFlashContent, setTabChangeRequested } =
     useContext(_AppContext);
 
   return (
@@ -45,7 +45,7 @@ export default function HeaderButton(p: Props) {
             // setTimeout(() => {
             //   router.push(`/${p.page}/`);
             // }, 100);
-            changePage(router, `/${p.page}/`, 400, setPageChangeRequested);
+            changePage(router, `/${p.page}/`, 400, setTabChangeRequested);
           }
         }
       }}

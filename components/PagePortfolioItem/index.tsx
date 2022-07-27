@@ -13,12 +13,12 @@ interface Props {}
 export default function PagePortfolioItem(p: Props) {
   const router = useRouter();
   const {
-    pageChangeRequested,
+    tabChangeRequested,
     portfolioBgColor,
     setPortfolioBgColor,
     setPortfolioHeaderItemColor,
   } = useContext(_AppContext);
-  const initialPageChangeRequest = useRef(pageChangeRequested);
+  const initialPageChangeRequest = useRef(tabChangeRequested);
 
   const [isExitingPage, setIsExitingPage] = useState(false);
   const [isInitialRender, setIsInitialRender] = useState(true);
@@ -50,7 +50,7 @@ export default function PagePortfolioItem(p: Props) {
   }, [dataPortfolio]);
 
   useEffect(() => {
-    if (initialPageChangeRequest.current !== pageChangeRequested) {
+    if (initialPageChangeRequest.current !== tabChangeRequested) {
       setIsExitingPage(true);
 
       setPortfolioBgColor("");
@@ -58,7 +58,7 @@ export default function PagePortfolioItem(p: Props) {
     } else {
       setIsExitingPage(false);
     }
-  }, [pageChangeRequested]);
+  }, [tabChangeRequested]);
 
   return (
     <div

@@ -43,10 +43,7 @@ export default function Header(props: Props) {
   }, []);
 
   useEffect(() => {
-    if (
-      router.query.PortfolioID !== undefined &&
-      portfolioHeaderItemColor.length > 0
-    ) {
+    if (portfolioHeaderItemColor.length > 0) {
       setBgColor(portfolioBgColor);
       setLogoColor(portfolioHeaderItemColor);
       setItemColor(portfolioHeaderItemColor);
