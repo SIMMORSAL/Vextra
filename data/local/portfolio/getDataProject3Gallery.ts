@@ -6,7 +6,6 @@ export function getDataProject3Gallery(): RichChunkModel[] {
         freeSpaceTop: "24px",
         bigImage: {
           path: `/images/portfolio/gallery/g${i}.jpg`,
-          aspectRatio: "1",
           animation: {
             animateOnScroll: i !== 0,
             animateFrom: "bottom",
