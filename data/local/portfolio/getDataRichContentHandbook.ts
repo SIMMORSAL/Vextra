@@ -57,21 +57,26 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
   return (
     [
       {
-        minHeight: "16px",
+        nameId: "header",
+        freeSpaceTop: "16px",
         backgroundColor: "#a86048",
+        textsTop: [
+            {
+              align: "center",
+              color: "white",
+              animation: {
+                duration: 2000,
+              },
+              text: `
+# Rich Content Handbook
+`,
+            },
+          ]
+      },
       },
       {
         nameId: "intro",
         textsTop: [
-          {
-            align: "center",
-            animation: {
-              duration: 2000,
-            },
-            text: `
-# Rich Content Handbook
-`,
-          },
           {
             animation: {
               animateFrom: "bottom",
