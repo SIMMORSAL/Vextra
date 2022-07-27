@@ -52,7 +52,7 @@ export default function Header(props: Props) {
       setLogoColor(colorLogoNormal);
       setItemColor(colorHeaderItem);
     }
-  }, [router.query, portfolioBgColor, portfolioHeaderItemColor]);
+  }, [portfolioBgColor, portfolioHeaderItemColor]);
 
   useEffect(() => {
     if (
