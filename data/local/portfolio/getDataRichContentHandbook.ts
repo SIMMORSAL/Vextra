@@ -66,13 +66,17 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
           {
             align: "center",
             animation: {
-              
+              duration: 2000,
             },
             text: `
 # Rich Content Handbook
 `,
           },
           {
+            animation: {
+              animateFrom: "bottom",
+              duration: 1600,
+            },
             text: ` 
 
 This is a full blown test in demonstration of Rich Chunks abilities. 
