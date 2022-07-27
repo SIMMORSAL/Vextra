@@ -13,32 +13,12 @@ export function Content({ Component, pageProps }) {
 
   const tabRootIsShowing = getSubTab(router) === undefined;
 
-  const [borderTransitionDuration, setBorderTransitionDuration] = useState(200);
-  const prevBg = useRef("");
-  const ti = useRef(null);
-
-  useEffect(() => {
-    return () => {
-      clearTimeout(ti.current);
-    };
-  }, []);
-
   useEffect(() => {
     if (flashContent)
       setTimeout(() => {
         setFlashContent(false);
-      }, 300);
+      }, 250);
   }, [flashContent, setFlashContent]);
-  useEffect(() => {
-    if (prevBg.current !== "" && portfolioBgColor === "") {
-      clearTimeout(ti.current);
-      setBorderTransitionDuration(1000);
-      ti.current = setTimeout(() => {
-        setBorderTransitionDuration(200);
-      }, 1000);
-    }
-    prevBg.current = portfolioBgColor;
-  }, [portfolioBgColor]);
 
   return (
     <div
@@ -47,16 +27,12 @@ export function Content({ Component, pageProps }) {
         height: calc(100% - ${headerHeight}px);
         transform: scale(${flashContent ? 0.95 : 1});
         border: ${tabRootIsShowing
-          ? portfolioBgColor !== ""
-            ? ""
-            : flashContent
+          ? flashContent
             ? "1px solid #484848"
-            : `1px solid ${
-                portfolioBgColor === "" ? colorBackground : portfolioBgColor
-              }`
+            : `0px solid transparent`
           : ""};
 
-        transition: ${borderTransitionDuration}ms ease;
+        transition: 200ms ease;
         transition-property: opacity, transform, border-bottom-color,
           border-bottom-width, border-right-color, border-right-width,
           border-left-color, border-left-width, border-top-color, border-top-width;
