@@ -73,7 +73,6 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
             },
           ]
       },
-      },
       {
         nameId: "intro",
         textsTop: [
