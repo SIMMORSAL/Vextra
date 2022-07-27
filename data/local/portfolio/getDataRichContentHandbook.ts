@@ -65,6 +65,9 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
         textsTop: [
           {
             align: "center",
+            animation: {
+              
+            },
             text: `
 # Rich Content Handbook
 `,
