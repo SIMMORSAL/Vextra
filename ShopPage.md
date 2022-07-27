@@ -11,7 +11,9 @@ Vextra is written using a combination of NextJS and Emotion, provided by Materia
 
 - Everything Animated.
 - Elegant flow and User Experience.
-- Powerful and flexible page content generator engine that can work anywhere.
+- Powerful and flexible page content generator engine that can work anywhere. Here's some examples made with it:
+  - [links of pages]
+  - drunk night
 - Minimal work required for backend and CMS integration.
 - Detailed ReadMe.md file that explains how you can setup your project.
 - Very Detailed Rich Page that explains how you can build your own page. You can check it out [from this link](https://mitra-portfolio.vercel.app/portfolio/rich-content-handbook)

@@ -1,7 +1,7 @@
 import { RichChunkModel } from "../../models/rich-chunk/RichChunkModel";
 
 export function getDataProject3Gallery(): RichChunkModel[] {
-  const images = Array(9).fill(0).map((_, i) => {
+  const images = Array(18).fill(0).map((_, i) => {
       return {
         freeSpaceTop: "24px",
         smallImage: {
