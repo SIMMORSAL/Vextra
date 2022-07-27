@@ -12,8 +12,12 @@ interface Props {}
 
 export default function PagePortfolioItem(p: Props) {
   const router = useRouter();
-  const { pageChangeRequested, setPortfolioBgColor, setPortfolioHeaderItemColor } =
-    useContext(_AppContext);
+  const {
+    pageChangeRequested,
+    portfolioBgColor,
+    setPortfolioBgColor,
+    setPortfolioHeaderItemColor,
+  } = useContext(_AppContext);
   const initialPageChangeRequest = useRef(pageChangeRequested);
 
   const [isExitingPage, setIsExitingPage] = useState(false);
@@ -69,7 +73,7 @@ export default function PagePortfolioItem(p: Props) {
         padding-top: ${headerHeight}px;
         opacity: ${isExitingPage || isInitialRender ? 0 : 1};
         margin-top: ${isExitingPage ? 12 : 0}px;
-        background-color: ${dataPortfolio?.backgroundColor};
+        background-color: ${portfolioBgColor};
 
         transition: ${isExitingPage ? 100 : 200}ms ease;
         transition-property: opacity, margin-top;
