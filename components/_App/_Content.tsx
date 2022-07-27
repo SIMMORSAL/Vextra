@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { _AppContext } from "../../helpers/providers/provider_App";
 import { useRouter } from "next/router";
 import { css } from "@emotion/react";
@@ -13,12 +13,32 @@ export function Content({ Component, pageProps }) {
 
   const tabRootIsShowing = getSubTab(router) === undefined;
 
+  const [borderTransitionDuration, setBorderTransitionDuration] = useState(200);
+  const prevBg = useRef("");
+  const ti = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      clearTimeout(ti.current);
+    };
+  }, []);
+
   useEffect(() => {
     if (flashContent)
       setTimeout(() => {
         setFlashContent(false);
       }, 300);
   }, [flashContent, setFlashContent]);
+  useEffect(() => {
+    clearTimeout(ti.current);
+    if (prevBg.current !== "" && portfolioBgColor === "") {
+      setBorderTransitionDuration(1000);
+      ti.current = setTimeout(() => {
+        setBorderTransitionDuration(200);
+      }, 1000);
+    }
+    prevBg.current = portfolioBgColor;
+  }, [portfolioBgColor]);
 
   return (
     <div
@@ -36,7 +56,7 @@ export function Content({ Component, pageProps }) {
               }`
           : ""};
 
-        transition: 300ms ease;
+        transition: ${borderTransitionDuration}ms ease;
         transition-property: opacity, transform, border-bottom-color,
           border-bottom-width, border-right-color, border-right-width,
           border-left-color, border-left-width, border-top-color, border-top-width;
