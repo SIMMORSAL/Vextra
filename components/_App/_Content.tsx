@@ -30,8 +30,8 @@ export function Content({ Component, pageProps }) {
       }, 300);
   }, [flashContent, setFlashContent]);
   useEffect(() => {
-    clearTimeout(ti.current);
     if (prevBg.current !== "" && portfolioBgColor === "") {
+      clearTimeout(ti.current);
       setBorderTransitionDuration(1000);
       ti.current = setTimeout(() => {
         setBorderTransitionDuration(200);
