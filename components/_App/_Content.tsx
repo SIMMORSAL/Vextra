@@ -1,11 +1,11 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { _AppContext } from "../../helpers/providers/provider_App";
 import { useRouter } from "next/router";
 import { css } from "@emotion/react";
 import { headerHeight } from "../Header";
 import { getSubTab } from "../../helpers/tools/tools";
 
-export function Content({ Component, pageProps, routeChops }) {
+export function Content({ Component, pageProps }) {
   const router = useRouter();
   const { flashContent, setFlashContent } = useContext(_AppContext);
 
@@ -17,8 +17,6 @@ export function Content({ Component, pageProps, routeChops }) {
         setFlashContent(false);
       }, 200);
   }, [flashContent, setFlashContent]);
-
-  console.log(`11111  Content:  ${flashContent}`);
 
   return (
     <div

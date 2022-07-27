@@ -8,6 +8,7 @@ import React, {
 import { useRouter } from "next/router";
 import { getActiveTab } from "../tools/tools";
 import { _GeneralDataModel, getGeneralData } from "../../data/local/_dataGeneral";
+import { colorBackground } from "../../data/colors";
 
 const LSK_App = "_App";
 

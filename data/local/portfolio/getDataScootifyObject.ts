@@ -22,7 +22,7 @@ const getImagePath = (name: string) => {
 return (
   [
     {
-      nameId: "project-name",
+      nameId: "1",
       textsTop: [
         {
           align: "center",
@@ -41,6 +41,7 @@ return (
     },
     // ---
     {
+      nameId: "2",
       gradient: ["#ee644e", "#b94134"],
       bigImage: {
         path: getImagePath("scootify_red.jpg"),
@@ -49,6 +50,7 @@ return (
     },
     // ---
     {
+      nameId: "3",
       minHeight: "400px",
       textsTop: [
         {
@@ -59,6 +61,7 @@ return (
     },
     // ---
     {
+      nameId: "4",
       smallImage: {
         path: getImagePath("scootify_green.jpg"),
         aspectRatio: "1000/680",
@@ -69,6 +72,7 @@ return (
     },
     // ---
     {
+      nameId: "5",
       freeSpaceTop: "20px",
       smallImage: {
         path: getImagePath("scootify_yellow.jpg"),
@@ -80,6 +84,7 @@ return (
     },
     // ---
     {
+      nameId: "6",
       freeSpaceBottom: "70px",
       textsTop: [
         {
@@ -90,6 +95,7 @@ return (
     },
     // ---
     {
+      nameId: "7",
       gradient: ["rgb(18,18,18)", "#212121"],
       minHeight: "40vh",
       textColor: "white",
@@ -109,6 +115,7 @@ return (
     },
     // ---
     {
+      nameId: "8",
       backgroundColor: "#101010",
       minHeight: "90vh",
       textColor: "white",
@@ -121,6 +128,7 @@ return (
     },
     // ---
     {
+      nameId: "9",
       gradient: ["#fcc3a788", "#e0500088"],
       freeSpaceTop: "15vh",
       freeSpaceBottom: "15vh",
@@ -138,6 +146,7 @@ return (
     },
     // ---
     {
+      nameId: "10",
       minHeight: "80vh",
       backgroundImage: getImagePath("mars_bg.jpg"),
       bigImage: {
@@ -150,6 +159,7 @@ return (
     },
     // ---
     {
+      nameId: "11",
       textColor: "#fff",
       freeSpaceTop: "50px",
       freeSpaceBottom: "70px",
@@ -161,6 +171,7 @@ return (
     },
     // ---
     {
+      nameId: "12",
       freeSpaceBottom: "800px",
       backgroundImage: getImagePath("vespia_purple.jpg"),
       textsTop: [
@@ -173,6 +184,7 @@ return (
     },
     // ---
     {
+      nameId: "13",
       freeSpaceTop: "100px",
       freeSpaceBottom: "200px",
       gradient: ["#aa64d5", "#a948eb"],
@@ -185,6 +197,7 @@ return (
     },
     // ---
     {
+      nameId: "14",
       backgroundImage: getImagePath("vespia_boop.jpg"),
       minHeight: "70vh",
       mediaBar: {
@@ -212,6 +225,7 @@ return (
     },
     // ---
     {
+      nameId: "15",
       minHeight: "100vh",
       textColor: "#fff",
       backgroundColor: "#b53f32",
@@ -226,11 +240,7 @@ return (
         },
       ],
     },
-  ] as RichChunkModel[]
-).map((v: RichChunkModel, i) => {
-  if (v.nameId === undefined) v.nameId = i.toString();
-  return v;
-});
+  ] as RichChunkModel[];
 \`\`\`
 `,
           },

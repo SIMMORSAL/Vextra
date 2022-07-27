@@ -82,11 +82,7 @@ function MyApp({ Component, pageProps }) {
             {isLandingPage ? (
               <Component {...pageProps} />
             ) : (
-              <Content
-                Component={Component}
-                pageProps={pageProps}
-                routeChops={routeChops}
-              />
+              <Content Component={Component} pageProps={pageProps} />
             )}
             <_MoveToMain />
           </div>

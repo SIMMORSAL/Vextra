@@ -1,9 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { css } from "@emotion/react";
 import { Portfolio } from "../../data/models/local-data/portfolio";
 import { useRouter } from "next/router";
 import { cacheImage } from "../../helpers/tools/tools";
+import { colorBackground } from "../../data/colors";
+import { _AppContext } from "../../helpers/providers/provider_App";
 
 interface Props {
   portfolio: Portfolio;
@@ -15,6 +17,8 @@ interface Props {
 
 export default function PortfolioItem(p: Props) {
   const router = useRouter();
+  const { setPortfolioBgColor, setPortfolioHeaderItemColor } =
+    useContext(_AppContext);
   const [beginFadeIn, setBeginFadeIn] = useState(false);
   const [fadeInAward, setFadeInAward] = useState(false);
   const [makeAwardSmall, setMakeAwardSmall] = useState(false);
@@ -70,6 +74,13 @@ export default function PortfolioItem(p: Props) {
         // noinspection JSIgnoredPromiseFromCall
         router.push(`/portfolio/${p.portfolio.linkId}`);
       }, 200)
+    );
+
+    setPortfolioBgColor(
+      p.portfolio.backgroundColor ? p.portfolio.backgroundColor : colorBackground
+    );
+    setPortfolioHeaderItemColor(
+      p.portfolio.headerItemsColor ? p.portfolio.headerItemsColor : ""
     );
   };
 

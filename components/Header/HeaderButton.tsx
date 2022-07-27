@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import {
   colorHeaderItem,
   colorHeaderItemSelect,
-  colorText,
+  colorElements,
 } from "../../data/colors";
 import { useRouter } from "next/router";
 import { _AppContext } from "../../helpers/providers/provider_App";

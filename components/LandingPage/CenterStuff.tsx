@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import {
   colorBackground,
   colorHeaderItemSelect,
-  colorText,
+  colorElements,
 } from "../../data/colors";
 import Image from "next/image";
 
@@ -141,7 +141,7 @@ export default function CenterStuff({
           padding: 0 32px;
           display: flex;
           flex-direction: row;
-          color: ${colorText};
+          color: ${colorElements};
           font-size: ${width * 0.03}px;
           text-align: center;
 
@@ -161,7 +161,7 @@ export default function CenterStuff({
               margin: 0;
               color: ${selectedPage === "about-me"
                 ? colorHeaderItemSelect
-                : colorText};
+                : colorElements};
               transform: ${selectedPage === undefined
                 ? "none"
                 : "translateY(-15vh) translateX(4vw)"};
@@ -200,7 +200,7 @@ export default function CenterStuff({
               margin: 0;
               color: ${selectedPage === "portfolio"
                 ? colorHeaderItemSelect
-                : colorText};
+                : colorElements};
               transform: ${selectedPage === undefined
                 ? "none"
                 : "translateY(-15vh) translateX(-4vw)"};

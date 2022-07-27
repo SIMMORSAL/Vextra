@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import {
   colorItemOnWhite,
   colorItemOnWhiteFocused,
-  colorText,
+  colorElements,
 } from "../../data/colors";
 import { getContacts } from "../../data/local/dataContactPage";
 import { Links } from "../../data/models/local-data/contactGroup";
@@ -70,7 +70,7 @@ export default function BottomContacts({ begin }: Props) {
           align-items: end;
           padding: 0 24px;
           overflow: hidden;
-          // color: ${colorText};
+          // color: ${colorElements};
           color: black;
         `}
       >
