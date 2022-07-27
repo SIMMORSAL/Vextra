@@ -42,6 +42,9 @@ export default function Header(props: Props) {
     }
   }, []);
 
+  console.log(
+    `11111  Header:  ${portfolioHeaderItemColor + "  " + portfolioBgColor}`
+  );
   useEffect(() => {
     if (portfolioHeaderItemColor.length > 0) {
       setBgColor(portfolioBgColor);

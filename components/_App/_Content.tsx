@@ -20,8 +20,6 @@ export function Content({ Component, pageProps }) {
       }, 300);
   }, [flashContent, setFlashContent]);
 
-  console.log(`11111  Content:  ${portfolioBgColor}`);
-
   return (
     <div
       css={css`

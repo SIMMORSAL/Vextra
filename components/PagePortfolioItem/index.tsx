@@ -72,11 +72,10 @@ export default function PagePortfolioItem(p: Props) {
         align-items: center;
         padding-top: ${headerHeight}px;
         opacity: ${isExitingPage || isInitialRender ? 0 : 1};
-        margin-top: ${isExitingPage ? 12 : 0}px;
         background-color: ${portfolioBgColor};
 
         transition: ${isExitingPage ? 100 : 200}ms ease;
-        transition-property: opacity, margin-top;
+        transition-property: opacity;
       `}
     >
       {dataPortfolio && (

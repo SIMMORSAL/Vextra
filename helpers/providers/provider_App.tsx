@@ -64,7 +64,14 @@ export function _AppProvider(props: Props) {
   const [tabChangeRequested, setTabChangeRequested] = useState(0);
   const [portfolioBgColor, setPortfolioBgColor] = useState("");
   const [portfolioHeaderItemColor, setPortfolioHeaderItemColor] = useState("");
-  useEffect(() => {}, []);
+
+  useEffect(() => {
+    if (getActiveTab(router) !== "portfolio" && portfolioBgColor != "") {
+      setPortfolioBgColor("");
+      setPortfolioHeaderItemColor("");
+    }
+  }, [router.route]);
+
   return (
     <_AppContext.Provider
       value={{
