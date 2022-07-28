@@ -44,7 +44,7 @@ export function Content({ Component, pageProps }) {
             ? colorBackground
             : portfolioBgColor};
 
-          transition: background-color ${portfolioBgColor === "" ? 1000 : 200}ms ease;
+          transition: background-color ${portfolioBgColor === "" ? 2500 : 200}ms ease;
         `}
       >
         <Component {...pageProps} />
