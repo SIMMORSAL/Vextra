@@ -289,7 +289,7 @@ Donec eleifend quis nisi in fringilla. Integer rhoncus, leo vulputate dictum ele
             text: `
 Special thanks to
 
-#### [Rochak Shukla](https://www.freepik.com/photos/moped) for Scootify and Vespia images
+#### [Rochak Shukla](https://www.freepik.com/photos/moped) <a href="https://www.freepik.com/photos/moped" style="color: red;">Rochak Shukla</a> for Scootify and Vespia images
 #### [Marek Piwnicki](https://unsplash.com/@marekpiwnicki) for the glimpse into Mars
 `,
           },
