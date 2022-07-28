@@ -79,7 +79,7 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
           {
             animation: {
               animateFrom: "bottom",
-              duration: 1600,
+              duration: 1000,
             },
             text: ` 
 
