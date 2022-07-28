@@ -33,11 +33,16 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         {/*<meta name="description" content="An example of a meta description." />*/}
-        <title>Mitra</title>
+        <title>Vextra</title>
       </Head>
       {/* eslint-disable-next-line @next/next/no-page-custom-font */}
       <link
-        href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Dosis&family=Raleway:ital,wght@0,300;0,400;0,700;1,400&family=Righteous&family=Rubik+Moonrocks&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Source+Code+Pro
+        &family=Dosis
+        &family=Raleway:ital,wght@0,300;0,400;0,700;1,400
+        &family=Righteous
+        &family=Rubik+Moonrocks
+        &display=swap"
         rel="stylesheet"
       />
       <Script

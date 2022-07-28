@@ -69,7 +69,7 @@ export default function _MoveToMain(props: Props) {
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={generalData.logo}
+          src={generalData.logoBig}
           alt={"logo"}
           css={css`
             width: 100%;

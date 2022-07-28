@@ -35,7 +35,7 @@ export default function LandingPage({}: Props) {
     setLoading(true);
     setBeginAnimationPhase2(false);
 
-    cacheImage(generalData.logo).then((value) => {
+    cacheImage(generalData.logoBig).then((value) => {
       timeouts.current.push(
         setTimeout(() => {
           setLoading(false);
@@ -93,7 +93,7 @@ export default function LandingPage({}: Props) {
         setSelectedPage={setSelectedPage}
       />
       <LandingLogo
-        path={generalData.logo}
+        path={generalData.logoBig}
         loading={loading}
         onClick={() => setSelectedPage(undefined)}
         selectedPage={selectedPage}

@@ -21,7 +21,7 @@ export default function HeaderLogo(p: Props) {
   const [isMouseOver, setIsMouseOver] = useState(false);
 
   useEffect(() => {
-    cacheImage(generalData.logo).then(() => {
+    cacheImage(generalData.logoSmall).then(() => {
       setImageCached(true);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -60,7 +60,7 @@ export default function HeaderLogo(p: Props) {
           <img
             onMouseEnter={() => setIsMouseOver(true)}
             onMouseLeave={() => setIsMouseOver(false)}
-            src={generalData.logo}
+            src={generalData.logoSmall}
             alt={"logo"}
             onClick={() => {
               p.setSelectedPage(undefined);

@@ -82,7 +82,7 @@ export default function LandingHeader(props: Props) {
           `}
         >
           <img
-            src={generalData.logo}
+            src={generalData.logoSmall}
             alt={"logo"}
             onClick={() => props.setSelectedPage(undefined)}
             css={css`
