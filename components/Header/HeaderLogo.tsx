@@ -2,7 +2,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import { _AppContext } from "../../helpers/providers/provider_App";
-import { cacheImage } from "../../helpers/tools/tools";
+import { cacheImage } from "../../helpers/tools";
 import { headerHeight } from "./index";
 import { hexToCSSFilter } from "hex-to-css-filter";
 import { colorLogoNormal } from "../../data/colors";

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { css } from "@emotion/react";
 import { colorElements } from "../../data/colors";
-import { shuffleArray } from "../../helpers/tools/tools";
+import { shuffleArray } from "../../helpers/tools";
 import { ContactGroup } from "../../data/models/local-data/contactGroup";
 
 interface Props {

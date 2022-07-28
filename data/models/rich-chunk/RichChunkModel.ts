@@ -24,6 +24,7 @@ export interface RichTextModel {
   color?: string;
   size?: string; // eg: "2.1em" or "25px"
   fontFamily?: string;
+  shadow?: string;
   animation?: RichAnimation;
 }
 

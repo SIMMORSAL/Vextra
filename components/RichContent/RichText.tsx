@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { css } from "@emotion/react";
 import { RichTextModel } from "../../data/models/rich-chunk/RichChunkModel";
 import MarkDown from "./Markdown/Markdown";
-import { cacheImage } from "../../helpers/tools/tools";
+import { cacheImage, isColor } from "../../helpers/tools";
 
 interface Props {
   texts: RichTextModel[];
@@ -94,6 +94,13 @@ function TextChunk(p: { text: RichTextModel }) {
         })`
       : "";
 
+  const pShadow = p.text.shadow;
+  const shadow = pShadow
+    ? isColor(pShadow)
+      ? `1px 1px 3px ${pShadow}`
+      : pShadow
+    : "";
+
   const style = css`
     text-align: ${p.text.align};
     user-select: ${p.text.userSelect ? p.text.userSelect : "none"};
@@ -103,6 +110,7 @@ function TextChunk(p: { text: RichTextModel }) {
     opacity: ${shouldAnimateIn ? 1 : 0};
     transform: ${shouldAnimateIn ? "" : animateFrom};
     padding: 0 ${p.text.align === "center" ? 32 : 0}px;
+    text-shadow: ${shadow};
 
     transition: ${pAnimation?.duration ? pAnimation.duration : 350}ms ease;
     transition-property: opacity, transform;

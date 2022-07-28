@@ -38,11 +38,8 @@ export const cacheImage = (path) =>
     img.src = path;
   });
 
-export const cacheAndGetImage = (path) =>
-  new Promise((resolve, reject) => {
-    const img = new Image();
-    img.onload = () => resolve(img);
-    img.onerror = () => reject();
-
-    img.src = path;
-  });
+export const isColor = (strColor) => {
+  const s = new Option().style;
+  s.color = strColor;
+  return s.color !== "";
+};

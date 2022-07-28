@@ -1,5 +1,5 @@
 import { getAllPortfolios } from "../data/local/dataPortfoliosPage";
-import { cacheImage } from "./tools/tools";
+import { cacheImage } from "./tools";
 
 export const runStartupTasks = () => {
   // * caching images

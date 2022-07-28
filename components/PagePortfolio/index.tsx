@@ -6,7 +6,7 @@ import { getAllPortfolios } from "../../data/local/dataPortfoliosPage";
 import PortfolioItem from "./PortfolioItem";
 import { useRouter } from "next/router";
 import { _AppContext } from "../../helpers/providers/provider_App";
-import { getActiveTab } from "../../helpers/tools/tools";
+import { getActiveTab } from "../../helpers/tools";
 import { Portfolio } from "../../data/models/local-data/portfolio";
 import { colorBackground } from "../../data/colors";
 

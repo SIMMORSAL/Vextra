@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { css } from "@emotion/react";
 import { RichImageModel } from "../../data/models/rich-chunk/RichChunkModel";
-import { cacheImage } from "../../helpers/tools/tools";
+import { cacheImage } from "../../helpers/tools";
 import MarkDown from "./Markdown/Markdown";
 
 interface Props {

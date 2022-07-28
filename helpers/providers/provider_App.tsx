@@ -6,7 +6,7 @@ import React, {
   useState,
 } from "react";
 import { useRouter } from "next/router";
-import { getActiveTab } from "../tools/tools";
+import { getActiveTab } from "../tools";
 import { _GeneralDataModel, getGeneralData } from "../../data/local/_dataGeneral";
 import { colorBackground } from "../../data/colors";
 

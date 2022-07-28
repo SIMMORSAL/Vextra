@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import { headerHeight } from "../Header";
 import { useRouter } from "next/router";
 import { _AppContext } from "../../helpers/providers/provider_App";
-import { cacheImage, getActiveTab } from "../../helpers/tools/tools";
+import { cacheImage, getActiveTab } from "../../helpers/tools";
 import Achievements from "./Achievements";
 import { getAboutMeData } from "../../data/local/dataAboutMePage";
 import Markdown from "../RichContent/Markdown/Markdown";

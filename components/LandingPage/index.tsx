@@ -7,7 +7,7 @@ import LandingHeader from "./LandingHeader";
 import LandingLogo from "./LandingLogo";
 import { useRouter } from "next/router";
 import { _AppContext } from "../../helpers/providers/provider_App";
-import { cacheImage } from "../../helpers/tools/tools";
+import { cacheImage } from "../../helpers/tools";
 
 interface Props {}
 

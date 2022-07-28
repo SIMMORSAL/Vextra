@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { css } from "@emotion/react";
 import LandingHeaderButton from "./LandingHeaderButton";
 import Image from "next/image";
-import useWindowSize from "../../helpers/tools/hooks/useWindowSize";
+import useWindowSize from "../../helpers/hooks/useWindowSize";
 import HeaderLogo from "../Header/HeaderLogo";
 import { _AppContext } from "../../helpers/providers/provider_App";
 import { hexToCSSFilter } from "hex-to-css-filter";

@@ -28,14 +28,8 @@ return (
           align: "center",
           text: "# Scootify",
           color: "#e3d9d9",
-        },
-        {
-          align: "center",
-          animation: {
-            animateOnScroll: false,
-            duration: 3000,
-          },
-          text: \`Scootify is covered in...\`,
+          shadow: "0 0 8px #e3d9d999",
+          size: "2em",
         },
       ],
     },
@@ -53,6 +47,15 @@ return (
       nameId: "3",
       minHeight: "400px",
       textsTop: [
+        {
+          color: "rgba(255,255,255,0.91)",
+          align: "center",
+          animation: {
+            animateOnScroll: true,
+            duration: 500,
+          },
+          text: \`Scootify is covered in Carbon-Ceramic and...\`,
+        },
         {
           color: "rgba(255,255,255,0.91)",
           text: \`## Structure: ...\`,

@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { css } from "@emotion/react";
 import { Portfolio } from "../../data/models/local-data/portfolio";
 import { useRouter } from "next/router";
-import { cacheImage } from "../../helpers/tools/tools";
+import { cacheImage } from "../../helpers/tools";
 import { colorBackground } from "../../data/colors";
 import { _AppContext } from "../../helpers/providers/provider_App";
 

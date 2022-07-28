@@ -3,7 +3,7 @@ import { _AppContext } from "../../helpers/providers/provider_App";
 import { useRouter } from "next/router";
 import { css } from "@emotion/react";
 import { headerHeight } from "../Header";
-import { getSubTab } from "../../helpers/tools/tools";
+import { getSubTab } from "../../helpers/tools";
 import { colorBackground } from "../../data/colors";
 
 export function Content({ Component, pageProps }) {

@@ -7,7 +7,7 @@ import {
 } from "../../data/colors";
 import { useRouter } from "next/router";
 import { _AppContext } from "../../helpers/providers/provider_App";
-import { changePage, getActiveTab, getSubTab } from "../../helpers/tools/tools";
+import { changePage, getActiveTab, getSubTab } from "../../helpers/tools";
 
 interface Props {
   page: string;
