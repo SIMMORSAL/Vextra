@@ -34,7 +34,7 @@ Scootify is covered in Carbon-Ceramic and runs on Quantized-hydroxium
         gradient: ["#b94335", "#b94134"],
         bigImage: {
           animation: {
-            animateFrom: "bottom",
+            animateFrom: "top",
             duration: 600,
             translateDistance: 5,
           },
