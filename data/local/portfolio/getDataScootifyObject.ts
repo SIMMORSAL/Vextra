@@ -35,7 +35,7 @@ return (
             animateOnScroll: false,
             duration: 3000,
           },
-          text: \`...\`,
+          text: \`Scootify is covered in...\`,
         },
       ],
     },
@@ -55,7 +55,7 @@ return (
       textsTop: [
         {
           color: "rgba(255,255,255,0.91)",
-          text: \`...\`,
+          text: \`## Structure: ...\`,
         },
       ],
     },
@@ -89,7 +89,7 @@ return (
       textsTop: [
         {
           color: "rgba(255,255,255,0.91)",
-          text: \`...\`,
+          text: \`### Other notable features ...\`,
         },
       ],
     },
@@ -108,7 +108,7 @@ return (
               animateOnScroll: true,
               animateFrom: "right",
             },
-            text: \`...\`,
+            text: \`### Look On Fleek\`,
           },
         ],
       },
@@ -196,6 +196,30 @@ return (
       ],
     },
     // ---
+      {
+        freeSpaceTop: "20px",
+        gradient: ["#a948eb", "#a34cf1 30%", "#a34cf1 70%", "#aa64d5"],
+        textColor: "#fff",
+        smallImage: {
+          path: getImagePath("vespia_purpleSmall.jpg"),
+          aspectRatio: "1000/680",
+          animation: {
+            animateOnScroll: true,
+            animateFrom: "left",
+          },
+        },
+      },
+      // ---
+      {
+        gradient: ["#aa64d5", "#a948eb"],
+        textColor: "#fff",
+        textsBottom: [
+          {
+            text: \`...\`,
+          },
+        ],
+      },
+    // ---
     {
       nameId: "14",
       backgroundImage: getImagePath("vespia_boop.jpg"),
@@ -203,7 +227,7 @@ return (
       mediaBar: {
         texts: [
           {
-            text: "### BEEP",
+            text: "### BEEP <i class="fa-solid fa-volume-off" style="transform: scaleX(-1);"></i>",
             color: "#bc9141",
             animation: {
               animateOnScroll: true,
@@ -213,7 +237,7 @@ return (
           },
           {
             color: "#bc9141",
-            text: "### BEEEEEP",
+            text: "### BEEEEEP <i class="fa-solid fa-volume-off" style="transform: scaleX(-1);"></i>",
             animation: {
               animateOnScroll: true,
               animateFrom: "right",
@@ -236,7 +260,11 @@ return (
             animateFrom: "top",
             translateDistance: 10,
           },
-          text: \`...\`,
+          text: \`
+...
+#### <a href="https://www.freepik.com/photos/moped"><span style="color: #ff9465;">Rochak Shukla</span></a> for Scootify and Vespia images
+#### <a href="https://unsplash.com/@marekpiwnicki"><span style="color: #ff9465;">Marek Piwnicki</span></a> for the glimpse into Mars
+\`,
         },
       ],
     },

@@ -61,17 +61,17 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
         freeSpaceTop: "16px",
         backgroundColor: "#a86048",
         textsTop: [
-            {
-              align: "center",
-              color: "white",
-              animation: {
-                duration: 2000,
-              },
-              text: `
+          {
+            align: "center",
+            color: "white",
+            animation: {
+              duration: 2000,
+            },
+            text: `
 # Rich Content Handbook
 `,
-            },
-          ]
+          },
+        ],
       },
       {
         nameId: "intro",
@@ -395,6 +395,9 @@ or animated individually.
 # Test Text
 
 This is a loooong text
+
+This is a <a href="https://www..."><span style="color: #ff9465;">Colored Link</span></a>
+
 Etcetera <i class="fa-solid fa-fire"></i> text.
 \`,
     },
