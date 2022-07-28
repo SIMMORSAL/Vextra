@@ -30,12 +30,14 @@ function MyApp({ Component, pageProps }) {
   }, [routeChops]);
 
   const fonts = [
-      "Source+Code+Pro",
-      "Dosis",
-      "Raleway:ital,wght@0,300;0,400;0,700;1,400",
-      "Righteous",
-      "Rubik+Moonrocks",
-    ].reduce((p, c) => `${p}&family=${c}`).slice(1);
+    "Source+Code+Pro",
+    "Dosis",
+    "Raleway:ital,wght@0,300;0,400;0,700;1,400",
+    "Righteous",
+    "Rubik+Moonrocks",
+  ]
+    .reduce((p, c) => `${p}&family=${c}`)
+    .slice(1);
 
   return (
     <>
@@ -45,7 +47,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       {/* eslint-disable-next-line @next/next/no-page-custom-font */}
       <link
-        href=`https://fonts.googleapis.com/css2?${fonts}&display=swap`
+        href={`https://fonts.googleapis.com/css2?${fonts}&display=swap`}
         rel="stylesheet"
       />
       <Script
