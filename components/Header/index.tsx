@@ -118,7 +118,9 @@ export default function Header(props: Props) {
         -webkit-backdrop-filter: blur(${shouldBlur ? 3 : 0}px);
 
         border-bottom-width: 1px;
-        border-bottom-color: ${shouldBlur && !showDev ? "#00000033" : "transparent"};
+        border-bottom-color: ${shouldBlur && !showDev
+          ? `${bgColor}${bgColor.length === 7 ? "aa" : ""}`
+          : "transparent"};
         border-bottom-style: solid;
 
         transition: ${shouldBlur ? 300 : 200}ms ease;
