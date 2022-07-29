@@ -84,19 +84,25 @@ export default function PortfolioItem(p: Props) {
     );
   };
 
-  // setTimeout(() => {
-  // }, 50);
+  ///////////////////////////////////////////////////////////////////////////////////
+  ////
 
-  // * if your awards are not in the shape of square, you may need to
-  // * uncomment below code and make changes to the values
+  // * if your awards are not in the shape of square, you may need to comment code
+  // * above, and uncomment below code and make changes to the values to fine tune
+  // * your image position
   const awardPadding =
-    p.portfolio.name === "umbrella"
-      ? `0px ${makeAwardSmall ? 70 : 12}% ${makeAwardSmall ? 0 : 25}% ${
+    p.portfolio.name === "theOneWithLandscapeAward"
+      ? // This is for landscape award image
+        `0px ${makeAwardSmall ? 70 : 12}% ${makeAwardSmall ? 0 : 25}% ${
           makeAwardSmall ? 4 : 12
         }%`
-      : `0px ${makeAwardSmall ? 80 : 27}% ${makeAwardSmall ? 0 : 12}% ${
+      : // This is for portrait award image
+        `0px ${makeAwardSmall ? 80 : 27}% ${makeAwardSmall ? 0 : 12}% ${
           makeAwardSmall ? 4 : 27
         }%`;
+
+  ////
+  ///////////////////////////////////////////////////////////////////////////////////
 
   const awardBoxShadow = p.portfolio.isBackgroundDark
     ? makeAwardSmall
@@ -207,10 +213,8 @@ export default function PortfolioItem(p: Props) {
                 css={css`
                   margin-bottom: ${makeAwardSmall ? 30 : 0}%;
                   box-shadow: ${awardBoxShadow};
-                  //vertical-align: bottom;
                   position: relative;
                   width: 100%;
-                  //aspect-ratio: 1/1;
 
                   display: flex;
 
@@ -218,14 +222,6 @@ export default function PortfolioItem(p: Props) {
                   transition-property: box-shadow, margin-bottom, transform;
                 `}
               >
-                {/*<Image*/}
-                {/*  // src={require(`/res/images/portfolio/${p.portfolio.award}`)}*/}
-                {/*  src={p.portfolio.award}*/}
-                {/*  alt={"behance"}*/}
-                {/*  layout={"fill"}*/}
-                {/*  loading={"lazy"}*/}
-                {/*  quality={100}*/}
-                {/*/>*/}
                 <img
                   src={p.portfolio.awardImage}
                   width={"100%"}
