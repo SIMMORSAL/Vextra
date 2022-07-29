@@ -7,13 +7,14 @@ import React, {
 } from "react";
 import { useRouter } from "next/router";
 import { getActiveTab } from "../tools";
-import { _GeneralDataModel, getGeneralData } from "../../data/local/_dataGeneral";
+import { getGeneralData } from "../../data/local/_dataGeneral";
 import { colorBackground } from "../../data/colors";
+import { GeneralDataModel } from "../../data/models/_GeneralData";
 
 const LSK_App = "_App";
 
 interface _AppInterface {
-  generalData: _GeneralDataModel;
+  generalData: GeneralDataModel;
   newTabSelected: string;
   setNewTabSelected: Dispatch<SetStateAction<string>>;
   shouldMoveToMain: boolean;
@@ -32,7 +33,7 @@ interface _AppInterface {
 }
 
 export const _AppContext = createContext({
-  generalData: {} as _GeneralDataModel,
+  generalData: {} as GeneralDataModel,
   newTabSelected: "/inContext",
   setNewTabSelected: () => {},
   shouldMoveToMain: false,

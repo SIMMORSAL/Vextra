@@ -1,6 +1,6 @@
-import { _GeneralDataModel } from "../models/_GeneralData";
+import { GeneralDataModel } from "../models/_GeneralData";
 
-export const getGeneralData = (): _GeneralDataModel => {
+export const getGeneralData = (): GeneralDataModel => {
   return {
     logoBig: "/images/logo_big.png",
     logoSmall: "/images/logo_small.png",

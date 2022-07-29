@@ -74,7 +74,7 @@ export default function _MoveToMain(props: Props) {
           css={css`
             width: 100%;
             opacity: ${beginAnimation ? 1 : 0};
-            filter: ${generalData.applyColorOnLogo
+            filter: ${generalData.applyColorToLogo
               ? hexToCSSFilter(colorLogoSplash).filter
               : ""};
 

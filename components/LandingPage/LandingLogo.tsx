@@ -38,7 +38,7 @@ export default function LandingLogo(p: Props) {
         alt={"logo"}
         css={css`
           width: 100%;
-          filter: ${generalData.applyColorOnLogo
+          filter: ${generalData.applyColorToLogo
             ? p.loading
               ? hexToCSSFilter(colorLogoSplash).filter
               : hexToCSSFilter(colorLogoNormal).filter

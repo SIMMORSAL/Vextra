@@ -81,6 +81,7 @@ export default function LandingHeader(props: Props) {
             display: grid;
           `}
         >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={generalData.logoSmall}
             alt={"logo"}
@@ -89,7 +90,7 @@ export default function LandingHeader(props: Props) {
               cursor: pointer;
               width: 100%;
               margin-bottom: 1px;
-              filter: ${generalData.applyColorOnLogo
+              filter: ${generalData.applyColorToLogo
                 ? hexToCSSFilter(colorLogoNormal).filter
                 : ""};
             `}

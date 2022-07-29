@@ -45,6 +45,7 @@ export default function PageAboutMe(props: Props) {
       // eslint-disable-next-line react-hooks/exhaustive-deps
       timeouts.current.forEach((value) => clearTimeout(value));
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

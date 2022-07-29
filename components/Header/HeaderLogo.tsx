@@ -72,7 +72,7 @@ export default function HeaderLogo(p: Props) {
               cursor: pointer;
               width: 100%;
               opacity: ${p.showDev ? 0 : 1};
-              filter: ${generalData.applyColorOnLogo
+              filter: ${generalData.applyColorToLogo
                 ? hexToCSSFilter(p.color ? p.color : colorLogoNormal).filter
                 : ""};
 

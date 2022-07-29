@@ -1,4 +1,4 @@
-export interface _GeneralDataModel {
+export interface GeneralDataModel {
   logoBig: string;
   logoSmall: string;
   applyColorToLogo: boolean;

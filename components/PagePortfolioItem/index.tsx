@@ -47,6 +47,7 @@ export default function PagePortfolioItem(p: Props) {
         dataPortfolio.headerItemsColor ? dataPortfolio.headerItemsColor : ""
       );
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dataPortfolio]);
 
   useEffect(() => {
@@ -58,6 +59,7 @@ export default function PagePortfolioItem(p: Props) {
     } else {
       setIsExitingPage(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tabChangeRequested]);
 
   return (

@@ -92,6 +92,7 @@ export default function Header(props: Props) {
     return () => {
       window.removeEventListener("scroll", listenToScroll, true);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
