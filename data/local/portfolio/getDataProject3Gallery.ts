@@ -57,6 +57,7 @@ export function getDataProject3Gallery(): RichChunkModel[] {
         textsBottom: [
             {
               align: "center",
+              aspectRatio: i === 0 ? "2400/1600" : i === 1 ? "2400/3600" : undefined,
               animation: {
                 animateOnScroll: true,
                 animateFrom: "top",
