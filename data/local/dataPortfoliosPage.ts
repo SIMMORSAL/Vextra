@@ -4,6 +4,7 @@ import { getDataProject2Scootify } from "./portfolio/getDataProject2Scootify";
 import { getDataProject3Gallery } from "./portfolio/getDataProject3Gallery";
 import { getDataRichContentHandbook } from "./portfolio/getDataRichContentHandbook";
 import { getDataScootifyObject } from "./portfolio/getDataScootifyObject";
+import { getDataUmbrella } from "./portfolio/getDataUmbrella";
 
 export function getPortfolio(linkId: string): Portfolio {
   return getAllPortfolios().filter((value) => value.linkId === linkId)[0];
@@ -11,6 +12,16 @@ export function getPortfolio(linkId: string): Portfolio {
 
 export function getAllPortfolios(): Portfolio[] {
   return [
+    {
+      linkId: "Umbrella",
+      name: "Umbrella",
+      backgroundColor: "#ffffff",
+      //headerItemsColor:""
+      isBig: true,
+      image: "/images/portfolio/umbrella/6.24.png",
+      awardImage: "/images/portfolio/GDPJ_logo.png",
+      pageRichContent: getDataUmbrella(),
+    },
     {
       linkId: "X-bike",
       name: "X|Bike",
