@@ -174,7 +174,7 @@ export default function PortfolioItem(p: Props) {
               onMouseLeave={() => setIsHovering(false)}
               // src={require(`/public/images/portfolio/${p.portfolio.image}`)}
               src={p.portfolio.image}
-              alt={"behance"}
+              alt={p.portfolio.name}
               loading={"eager"}
               // layout={"fill"}
               // quality={100}
@@ -229,7 +229,7 @@ export default function PortfolioItem(p: Props) {
                   src={p.portfolio.awardImage}
                   width={"100%"}
                   loading={"eager"}
-                  alt={""}
+                  alt={p.portfolio.awardImage}
                 />
               </div>
             </div>

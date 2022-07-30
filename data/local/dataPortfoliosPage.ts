@@ -19,7 +19,7 @@ export function getAllPortfolios(): Portfolio[] {
       //headerItemsColor:""
       // isBig: true,
       image: "/images/portfolio/umbrella/6.24.png",
-      awardImage: "/images/portfolio/GDPJ_logo.png",
+      awardImage: "/images/portfolio/umbrella/GDPJ_logo.png",
       pageRichContent: getDataUmbrella(),
     },
     {
@@ -41,7 +41,7 @@ export function getAllPortfolios(): Portfolio[] {
       backgroundColor: "#b63f31",
       headerItemsColor: "#d2d2d2",
       isBackgroundDark: false,
-      image: "/images/portfolio/PortfolioItemTemplate2.jpg",
+      image: "/images/portfolio/scootify/PortfolioItemTemplate2.jpg",
       pageRichContent: getDataProject2Scootify(),
     },
     {
@@ -50,7 +50,7 @@ export function getAllPortfolios(): Portfolio[] {
       // backgroundColor: "#bfd2cb",
       headerItemsColor: "#500650",
       isBackgroundDark: false,
-      image: "/images/portfolio/PortfolioItemTemplate3.jpg",
+      image: "/images/portfolio/gallery/PortfolioItemTemplate3.jpg",
       pageRichContent: getDataProject3Gallery(),
     },
     {
@@ -60,7 +60,7 @@ export function getAllPortfolios(): Portfolio[] {
       backgroundColor: "#a86048",
       headerItemsColor: "#fff3ee",
       isBackgroundDark: false,
-      image: "/images/portfolio/PortfolioItemRichContentHandbook.jpg",
+      image: "/images/portfolio/handbook/PortfolioItemRichContentHandbook.jpg",
       pageRichContent: getDataRichContentHandbook(),
     },
     {
