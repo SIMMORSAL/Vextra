@@ -41,9 +41,10 @@ export default function RichVideo(p: Props) {
   };
 
   useEffect(() => {
+    window.addEventListener("scroll", listenToScroll);
+
     listenToScroll();
 
-    window.addEventListener("scroll", listenToScroll);
     return () => {
       window.removeEventListener("scroll", listenToScroll);
     };

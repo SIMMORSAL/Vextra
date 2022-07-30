@@ -45,18 +45,11 @@ function TextChunk(p: { text: RichTextModel }) {
   };
 
   useEffect(() => {
-    // checking if on first frame scroll is reached
-    if (p.text.animation?.animateOnScroll) {
-      const scroll = document.documentElement.scrollTop;
-      const imagePosition = (refTextRoot.current as HTMLDivElement).offsetTop;
-      if (scroll + window.innerHeight * scrollThreshold < imagePosition)
-        setShouldAnimateIn(false);
-      else setShouldAnimateIn(true);
-    }
-
     if (p.text.animation?.animateOnScroll)
       window.addEventListener("scroll", listenToScroll);
     else setShouldAnimateIn(true);
+
+    listenToScroll();
 
     return () => {
       if (p.text.animation?.animateOnScroll)

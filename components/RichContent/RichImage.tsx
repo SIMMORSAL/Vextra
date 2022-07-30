@@ -32,18 +32,11 @@ export default function RichImage(p: Props) {
       setImageCached(true);
     });
 
-    // checking if on first frame scroll is reached
-    if (p.image.animation?.animateOnScroll) {
-      const scroll = document.documentElement.scrollTop;
-      const imagePosition = (refImageRoot.current as HTMLDivElement).offsetTop;
-      if (scroll + window.innerHeight * scrollThreshold < imagePosition)
-        setScrollReached(false);
-      else setScrollReached(true);
-    }
-
     if (p.image.animation?.animateOnScroll)
       window.addEventListener("scroll", listenToScroll);
     else setScrollReached(true);
+
+    listenToScroll();
 
     return () => {
       if (p.image.animation?.animateOnScroll)

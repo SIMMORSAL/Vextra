@@ -89,7 +89,7 @@ export default function PortfolioItem(p: Props) {
 
   // * if your awards are not in the shape of square, you may need to comment code
   // * above, and uncomment below code and make changes to the values to fine tune
-  // * your image position
+  // * your image's position and sizing
   const awardPadding =
     p.portfolio.name === "theOneWithLandscapeAward"
       ? // This is for landscape award image
@@ -164,6 +164,9 @@ export default function PortfolioItem(p: Props) {
               left: 4px;
               position: relative;
               overflow: hidden;
+              background-color: ${p.portfolio.backgroundColor
+                ? p.portfolio.backgroundColor
+                : "transparent"};
             `}
           >
             <img

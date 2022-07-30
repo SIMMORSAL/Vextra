@@ -15,9 +15,9 @@ export function getAllPortfolios(): Portfolio[] {
     {
       linkId: "Umbrella",
       name: "Umbrella",
-      backgroundColor: "#ffffff",
+      backgroundColor: "#90d3d3",
       //headerItemsColor:""
-      isBig: true,
+      // isBig: true,
       image: "/images/portfolio/umbrella/6.24.png",
       awardImage: "/images/portfolio/GDPJ_logo.png",
       pageRichContent: getDataUmbrella(),
@@ -25,6 +25,7 @@ export function getAllPortfolios(): Portfolio[] {
     {
       linkId: "X-bike",
       name: "X|Bike",
+      isBig: true,
       backgroundColor: "#0066ff",
       headerItemsColor: "#011736",
       isBackgroundDark: true,
