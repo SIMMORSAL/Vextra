@@ -32,11 +32,11 @@ export default function RichImage(p: Props) {
       setImageCached(true);
     });
 
+    listenToScroll();
+
     if (p.image.animation?.animateOnScroll)
       window.addEventListener("scroll", listenToScroll);
     else setScrollReached(true);
-
-    listenToScroll();
 
     return () => {
       if (p.image.animation?.animateOnScroll)

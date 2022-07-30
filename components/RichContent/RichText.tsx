@@ -45,11 +45,11 @@ function TextChunk(p: { text: RichTextModel }) {
   };
 
   useEffect(() => {
+    listenToScroll();
+
     if (p.text.animation?.animateOnScroll)
       window.addEventListener("scroll", listenToScroll);
     else setShouldAnimateIn(true);
-
-    listenToScroll();
 
     return () => {
       if (p.text.animation?.animateOnScroll)
