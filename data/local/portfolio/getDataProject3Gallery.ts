@@ -9,8 +9,22 @@ export function getDataProject3Gallery(): RichChunkModel[] {
           animation: {
             animateOnScroll: i !== 0,
             animateFrom: "bottom",
-          }
-        }
+          },
+        },
+        textsBottom: [
+            {
+              align: "center",
+              animation: {
+                animateOnScroll: true,
+                animateFrom: "top",
+                translateDistance: 5,
+                duration: 400,
+              },
+              text: `
+${i}
+`,
+            },
+          ],
       } as RichChunkModel;
     }
   );
