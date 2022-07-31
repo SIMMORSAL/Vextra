@@ -13,15 +13,15 @@ export function getPortfolio(linkId: string): Portfolio {
 export function getAllPortfolios(): Portfolio[] {
   return [
     {
-      linkId: "Umbrella",
-      name: "Umbrella",
-      backgroundColor: "#90d3d3",
+   //   linkId: "Umbrella",
+  //    name: "Umbrella",
+     // backgroundColor: "#90d3d3",
       //headerItemsColor:""
       // isBig: true,
-      image: "/images/portfolio/umbrella/6.24.png",
-      awardImage: "/images/portfolio/umbrella/GDPJ_logo.png",
-      pageRichContent: getDataUmbrella(),
-    },
+   //   image: "/images/portfolio/umbrella/6.24.png",
+    //  awardImage: "/images/portfolio/umbrella/GDPJ_logo.png",
+   //   pageRichContent: getDataUmbrella(),
+   // },
     {
       linkId: "X-bike",
       name: "X|Bike",
