@@ -13,7 +13,7 @@ Hi, and welcome to my website.
 
 I'm a determined project manager with 10 years of experience in the field. 
 Here you'll find a short sum of my history and the things I've been doing 
-through my professional career. However please check out the Portfolio 
+through my professional career. However please do check out the Portfolio 
 tab to see my work in more details.
 `,
     textBottom: `
