@@ -1,5 +1,7 @@
 # Vextra 
-#### A highly customizable platform ready to be a portfolio page, and become a lot more with some of your own components.
+#### A NextJS + Emotion portfolio website, with a page creation engine so easy to use, anyone can create a page with it.
+
+A highly customizable platform ready to be a portfolio page, and become a lot more with some of your own components.
 
 Sporting a powerful and flexible page creation engine that is easy to use and is fast to work with.
 
@@ -16,7 +18,7 @@ Vextra is written using a combination of NextJS and Emotion, provided by Materia
   - drunk night
 - Minimal work required for backend and CMS integration.
 - Detailed ReadMe.md file that explains how you can setup your project.
-- Very Detailed Rich Page that explains how you can build your own page. You can check it out [from this link](https://mitra-portfolio.vercel.app/portfolio/rich-content-handbook)
+- Very Detailed Rich Page that explains how you can build your own page. You can check it out [Vextra.vercel.app/portfolio/rich-content-handbook](https://vextra.vercel.app/portfolio/rich-content-handbook)
 
 
 Take this as a base to build your own world. \  
