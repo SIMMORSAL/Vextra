@@ -7,3 +7,4 @@ export const colorHeaderItemSelect = "#005ba1";
 export const colorElements = "#707070";
 export const colorItemOnWhite = "#646464";
 export const colorItemOnWhiteFocused = "#161616";
+export const colorDefaultRichContentText = "#1e1e1e";

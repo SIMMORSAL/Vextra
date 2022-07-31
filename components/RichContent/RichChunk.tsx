@@ -14,10 +14,11 @@ import MediaBar from "./MediaBar";
 interface Props {
   chunk: RichChunkModel;
   backgroundColor: string;
+  textColor: string;
 }
 
 export default function RichChunk(p: Props) {
-  const textColor = p.chunk.textColor ? p.chunk.textColor : "#1e1e1e";
+  const textColor = p.chunk.textColor ? p.chunk.textColor : p.textColor;
 
   const bgImage = p.chunk.backgroundImage
     ? `url(${p.chunk.backgroundImage})`

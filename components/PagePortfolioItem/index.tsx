@@ -6,7 +6,11 @@ import { useRouter } from "next/router";
 import { Portfolio } from "../../data/models/local-data/portfolio";
 import { getPortfolio } from "../../data/local/dataPortfoliosPage";
 import { _AppContext } from "../../helpers/providers/provider_App";
-import { colorBackground, colorHeaderItem } from "../../data/colors";
+import {
+  colorBackground,
+  colorDefaultRichContentText,
+  colorHeaderItem,
+} from "../../data/colors";
 
 interface Props {}
 
@@ -84,6 +88,11 @@ export default function PagePortfolioItem(p: Props) {
         <RichContent
           data={dataPortfolio.pageRichContent}
           backgroundColor={dataPortfolio.backgroundColor}
+          textColor={
+            dataPortfolio.textColor
+              ? dataPortfolio.textColor
+              : colorDefaultRichContentText
+          }
         />
       )}
     </div>

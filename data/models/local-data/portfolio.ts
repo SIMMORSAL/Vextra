@@ -10,4 +10,5 @@ export interface Portfolio {
   pageRichContent: RichChunkModel[];
   headerItemsColor?: string;
   backgroundColor?: string;
+  textColor?: string;
 }
