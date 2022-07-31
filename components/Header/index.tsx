@@ -124,7 +124,7 @@ export default function Header(props: Props) {
           : "transparent"};
         border-bottom-style: solid;
 
-        transition: ${shouldBlur ? 300 : 200}ms ease;
+        transition: ${shouldBlur ? 200 : 200}ms ease;
         transition-property: border-bottom-color, background-color, padding-bottom;
       `}
     >
