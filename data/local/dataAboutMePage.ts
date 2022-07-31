@@ -9,26 +9,18 @@ export function getAboutMeData(): AboutMeData {
     // "https://j.plenio.de/images/igallery/resized/701-800/jplenio_IMG_6405_3-748-4000-4000-100.jpg",
     name: "Jane Smith",
     textTop: `
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at
-convallis velit. Nunc bibendum nibh in lectus convallis aliquam vitae id
-diam. Ut ut ante eu dui placerat sodales. Suspendisse vulputate maximus
-nisl, sed suscipit ante lacinia ac. Vestibulum suscipit, sapien vitae
-convallis porttitor, mauris ligula placerat nibh, a ornare mauris diam at
-erat. Ut nec magna mauris. Integer accumsan tempus quam, elementum pharetra
-elit suscipit id.
+Hi, and welcome to my website.
+
+I'm a determined project manager with 10 years of experience in the field. 
+Here you'll find a short sum of my history and the things I've been doing 
+through my professional career. However please check out the Portfolio 
+tab to see my work in more details.
 `,
     textBottom: `
-Etiam at nisl tempor nibh iaculis mattis. Aliquam quam leo, efficitur
-fringilla commodo eu, vehicula ut velit. Nam eu ante vulputate libero
-convallis gravida et at dolor. In est justo, viverra pretium ullamcorper
-pellentesque pellentesque. Fusce turpis erat, congue in lobortis ut,
-viverra et nibh. Suspendisse vel tortor aliquam, rhoncus dui et, sagittis
-arcu. Cras dictum sapien purus, justo, viverra pretium ullamcorper
-pellentesque pellentesque. Fusce turpis erat, congue in lobortis ut,
-viverra et nibh. Suspendisse vel tortor aliquam, rhoncus dui et, sagittis
-arcu. Cras dictum sapien purus, sed vulputate augue convallis consectetur.
-Orci varius natoque penatibus et magnis dis parturient montes, nascetur
-ridiculus mus.
+Hi again. This actually is not for any person named "Jane Smith", and all the data are fake and merely mockup.
+
+This website is actually a demo, and it's source code is on sale.  
+You can grab your copy from xxx.
 `,
   };
 }

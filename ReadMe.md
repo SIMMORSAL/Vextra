@@ -7,7 +7,7 @@ You can customize the website for yourself by going to `/data/` directory where 
 
 ## Landing Page
 
-Landing starts by a big logo image taking all the screen, and then getting smaller while other elements start appearing. After you click on a map and open it, the image will turn into a small logo image and moves to the center of the header. Below is the data it needs, however the data is also used in other places.
+Landing starts by a big logo image taking all the screen, and then getting smaller while other elements start appearing. After you click on a Tab button and open it, the image will turn into a small logo image and moves to the center of the header. Below is the data it needs, however the data is also used in other places.
 
 Edit this in:  
 `/data/local/_dataGeneral.ts`
@@ -82,4 +82,23 @@ interface Portfolio {
 
 `awardImage`: You can give an award image to a portfolio item and when you enter the home page, it'll show up after a little while, and then will become small and sits in bottom left corner. However, Award images are made to work with square images, and things may look funky otherwise.  
 To fix this, you'll need to open `/components/PagePortfolio&#8291;/PortfolioItem.tsx` and go to line 87. There's more information there.
+
+
+### Portfolio Pages
+
+There's a special package developed for this website, named RichContent. It allows you to create beautiful and animated pages very fast and nearly anybody can make pages with it easily by editing a javascript Object.
+
+To make it work, you need to give a list of `RichChunkModel` to the `pageRichContent' property. To see some examples of it running, please go to [vextra.vercel.app](https:\\vextra.vercel.app)
+
+
+
+
+
+
+
+
+
+
+
+
 
