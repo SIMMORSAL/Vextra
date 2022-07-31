@@ -205,7 +205,8 @@ export default function Header(props: Props) {
           font-weight: bold;
           opacity: ${showDev ? 1 : 0};
           filter: blur(${showDev ? 0 : 24}px);
-          transform: translateY(${showDev ? "140px" : headerHeight + "px"});
+          transform: translateY(${showDev ? "140px" : headerHeight + "px"})
+            translateX(${!isXs ? "-19px" : "0px"});
           transition: 600ms ease;
           transition-property: opacity, filter, transform;
           transition-delay: ${showDev ? 800 : 200}ms;
