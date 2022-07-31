@@ -84,7 +84,7 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
             text: ` 
 
 This is a full blown test in demonstration of Rich Chunks abilities. 
-You can find the data file of this page 
+You can find the data file of this and all the other pages
 in ${getInlineCode(
               "/data/local/portfolio/&#8291;getDataRichContentHandbook.ts",
               "green"
