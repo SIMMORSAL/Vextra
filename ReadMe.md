@@ -1,17 +1,23 @@
 # Vextra  
 ### Elegant and animated portfolio website.
 
-Vextra is a portfolio template, packed with animations with a satisfying flow to page navigation. 
+Vextra is a portfolio template, packed with animations with a 
+satisfying flow to page navigation. 
 
-You can customize the website for yourself by going to `/data/` directory where you can find all the data files you need to edit things. You can also put your images under `/public/` directory.
-
-To edit the fonts, you can do so at the beginning  lines of `/pages/_app.ts` function's return.
+You can customize the website for yourself by going to `/data/` 
+directory where you can find all the data files you need to edit 
+things. You can also put your images under `/public/` directory.
 
 ## Installation
 
 #### Setting up Font Awesome
 
-you need to 
+First you need to get your own access to FontAwesome fonts.
+
+1. Head over to [fontawesome.com/kits](https://fontawesome.com/kits) 
+and get your kit which is a link.  
+2. Paste that link in `/data/local/_dataGeneral.ts` in front of
+`fontAwesomeKitAddress`
 
 #### Running Locally
 
@@ -32,9 +38,9 @@ After that open [localhost:3000](http://localhost:3000) in your browser.
 
 The easiest way to get this website running on web is to use Vercel's (creator of NextJS) deployment tool.
 
-1- Push the code to a private GitHub or Gitlab repository.
-2- Go to [Vercel.com](https://vercel.com) and create an account, then import the repository.
-3- A few minutes after, you'll be presented with the links to your website.
+1. Push the code to a private GitHub or Gitlab repository.
+2. Go to [Vercel.com](https://vercel.com) and create an account, then import the repository.
+3. A few minutes later you'll be presented with the links to your website.
 
 If you want to deploy it on your own server, visit [this link](https://nextjs.org/docs/deployment) for more information.
 
