@@ -21,8 +21,9 @@ Vextra is written using a combination of NextJS, TypeScript, and Emotion, provid
 - Very Detailed Rich Page that explains how you can build your own pages using RichContent. You can check it out at [Vextra.vercel.app/portfolio/rich-content-handbook](https://vextra.vercel.app/portfolio/rich-content-handbook)
 
 
-Take this as a base to build your own world. 
-The experience is curated to feel good on very simple elements. It can be a lot better when you add your own conponents to it.
+Aside from all of this, this website is built upon some of the latest and greatest technologies available in 2022. [NextJS](https://nextjs.org/) which is a complete package of everything a website needs to be built, and [Emotion](https://emotion.sh/docs/introduction) which gives you the ability to write and animate your CSS by allowing you to tweak it during runtime directly from javascript. Once you understand how this website works, you'll be ready for any design challenges on your way.
+
+You can also take this as a base to build your own world. The experience is curated to feel good on very simple elements. It can be a lot better when you add your own conponents to it.
 
 
 
