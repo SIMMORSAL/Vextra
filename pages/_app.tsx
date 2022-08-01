@@ -11,6 +11,7 @@ import Head from "next/head";
 import Script from "next/script";
 import { runStartupTasks } from "../helpers/StartUpTasks";
 import { Content } from "../components/_App/_Content";
+import { getGeneralData } from "../data/local/_dataGeneral";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -19,6 +20,8 @@ function MyApp({ Component, pageProps }) {
 
   const routeRoot = routeChops[0];
   const [selectedPage, setSelectedPage] = useState(routeRoot);
+
+  const generalData = getGeneralData();
 
   useEffect(() => {
     runStartupTasks();
@@ -29,14 +32,6 @@ function MyApp({ Component, pageProps }) {
     setSelectedPage(route);
   }, [routeChops]);
 
-  const fonts = [
-    "family=Source+Code+Pro",
-    "Dosis",
-    "Raleway:ital,wght@0,300;0,400;0,700;1,400",
-    "Righteous",
-    "Rubik+Moonrocks",
-  ].reduce((p, c) => `${p}&family=${c}`);
-
   return (
     <>
       <Head>
@@ -45,13 +40,10 @@ function MyApp({ Component, pageProps }) {
       </Head>
       {/* eslint-disable-next-line @next/next/no-page-custom-font */}
       <link
-        href={`https://fonts.googleapis.com/css2?${fonts}&display=swap`}
+        href={`https://fonts.googleapis.com/css2?${generalData.fonts}&display=swap`}
         rel="stylesheet"
       />
-      <Script
-        src="https://kit.fontawesome.com/195ee4c6bd.js"
-        crossOrigin="anonymous"
-      />
+      <Script src={generalData.fontAwesomeKitAddress} crossOrigin="anonymous" />
       {/* <Script async src="//www.instagram.com/embed.js"/>*/}
       <div
         css={css`
