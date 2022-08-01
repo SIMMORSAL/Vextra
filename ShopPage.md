@@ -24,6 +24,5 @@ Vextra is written using a combination of NextJS, TypeScript, and Emotion, provid
 Take this as a base to build your own world. 
 The experience is curated to feel good on very simple elements. It can be a lot better when you add your own conponents to it.
 
-![Screenshot of README.md](TODO)
 
 

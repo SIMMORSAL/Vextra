@@ -85,7 +85,10 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
 
 This is a full blown test in demonstration of Rich Chunks abilities. 
 You can find the data file of this and all the other pages
-in ${getInlineCode("/data/local/portfolio/", "green")} directory.
+in ${getInlineCode(
+              "/data/local/portfolio/&#8291;getDataRichContentHandbook.ts",
+              "green"
+            )}.
 \` \`           
 \` \`           
 
@@ -122,7 +125,7 @@ interface RichChunkModel {
   gradient?: string[];
   gradientDegree?: number;
   backgroundImage?: string;
-  freeSpaceTop?: string; // e.g: "200px", or "20vh" // TODO
+  freeSpaceTop?: string; // e.g: "200px", or "20vh" 
   minHeight?: string; // e.g: "500px", or "80vh"
   textsTop?: RichTextModel[];
   bigImage?: RichImageModel;
@@ -147,12 +150,11 @@ interface RichTextModel {
 interface RichImageModel {
   path: string;
   subText?: string;
-  align?: "start" | "center" | "end"; // works only if small // TODO
+  align?: "start" | "center" | "end"; // works only if small 
   aspectRatio?: string; // you can write your image's width and height
   animation?: RichAnimation;
 }
 
-// TODO
 interface RichVideoModel {
   path: string;
   align?: "start" | "center" | "end"; // works only if small
@@ -160,7 +162,6 @@ interface RichVideoModel {
   animation?: RichAnimation;
 }
 
-// TODO
 interface MediaBarModel {
   leftImage?: RichImageModel;
   leftVideo?: RichVideoModel;
@@ -172,7 +173,7 @@ interface MediaBarModel {
 interface RichAnimation {
   animateOnScroll?: boolean;
   translateDistance?: number; // e.g: 25vh and 25vw
-  duration?: number; // in milliseconds  // TODO
+  duration?: number; // in milliseconds
   animateFrom?:
     | "none"
     | "top"

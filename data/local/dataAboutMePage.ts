@@ -14,7 +14,7 @@ Hi, and welcome to my website.
 I'm a determined project manager with 10 years of experience in the field. 
 Here you'll find a short sum of my history and the things I've been doing 
 through my professional career. However please do check out the Portfolio 
-tab to see my work in more details.
+tab to see my works in more detail.
 `,
     textBottom: `
 Hi again. This actually is not for any person named "Jane Smith", and all the data are fake and merely mockup.
