@@ -13,5 +13,6 @@ export const getGeneralData = (): GeneralDataModel => {
       "Righteous",
       "Rubik+Moonrocks",
     ].reduce((p, c) => `${p}&family=${c}`),
+    defaultFont: "Raleway, sans-serif",
   };
 };

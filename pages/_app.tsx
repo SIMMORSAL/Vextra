@@ -47,7 +47,7 @@ function MyApp({ Component, pageProps }) {
       {/* <Script async src="//www.instagram.com/embed.js"/>*/}
       <div
         css={css`
-          font-family: Raleway, sans-serif;
+          font-family: ${generalData.defaultFont};
           //font-family: "Dosis", sans-serif;
           font-weight: 400;
           //font-size: 1.1em;

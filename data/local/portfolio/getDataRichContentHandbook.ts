@@ -85,10 +85,7 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
 
 This is a full blown test in demonstration of Rich Chunks abilities. 
 You can find the data file of this and all the other pages
-in ${getInlineCode(
-              "/data/local/portfolio/",
-              "green"
-            )}.
+in ${getInlineCode("/data/local/portfolio/", "green")}.
 \` \`           
 \` \`           
 
@@ -427,7 +424,7 @@ inside ${getInlineCode("<a...><span...>TITLE</span></a>")} like in the example a
 
 If you need to edit code-block and it's syntax highlighting, you can do so by 
 editing ${getInlineCode(
-              "/components/RichContent/&#8291;Markdown/MarkdownSyntaxTheme.ts ",
+              "/components/RichContent/Markdown/MarkdownSyntaxTheme.ts ",
               "green"
             )}.
           

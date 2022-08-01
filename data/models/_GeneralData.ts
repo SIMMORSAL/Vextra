@@ -4,4 +4,5 @@ export interface GeneralDataModel {
   applyColorToLogo: boolean;
   fontAwesomeKitAddress: string;
   fonts: string;
+  defaultFont: string;
 }

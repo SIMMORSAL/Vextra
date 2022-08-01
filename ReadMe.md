@@ -53,10 +53,13 @@ Edit this in:
 `/data/local/_dataGeneral.ts`
 
 ```js
-interface _GeneralDataModel {
+interface GeneralDataModel {
   logoBig: string;
   logoSmall: string;
   applyColorToLogo: boolean;
+  fontAwesomeKitAddress: string;
+  fonts: string;
+  defaultFont: string;
 }
 ```
 `applyColorToLogo` : You can choose to have colors applied to your logo when you navigate the site, which you can disable by setting this to false.
