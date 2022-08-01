@@ -19,7 +19,7 @@ export default function Achievements(props: Props) {
       `}
     >
       {achievements.map((value) => {
-        return <Ach key={value.groupName} ach={value} />;
+        return <Ach key={value.groupTitle} ach={value} />;
       })}
     </div>
   );
@@ -27,7 +27,7 @@ export default function Achievements(props: Props) {
 
 function Ach({ ach }: { ach: History }) {
   return (
-    <div key={ach.groupName}>
+    <div key={ach.groupTitle}>
       <div
         css={css`
           display: flex;
@@ -52,7 +52,7 @@ function Ach({ ach }: { ach: History }) {
             font-size: 0.93em;
           `}
         >
-          {ach.groupName}
+          {ach.groupTitle}
         </p>
       </div>
       {ach.items.map((value) => {

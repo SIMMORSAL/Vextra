@@ -49,7 +49,7 @@ If you want to deploy it on your own server, visit [this link](https://nextjs.or
 
 Landing starts by a big logo image taking all the screen, and then getting smaller while other elements start appearing. After you click on a Tab button and open it, the image will turn into a small logo image and moves to the center of the header. Below is the data it needs for this, however this data is also used in other places.
 
-Edit this in:  
+###### Edit this in:  
 `/data/local/_dataGeneral.ts`
 
 ```js
@@ -70,7 +70,7 @@ use [Google Fonts](https://fonts.google.com/)
 
 Data in this page consists of two parts. One holds image, name, and two long strings. And the other one is a list of History objects that you can fill with anything that demonstrates your abilities and the things you've done.
 
-Edit this in:  
+###### Edit this in:  
 `/data/local/dataAboutMePage.ts`
 
 ```js
@@ -82,7 +82,7 @@ interface AboutMeData {
 }
 
 interface History {
-  groupName: string;
+  groupTitle: string;
   icon: string;
   items: Item[];
 }
@@ -92,10 +92,13 @@ interface Item {
   date?: string;
   description?: string;
 }
-
 ```
 
 ## Contact Me
+
+###### Edit this in:  
+`/data/local/dataContactPage.ts`
+
 ```js
 interface ContactGroup {
   socialHandle: string;
@@ -111,6 +114,12 @@ interface Links {
 
 ## Portfolio
 
+To make new Portfolio items in this tab, you should make a list of 
+`Portfolio` Objects.
+
+###### Edit this in:  
+`/data/local/dataContactPage.ts`
+
 ```js
 interface Portfolio {
   linkId: string;
@@ -122,20 +131,42 @@ interface Portfolio {
   pageRichContent: RichChunkModel[];
   headerItemsColor?: string;
   backgroundColor?: string;
+  textColor?: string;
 }
 ```
+`isBig` : By default the first item in `http.../portfolio` page is sized big
+and the rest will be placed in a row of two elements.
+Setting this value on items that would be small, will cause them to be 
+big as well.
 
-`awardImage`: You can give an award image to a portfolio item and when you enter the home page, it'll show up after a little while, and then will become small and sits in bottom left corner. However, Award images are made to work with square images, and things may look funky otherwise.  
-To fix this, you'll need to open `/components/PagePortfolio/PortfolioItem.tsx` and go to line 87. There's more information there.
+`awardImage`: You can give an award image to a portfolio item 
+and when you enter the home page, it'll show up after a little 
+while, and then will become small and sits in bottom left corner. 
+However, Award images are made to work with square images, and 
+things may look funky otherwise.  
+To fix this, you'll need to open 
+`/components/PagePortfolio/PortfolioItem.tsx` and go to line 87. 
+There's more information there.
+
+`isBackgroundDark` : `awardImage` uses this in  `http.../portfolio` page
+to decide if the shadow behind it should be white or black.
+
 
 
 ### Portfolio Pages
 
-There's a special package developed for this website, named RichContent. It allows you to create beautiful and animated pages very fast and nearly anybody can make pages with it easily by editing a javascript Object.
+There's a special package developed for this website, named RichContent. 
+It allows you to create beautiful and animated pages very fast and nearly 
+anybody can make pages with it easily by editing a javascript Object.
 
-To make it work, you need to give a list of `RichChunkModel` to the `pageRichContent' property. To see some examples of it running, please go to [vextra.vercel.app/portfolio](https://vextra.vercel.app/portfolio).
+To make it work, you need to give a list of `RichChunkModel` to the 
+`pageRichContent` property. To see some examples of it running, please 
+go to [vextra.vercel.app/portfolio](https://vextra.vercel.app/portfolio).
 
-To learn how you can create your own pages, visit [https://vextra.vercel.app/portfolio](https://vextra.vercel.app/portfolio/rich-content-handbook). It is a page entirely built using Rich Content, that explains how you can make your own.
+To learn how you can create your own pages, visit 
+[https://vextra.vercel.app/portfolio](https://vextra.vercel.app/portfolio/rich-content-handbook). 
+It is a page entirely built using Rich Content, and it explains how
+you can make your own.
 
 
 

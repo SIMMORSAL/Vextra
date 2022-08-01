@@ -28,7 +28,7 @@ You can grab your copy from xxx.
 export function getHistory(): History[] {
   return [
     {
-      groupName: "Work history",
+      groupTitle: "Work history",
       icon: "fa-solid fa-briefcase",
       items: [
         {
@@ -63,7 +63,7 @@ and manage risk more effectively
       ],
     },
     {
-      groupName: "Licenses",
+      groupTitle: "Licenses",
       icon: "fa-solid fa-file",
       items: [
         {
@@ -81,7 +81,7 @@ Honors: cum laude (GPA: 3.6/4.0)
       ],
     },
     {
-      groupName: "Achievements",
+      groupTitle: "Achievements",
       icon: "fa-solid fa-trophy",
       items: [
         {

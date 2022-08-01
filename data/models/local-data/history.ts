@@ -1,5 +1,5 @@
 export interface History {
-  groupName: string;
+  groupTitle: string;
   icon: string;
   items: Item[];
 }
