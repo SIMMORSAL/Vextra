@@ -422,7 +422,7 @@ to [fontawesome.com/icons](https://fontawesome.com/icons)
 and once you find the icon you want, copy the **HTML** code 
 then paste it in your text, like in the example above.
 
-To colorize your text links, you can create an a tag with a span 
+To colorize your text links, you can create an \`a\` tag with a \`span\`
 inside ${getInlineCode("<a...><span...>TITLE</span></a>")} like in the example above.
 
 If you need to edit code-block and it's syntax highlighting, you can do so by 
