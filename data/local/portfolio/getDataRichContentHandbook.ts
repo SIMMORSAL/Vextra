@@ -86,7 +86,7 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
 This is a full blown test in demonstration of Rich Chunks abilities. 
 You can find the data file of this and all the other pages
 in ${getInlineCode(
-              "/data/local/portfolio/,
+              "/data/local/portfolio/",
               "green"
             )}.
 \` \`           
@@ -416,12 +416,6 @@ _More on ${getInlineCode("animation", "#9d0006")} below._
 
 All the texts are rendered as Markdown for easy 
 and fast typing.
-        
-If you need to edit code-block and it's syntax highlighting, you can do so by 
-editing ${getInlineCode(
-              "/components/RichContent/&#8291;Markdown/MarkdownSyntaxTheme.ts ",
-              "green"
-            )}.
             
 <i class="fa-solid fa-fire"></i>  To use fonts in you text, go 
 to [fontawesome.com/icons](https://fontawesome.com/icons)
@@ -430,6 +424,12 @@ then paste it in your text, like in the example above.
 
 To colorize your text links, you can create an a tag with a span 
 inside ${getInlineCode("<a...><span...>TITLE</span></a>")} like in the example above.
+
+If you need to edit code-block and it's syntax highlighting, you can do so by 
+editing ${getInlineCode(
+              "/components/RichContent/&#8291;Markdown/MarkdownSyntaxTheme.ts ",
+              "green"
+            )}.
           
 To write inline-code, it's better to use ${getInlineCode(
               "getInlineCode(text, color)"
