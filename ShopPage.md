@@ -1,5 +1,5 @@
 # Vextra 
-#### A NextJS + Emotion portfolio website, with a page creation engine that is so easy to use, anyone can create a page with it.
+#### An elegant portfolio website, with a page creation engine that is so easy to use, anyone can create a page with it.
 
 A highly customizable platform ready to be a portfolio page, and become a lot more with some of your own components.
 

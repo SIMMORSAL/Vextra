@@ -3,9 +3,15 @@
 
 Vextra is a portfolio template, packed with animations with a satisfying flow to page navigation. 
 
-You can customize the website for yourself by going to `/data/` directory where you can find all the data and color files, and put your images under `/public/` directory.
+You can customize the website for yourself by going to `/data/` directory where you can find all the data files you need to edit things. You can also put your images under `/public/` directory.
+
+To edit the fonts, you can do so at the beginning  lines of `/pages/_app.ts` function's return.
 
 ## Installation
+
+#### Setting up Font Awesome
+
+you need to 
 
 #### Running Locally
 
