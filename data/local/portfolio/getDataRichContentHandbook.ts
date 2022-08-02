@@ -137,10 +137,11 @@ interface RichChunkModel {
 interface RichTextModel {
   text: string;
   align?: "start" | "center" | "end";
-  userSelect?: string;
+  userSelect?: string; // eg: "none" or "texts" - def: "none"
   color?: string;
   size?: string; // eg: "2em" or "25px"
   fontFamily?: string;
+  shadow?: string;
   animation?: RichAnimation;
 }
 
@@ -155,14 +156,17 @@ interface RichImageModel {
 interface RichVideoModel {
   path: string;
   align?: "start" | "center" | "end"; // works only if small
-  aspectRatio?: string;
+  aspectRatio?: string; // you can write your video's width and height
+  autoPlay?: boolean; // will mute the sound if true
+  loop?: boolean;
+  controls?: boolean;
   animation?: RichAnimation;
 }
 
 interface MediaBarModel {
   leftImage?: RichImageModel;
   leftVideo?: RichVideoModel;
-  text?: RichTextModel[];
+  texts?: RichTextModel[];
   rightImage?: RichImageModel;
   rightVideo?: RichVideoModel;
 }
@@ -238,7 +242,7 @@ Here's a diagram of how things are drawn:
 
 Below is an example of a chunk with image as it's background. It 
 utilizes ${getInlineCode("backgroundImage", "#9d0006")} &#8291;
-and ${getInlineCode("minHeight", "#9d0006")}:
+and ${getInlineCode("minHeight", "#b67e7b")}:
 `,
           },
         ],
@@ -252,12 +256,16 @@ and ${getInlineCode("minHeight", "#9d0006")}:
           {
             align: "center",
             color: "#eeeeee",
-            size: "2em",
+            size: "4em",
             fontFamily: "'Rubik Moonrocks', cursive",
             userSelect: "none",
             animation: {
               animateOnScroll: true,
+              animateFrom: "topRight",
+              translateDistance: 7,
             },
+            shadow: "24px -24px 48px #b67e7b",
+            // shadow: "red",
             text: "## Nebuland",
           },
           {
@@ -384,6 +392,11 @@ or animated individually.
     {
       text: "First text part",
       align: "center",
+      userSelect?: "text",
+      color: "red",
+      size: "1.4em",
+      fontFamily: "'Rubik Moonrocks', cursive",
+      shadow: "black", // or "3px 4px 6px #ff5a00"
     },
     {
       text: \`
@@ -420,7 +433,9 @@ and once you find the icon you want, copy the **HTML** code
 then paste it in your text, like in the example above. If some fonts don't work for you, it's because you need to be on a higher tier plan.
 
 To colorize your text links, you can create an \`a\` tag with a \`span\`
-inside ${getInlineCode("<a...><span...>TITLE\</span>\</a>")} like in the example above.
+inside ${getInlineCode(
+              `\<a...\>\<span...\>TITLE\<\/span\></a\>`
+            )} like in the example above.
 
 If you need to edit code-block and it's syntax highlighting, you can do so by 
 editing ${getInlineCode(
@@ -477,7 +492,7 @@ and ${getInlineCode("mediaBar", "#794d00")}.
 
 ${getInlineCode("aspectRatio", "#9d0006")}: It is 
 not important no provide this, but if you do, content won't jump down when image starts loading.\  
-You may also play with this number and crop images.
+You may also play with this number to crop images.
 
 ${getInlineCode("align", "#9d0006")}: Only works 
 in ${getInlineCode("smallImage ", "#794d00")}.
@@ -542,8 +557,7 @@ ${getInlineCode("autoPlay", "#9d0006")}: By setting this to true,
 videos will start playing as soon as you scroll to them or they animate in 
 on scroll, and will pause when they're out of view. 
 However bear in mind
-that modern browsers won't allow videos to autoplay with sound. 
-Therefore the sound will be muted.
+that modern browsers won't allow videos to autoplay with sound, therefore the sound will be muted.
 
 ${getInlineCode("align", "#9d0006")}: Only works 
 in ${getInlineCode("smallVideo ", "#794d00")}.

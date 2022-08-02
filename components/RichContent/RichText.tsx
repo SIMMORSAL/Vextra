@@ -90,7 +90,7 @@ function TextChunk(p: { text: RichTextModel }) {
   const pShadow = p.text.shadow;
   const shadow = pShadow
     ? isColor(pShadow)
-      ? `1px 1px 3px ${pShadow}`
+      ? `3px 4px 6px ${pShadow}`
       : pShadow
     : "";
 
