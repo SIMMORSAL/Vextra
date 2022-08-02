@@ -417,7 +417,7 @@ and fast typing.
 <i class="fa-solid fa-fire"></i>  To use fonts in you text, go 
 to [fontawesome.com/icons](https://fontawesome.com/icons)
 and once you find the icon you want, copy the **HTML** code 
-then paste it in your text, like in the example above.
+then paste it in your text, like in the example above. If some fonts don't work for you, it's because you need to be on a higher tier plan.
 
 To colorize your text links, you can create an \`a\` tag with a \`span\`
 inside ${getInlineCode("<a...><span...>TITLE</span></a>")} like in the example above.
