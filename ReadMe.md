@@ -118,7 +118,7 @@ To make new Portfolio items in this tab, you should make a list of
 `Portfolio` Objects.
 
 ###### Edit this in:  
-`/data/local/dataContactPage.ts`
+`/data/local/dataPortfoliosPage.ts`
 
 ```js
 interface Portfolio {
