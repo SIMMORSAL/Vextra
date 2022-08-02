@@ -420,7 +420,7 @@ and once you find the icon you want, copy the **HTML** code
 then paste it in your text, like in the example above. If some fonts don't work for you, it's because you need to be on a higher tier plan.
 
 To colorize your text links, you can create an \`a\` tag with a \`span\`
-inside ${getInlineCode("<a...><span...>TITLE</span></a>")} like in the example above.
+inside ${getInlineCode("<a...><span...>TITLE\</span>\</a>")} like in the example above.
 
 If you need to edit code-block and it's syntax highlighting, you can do so by 
 editing ${getInlineCode(
