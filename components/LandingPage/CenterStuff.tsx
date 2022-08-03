@@ -4,8 +4,10 @@ import {
   colorBackground,
   colorHeaderItemSelect,
   colorElements,
+  colorLandingLine,
 } from "../../data/colors";
 import Image from "next/image";
+import { hexToCSSFilter } from "hex-to-css-filter";
 
 interface Props {
   begin: boolean;
@@ -84,8 +86,7 @@ export default function CenterStuff({
           alt={""}
           layout={"intrinsic"}
           css={css`
-            filter: brightness(0) saturate(100%) invert(45%) sepia(0%)
-              saturate(1073%) hue-rotate(140deg) brightness(96%) contrast(85%);
+            filter: ${hexToCSSFilter(colorLandingLine).filter};
             opacity: ${selectedPage === undefined ? 1 : 0};
             transform: ${selectedPage === undefined ? "none" : "translateY(15vh)"};
 

@@ -41,6 +41,44 @@ function MyApp({ Component, pageProps }) {
       <Head>
         {/*<meta name="description" content="An example of a meta description." />*/}
         <title>Vextra</title>
+
+        <link
+          rel="apple-touch-icon"
+          sizes="57x57"
+          href="/favicons/apple-touch-icon.png"
+        />
+
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicons/favicon-16x16.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicons/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="192x192"
+          href="/favicons/android-chrome-192x192.png"
+        />
+
+        <link rel="shortcut icon" href="/favicons/favicon.ico" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+
+        <meta
+          name="msapplication-TileImage"
+          content="/favicons/mstile-150x150.png"
+        />
+        <meta
+          name="msapplication-square150x150logo"
+          content="/favicons/mstile-150x150.png"
+        />
       </Head>
       {/* eslint-disable-next-line @next/next/no-page-custom-font */}
       <link
