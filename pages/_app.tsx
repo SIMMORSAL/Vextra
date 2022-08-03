@@ -39,7 +39,6 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        {/*<meta name="description" content="An example of a meta description." />*/}
         <title>Vextra</title>
 
         <link
@@ -64,7 +63,7 @@ function MyApp({ Component, pageProps }) {
           rel="icon"
           type="image/png"
           sizes="192x192"
-          href="/favicons/android-chrome-192x192.png"
+          href="/android-chrome-192x192.png"
         />
 
         <link rel="shortcut icon" href="/favicons/favicon.ico" />
