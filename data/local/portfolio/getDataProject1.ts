@@ -1,14 +1,13 @@
 import { RichChunkModel } from "../../models/rich-chunk/RichChunkModel";
 import { headerHeight } from "../../../components/Header";
 
-<iframe src="https://giphy.com/embed/UNHplVba2fweBfkLHv" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/background-visuals-particles-UNHplVba2fweBfkLHv">via GIPHY</a></p>
-
 export function getDataProject1(): RichChunkModel[] {
   return [
     {
       nameId: "asdf",
       minHeight: `calc(100vh - ${headerHeight}px)`,
-      backgroundImage: "https://giphy.com/gifs/background-visuals-particles-UNHplVba2fweBfkLHv",
+      backgroundImage:
+        "https://giphy.com/gifs/background-visuals-particles-UNHplVba2fweBfkLHv",
       textsTop: [
         {
           align: "center",
