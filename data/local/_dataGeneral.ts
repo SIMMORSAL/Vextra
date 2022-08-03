@@ -15,6 +15,7 @@ export const getGeneralData = (): GeneralDataModel => {
     ].reduce((p, c) => `${p}&family=${c}`),
     defaultFont: "Raleway, sans-serif",
     startupImageCacheQueue: [
+      "/images/my_image.jpg",
       "/images/portfolio/scootify/scootify_red.jpg",
       "/images/portfolio/gallery/g0.jpg",
     ],
