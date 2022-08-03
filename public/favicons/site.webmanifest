@@ -1,0 +1,14 @@
+{
+    "name": "Vextra",
+    "short_name": "Vextra",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ff0000",
+    "background_color": "#ff0000",
+    "display": "standalone"
+}
