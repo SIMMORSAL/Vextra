@@ -26,8 +26,10 @@ export function getAllPortfolios(): Portfolio[] {
       linkId: "X-bike",
       name: "X|Bike",
       isBig: true,
-      backgroundColor: "#0066ff",
-      headerItemsColor: "#011736",
+      // backgroundColor: "#262949",
+      backgroundColor: "#282649",
+      headerItemsColor: "#8a85ff",
+      textColor: "#fff",
       isBackgroundDark: true,
       image: "/images/portfolio/PortfolioItemTemplate1.jpg",
       // image:

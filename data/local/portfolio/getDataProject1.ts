@@ -11,7 +11,10 @@ export function getDataProject1(): RichChunkModel[] {
       textsTop: [
         {
           align: "center",
-          text: "X|Phone",
+          size: "6em",
+          text: `
+**<span style="color: red; ">X</span><span style="font-size: .92em;">|</span>Phone**
+`,
         },
       ],
       bigImage: {
