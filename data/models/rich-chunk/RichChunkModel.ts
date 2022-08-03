@@ -12,6 +12,7 @@ export interface RichChunkModel {
   smallImage?: RichImageModel;
   bigVideo?: RichVideoModel;
   smallVideo?: RichVideoModel;
+  freeSpaceMiddle?: string;
   mediaBar?: MediaBarModel;
   textsBottom?: RichTextModel[];
   freeSpaceBottom?: string;

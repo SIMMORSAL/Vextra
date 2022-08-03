@@ -58,7 +58,7 @@ export default function RichChunk(p: Props) {
       )}
       {p.chunk.textsTop && (
         <div
-        // * This is the way to get one way chunk and test it
+        // * This is one way to get a chunk and test it
         // css={css`
         //   background-color: ${p.chunk.textsTop[0].texts ===
         //   getPortfolio("rich-content-handbook").pageContent[0].textsTop[0].texts
@@ -116,6 +116,13 @@ export default function RichChunk(p: Props) {
             <RichVideo video={p.chunk.smallVideo} />
           </div>
         </div>
+      )}
+      {p.chunk.freeSpaceMiddle && (
+        <div
+          css={css`
+            height: ${p.chunk.freeSpaceMiddle};
+          `}
+        />
       )}
       {p.chunk.mediaBar && (
         <MediaBar mediaBar={p.chunk.mediaBar} textColor={textColor} />

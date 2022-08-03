@@ -251,12 +251,13 @@ and ${getInlineCode("minHeight", "#b67e7b")}:
       {
         minHeight: `200vh`,
         freeSpaceTop: "20vh",
+        freeSpaceMiddle: "40vh",
         backgroundImage: "/images/portfolio/handbook/bg_sample.jpg",
         textsTop: [
           {
             align: "center",
             color: "#eeeeee",
-            size: "4em",
+            size: "2em",
             fontFamily: "'Rubik Moonrocks', cursive",
             userSelect: "none",
             animation: {
@@ -281,34 +282,18 @@ and ${getInlineCode("minHeight", "#b67e7b")}:
             text: `
 \` \`  
 \` \`  
-\` \`  
 
 This image will always fill the entire width of the screen, 
 and expand or shrink depending on the size that is given min height, or how much space it's content need
 
 \` \`  
 \` \`  
-\` \`  
-\` \`  
-\` \`  
-\` \`  
-\` \`  
-\` \`  
-\` \`  
-\` \`  
-\` \`  
-\` \`  
-\` \`  
-\` \`  
-\` \`  
-\` \`  
-\` \`  
-\` \`  
-\` \`  
 
 &#8291;
 `,
           },
+        ],
+        textsBottom: [
           {
             color: "#eeeeee",
             text: "Image by [Javier Miranda](https://unsplash.com/@nuvaproductions)",
@@ -582,6 +567,7 @@ in ${getInlineCode("smallVideo ", "#794d00")}.
         //   },
         // },
         freeSpaceTop: "30px",
+
         freeSpaceBottom: "40px",
       },
       {
