@@ -164,7 +164,7 @@ To make it work, you need to give a list of `RichChunkModel` to the
 go to [vextra.vercel.app/portfolio](https://vextra.vercel.app/portfolio).
 
 To learn how you can create your own pages, visit 
-[https://vextra.vercel.app/portfolio](https://vextra.vercel.app/portfolio/rich-content-handbook). 
+[https://vextra.vercel.app/portfolio/rich-content-handbook](https://vextra.vercel.app/portfolio/rich-content-handbook). 
 It is a page entirely built using Rich Content, and it explains how
 you can make your own.
 

@@ -96,12 +96,20 @@ of ${getInlineCode("RichChunkModel")} items provided in your portfolio object:
 interface Portfolio {
   ...
   pageRichContent: RichChunkModel[];
-  headerColor: string;
-  headerItemsColor: string;
+  backgroundColor?: string;
+  textColor?: string;
+  headerItemsColor?: string;
 }
 \`\`\`
-_The two color properties are used by other parts of the website to style the page, 
-and they are unrelated to Rich Content._
+${getInlineCode("backgroundColor", "#9d6301")} and ${getInlineCode(
+              "textColor",
+              "#9d6301"
+            )} : 
+ These are used to set the default colors of the whole page.
+
+${getInlineCode("headerItemColor", "#9d6301")} : 
+_this is used by other parts of the website 
+to style the page, and is unrelated to Rich Content._
 \` \`           
 \` \`           
 \` \`           
@@ -129,6 +137,7 @@ interface RichChunkModel {
   smallImage?: RichImageModel;
   bigVideo?: RichVideoModel;
   smallVideo?: RichVideoModel;
+  freeSpaceMiddle?: string;
   mediaBar?: MediaBarModel;
   textsBottom?: RichTextModel[];
   freeSpaceBottom?: string;
