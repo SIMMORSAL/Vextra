@@ -28,12 +28,4 @@ export const runStartupTasks = (p: StartUpTasksProps) => {
       console.log(`\n   Image Caching Failed:\n${reason}`);
     });
   });
-
-  // cacheImage(
-  //   "https://avatarairlines.com/wp-content/uploads/2020/05/Female-Placeholder.png"
-  // ).catch((reason) =>
-  //   console.log(
-  //     `Image Caching Failed:  "https://avatarairlines.com/wp-content/uploads/2020/05/Female-Placeholder.png"\n${reason}`
-  //   )
-  // );
 };
