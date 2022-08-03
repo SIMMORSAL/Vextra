@@ -256,7 +256,7 @@ and ${getInlineCode("minHeight", "#b67e7b")}:
           {
             align: "center",
             color: "#eeeeee",
-            size: "4em",
+            size: "3em",
             fontFamily: "'Rubik Moonrocks', cursive",
             userSelect: "none",
             animation: {

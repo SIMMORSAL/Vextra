@@ -25,8 +25,8 @@ return (
       nameId: "1",
       textsTop: [
         {
-          align: "center",
           text: "# Scootify",
+          align: "center",
           color: "#e3d9d9",
           shadow: "0 0 8px #e3d9d999",
           size: "2em",
