@@ -60,11 +60,18 @@ interface GeneralDataModel {
   fontAwesomeKitAddress: string;
   fonts: string;
   defaultFont: string;
+  startupImageCacheQueue: string[],
 }
 ```
 `applyColorToLogo` : You can choose to have colors applied to your logo when you navigate the site, which you can disable by setting this to false.  
+
 `fonts` : Website is setup to 
-use [Google Fonts](https://fonts.google.com/)
+use [Google Fonts](https://fonts.google.com/).
+
+`startupImageCacheQueue` : You can put a list of image links 
+that should appear as soon as user navigates to a page here,
+and it will be downloaded and  cached as soon as the website
+loads, ready to be displayed quickly.
 
 ## About Me
 

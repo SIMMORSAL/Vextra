@@ -14,5 +14,6 @@ export const getGeneralData = (): GeneralDataModel => {
       "Rubik+Moonrocks",
     ].reduce((p, c) => `${p}&family=${c}`),
     defaultFont: "Raleway, sans-serif",
+    startupImageCacheQueue: [""],
   };
 };

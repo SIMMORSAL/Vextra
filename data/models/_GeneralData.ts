@@ -5,4 +5,5 @@ export interface GeneralDataModel {
   fontAwesomeKitAddress: string;
   fonts: string;
   defaultFont: string;
+  startupImageCacheQueue: string[];
 }

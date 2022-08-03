@@ -12,6 +12,7 @@ import Script from "next/script";
 import { runStartupTasks } from "../helpers/StartUpTasks";
 import { Content } from "../components/_App/_Content";
 import { getGeneralData } from "../data/local/_dataGeneral";
+import { getAllPortfolios } from "../data/local/dataPortfoliosPage";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -24,7 +25,10 @@ function MyApp({ Component, pageProps }) {
   const generalData = getGeneralData();
 
   useEffect(() => {
-    runStartupTasks();
+    runStartupTasks({
+      portfolios: getAllPortfolios(),
+      startupImageCacheQueue: generalData.startupImageCacheQueue,
+    });
   }, []);
 
   useEffect(() => {
