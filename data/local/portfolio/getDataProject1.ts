@@ -11,7 +11,7 @@ export function getDataProject1(): RichChunkModel[] {
       textsTop: [
         {
           align: "center",
-          size: "5em",
+          size: "4em",
           text: `
 **<span style="color: red; ">X</span><span style="font-size: .92em;">|</span>Phone**
 `,
