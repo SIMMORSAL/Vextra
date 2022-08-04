@@ -74,6 +74,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis u
         "420 Hertz display",
         "IP68 Water and Dust Resistant",
         "2TB NVME Storage",
+        "9800 mAh Battery",
+        "5G Capable",
+        "128 Megapixel Camera",
+        "Triple Sim Tray",
       ].map((s) => {
         return {
           textsTop: [
