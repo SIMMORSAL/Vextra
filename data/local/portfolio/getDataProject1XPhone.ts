@@ -78,7 +78,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis u
         ],
       },
       ...([
-        "Snapdragon 969",
+        "Snapdragon 999",
         "420 Hertz display",
         "IP69 Water and Dust Resistant",
         "2TB NVME Storage",
