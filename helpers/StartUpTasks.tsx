@@ -8,7 +8,7 @@ interface CacheImagesProps {
 
 export const cacheImages = (p: CacheImagesProps) => {
   // * caching images
-  ["/images/logo_big.png", "/images/landing_line.png", "/images/logo_small.png"].map(
+  ["/images/landing_line.png"].map(
     (s) => {
       cacheImage(s).catch((reason) => {
         console.log(`\n   Image Caching Failed:\n${reason}`);
