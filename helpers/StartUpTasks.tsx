@@ -8,6 +8,14 @@ interface StartUpTasksProps {
 
 export const runStartupTasks = (p: StartUpTasksProps) => {
   // * caching images
+  ["/images/logo_big.png", "/images/landing_line.png", "/images/logo_small.png"].map(
+    (s) => {
+      cacheImage(s).catch((reason) => {
+        console.log(`\n   Image Caching Failed:\n${reason}`);
+      });
+    }
+  );
+
   p.portfolios.map((po) => {
     po.image &&
       cacheImage(po.image)
