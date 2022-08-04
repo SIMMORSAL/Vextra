@@ -80,7 +80,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis u
       ...([
         "Snapdragon 969",
         "420 Hertz display",
-        "IP68 Water and Dust Resistant",
+        "IP69 Water and Dust Resistant",
         "2TB NVME Storage",
         "9800 mAh Battery",
         "6G Capable",
