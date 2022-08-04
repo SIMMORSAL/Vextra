@@ -83,8 +83,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis u
         "IP68 Water and Dust Resistant",
         "2TB NVME Storage",
         "9800 mAh Battery",
-        "5G Capable",
-        "128 Megapixel Camera",
+        "6G Capable",
+        "256 Megapixel Camera",
         "Triple Sim Tray",
       ].map((s) => {
         return {
