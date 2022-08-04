@@ -72,6 +72,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="mobile-web-app-capable" content="yes" />
 
+        <meta name="msapplication-config" content="/favicons/browserconfig.xml" />
         <meta
           name="msapplication-TileImage"
           content="/favicons/mstile-150x150.png"
