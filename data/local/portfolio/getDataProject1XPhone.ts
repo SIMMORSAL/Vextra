@@ -65,6 +65,14 @@ export function getDataProject1XPhone(): RichChunkModel[] {
             },
             text: `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis urna et scelerisque. Nulla dignissim ac eros ut lobortis. Donec eleifend quis nisi in fringilla. Integer rhoncus, leo vulputate dictum elementum, odio velit condimentum massa, a eleifend orci tellus sed ligula. Duis convallis volutpat augue, id volutpat augue porttitor eu. Donec risus mi, semper non dictum finibus, efficitur nec nunc. Sed iaculis odio nec efficitur posuere. Aliquam porta lectus orci, vel cursus sem laoreet sit amet. Ut viverra nulla at scelerisque aliquam. Duis venenatis arcu nunc, sit amet luctus augue egestas sit amet. Sed eget est est. Proin quis lectus eget magna volutpat consequat at luctus ex. Quisque posuere iaculis vestibulum. Phasellus non interdum nibh. Ut nisi orci, cursus nec euismod at, pharetra quis massa.
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+# Phone Features
 `,
           },
         ],
@@ -108,6 +116,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis u
             text: `
 ## Attribution
 #### <a href="https://unsplash.com/@efekurnaz"><span style="color: #ff9465;">Efe kurnaz</span></a>
+#### <a href="https://freepik.com/author/rawpixel-com"><span style="color: #ff9465;">rawpixel.com</span></a>
 #### <a href="https://www.pexels.com/@ambient_nature_-atmosphere-1682386/https://unsplash.com/@efekurnaz"><span style="color: #ff9465;">Ambient_Nature_Atmosphere</span></a>
 `,
           },
