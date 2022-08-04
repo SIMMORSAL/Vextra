@@ -9,7 +9,7 @@ import _MoveToMain from "../components/_App/_MoveToMain";
 import { useEffect, useState } from "react";
 import Head from "next/head";
 import Script from "next/script";
-import { runStartupTasks } from "../helpers/StartUpTasks";
+import { cacheImages } from "../helpers/StartUpTasks";
 import { Content } from "../components/_App/_Content";
 import { getGeneralData } from "../data/local/_dataGeneral";
 import { getAllPortfolios } from "../data/local/dataPortfoliosPage";
@@ -25,10 +25,17 @@ function MyApp({ Component, pageProps }) {
   const generalData = getGeneralData();
 
   useEffect(() => {
-    runStartupTasks({
-      portfolios: getAllPortfolios(),
-      startupImageCacheQueue: generalData.startupImageCacheQueue,
-    });
+    const ti = setTimeout(() => {
+      cacheImages({
+        portfolios: getAllPortfolios(),
+        startupImageCacheQueue: generalData.startupImageCacheQueue,
+      });
+    }, 250);
+
+    return () => {
+      clearTimeout(ti);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
