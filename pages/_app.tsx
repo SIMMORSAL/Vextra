@@ -75,7 +75,7 @@ function MyApp({ Component, pageProps }) {
 
         <link rel="shortcut icon" href="/favicons/favicon.ico" />
         <link rel="manifest" href="/favicons/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#333333" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="mobile-web-app-capable" content="yes" />
 
