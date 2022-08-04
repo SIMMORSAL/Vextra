@@ -143,7 +143,7 @@ export default function PortfolioItem(p: Props) {
       >
         <div
           css={css`
-            margin: 16px 8px;
+            margin: 16px 0;
             opacity: ${beginFadeIn ? 1 : 0};
             width: 100%;
             max-width: 400px;
