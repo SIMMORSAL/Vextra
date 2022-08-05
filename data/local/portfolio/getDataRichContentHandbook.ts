@@ -77,17 +77,23 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
         nameId: "intro",
         textsTop: [
           {
+            align: "center",
+            animation: {
+              animateFrom: "bottom",
+              duration: 900,
+            },
+            text: `
+This is a full blown test in demonstration of Rich Chunks abilities, alongside explanation. 
+You can find the data file of this and all the other pages
+in ${getInlineCode("/data/local/portfolio/", "green")}.
+`
+          },
+          {
             animation: {
               animateFrom: "bottom",
               duration: 1000,
             },
             text: ` 
-
-This is a full blown test in demonstration of Rich Chunks abilities. 
-You can find the data file of this and all the other pages
-in ${getInlineCode("/data/local/portfolio/", "green")}.
-\` \`           
-\` \`           
 
 Each portfolio page is dynamically created by reading a JavaScript List 
 of ${getInlineCode("RichChunkModel")} items provided in your portfolio object:

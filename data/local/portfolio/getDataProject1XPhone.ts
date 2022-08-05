@@ -51,6 +51,7 @@ export function getDataProject1XPhone(): RichChunkModel[] {
             animation: {
               animateOnScroll: true,
               animateFrom: "right",
+              translateDistance: 10,
             },
             text: `
 **<span style="color: red; ">X</span><span style="font-size: .92em;">|</span>Phone**
