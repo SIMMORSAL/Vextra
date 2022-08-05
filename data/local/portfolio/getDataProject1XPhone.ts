@@ -36,8 +36,9 @@ export function getDataProject1XPhone(): RichChunkModel[] {
         bigImage: {
           path: getImagePath("xphone.png"),
           animation: {
-            animateFrom: "left",
+            animateFrom: "topLeft",
             duration: 700,
+            translateDistance: 5,
           },
         },
       },
@@ -49,7 +50,7 @@ export function getDataProject1XPhone(): RichChunkModel[] {
             shadow: `-12px 0 64px ${"#3f0826"}`,
             animation: {
               animateOnScroll: true,
-              animateFrom: "left",
+              animateFrom: "right",
             },
             text: `
 **<span style="color: red; ">X</span><span style="font-size: .92em;">|</span>Phone**
