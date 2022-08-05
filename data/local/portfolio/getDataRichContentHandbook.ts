@@ -77,7 +77,7 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
         nameId: "intro",
         textsTop: [
           {
-            align: "center",
+            size: ".9em",
             animation: {
               animateFrom: "bottom",
               duration: 900,
