@@ -29,12 +29,13 @@ export function getDataProject1XPhone(): RichChunkModel[] {
         ],
       },
       {
-        minHeight: `calc(60vh - ${headerHeight}px)`,
+        minHeight: `60vh`,
         backgroundImage: getImagePath("leading-background.jpg"),
         freeSpaceTop: "15vh",
         freeSpaceBottom: "5vh",
         bigImage: {
           path: getImagePath("xphone.png"),
+          aspectRatio: "2000/1624",
           animation: {
             animateFrom: "topLeft",
             duration: 700,
@@ -119,7 +120,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis u
 ## Attribution
 #### <a href="https://unsplash.com/@efekurnaz"><span style="color: #ff9465;">Efe kurnaz</span></a>
 #### <a href="https://freepik.com/author/rawpixel-com"><span style="color: #ff9465;">rawpixel.com</span></a>
-#### <a href="https://www.pexels.com/@ambient_nature_-atmosphere-1682386/https://unsplash.com/@efekurnaz"><span style="color: #ff9465;">Ambient_Nature_Atmosphere</span></a>
+#### <a href="https://www.pexels.com/@ambient_nature_-atmosphere-1682386/"><span style="color: #ff9465;">Ambient_Nature_Atmosphere</span></a>
+#### <a href="https://www.vecteezy.com/members/icon0"><span style="color: #ff9465;">icon0.com</span></a>
+#### <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><span style="color: #ff9465;">Rick Astley</span></a>
 `,
           },
         ],

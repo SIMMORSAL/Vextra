@@ -77,7 +77,7 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
         nameId: "intro",
         textsTop: [
           {
-            size: ".9em",
+            size: ".88em",
             animation: {
               animateFrom: "bottom",
               duration: 900,
@@ -86,7 +86,7 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
 This is a full blown test in demonstration of Rich Chunks abilities, alongside explanation. 
 You can find the data file of this and all the other pages
 in ${getInlineCode("/data/local/portfolio/", "green")}.
-`
+`,
           },
           {
             animation: {
