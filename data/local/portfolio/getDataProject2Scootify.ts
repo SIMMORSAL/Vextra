@@ -59,7 +59,7 @@ Protected by **Carbon-Ceramic**, Scootify is able to withstand 10,000k N/m<sup>3
 ## Fuel:
 
 Scootify runs on **Quantized-hydroxium** which is such a potent energy source that it
-gives minor floating abilities to scootify. This makes this scooter drivable even in Death Stranding
+gives minor floating abilities to scootify. This makes this scooter drivable even in Death Stranding.
 
 
 ## Customizable:
