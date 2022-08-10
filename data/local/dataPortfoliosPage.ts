@@ -23,18 +23,18 @@ export function getAllPortfolios(): Portfolio[] {
     //   pageRichContent: getDataUmbrella(),
     // },
     {
-      linkId: "X-bike",
-      name: "X|Bike",
+      linkId: "x-phone",
+      name: "X|Phone",
       isBig: true,
       // backgroundColor: "#262949",
       backgroundColor: "#282649",
       headerItemsColor: "#8a85ff",
       textColor: "#fff",
       isBackgroundDark: true,
-      image: "/images/portfolio/PortfolioItemTemplate1.jpg",
+      image: "/images/portfolio/xphone/PortfolioItemTemplate1.jpg",
       // image:
       //   "https://th.bing.com/th/id/R.58cc46069f9c1bfec000c83e79721d31?rik=V6%2bwTqIO36Y40g&riu=http%3a%2f%2fwallup.net%2fwp-content%2fuploads%2f2016%2f05%2f24%2f374644-path-landscape-trees.jpg&ehk=4r8HqHCVUOTPA4f19szEL4vOhfNMFE4FPAQUSSsOg%2bA%3d&risl=&pid=ImgRaw&r=0",
-      awardImage: "/images/portfolio/a_design_award.gif",
+      // awardImage: "/images/portfolio/a_design_award.gif",
       pageRichContent: getDataProject1XPhone(),
     },
     {

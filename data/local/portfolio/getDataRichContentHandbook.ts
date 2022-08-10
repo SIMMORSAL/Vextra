@@ -80,7 +80,8 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
             size: ".88em",
             animation: {
               animateFrom: "bottom",
-              duration: 900,
+              duration: 600,
+              translateDistance: 6,
             },
             text: `
 This is a full blown test in demonstration of Rich Chunks abilities, alongside explanation. 
@@ -92,6 +93,7 @@ in ${getInlineCode("/data/local/portfolio/", "green")}.
             animation: {
               animateFrom: "bottom",
               duration: 1000,
+              translateDistance: 10,
             },
             text: ` 
 
