@@ -790,7 +790,7 @@ you can have all of this anywhere you want by copying  ${getInlineCode(
         //   },
         // },
         freeSpaceTop: "40vh",
-        freeSpaceBottom: "10vh",
+        freeSpaceBottom: "15vh",
         textsBottom: [
           {
             align: "center",
