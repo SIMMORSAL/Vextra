@@ -16,8 +16,9 @@ export function getDataProject2Scootify(): RichChunkModel[] {
           {
             align: "center",
             text: "# Scootify",
-            shadow: "0 0 8px #e3d9d999",
-            size: "2em",
+            fontFamily: "'Pacifico', cursive",
+            shadow: "0 0 8px #961505",
+            size: "2.3em",
           },
         ],
       },

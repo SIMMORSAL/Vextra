@@ -12,6 +12,7 @@ export const getGeneralData = (): GeneralDataModel => {
       "Raleway:ital,wght@0,300;0,400;0,700;1,400",
       "Righteous",
       "Rubik+Moonrocks",
+      "Pacifico",
     ].reduce((p, c) => `${p}&family=${c}`),
     defaultFont: "Raleway, sans-serif",
     startupImageCacheQueue: [
