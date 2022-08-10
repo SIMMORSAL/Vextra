@@ -157,11 +157,29 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis u
           },
         ],
         freeSpaceMiddle: "200px",
-        textsBottom: [
-          {
-            text: "# Revolutionary Camera System",
-            align: "center",
+        mediaBar: {
+          texts: [
+            {
+              text: "# Revolutionary Camera System",
+              align: "center",
+              animation: {
+                animateOnScroll: true,
+                animateFrom: "bottomLeft",
+                translateDistance: 8,
+              },
+            },
+          ],
+          leftImage: {
+            path: getImagePath("camera-close.webp"),
+            aspectRatio: "20/23",
+            animation: {
+              animateOnScroll: true,
+              animateFrom: "bottomRight",
+              translateDistance: 4,
+            },
           },
+        },
+        textsBottom: [
           {
             text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis urna et scelerisque. Nulla dignissim ac eros ut lobortis. Donec eleifend quis nisi in fringilla. Integer rhoncus, leo vulputate dictum elementum, odio velit condimentum massa, a eleifend orci tellus sed ligula. Duis convallis volutpat augue, id volutpat augue porttitor eu. Donec risus mi, semper non dictum finibus, efficitur nec nunc. Sed iaculis odio nec efficitur posuere. Aliquam porta lectus orci, vel cursus sem laoreet sit amet. Ut viverra nulla at scelerisque aliquam. Duis venenatis arcu nunc, sit amet luctus augue egestas sit amet. Sed eget est est. Proin quis lectus eget magna volutpat consequat at luctus ex. Quisque posuere iaculis vestibulum. Phasellus non interdum nibh. Ut nisi orci, cursus nec euismod at, pharetra quis massa.`,
           },
@@ -181,6 +199,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis u
         ],
       },
       ...(makeSmallImages(cameraImagesFirstBatch) as RichChunkModel[]),
+      {
+        backgroundColor: "#8a062c",
+        smallVideo: {
+          path: getVideoPath("video-sample-1.mp4"),
+          controls: false,
+          autoPlay: true,
+          loop: true,
+        },
+      },
       {
         backgroundColor: "#8a062c",
         textsTop: [

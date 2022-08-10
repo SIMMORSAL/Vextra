@@ -101,8 +101,8 @@ export default function RichChunk(p: Props) {
           css={css`
             max-width: 1100px;
             display: flex;
-            justify-content: ${p.chunk.smallImage.align
-              ? p.chunk.smallImage.align
+            justify-content: ${p.chunk.smallVideo.align
+              ? p.chunk.smallVideo.align
               : "center"};
           `}
         >
