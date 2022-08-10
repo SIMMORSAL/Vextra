@@ -13,7 +13,8 @@ export function getDataProject1XPhone(): RichChunkModel[] {
     return `/videos/portfolio/xphone/${name}`;
   };
 
-  const cameraImagesFirstBatch = ["cs0.jpg", "cs1.jpg"];
+  const cameraImagesFirstBatch = ["cs0.jpg", "cs1.jpg", "cs2.jpg"];
+  const cameraImagesNightMode = ["nm0.jpg", "nm1.jpg"];
 
   const makeSmallImages = (paths: string[]) => {
     return paths.map((p) => {
@@ -181,6 +182,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis u
       },
       ...(makeSmallImages(cameraImagesFirstBatch) as RichChunkModel[]),
       {
+        backgroundColor: "#8a062c",
+        textsTop: [
+          {
+            text: "#### Night mode imagery looks absolutely beautiful and crisp",
+          },
+        ],
+      },
+      ...(makeSmallImages(cameraImagesNightMode) as RichChunkModel[]),
+      {
         minHeight: "100vh",
         freeSpaceTop: "25vh",
         textsTop: [
@@ -202,6 +212,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis u
 #### <a href="https://unsplash.com/@abillion"><span style="color: #ff9465;">abillion</span></a>
 #### <a href="https://unsplash.com/@litvinov"><span style="color: #ff9465;">Egor Litvinov</span></a>
 #### <a href="https://unsplash.com/@screenpost"><span style="color: #ff9465;">SCREEN POST</span></a>
+#### <a href="https://unsplash.com/@bmx22c"><span style="color: #ff9465;">bmx22c</span></a>
+#### <a href="https://unsplash.com/@maxsaeling"><span style="color: #ff9465;">Max Saeling</span></a>
+#### <a href="https://unsplash.com/@joshuanewton"><span style="color: #ff9465;">Joshua Newton</span></a>
 `,
           },
         ],
