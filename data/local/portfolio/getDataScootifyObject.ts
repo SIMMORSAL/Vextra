@@ -25,12 +25,12 @@ return (
       nameId: "1",
       textsTop: [
         {
-          text: "# Scootify",
+          text: "Scootify",
           align: "center",
           color: "#e3d9d9",
           fontFamily: "'Pacifico', cursive",
           shadow: "0 0 8px #961505",
-          size: "2.3em",
+          size: "4em",
         },
       ],
     },
