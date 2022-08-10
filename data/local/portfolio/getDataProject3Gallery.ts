@@ -80,7 +80,7 @@ export function getDataProject3Gallery(): RichChunkModel[] {
         textsTop: [
           {
             align: "center",
-            site: "4.3em",
+            size: "4.3em",
             text: "Gallery",
             fontFamily: "'Pacifico', cursive",
           },
