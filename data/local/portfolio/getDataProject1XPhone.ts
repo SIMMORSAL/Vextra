@@ -138,7 +138,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis u
           animation: {
             animateOnScroll: true,
             animateFrom: "bottom",
-            translateDistance: 12,
+            translateDistance: 7,
           },
         },
         textsTop: [
