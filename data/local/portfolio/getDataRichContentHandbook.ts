@@ -607,6 +607,13 @@ RichText, RichImage, and RichVideo elements accept an animation object.
 }
 \`\`\`
 
+${getInlineCode("animateOnScroll", "#9d0006")}: If you set this to true
+the object will listen to scroll and animates itself in or out. 
+RichText animates in when it's 20vh higher from the bottom. RichImage and RichVideo do at 40vh.
+
+For the first few element you expect to immediately be seen when a page loads,
+you can set this to false, and still fill the rest of the properties to control their initial animation.
+
 ${getInlineCode("translateDistance", "#9d0006")}: For left and right 
 translations, the number 15 written above will be counted 
 as ${getInlineCode("∓15vw")} and for up and down
@@ -779,6 +786,7 @@ you can have all of this anywhere you want by copying  ${getInlineCode(
         //     animateOnScroll: true,
         //   },
         // },
+        freeSpaceTop: "80vh",
         textsBottom: [
           {
             align: "center",
