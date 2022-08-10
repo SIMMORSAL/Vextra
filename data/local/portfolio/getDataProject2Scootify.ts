@@ -15,10 +15,10 @@ export function getDataProject2Scootify(): RichChunkModel[] {
         textsTop: [
           {
             align: "center",
-            text: "#### Scootify",
+            text: " Scootify",
             fontFamily: "'Pacifico', cursive",
             shadow: "0 0 8px #961505",
-            size: "2.5em",
+            size: "4em",
           },
         ],
       },
