@@ -64,7 +64,7 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
           {
             align: "center",
             color: "white",
-            shadow: "rgb(126,35,5)"
+            shadow: "rgb(126,35,5)",
             animation: {
               duration: 2000,
             },
