@@ -186,7 +186,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis u
         backgroundColor: "#8a062c",
         textsTop: [
           {
-            text: "#### Night mode imagery looks absolutely beautiful and crisp",
+            text: "#### Night mode imagery looks absolutely crisp and free of noise",
           },
         ],
       },
