@@ -65,6 +65,7 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
             align: "center",
             color: "white",
             shadow: "rgb(126,35,5)",
+            userSelect: "none",
             animation: {
               duration: 2000,
             },
@@ -848,6 +849,12 @@ I give discounts on my own work ;)
     if (v.nameId === undefined) v.nameId = i.toString();
     if (v.textsTop !== undefined) {
       v.textsTop = v.textsTop.map((vv: RichTextModel) => {
+        if (vv.userSelect === undefined) vv.userSelect = "text";
+        return vv;
+      });
+    }
+    if (v.textsBottom !== undefined) {
+      v.textsBottom = v.textsBottom.map((vv: RichTextModel) => {
         if (vv.userSelect === undefined) vv.userSelect = "text";
         return vv;
       });
