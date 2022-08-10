@@ -789,7 +789,6 @@ you can have all of this anywhere you want by copying  ${getInlineCode(
         //   },
         // },
         freeSpaceTop: "40vh",
-        freeSpaceBottom: "20vh",
         textsBottom: [
           {
             align: "center",
