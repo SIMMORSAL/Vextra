@@ -36,8 +36,7 @@ export default function MediaBar(p: Props) {
         <Grid
           item
           xs={12}
-          sm={6}
-          md={12 / availableRows}
+          sm={12 / availableRows}
           css={css`
             display: flex;
             justify-content: center;
@@ -65,8 +64,7 @@ export default function MediaBar(p: Props) {
         <Grid
           item
           xs={12}
-          sm={6}
-          md={12 / availableRows}
+          sm={12 / availableRows}
           css={css`
             display: flex;
             justify-content: center;
@@ -91,8 +89,7 @@ export default function MediaBar(p: Props) {
         <Grid
           item
           xs={12}
-          sm={6}
-          md={12 / availableRows}
+          sm={12 / availableRows}
           css={css`
             display: flex;
             justify-content: center;

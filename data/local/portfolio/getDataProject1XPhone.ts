@@ -20,8 +20,10 @@ export function getDataProject1XPhone(): RichChunkModel[] {
     return paths.map((p) => {
       return {
         backgroundColor: "#8a062c",
-        smallImage: {
-          path: getImagePath(p),
+        mediaBar: {
+          rightImage: {
+            path: getImagePath(p),
+          },
         },
         freeSpaceBottom: "32px",
       };
@@ -202,11 +204,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis u
       ...(makeSmallImages(cameraImagesFirstBatch) as RichChunkModel[]),
       {
         backgroundColor: "#8a062c",
-        smallVideo: {
-          path: getVideoPath("video-sample-1.mp4"),
-          controls: false,
-          autoPlay: true,
-          loop: true,
+        mediaBar: {
+          leftVideo: {
+            path: getVideoPath("video-sample-1.mp4"),
+            controls: false,
+            autoPlay: true,
+            loop: true,
+          },
         },
       },
       {
