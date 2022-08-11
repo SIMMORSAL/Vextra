@@ -6,13 +6,15 @@ import Header from "../components/Header";
 import { useRouter } from "next/router";
 import { _AppProvider } from "../helpers/providers/provider_App";
 import _MoveToMain from "../components/_App/_MoveToMain";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import Script from "next/script";
 import { cacheImages } from "../helpers/StartUpTasks";
 import { Content } from "../components/_App/_Content";
 import { getGeneralData } from "../data/local/_dataGeneral";
 import { getAllPortfolios } from "../data/local/dataPortfoliosPage";
+import { initializeApp } from "firebase/app";
+import { getAnalytics, logEvent } from "firebase/analytics";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -21,6 +23,7 @@ function MyApp({ Component, pageProps }) {
 
   const routeRoot = routeChops[0];
   const [selectedPage, setSelectedPage] = useState(routeRoot);
+  // const refAnalytics = useRef(null);
 
   const generalData = getGeneralData();
 
@@ -30,7 +33,12 @@ function MyApp({ Component, pageProps }) {
         portfolios: getAllPortfolios(),
         startupImageCacheQueue: generalData.startupImageCacheQueue,
       });
-    }, 250);
+    }, 250); // starting with a delay so all <img> tags in doc are started loading
+
+    if (generalData.firebaseConfig) {
+      const firebaseApp = initializeApp(generalData.firebaseConfig);
+      getAnalytics(firebaseApp);
+    }
 
     return () => {
       clearTimeout(ti);
@@ -42,6 +50,17 @@ function MyApp({ Component, pageProps }) {
     const route = routeChops[0];
     setSelectedPage(route);
   }, [routeChops]);
+
+  useEffect(() => {
+    const analytics = getAnalytics();
+    if (analytics) {
+      logEvent(analytics, "page_view", {
+        page_path: `${JSON.stringify(router.route)}   Q: ${JSON.stringify(
+          router.query
+        )}`,
+      });
+    }
+  }, [router.query, router.route]);
 
   return (
     <>
@@ -84,10 +103,7 @@ function MyApp({ Component, pageProps }) {
           name="msapplication-TileImage"
           content="/favicons/mstile-150x150.png"
         />
-        <meta
-          name="msapplication-square150x150logo"
-          content="/mstile-150x150.png"
-        />
+        <meta name="msapplication-square150x150logo" content="/mstile-150x150.png" />
       </Head>
       {/* eslint-disable-next-line @next/next/no-page-custom-font */}
       <link

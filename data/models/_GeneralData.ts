@@ -6,4 +6,5 @@ export interface GeneralDataModel {
   fonts: string;
   defaultFont: string;
   startupImageCacheQueue: string[];
+  firebaseConfig?: {};
 }

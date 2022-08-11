@@ -22,5 +22,15 @@ export const getGeneralData = (): GeneralDataModel => {
       "/images/portfolio/scootify/scootify_red.jpg",
       "/images/portfolio/gallery/g0.jpg",
     ],
+    firebaseConfig: {
+      // TODO ERASE THIS
+      apiKey: "AIzaSyD7TE8M1TcQWMWKGUoboc6iB1p0HghxMyY",
+      authDomain: "vextra-app.firebaseapp.com",
+      projectId: "vextra-app",
+      storageBucket: "vextra-app.appspot.com",
+      messagingSenderId: "943808844875",
+      appId: "1:943808844875:web:8e28fdcf9a77bdc36269ce",
+      measurementId: "G-B7XYXQEHE9",
+    },
   };
 };
