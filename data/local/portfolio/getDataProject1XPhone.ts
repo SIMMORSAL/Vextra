@@ -26,7 +26,7 @@ export function getDataProject1XPhone(): RichChunkModel[] {
             path: getImagePath(p),
           },
         },
-        freeSpaceBottom: "32px",
+        freeSpaceTop: "32px",
       };
     }) as RichChunkModel[];
   };
@@ -200,6 +200,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis u
         freeSpaceMiddle: "80px",
         textsBottom: [
           {
+            align: "center",
             text: "#### Camera is ready to take beautiful images out of the box",
           },
         ],
@@ -217,9 +218,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis u
         },
       },
       {
+        freeSpaceTop: "32px",
         backgroundColor: "#8a062c",
         textsTop: [
           {
+            align: "center",
             text: "#### Night mode imagery looks absolutely crisp and free of noise",
           },
         ],
