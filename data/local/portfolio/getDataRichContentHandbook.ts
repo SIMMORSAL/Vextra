@@ -253,7 +253,7 @@ This page you're reading is entirely rendered using Rich Chunks.
 \`\`\`
 
 ${getInlineCode("nameId", "#9d0006")}: Providing this is 
-necessary. React uses this to keep track of each chunk and update it correctly.
+necessary. React uses this to keep track of each chunk to update it correctly.
 
 ${getInlineCode("minHeight", "#9d0006")}: Your chunk will always be
 this high, unless the content need more space.
@@ -537,7 +537,7 @@ and ${getInlineCode("mediaBar", "#794d00")}.
   smallVideo: {
     path: "https://www.youtube.com/watch?v=FK3HyJglFQ0",
     align: "end",
-    aspectRatio: "16/9",
+    aspectRatio: "1/1",
     autoPlay: true,
     loop: true,
     controls: false,
@@ -551,7 +551,7 @@ and ${getInlineCode("mediaBar", "#794d00")}.
 ${getInlineCode("path", "#9d0006")}: Rich Video 
 uses [ReactPlayer](https://github.com/CookPete/react-player) under the hood which is
 able to recognize the path you give it and load an appropriate player based on it.
-It can recognize YouTube, Facebook, SoundCloud, Vimeo, Twitch, DailyMotion, Kaltura, Mixcloud, Vidyars, Wistia. \ 
+It can recognize YouTube, Facebook, SoundCloud, Vimeo, Twitch, DailyMotion, Kaltura, Mixcloud, Vidyars, and Wistia. \ 
 Otherwise it loads an standard player.
 
 
