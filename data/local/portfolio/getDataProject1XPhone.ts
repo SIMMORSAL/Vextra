@@ -16,7 +16,8 @@ export function getDataProject1XPhone(): RichChunkModel[] {
   const cameraImagesFirstBatch = ["cs0.jpg", "cs1.jpg", "cs2.jpg"];
   const cameraImagesNightMode = ["nm0.jpg", "nm1.jpg"];
 
-  const makeSmallImages = (paths: string[]) => {
+  // images in mediabar are a little larger than smallImage
+  const makeMediaBarImages = (paths: string[]) => {
     return paths.map((p) => {
       return {
         backgroundColor: "#8a062c",
@@ -160,6 +161,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis u
           },
         ],
         freeSpaceMiddle: "200px",
+        //////////
+        // CAMERA
         mediaBar: {
           texts: [
             {
@@ -201,7 +204,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis u
           },
         ],
       },
-      ...(makeSmallImages(cameraImagesFirstBatch) as RichChunkModel[]),
+      ...(makeMediaBarImages(cameraImagesFirstBatch) as RichChunkModel[]),
       {
         backgroundColor: "#8a062c",
         mediaBar: {
@@ -221,7 +224,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis u
           },
         ],
       },
-      ...(makeSmallImages(cameraImagesNightMode) as RichChunkModel[]),
+      ...(makeMediaBarImages(cameraImagesNightMode) as RichChunkModel[]),
+      //////////
+      // Gaming
       {
         minHeight: "100vh",
         freeSpaceTop: "25vh",

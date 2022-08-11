@@ -230,29 +230,33 @@ And here's a diagram of how everything is placed:
 
 You can create a page by chaining multiple Chunks together, while making each
 of them look and feel unique. Each chunk can hold one or more rich elements in it.
-This page you're reading is entirely rendered using Rich Chunks. you can check it's data
-file and see how everything here is created from the link at the top.
-
-Here's a diagram of how things are drawn:
+This page you're reading is entirely rendered using Rich Chunks.
 
 ###### Example
 
 \`\`\`js
 [
   {
-    nameId: "projectImage#3",
+    nameId: "image3",
     textColor: black,
     backgroundColor: "#eaeaea",
     gradient: [blue, pink],
     gradientDegree: 45,
     backgroundImage: "/images/bgImage3".
-    freeSpaceTop: "200px",
+    freeSpaceTop: "8vh",
+    freeSpaceMiddle: "60px",
     freeSpaceBottom: "10vh",
     minHeight: "80vh",
     ...
   }
 ]
 \`\`\`
+
+${getInlineCode("nameId", "#9d0006")}: Providing this is 
+necessary. React uses this to keep track of each chunk and update it correctly.
+
+${getInlineCode("minHeight", "#9d0006")}: Your chunk will always be
+this high, unless the content need more space.
 
 \` \`  
 \` \`  
@@ -261,7 +265,7 @@ Here's a diagram of how things are drawn:
 
 Below is an example of a chunk with image as it's background. It 
 utilizes ${getInlineCode("backgroundImage", "#9d0006")} &#8291;
-and ${getInlineCode("minHeight", "#b67e7b")}:
+and ${getInlineCode("minHeight", "#9d0006")}:
 `,
           },
         ],
@@ -396,7 +400,7 @@ or animated individually.
     {
       text: "First text part",
       align: "center",
-      userSelect?: "text",
+      userSelect: "text",
       color: "red",
       size: "1.4em",
       fontFamily: "'Rubik Moonrocks', cursive",
