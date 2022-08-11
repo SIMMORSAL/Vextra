@@ -227,6 +227,47 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis u
       ...(makeMediaBarImages(cameraImagesNightMode) as RichChunkModel[]),
       //////////
       // Gaming
+
+      {
+        backgroundColor: "#553473",
+        gradient: ["#00714d", "#00ea58", "#90ec5a", "#00fc70", "#7efdfe"],
+        minHeight: "80vh",
+        textColor: "black",
+        freeSpaceTop: "20vh",
+        freeSpaceMiddle: "60px",
+        freeSpaceBottom: "30vh",
+        textsTop: [
+          {
+            align: "center",
+            text: `
+## NONE LIKE IT IN <span style="color: #5b0624">GAMING</span>
+`,
+          },
+        ],
+        bigVideo: {
+          path: getVideoPath("game.mp4"),
+          controls: false,
+          autoPlay: true,
+          loop: true,
+        },
+        textsBottom: [
+          {
+            animation: {
+              animateOnScroll: true,
+              animateFrom: "right",
+            },
+            text: `
+## Snapdragon 999 allows you to run <img src="${getImagePath(
+              "reddeadredemption.png"
+            )}" width="128px"/> on PS34DROID emulator in 120 Frames Per Second
+`,
+          },
+        ],
+      },
+
+      //////////
+      // Attribution
+
       {
         minHeight: "100vh",
         freeSpaceTop: "25vh",
