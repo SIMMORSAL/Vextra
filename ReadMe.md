@@ -19,6 +19,19 @@ and get your kit which is a link.
 2. Paste that link in `/data/local/_dataGeneral.ts` in front of
 `fontAwesomeKitAddress`
 
+#### Setting up Firebase Analytics (Optional)
+
+If you'd like to have Firebase/Google Analytics in your website,
+you can set it up by providing your `firebaseConfig` object.
+
+1. Head over to [console.firebase.google.com](https://console.firebase.google.com/)
+and create a new project.
+    - Make sure Google Analytics is enabled.
+2. Create a Web app from inside the project dashboard.
+3. Find `firebaseConfig` in Project Settings.
+4. Copy it's data and paste it in `/data/local/_dataGeneral.ts` 
+in front of`firebaseConfig`
+
 #### Running Locally
 
 You need to have [Node](https://nodejs.org/en/download/) and [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/) installed on your machine.
@@ -61,11 +74,12 @@ interface GeneralDataModel {
   fonts: string;
   defaultFont: string;
   startupImageCacheQueue: string[],
+  firebaseConfig?: {};
 }
 ```
 `applyColorToLogo` : You can choose to have colors applied to your logo when you navigate the site, which you can disable by setting this to false.  
 
-`fonts` : Website is setup to 
+`fonts` : Website is set up to 
 use [Google Fonts](https://fonts.google.com/).
 
 `startupImageCacheQueue` : You can put a list of image links 

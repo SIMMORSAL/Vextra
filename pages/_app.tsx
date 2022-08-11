@@ -36,8 +36,7 @@ function MyApp({ Component, pageProps }) {
     }, 250); // starting with a delay so all <img> tags in doc are started loading
 
     if (generalData.firebaseConfig) {
-      const firebaseApp = initializeApp(generalData.firebaseConfig);
-      getAnalytics(firebaseApp);
+      initializeApp(generalData.firebaseConfig);
     }
 
     return () => {
@@ -53,6 +52,7 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     const analytics = getAnalytics();
+    console.log(`11111  asdfasdf:  ${JSON.stringify(analytics)}`);
     if (analytics) {
       logEvent(analytics, "page_view", {
         page_path: `${JSON.stringify(router.route)}   Q: ${JSON.stringify(
