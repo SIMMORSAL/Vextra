@@ -806,7 +806,7 @@ you can have all of this anywhere you want by copying  ${getInlineCode(
               duration: 500,
             },
             text: `
-If there's something extra that you need that [this](linkToStore) package doesn't 
+If there's something extra that you need that [this](https://uplabs.com/simmorsal) package doesn't 
 cover, hit me up.\  
 I give discounts on my own work ;)
 `,
