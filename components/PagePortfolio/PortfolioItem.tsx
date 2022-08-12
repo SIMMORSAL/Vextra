@@ -103,7 +103,7 @@ export default function PortfolioItem(p: Props) {
   const awardPadding = `0
       ${makeAwardSmall ? 70 : 25}%
       ${makeAwardSmall ? 0 : 25}%
-      ${makeAwardSmall ? 4 : 25}%`;
+      ${makeAwardSmall ? 5 : 25}%`;
 
   // * if your awards are not in the shape of square, you may need to comment code
   // * above, and uncomment below code and make changes to the values to fine tune
