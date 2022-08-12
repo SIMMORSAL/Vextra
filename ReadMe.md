@@ -30,7 +30,7 @@ and create a new project.
 2. Create a Web app from inside the project dashboard.
 3. Find `firebaseConfig` in Project Settings.
 4. Copy it's data and paste it in `/data/local/_dataGeneral.ts` 
-in front of`firebaseConfig`
+in front of `firebaseConfig`
 
 #### Running Locally
 
@@ -82,9 +82,8 @@ interface GeneralDataModel {
 `fonts` : Website is set up to 
 use [Google Fonts](https://fonts.google.com/).
 
-`startupImageCacheQueue` : You can put a list of image links 
-that should appear as soon as user navigates to a page here,
-and it will be downloaded and  cached as soon as the website
+`startupImageCacheQueue` : You can put a list of image links here that should appear as soon as user navigates to a page,
+and they will be downloaded and  cached as soon as the website
 loads, ready to be displayed quickly.
 
 ## About Me
@@ -116,6 +115,8 @@ interface Item {
 ```
 
 ## Contact Me
+
+When viewing the website on a large screen, Contact Me will have it's own tab, and will be displayed in it. However on mobile the tab will hide and the content will be displayed in About Me tab.
 
 ###### Edit this in:  
 `/data/local/dataContactPage.ts`

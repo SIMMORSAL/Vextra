@@ -5,7 +5,7 @@ A highly customizable platform ready to be a portfolio page, and become a lot mo
 
 Sporting a powerful and flexible page creation engine that is easy to use and fast to work with.
 
-There's a special package developed for this website, named RichContent. It allows you to create beautiful and animated pages very fast and nearly anybody can make pages with it easily by editing a javascript Object. Here's [some examples](https://vextra.vercel.app/portfolio) made with it.
+There's a special package developed for this website, named RichContent. It allows you to create beautiful and animated pages very fast and nearly anybody can make pages with it easily by editing a javascript Object. You can also setup your CMS to make things even easier. Here's [some examples](https://vextra.vercel.app/portfolio) made with it.
 
 Vextra is written using a combination of NextJS, TypeScript, and Emotion, the latter provided by MaterialUI package.
 
