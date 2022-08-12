@@ -404,7 +404,7 @@ or animated individually.
       color: "red",
       size: "1.4em",
       fontFamily: "'Rubik Moonrocks', cursive",
-      shadow: "black", // or "3px 4px 6px #ff5a00"
+      shadow: "#989898", // or "3px 4px 6px #ff5a00"
     },
     {
       text: \`
@@ -423,6 +423,7 @@ Etcetera <i class="fa-solid fa-fire"></i> text.
         animateOnScroll: true,
         animateFrom: "bottomLeft",
         translateDistance: 30,
+        duration: 600,
       },
     },
   ],
