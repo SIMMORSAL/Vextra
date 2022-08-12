@@ -284,10 +284,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis u
             text: `
 ## Attribution
 #### <a href="https://unsplash.com/@onurbinay"><span style="color: #ff9465;">Onur Binay</span></a>
+#### <a href="https://www.vecteezy.com/members/yganko"><span style="color: #ff9465;">Юлия Гапеенко</span></a>
 #### <a href="https://unsplash.com/@efekurnaz"><span style="color: #ff9465;">Efe kurnaz</span></a>
 #### <a href="https://freepik.com/author/rawpixel-com"><span style="color: #ff9465;">rawpixel.com</span></a>
-#### <a href="https://www.pexels.com/@ambient_nature_-atmosphere-1682386/"><span style="color: #ff9465;">Ambient_Nature_Atmosphere</span></a>
 #### <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><span style="color: #ff9465;">Rick Astley</span></a>
+#### <a href="https://www.pexels.com/@ambient_nature_-atmosphere-1682386/"><span style="color: #ff9465;">Ambient_Nature_Atmosphere</span></a>
 #### <a href="https://www.vecteezy.com/members/icon0"><span style="color: #ff9465;">icon0.com</span></a>
 #### <a href="https://unsplash.com/@steve_j"><span style="color: #ff9465;">Steve Johnson</span></a>
 #### <a href="https://unsplash.com/@abillion"><span style="color: #ff9465;">abillion</span></a>

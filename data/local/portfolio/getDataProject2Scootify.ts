@@ -294,6 +294,7 @@ Special thanks to
 
 #### <a href="https://www.freepik.com/photos/moped"><span style="color: #ff9465;">Rochak Shukla</span></a> for Scootify and Vespia images
 #### <a href="https://unsplash.com/@marekpiwnicki"><span style="color: #ff9465;">Marek Piwnicki</span></a> for the glimpse into Mars
+#### <a href="https://www.vecteezy.com/members/nokkievector"><span style="color: #ff9465;">Chaiwut Sridara</span></a> for the awards
 `,
           },
         ],

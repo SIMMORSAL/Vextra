@@ -100,20 +100,25 @@ export default function PortfolioItem(p: Props) {
   //     ${makeAwardSmall ? 4 : (2 - awardNormal) * 20}%`;
   ////////
 
+  const awardPadding = `0
+      ${makeAwardSmall ? 70 : 25}%
+      ${makeAwardSmall ? 0 : 25}%
+      ${makeAwardSmall ? 4 : 25}%`;
+
   // * if your awards are not in the shape of square, you may need to comment code
   // * above, and uncomment below code and make changes to the values to fine tune
   // * your image's position and sizing
-  const awardPadding =
-    // p.portfolio.name === "theOneWithLandscapeAward"
-    p.portfolio.name === "Scootify"
-      ? // This is for landscape award image
-        `0px ${makeAwardSmall ? 70 : 12}% ${makeAwardSmall ? 0 : 25}% ${
-          makeAwardSmall ? 4 : 12
-        }%`
-      : // This is for portrait award image
-        `0px ${makeAwardSmall ? 80 : 27}% ${makeAwardSmall ? 0 : 12}% ${
-          makeAwardSmall ? 4 : 27
-        }%`;
+  // const awardPadding =
+  //   // p.portfolio.name === "theOneWithLandscapeAward"
+  //   p.portfolio.name === "Scootify"
+  //     ? // This is for landscape award image
+  //       `0px ${makeAwardSmall ? 70 : 12}% ${makeAwardSmall ? 0 : 25}% ${
+  //         makeAwardSmall ? 4 : 12
+  //       }%`
+  //     : // This is for portrait award image
+  //       `0px ${makeAwardSmall ? 80 : 27}% ${makeAwardSmall ? 0 : 12}% ${
+  //         makeAwardSmall ? 4 : 27
+  //       }%`;
 
   ////
   ///////////////////////////////////////////////////////////////////////////////////
