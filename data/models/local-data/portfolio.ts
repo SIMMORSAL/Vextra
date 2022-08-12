@@ -6,6 +6,7 @@ export interface Portfolio {
   isBig?: boolean;
   image: string;
   awardImage?: string;
+  awardAspectRatio?: string;
   isBackgroundDark?: boolean;
   pageRichContent: RichChunkModel[];
   headerItemsColor?: string;

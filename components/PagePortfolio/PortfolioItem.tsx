@@ -87,11 +87,25 @@ export default function PortfolioItem(p: Props) {
   ///////////////////////////////////////////////////////////////////////////////////
   ////
 
+  ////////
+  // I couldn't finish this in time, so I'm leaving it for later
+  // const s = p.portfolio.awardAspectRatio?.split("/");
+  // const awardNormal = s ? +s[0] / +s[1] : 1;
+
+  // console.log(`11111  PortfolioItem:  ${awardNormal}`);
+
+  // const awardPadding = `0
+  //     ${makeAwardSmall ? 50 + 15 * (2 - awardNormal) : (2 - awardNormal) * 20}%
+  //     ${makeAwardSmall ? 0 : 50 - (awardNormal * )}%
+  //     ${makeAwardSmall ? 4 : (2 - awardNormal) * 20}%`;
+  ////////
+
   // * if your awards are not in the shape of square, you may need to comment code
   // * above, and uncomment below code and make changes to the values to fine tune
   // * your image's position and sizing
   const awardPadding =
-    p.portfolio.name === "theOneWithLandscapeAward"
+    // p.portfolio.name === "theOneWithLandscapeAward"
+    p.portfolio.name === "Scootify"
       ? // This is for landscape award image
         `0px ${makeAwardSmall ? 70 : 12}% ${makeAwardSmall ? 0 : 25}% ${
           makeAwardSmall ? 4 : 12
@@ -154,6 +168,16 @@ export default function PortfolioItem(p: Props) {
             display: grid;
           `}
         >
+          {/*<div // TODO*/}
+          {/*  css={css`*/}
+          {/*    grid-row: 1;*/}
+          {/*    grid-column: 1;*/}
+          {/*    z-index: 10000;*/}
+          {/*    text-shadow: 0 0 12px white;*/}
+          {/*  `}*/}
+          {/*>*/}
+          {/*  {`${awardPadding}  |  ${awardNormal}  |  ${2 - awardNormal}`}*/}
+          {/*</div>*/}
           <div
             onClick={onClicked}
             css={css`
