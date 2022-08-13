@@ -31,10 +31,7 @@ export default function _Document() {
           name="og:description"
           content="A highly customizable platform ready to be a portfolio page, and become a lot more with some of your own components."
         />
-        <meta
-          name="og:image"
-          content="https://vextra.vercel.app/images/preview.jpg"
-        />
+        <meta name="og:image" content="https://vextra.vercel.app/preview.jpg" />
       </Head>
       <body>
         <Main />
