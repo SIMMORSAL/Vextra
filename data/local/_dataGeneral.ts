@@ -5,7 +5,7 @@ export const getGeneralData = (): GeneralDataModel => {
     logoBig: "/images/logo_big.png",
     logoSmall: "/images/logo_small.png",
     applyColorToLogo: true,
-    fontAwesomeKitAddress: "https://kit.fontawesome.com/195ee4c6bd.js", // TODO ERASE THIS
+    fontAwesomeKitAddress: "https://kit.fontawesome.com/195ee4c6bd.js", // TODO Fill this
     fonts: [
       "family=Source+Code+Pro",
       "Dosis",
@@ -22,8 +22,8 @@ export const getGeneralData = (): GeneralDataModel => {
       "/images/portfolio/scootify/scootify_red.jpg",
       "/images/portfolio/gallery/g0.jpg",
     ],
+    // TODO (Optional) Paste your config here
     firebaseConfig: {
-      // TODO ERASE THIS
       apiKey: "AIzaSyD7TE8M1TcQWMWKGUoboc6iB1p0HghxMyY",
       authDomain: "vextra-app.firebaseapp.com",
       projectId: "vextra-app",
