@@ -1,7 +1,6 @@
 # Vextra 
-#### An elegant portfolio website, with an easy to use page creation engine.
 
-A highly customizable platform ready to be a portfolio page, and become a lot more with some of your own components.
+A highly customizable platform ready to be a portfolio page, and become a lot more with some of your own components to it.
 
 Sporting a powerful and flexible page creation engine that is easy to use and fast to work with.
 
