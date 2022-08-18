@@ -207,6 +207,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida facilisis u
       },
       ...(makeMediaBarImages(cameraImagesFirstBatch) as RichChunkModel[]),
       {
+        freeSpaceTop: "32px",
         backgroundColor: "#8a062c",
         mediaBar: {
           leftVideo: {
