@@ -20,7 +20,7 @@ tab to see my works in more detail.
 Hi again. This actually is not for any person named "Jane Smith", and all the data are fake and merely mockup.
 
 This website is actually a demo, and it's source code is on sale.  
-You can grab your copy from [uplabs.com](https://codecanyon.net/user/simmorsal).
+You can grab your copy from [CodeCanyon](https://codecanyon.net/user/simmorsal).
 `,
   };
 }
