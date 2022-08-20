@@ -16,8 +16,9 @@ export default function _Document() {
 
   return (
     <Html lang="en">
-      {/*<Head>*/}
-      {/*</Head>*/}
+      <Head>
+        <title>Vextra</title>
+      </Head>
       <body>
         <Main />
         <NextScript />
