@@ -4,7 +4,6 @@ import { getDataProject2Scootify } from "./portfolio/getDataProject2Scootify";
 import { getDataProject3Gallery } from "./portfolio/getDataProject3Gallery";
 import { getDataRichContentHandbook } from "./portfolio/getDataRichContentHandbook";
 import { getDataScootifyObject } from "./portfolio/getDataScootifyObject";
-import { getDataUmbrella } from "./portfolio/getDataUmbrella";
 
 export function getPortfolio(linkId: string): Portfolio {
   return getAllPortfolios().filter((value) => value.linkId === linkId)[0];
@@ -12,16 +11,6 @@ export function getPortfolio(linkId: string): Portfolio {
 
 export function getAllPortfolios(): Portfolio[] {
   return [
-    // {
-    //   linkId: "Umbrella",
-    //    name: "Umbrella",
-    // backgroundColor: "#90d3d3",
-    //headerItemsColor:""
-    // isBig: true,
-    //   image: "/images/portfolio/umbrella/6.24.png",
-    //  awardImage: "/images/portfolio/umbrella/GDPJ_logo.png",
-    //   pageRichContent: getDataUmbrella(),
-    // },
     {
       linkId: "x-phone",
       name: "X|Phone",
@@ -33,7 +22,8 @@ export function getAllPortfolios(): Portfolio[] {
       image: "/images/portfolio/xphone/PortfolioItemTemplate1.jpg",
       pageRichContent: getDataProject1XPhone(),
       awardImage: "/images/portfolio/xphone/xphone-award.png",
-      awardAspectRatio: "244/376",
+      awardIsTransparent: true,
+      // awardAspectRatio: "244/376",
     },
     {
       linkId: "scootify",
@@ -44,7 +34,7 @@ export function getAllPortfolios(): Portfolio[] {
       image: "/images/portfolio/scootify/PortfolioItemTemplate2.jpg",
       pageRichContent: getDataProject2Scootify(),
       awardImage: "/images/portfolio/scootify/scootify-award.png",
-      awardAspectRatio: "520/300",
+      // awardAspectRatio: "520/300",
     },
     {
       linkId: "gallery",
@@ -74,42 +64,5 @@ export function getAllPortfolios(): Portfolio[] {
       image: "/images/portfolio/PortfolioItemScootifyObject.jpg",
       pageRichContent: getDataScootifyObject(),
     },
-    // {
-    //   linkId: "one-more",
-    //   name: "One More Faucet",
-    //   color: "#0066ff",
-    //   backgroundColor: "#011736",
-    //   isBackgroundDark: false,
-    //   image: "/images/portfolio/ab.png",
-    //   // image:
-    //   //   "https://th.bing.com/th/id/R.58cc46069f9c1bfec000c83e79721d31?rik=V6%2bwTqIO36Y40g&riu=http%3a%2f%2fwallup.net%2fwp-content%2fuploads%2f2016%2f05%2f24%2f374644-path-landscape-trees.jpg&ehk=4r8HqHCVUOTPA4f19szEL4vOhfNMFE4FPAQUSSsOg%2bA%3d&risl=&pid=ImgRaw&r=0",
-    //   award: "/images/portfolio/a_design_award.gif",
-    //   pageContent: getDataProject1XPhone(),
-    // },
-    // {
-    //   linkId: "umbrella-ca",
-    //   name: "ab",
-    //   color: "#ff00ff",
-    //   backgroundColor: "#3a053a",
-    //   isBackgroundDark: false,
-    //   image: "/images/portfolio/umbrella_2.png",
-    //   pageContent: getDataProject2Scootify(),
-    // },
-    // {
-    //   linkId: "umbrella",
-    //   name: "umbrella",
-    //   color: "#ff0000",
-    //   backgroundColor: "#3f0101",
-    //   isBackgroundDark: true,
-    //   image: "/images/portfolio/umbrella.png",
-    //   award: "/images/portfolio/GDPJ_logo.png",
-    //   pageContent: getDataProject3(),
-    // },
-    // {
-    //   name: "Desk Light",
-    //   color: "#00ff7c",
-    //   backgroundColor: "#00381c",
-    //   image: "desk_light.png",
-    // },
   ];
 }

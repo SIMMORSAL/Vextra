@@ -42,7 +42,6 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
     return {
       smallImage: {
         path: `/images/portfolio/handbook/fireball_${index}.gif`,
-        // path: "https://th.bing.com/th/id/OIP.XInPSfSw_KKOcuwTSDbW1AHaF7?pid=ImgDet&rs=1",
         aspectRatio: "474/379",
         animation: {
           animateOnScroll: true,
@@ -50,7 +49,6 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
           translateDistance: 30,
         },
       },
-      // freeSpace: "20px",
     } as RichChunkModel;
   });
 
@@ -86,8 +84,8 @@ export function getDataRichContentHandbook(): RichChunkModel[] {
               translateDistance: 6,
             },
             text: `
-This is a full blown test in demonstration of Rich Chunks abilities, alongside explanation. 
-You can find the data file of this and all the other pages
+This is a full blown test in demonstration of Rich Chunks abilities, alongside 
+explanations. You can find the data file of this and all the other portfolio pages
 in ${getInlineCode("/data/local/portfolio/", "green")}.
 `,
           },
@@ -307,7 +305,8 @@ and ${getInlineCode("minHeight", "#9d0006")}:
 \` \`  
 
 This image will always fill the entire width of the screen, 
-and expand or shrink depending on the size that is given min height, or how much space it's content need
+and expand or shrink depending on the size that is given min height, 
+or how much space it's content need
 
 \` \`  
 \` \`  
@@ -439,7 +438,8 @@ and fast typing.
 <i class="fa-solid fa-fire"></i>  To use fonts in you text, go 
 to [fontawesome.com/icons](https://fontawesome.com/icons)
 and once you find the icon you want, copy the **HTML** code 
-then paste it in your text, like in the example above. If some fonts don't work for you, it's because you need to be on a higher tier plan.
+then paste it in your text, like in the example above. If some 
+fonts don't work for you, it's because you need to be on a higher tier plan.
 
 To colorize your text links, you can create an \`a\` tag with a \`span\`
 inside ${getInlineCode(

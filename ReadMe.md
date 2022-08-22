@@ -116,7 +116,8 @@ interface Item {
 
 ## Contact Me
 
-When viewing the website on a large screen, Contact Me will have it's own tab, and will be displayed in it. However on mobile the tab will hide and the content will be displayed in About Me tab.
+When viewing the website on a large screen, Contact Me will have its own tab, and will be displayed in it. However, on mobile the tab will hide and the content will be displayed in About Me tab.
+
 
 ###### Edit this in:  
 `/data/local/dataContactPage.ts`
@@ -149,6 +150,7 @@ interface Portfolio {
   isBig?: boolean;
   image: string;
   awardImage?: string;
+  awardIsTransparent?: boolean;
   isBackgroundDark?: boolean;
   pageRichContent: RichChunkModel[];
   headerItemsColor?: string;
@@ -169,6 +171,9 @@ things may look funky otherwise.
 To fix this, you'll need to open 
 `/components/PagePortfolio/PortfolioItem.tsx` and go to line 87. 
 There's more information there.
+ 
+`awardIsTransparent`: If your award image has transparent background,
+set this to true. Otherwise, a shadow will be cast behind the award.
 
 `isBackgroundDark` : `awardImage` uses this in  `http.../portfolio` page
 to decide if the shadow behind it should be white or black.

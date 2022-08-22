@@ -55,7 +55,8 @@ Scootify is covered in Carbon-Ceramic and runs on Quantized-hydroxium
             text: `
 ## Structure:
 
-Protected by **Carbon-Ceramic**, Scootify is able to withstand 10,000k N/m<sup>3</sup> on direct impact, which makes it virtually indestructable.
+Protected by **Carbon-Ceramic**, Scootify is able to withstand 10,000k N/m<sup>3</sup> on 
+direct impact, which makes it virtually indestructable.
 
 ## Fuel:
 

@@ -2,14 +2,14 @@ import { RichChunkModel } from "../../models/rich-chunk/RichChunkModel";
 
 export function getDataProject3Gallery(): RichChunkModel[] {
   const refs = [
-    "Katerina Kerdi", //
-    "Giuseppe Mondi", //
-    "Artiom Vallat", //
+    "Katerina Kerdi",
+    "Giuseppe Mondi",
+    "Artiom Vallat",
     "Allyson Beaucourt",
-    "Roma Ryabchenko", //
+    "Roma Ryabchenko",
     "Andre Furtado",
     "Simon Wilkes",
-    "Benjamin Davies", //
+    "Benjamin Davies",
     "Paul Summers",
     "Hojjat Aghaei",
     "Andre Furtado",

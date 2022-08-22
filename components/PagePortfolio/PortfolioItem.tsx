@@ -123,7 +123,9 @@ export default function PortfolioItem(p: Props) {
   ////
   ///////////////////////////////////////////////////////////////////////////////////
 
-  const awardBoxShadow = p.portfolio.isBackgroundDark
+  const awardBoxShadow = p.portfolio.awardIsTransparent
+    ? ""
+    : p.portfolio.isBackgroundDark
     ? makeAwardSmall
       ? ".5px 1px 5px 1px #ffffff66"
       : `4px 12px 85px 16px #ffffff44`

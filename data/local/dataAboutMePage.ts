@@ -3,10 +3,7 @@ import { AboutMeData } from "../models/local-data/aboutMeData";
 
 export function getAboutMeData(): AboutMeData {
   return {
-    image:
-      // "https://avatarairlines.com/wp-content/uploads/2020/05/Female-Placeholder.png",
-      "/images/my_image.jpg",
-    // "https://j.plenio.de/images/igallery/resized/701-800/jplenio_IMG_6405_3-748-4000-4000-100.jpg",
+    image: "/images/my_image.jpg",
     name: "Jane Smith",
     textTop: `
 Hi, and welcome to my website.
