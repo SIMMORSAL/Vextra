@@ -124,6 +124,9 @@ to style the page, and is unrelated to Rich Content._
 
 
 Rich Content gives you the ability to create beautiful and animated pages very quickly. 
+You can hook it up to your CMS or Backend for an even easier workflow.
+
+
 The best way to learn how it work is to first look at the Models.
 
 # Model
