@@ -254,7 +254,8 @@ This page you're reading is entirely rendered using Rich Chunks.
 \`\`\`
 
 ${getInlineCode("nameId", "#9d0006")}: Providing this is 
-necessary. React uses this to keep track of each chunk to update it correctly.
+necessary. React uses this to keep track of each chunk to update it correctly. 
+Each nameId should be unique, and they won't show up in the page.
 
 ${getInlineCode("minHeight", "#9d0006")}: Your chunk will always be
 this high, unless the content need more space.
