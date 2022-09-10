@@ -1,4 +1,4 @@
-![](public/images/logo_small.png)
+![github-logo](https://user-images.githubusercontent.com/24822099/189475489-6e475eaa-c9cc-4398-a58e-2a803edcfa77.png)
 
 # Vextra  
 ### Elegant and animated portfolio website.
@@ -208,10 +208,12 @@ you can make your own.
 Potware. If you want to use this commercially,
 you have to buy me a joint.
 
-BTC Address:
+Bitcoin Address:  
+![Bitcoin](https://user-images.githubusercontent.com/24822099/189475474-a5f0e60b-8501-4c64-9d70-d55b05a73fb5.png)  
 bc1qar2ukc0llsctga6rcgc58kuek5f89dwxpvc5ud
 
-Ethereum Address:
+Ethereum Address:  
+![Ethereum](https://user-images.githubusercontent.com/24822099/189475478-38c5c314-10e4-4601-bf18-9d1c0461b658.png)  
 0xb43f418bc5355c45331b6838f559d86f7de0410a
 
 
