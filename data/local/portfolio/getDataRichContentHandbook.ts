@@ -810,8 +810,9 @@ you can have all of this anywhere you want by copying  ${getInlineCode(
               duration: 500,
             },
             text: `
-If there's something extra that you need that [this](https://www.uplabs.com/posts/vextra-elegant-and-animated-portfolio-website-3bc91d63-c9e9-40aa-972b-8c568e23d344) package doesn't 
-cover, hit me up.\  
+If there's something extra that you need 
+that [this](https://github.com/simmorsal/Vextra) package 
+doesn't cover, hit me up.\  
 I give discounts on my own work ;)
 `,
           },
