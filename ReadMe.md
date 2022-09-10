@@ -1,5 +1,9 @@
+![](public/images/logo_small.png)
+
 # Vextra  
 ### Elegant and animated portfolio website.
+
+Demo: [vextra.vercel.app](https://vextra.vercel.app)
 
 Vextra is a portfolio template, packed with animations with a 
 satisfying flow to page navigation. 
