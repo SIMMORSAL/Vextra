@@ -1,4 +1,4 @@
-![github-logo](https://user-images.githubusercontent.com/24822099/189475489-6e475eaa-c9cc-4398-a58e-2a803edcfa77.png)
+![github-logo](https://user-images.githubusercontent.com/24822099/189476737-3cddd9ef-ade6-4303-9b76-7e676abf08de.png)
 
 # Vextra  
 ### Elegant and animated portfolio website.
