@@ -195,8 +195,20 @@ To learn how you can create your own pages, visit
 It is a page entirely built using Rich Content, and it explains how
 you can make your own.
 
+ 
 
 
+
+### Licence
+
+Potware. If you want to use this commercially,
+you have to buy me a joint.
+
+BTC Address:
+bc1qar2ukc0llsctga6rcgc58kuek5f89dwxpvc5ud
+
+Ethereum Address:
+0xb43f418bc5355c45331b6838f559d86f7de0410a
 
 
 

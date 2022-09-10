@@ -17,7 +17,7 @@ tab to see my works in more detail.
 Hi again. This actually is not for any person named "Jane Smith", and all the data are fake and merely mockup.
 
 This website is a demo, and it's source code is on sale.  
-You can grab your copy from [UpLabs.com](https://www.uplabs.com/posts/vextra-elegant-and-animated-portfolio-website-3bc91d63-c9e9-40aa-972b-8c568e23d344).
+You can grab your copy from [GitHub](https://github.com/simmorsal/Vextra).
 `,
   };
 }
