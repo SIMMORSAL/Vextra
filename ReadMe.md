@@ -205,7 +205,7 @@ you can make your own.
 
 ### Licence
 
-Potware. If you want to use this commercially,
+Weedware. If you want to use this commercially,
 you have to buy me a joint.
 
 Bitcoin Address:  
