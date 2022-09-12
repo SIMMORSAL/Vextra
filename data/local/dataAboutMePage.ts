@@ -16,8 +16,7 @@ tab to see my works in more detail.
     textBottom: `
 Hi again. This actually is not for any person named "Jane Smith", and all the data are fake and merely mockup.
 
-This website is a demo, and it's source code is on sale.  
-You can grab your copy from [GitHub](https://github.com/simmorsal/Vextra).
+This website is a demo, and it's source code is on [GitHub](https://github.com/simmorsal/Vextra).
 `,
   };
 }
