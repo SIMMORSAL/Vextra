@@ -12,7 +12,7 @@ You can customize the website for yourself by going to `/data/`
 directory where you can find all the data files you need to edit 
 things. You can also put your images and videos under `/public/` directory.
 
-There's a special package developed for this website, 
+There's a frontend CMS solution developed for this website, 
 named RichContent. It allows you to create beautiful and 
 animated pages very fast and nearly anybody can make 
 pages with it easily by editing a javascript Object. 
