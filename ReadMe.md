@@ -16,7 +16,7 @@ There's a frontend CMS solution developed for this website,
 named RichContent. It allows you to create beautiful and 
 animated pages very fast and nearly anybody can make 
 pages with it easily by editing a javascript Object. 
-You can also setup your CMS to make things even easier. 
+You can also setup your CMS backend to make things even easier. 
 To see some examples of it, please visit the Portfolio tab.
 
 Vextra is written using a combination of NextJS, TypeScript, and Emotion, the latter provided by MaterialUI package.
