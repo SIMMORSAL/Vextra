@@ -801,58 +801,6 @@ you can have all of this anywhere you want by copying  ${getInlineCode(
         // },
         freeSpaceTop: "40vh",
         freeSpaceBottom: "15vh",
-        textsBottom: [
-          {
-            align: "center",
-            animation: {
-              animateOnScroll: true,
-              animateFrom: "bottom",
-              duration: 500,
-            },
-            text: `
-If there's something extra that you need 
-that [this](https://github.com/simmorsal/Vextra) package 
-doesn't cover, hit me up.\  
-I give discounts on my own work ;)
-`,
-          },
-          {
-            align: "center",
-            animation: {
-              animateOnScroll: true,
-              animateFrom: "bottom",
-              duration: 700,
-            },
-            text: `
-                  
-<a href="mailto: soheil.sisakht@gmail.com">
-  <div id="sim" style="
-    display: flex; 
-    flex-direction: row; 
-    color: #5d3600; 
-    align-items: center; 
-    font-weight: bold;
-    justify-content: center;
-  ">
-    <i
-      class="fa-solid fa-envelope"
-      style="
-        width: 30px;
-        color: #5d3600; 
-        cursor: pointer;
-        margin: 16px 8px;
-        padding: 0;
-        text-align: center;
-        font-size: 150%;
-      ">
-    </i>
-    soheil.sisakht@gmail.com
-  </div>
-</a>
-
-`,
-          },
-        ],
       },
     ] as RichChunkModel[]
   ).map((v: RichChunkModel, i) => {
