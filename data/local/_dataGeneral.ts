@@ -14,7 +14,7 @@ export const getGeneralData = (): GeneralDataModel => {
       "Rubik+Moonrocks",
       "Pacifico",
     ].reduce((p, c) => `${p}&family=${c}`),
-    defaultFont: "Raleway, sans-serif",
+    defaultFont: "'Dosis', sans-serif",
     startupImageCacheQueue: [
       "/images/my_image.jpg",
       "/images/portfolio/xphone/leading-background.jpg",
