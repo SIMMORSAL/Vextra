@@ -13,12 +13,12 @@ export function getContacts(): ContactGroup[] {
       ],
     },
     {
-      socialHandle: "+1 243-555-2394",
+      socialHandle: "+98 936 748 2561",
       links: [
         {
           icon: "fa-solid fa-phone",
-          href: "tel: +1 243-555-2394",
-          showInHome: true,
+          href: "tel: +98 936 748 2561",
+          showInHome: false,
         },
       ],
     },
