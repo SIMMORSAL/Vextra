@@ -162,7 +162,6 @@ export default function Header(props: Props) {
 
       <HeaderLogo
         color={logoColor}
-        showDev={showDev}
         justLoaded={justLoaded}
         selectedPage={props.selectedPage}
         setSelectedPage={props.setSelectedPage}
