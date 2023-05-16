@@ -3,8 +3,8 @@ import { AboutMeData } from "../models/local-data/aboutMeData";
 
 export function getAboutMeData(): AboutMeData {
   return {
-    image: "/images/my_image.jpg",
-    name: "Jane Smith",
+    image: "/images/my_image.png",
+    name: "Mitra Sisakht",
     textTop: `
 Hi, and welcome to my website.
 
