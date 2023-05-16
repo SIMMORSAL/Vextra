@@ -3,7 +3,7 @@ import { ContactGroup } from "../models/local-data/contactGroup";
 export function getContacts(): ContactGroup[] {
   return [
     {
-      socialHandle: "hi@janesmith.com",
+      socialHandle: "mhmitra.mh@gmail.com",
       links: [
         {
           icon: "fa-solid fa-envelope",
@@ -13,7 +13,17 @@ export function getContacts(): ContactGroup[] {
       ],
     },
     {
-      socialHandle: "@jane-smith",
+      socialHandle: "+1 243-555-2394",
+      links: [
+        {
+          icon: "fa-solid fa-phone",
+          href: "tel: +1 243-555-2394",
+          showInHome: true,
+        },
+      ],
+    },
+    {
+      socialHandle: "@mitra-khar",
       links: [
         {
           icon: "fa-brands fa-pinterest",
@@ -33,11 +43,6 @@ export function getContacts(): ContactGroup[] {
           icon: "fa-brands fa-instagram",
           href: "https://www.instagram.com/",
         },
-      ],
-    },
-    {
-      socialHandle: "+1 243-555-2394",
-      links: [
         {
           icon: "fa-solid fa-phone",
           href: "tel: +1 243-555-2394",

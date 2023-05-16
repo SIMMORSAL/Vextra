@@ -6,6 +6,7 @@ export interface History {
 
 interface Item {
   title: string;
+  afterTitle?: string;
   date?: string;
   description?: string;
 }

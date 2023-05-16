@@ -71,28 +71,48 @@ function Ach({ ach }: { ach: History }) {
                   font-weight: 600;
                   color: #4d4d4d;
                   font-size: 1.07em;
+                  margin-bottom: 0;
                 `}
               >
                 {value.title}
+                {value.afterTitle && (
+                  <span
+                    css={css`
+                      margin: 0 12px;
+                    `}
+                  >
+                    —
+                  </span>
+                )}
                 <span
                   css={css`
-                    font-size: 0.9em;
-                    font-weight: lighter;
+                    font-size: 0.85em;
+                    font-weight: 600;
                     color: #646464;
-                    margin-left: 12px;
                     user-select: none;
                   `}
                 >
-                  {value.date}
+                  {value.afterTitle}
                 </span>
               </p>
+              <span
+                css={css`
+                  font-size: 0.9em;
+                  font-weight: lighter;
+                  color: #646464;
+                  margin: 0 0 8px 12px;
+                  user-select: none;
+                `}
+              >
+                {value.date}
+              </span>
             </div>
             <MarkDown
               text={value.description}
               style={css`
                 padding: 0 12px;
                 font-size: 0.9em;
-                margin-top: -4px;
+                margin-top: -6px;
                 color: #151515;
               `}
             />

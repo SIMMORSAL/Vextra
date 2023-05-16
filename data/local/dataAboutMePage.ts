@@ -6,18 +6,21 @@ export function getAboutMeData(): AboutMeData {
     image: "/images/my_image.png",
     name: "Mitra Sisakht",
     textTop: `
-Hi, and welcome to my website.
-
-I'm a determined project manager with 10 years of experience in the field. 
-Here you'll find a short sum of my history and the things I've been doing 
-through my professional career. However please do check out the Portfolio 
-tab to see my works in more detail.
+I am an industrial Designer. I was born in Sisakht(Kohgiluye &
+Boyerahmad province), Grew up in Isfahan. I have always been
+interested in creating objects by hand when I was a child, but since I
+got familiar with different design fields, I knew industrial design and
+whatever related to it are in my interest zone. So overtime, this
+interest was transfered from creating things by hand in childhood to
+creating useful objects for life. As a result I took up Industrial Design
+as my major in the university.
+Atier graduation from BCs program, I decided to work despite my
+desire to continue my studies in MCs peogram. Atier gaining valuable
+experiences during the years of working in multiple companies, now I
+intend to get to well established Politecnico di Milano University, to
+expand my knowledge in Design program.
 `,
-    textBottom: `
-Hi again. This actually is not for any person named "Jane Smith", and all the data are fake and merely mockup.
-
-This website is a demo, and it's source code is on [GitHub](https://github.com/simmorsal/Vextra).
-`,
+    textBottom: ``,
   };
 }
 
@@ -28,32 +31,117 @@ export function getHistory(): History[] {
       icon: "fa-solid fa-briefcase",
       items: [
         {
-          title: "COOLSOFT Ltd",
-          date: "September 2020 – Present",
+          title: "Mirnegaar",
+          afterTitle: "Packaging Structure Designer",
+          date: "April 2022 – Present",
           description: `
-- Develop and maintain 12+ customized data-centric web applications and services using
-ASP.NET, C#.NET, LINQ, MS SQL, and Agile/SCRUM methodologies
-- Create and apply UI requirements utilizing ASP.NET, JS/jQuery, HTML, and CSS
-- Collaborate with business analysts, users, and federal agencies to collect requirements and provide implementation
+- Some explainations here
+- Some more here
 `,
         },
         {
-          title: "Minisoft",
-          date: "June 2017 – August 2020",
+          title: "Teram",
+          afterTitle: "Packaging Structure Designer",
+          date: "December 2020 – September 2021",
           description: `
-- Enhance process accuracy from 89% to 99%, saving 1000+ hours yearly
-- Implement Business Intelligence/ETL solutions to integrate disparate data sources
-towards a centralized datastore
 `,
         },
         {
-          title: "SARLEN & BOUTRO INFOTECH LLC",
-          date: "June 2013 – August 2016",
+          title: "Anil Pack",
+          afterTitle: "Graphic Designer",
+          date: "January 2019 – November 2020",
           description: `
-- Improve the performance of all ETL/SQL and online components to ensure strict service
-level agreements, timely response and data reliability
-- Programmed customized software solutions that helped customers to use their capital
-and manage risk more effectively
+`,
+        },
+        {
+          title: "Color Season",
+          afterTitle: "Photographer",
+          date: "December 2018 – December 2018",
+          description: `
+_THIS DOESN'T BELONG HERE!_
+`,
+        },
+        {
+          title: "Goharbafan",
+          afterTitle: "YOUR JOB TITLE HERE",
+          date: "July 2015 – September 2015",
+          description: `
+`,
+        },
+        {
+          title: "Isfahan Fashion Group",
+          afterTitle: "Fashion Designer",
+          date: "July 2015 – ???",
+          description: `
+_THIS MIGHT NOT BELONG HERE EITHER!_
+`,
+        },
+      ],
+    },
+    {
+      groupTitle: "Education",
+      icon: "fa-solid fa-graduation-cap",
+      items: [
+        {
+          title: "Tabriz Art University, Tariz, Iran",
+          date: "2013 - 2018",
+          description: `
+Bachelor of Industrial Design \ 
+GPA : 15.31 (Out of 20)
+`,
+        },
+        {
+          title: "Banifateme High School, Isfahan, Iran",
+          date: "?MONTH? 2012",
+          description: `
+Mathematcs & Physics Diploma \ 
+GPA : 13.36 (Out of 20)
+`,
+        },
+      ],
+    },
+    {
+      groupTitle: "Achievements",
+      icon: "fa-solid fa-trophy",
+      items: [
+        {
+          title: "A Design Award Competition",
+          date: "2022",
+          description: "Winner of Iron A Design Award & Competition for One More",
+        },
+        {
+          title: "Gensai Design & Planning Competition",
+          date: "2020",
+          description: "GENSAI Design Award, with Life Saving Umbrela",
+        },
+        {
+          title: "National Award of Packaging Design in Cultural Industries",
+          date: "2020",
+          description: " Silver Award, with Jelveh ",
+        },
+      ],
+    },
+    {
+      groupTitle: "Operating Activities",
+      icon: "fa-solid fa-person-digging",
+      items: [
+        {
+          title: "Number 3",
+          afterTitle: "Magazine Layout Designer",
+          date: "2018",
+          description: `
+Tarahi-Novin Student Quarterly Magazine Layout Design ti Number 3 ti Islamic Azad University,
+Science and Research Branch ti Tehran - Iran -- THIS NEED EDIT!  
+`,
+        },
+        {
+          title: "Dr. Mahmoud Golabchi International Architecture Festival",
+          afterTitle: "3D Modeler",
+          date: "2018",
+          description: `
+
+Statue 3D Modeling for Dr. Mahmoud Golabchi International Architecture Festival ti Pars
+University ti Tehran - Iran -- THIS NEED EDIT!  
 `,
         },
       ],
@@ -63,31 +151,60 @@ and manage risk more effectively
       icon: "fa-solid fa-file",
       items: [
         {
-          title: "DEVRY UNIVERSITY, Sherman Oaks, CA",
-          date: "May 2016",
-          description: `
-Bachelor of Science in Information Technology \ 
-Honors: cum laude (GPA: 3.6/4.0)
-`,
-        },
-        {
-          title: "Coder smith React Bootcamp, Los Angeles, CA",
-          date: "June 2019",
-        },
-      ],
-    },
-    {
-      groupTitle: "Achievements",
-      icon: "fa-solid fa-trophy",
-      items: [
-        {
-          title: "awwwards. design winner ",
-          date: "2021",
-          description: "for the website [example.com](https://example.com)",
-        },
-        {
-          title: "React Open Source Awards",
+          title: "Design: Creation of Artifacts in Society",
           date: "2020",
+          afterTitle: "Coursera",
+        },
+        {
+          title: "Prototyping for Digital Products and Websites",
+          date: "2020",
+          afterTitle: "Gymnasium",
+        },
+        {
+          title: "UX Fundeamental Course",
+          date: "2020",
+          afterTitle: "Gymnasium",
+        },
+        {
+          title: "Fashion as Design Course",
+          date: "2020",
+          afterTitle: "Coursera",
+        },
+        {
+          title: "Fashion Design Course",
+          date: "July 2013 - January 2014 --- or 2019?!",
+          afterTitle: "Danesh Ara Academy of Arts, Isfahan",
+        },
+        {
+          title: "Product Design and Smart Home Workshop",
+          date: "2018 --- or 2019?!",
+          afterTitle: "Isfahan University of Art, Isfahan",
+        },
+        {
+          title: "From Idea to Italy Workshop",
+          date: "2018 --- or 2019?!",
+          afterTitle: "Pin Design Studio, Tehran",
+        },
+        {
+          title: "The Introduction of Technology in Fashion, Design And Garment",
+          date: "2017 --- or 2018?!",
+          afterTitle: "East Azarbaijan Industrial Management Organazation, Tabriz",
+        },
+        {
+          title:
+            "Entrepreneurship workshop titled “Entrepreneurship in Art” and “Trade and Sales Skills of Artistic Products”",
+          date: "2018",
+          afterTitle: "East Azarbaijan Industrial Management Organazation, Tabriz",
+        },
+        {
+          title: "Gensai Design Workshop",
+          date: "2018",
+          afterTitle: "Embassy of Japan in Tehran",
+        },
+        {
+          title: "Car Modeling with Clay Workshop",
+          date: "2016",
+          afterTitle: "Tabriz Islamic Art University",
         },
       ],
     },
