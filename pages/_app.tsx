@@ -65,18 +65,15 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Vextra</title>
+        <title>mitra</title>
+        <meta name="description" content="Mitra's portfolio." />
+        <meta name="og:title" content="mitra" />
+        <meta name="og:url" content="https://mitra-portfolio.vercel.app" />
+        <meta name="og:description" content="Mitra's portfolio." />
         <meta
-          name="description"
-          content="A highly customizable platform ready to be a portfolio page, and become a lot more with some of your own components."
+          name="og:image"
+          content="https://mitra-portfolio.vercel.app/preview.jpg"
         />
-        <meta name="og:title" content="Vextra" />
-        <meta name="og:url" content="https://vextra.vercel.app" />
-        <meta
-          name="og:description"
-          content="A highly customizable platform ready to be a portfolio page, and become a lot more with some of your own components."
-        />
-        <meta name="og:image" content="https://vextra.vercel.app/preview.jpg" />
 
         <link
           rel="apple-touch-icon"
