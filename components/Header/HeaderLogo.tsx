@@ -3,7 +3,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import { _AppContext } from "../../helpers/providers/provider_App";
 import { cacheImage } from "../../helpers/tools";
-import { headerHeight } from "./index";
 import { hexToCSSFilter } from "hex-to-css-filter";
 import { colorLogoNormal } from "../../data/colors";
 
@@ -12,7 +11,6 @@ interface Props {
   justLoaded: boolean;
   selectedPage: string; // undefined | about-me | portfolio
   setSelectedPage: (page?: string) => void;
-  showDev: boolean;
 }
 
 export default function HeaderLogo(p: Props) {
@@ -24,6 +22,7 @@ export default function HeaderLogo(p: Props) {
     cacheImage(generalData.logoSmall).then(() => {
       setImageCached(true);
     });
+    cacheImage(generalData.logoBig);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -71,45 +70,41 @@ export default function HeaderLogo(p: Props) {
               grid-column: 1;
               cursor: pointer;
               width: 100%;
-              opacity: ${p.showDev ? 0 : 1};
+              height: 27px;
+              object-fit: contain;
+              opacity: ${isMouseOver ? 0 : 1};
+              transform: translateX(${isMouseOver ? -5 : 0}px);
               filter: ${generalData.applyColorToLogo
                 ? hexToCSSFilter(p.color ? p.color : colorLogoNormal).filter
                 : ""};
 
-              transition: 200ms ease;
+              transition: ${isMouseOver ? 300 : 200}ms ease;
             `}
           />
-          <a
-            href={"https://github.com/simmorsal"}
-            target={"_blank"}
-            rel={"noreferrer"}
+          <img
+            src={generalData.logoBig}
+            alt={"logo"}
+            onClick={() => {
+              p.setSelectedPage(undefined);
+              setMoveToMain(true);
+            }}
             css={css`
-              z-index: 1002;
               grid-row: 1;
               grid-column: 1;
+              pointer-events: none;
               cursor: pointer;
-              transform: translateY(${p.showDev ? "39px" : -headerHeight + "px"})
-                scale(${p.showDev ? 2 : 1});
-              transition: transform 600ms ease;
-            `}
-          >
-            <img
-              onMouseEnter={() => setIsMouseOver(true)}
-              onMouseLeave={() => setIsMouseOver(false)}
-              src={"https://avatars.githubusercontent.com/u/24822099"}
-              alt={"SIMMORSAL"}
-              css={css`
-                opacity: ${p.showDev ? 1 : 0};
-                filter: blur(${p.showDev ? 0 : 24}px);
-                width: 100%;
-                padding: 0 12%;
+              width: 100%;
+              height: 27px;
+              object-fit: contain;
+              opacity: ${isMouseOver ? 1 : 0};
+              transform: translateX(${isMouseOver ? 0 : 5}px);
+              filter: ${generalData.applyColorToLogo
+                ? hexToCSSFilter(p.color ? p.color : colorLogoNormal).filter
+                : ""};
 
-                transition: 600ms ease;
-                transition-property: opacity, filter;
-                transition-delay: ${p.showDev ? 300 : 0}ms;
-              `}
-            />
-          </a>
+              transition: ${isMouseOver ? 300 : 200}ms ease;
+            `}
+          />
         </div>
       </div>
     </div>
