@@ -12,9 +12,23 @@ export function getPortfolio(linkId: string): Portfolio {
 export function getAllPortfolios(): Portfolio[] {
   return [
     {
+      linkId: "one-more-faucet",
+      name: "One More Faucet",
+      isBig: true,
+      backgroundColor: "#282649",
+      headerItemsColor: "#8a85ff",
+      textColor: "#fff",
+      isBackgroundDark: false,
+      image: "/images/portfolio/xphone/PortfolioItemTemplate1.jpg",
+      pageRichContent: [],
+      // awardImage: "/images/portfolio/xphone/xphone-award.png",
+      awardIsTransparent: true,
+      // awardAspectRatio: "244/376",
+    },
+    {
       linkId: "x-phone",
       name: "X|Phone",
-      isBig: true,
+      isBig: false,
       backgroundColor: "#282649",
       headerItemsColor: "#8a85ff",
       textColor: "#fff",

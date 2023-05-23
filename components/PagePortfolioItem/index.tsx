@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { ReactNode, useContext, useEffect, useRef, useState } from "react";
 import { css } from "@emotion/react";
 import RichContent from "../RichContent";
 import { headerHeight } from "../Header";
@@ -12,7 +12,9 @@ import {
   colorHeaderItem,
 } from "../../data/colors";
 
-interface Props {}
+interface Props {
+  children?: ReactNode;
+}
 
 export default function PagePortfolioItem(p: Props) {
   const router = useRouter();
@@ -95,6 +97,7 @@ export default function PagePortfolioItem(p: Props) {
           }
         />
       )}
+      {p.children}
     </div>
   );
 }
