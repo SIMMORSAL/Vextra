@@ -1,14 +1,11 @@
 import { css } from "@emotion/react";
+import Faucet from "./Faucet";
 
 const PortfolioOneMoreFaucet = () => {
   return (
-    <div
-      css={css`
-        width: 100px;
-        height: 400px;
-        background-color: red;
-      `}
-    ></div>
+    <div css={css``}>
+      <Faucet />
+    </div>
   );
 };
 
