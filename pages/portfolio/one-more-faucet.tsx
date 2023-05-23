@@ -2,6 +2,7 @@ import React from "react";
 import { css } from "@emotion/react";
 import PagePortfolioItem from "../../components/PagePortfolioItem";
 import PortfolioOneMoreFaucet from "../../components/PortfolioOneMoreFaucet";
+import FaucetProvider from "../../components/PortfolioOneMoreFaucet/Context";
 
 interface Props {}
 
@@ -14,7 +15,9 @@ export default function PortfolioOneMore(props: Props) {
       `}
     >
       <PagePortfolioItem>
-        <PortfolioOneMoreFaucet />
+        <FaucetProvider>
+          <PortfolioOneMoreFaucet />
+        </FaucetProvider>
       </PagePortfolioItem>
     </div>
   );

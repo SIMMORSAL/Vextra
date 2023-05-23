@@ -16,7 +16,7 @@ export function getAllPortfolios(): Portfolio[] {
       name: "One More Faucet",
       isBig: true,
       backgroundColor: "#ffffff",
-      headerItemsColor: "#6b6b6b",
+      headerItemsColor: "#777",
       textColor: "#fff",
       isBackgroundDark: false,
       image: "/images/portfolio/xphone/PortfolioItemTemplate1.jpg",

@@ -32,23 +32,26 @@ interface _AppInterface {
   setPortfolioHeaderItemColor: Dispatch<SetStateAction<string>>;
 }
 
-export const _AppContext = createContext({
-  generalData: {} as GeneralDataModel,
-  newTabSelected: "/inContext",
-  setNewTabSelected: () => {},
-  shouldMoveToMain: false,
-  setMoveToMain: () => {},
-  fadeOutContent: false,
-  setFadeOutContent: () => {},
-  flashContent: false,
-  setFlashContent: () => {},
-  tabChangeRequested: 0,
-  setTabChangeRequested: () => {},
-  portfolioBgColor: "",
-  setPortfolioBgColor: () => {},
-  portfolioHeaderItemColor: "",
-  setPortfolioHeaderItemColor: () => {},
-} as _AppInterface);
+export const _AppContext = createContext(
+  //   {
+  //   generalData: {} as GeneralDataModel,
+  //   newTabSelected: "/inContext",
+  //   setNewTabSelected: () => {},
+  //   shouldMoveToMain: false,
+  //   setMoveToMain: () => {},
+  //   fadeOutContent: false,
+  //   setFadeOutContent: () => {},
+  //   flashContent: false,
+  //   setFlashContent: () => {},
+  //   tabChangeRequested: 0,
+  //   setTabChangeRequested: () => {},
+  //   portfolioBgColor: "",
+  //   setPortfolioBgColor: () => {},
+  //   portfolioHeaderItemColor: "",
+  //   setPortfolioHeaderItemColor: () => {},
+  // }
+  {} as _AppInterface
+);
 
 interface Props {
   children: JSX.Element | JSX.Element[];
