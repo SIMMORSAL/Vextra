@@ -2,8 +2,8 @@ import { css } from "@emotion/react";
 import { useContext, useState } from "react";
 import { ContextFaucet } from "./Context";
 
-const FaucetControlls = () => {
-  const { faucetPosition, setFaucetPosition, positionMarkerList } =
+const OnScreenController = () => {
+  const { faucetPosition, setFaucetPosition, faucetKeyFrames } =
     useContext(ContextFaucet);
   const [jumpDistance, setJumpDistance] = useState(0.1);
   return (
@@ -13,7 +13,7 @@ const FaucetControlls = () => {
         align-self: flex-end;
       `}
     >
-      {JSON.stringify(positionMarkerList)}
+      <p>{faucetKeyFrames + ""}</p>
       <button
         onClick={() => {
           setJumpDistance(
@@ -96,4 +96,4 @@ const FaucetControlls = () => {
   );
 };
 
-export default FaucetControlls;
+export default OnScreenController;

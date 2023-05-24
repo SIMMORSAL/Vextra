@@ -1,12 +1,13 @@
 import { Dispatch, ReactNode, SetStateAction, createContext, useState } from "react";
 import { FaucetPosition } from "./Faucet";
-import { PositionMarker } from "./FaucetPositionMarker";
+import { FaucetKeyframes } from "./DataFaucetKeyframes";
+// import { PositionMarker } from "./FaucetPositionMarker";
 
 interface FaucetContextProps {
   faucetPosition: FaucetPosition;
   setFaucetPosition: Dispatch<SetStateAction<FaucetPosition>>;
-  positionMarkerList: PositionMarker[];
-  setPositionMarkerList: Dispatch<SetStateAction<PositionMarker[]>>;
+  faucetKeyFrames: FaucetKeyframes[];
+  setFaucetKeyFrames: Dispatch<SetStateAction<FaucetKeyframes[]>>;
 }
 
 export const ContextFaucet = createContext({} as FaucetContextProps);
@@ -22,15 +23,15 @@ const FaucetProvider = (p: Props) => {
     translateY: 0,
   });
 
-  const [positionMarkerList, setPositionMarkerList] = useState<PositionMarker[]>([]);
+  const [faucetKeyFrames, setFaucetKeyFrames] = useState<FaucetKeyframes[]>([]);
 
   return (
     <ContextFaucet.Provider
       value={{
         faucetPosition,
         setFaucetPosition,
-        positionMarkerList,
-        setPositionMarkerList,
+        faucetKeyFrames,
+        setFaucetKeyFrames,
       }}
     >
       {p.children}

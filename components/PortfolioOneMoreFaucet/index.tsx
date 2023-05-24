@@ -1,21 +1,34 @@
-import { css } from "@emotion/react";
+import { css, keyframes } from "@emotion/react";
 import Faucet from "./Faucet";
-import { useContext, useRef, useState } from "react";
+import { MutableRefObject, useContext, useEffect, useRef, useState } from "react";
 import { ContextFaucet } from "./Context";
-import FaucetControlls from "./FaucetControlls";
-import FaucetPositionMarker, { PositionMarker } from "./FaucetPositionMarker";
-import { colorBackground } from "../../data/colors";
+import OnScreenController from "./OnScreenController";
+import FaucetPositionMarker from "./FaucetPositionMarker";
+import { getFaucetKeyframes } from "./DataFaucetKeyframes";
 
 const PortfolioOneMoreFaucet = () => {
-  const { faucetPosition, setFaucetPosition } = useContext(ContextFaucet);
-  const [positionMarkers, setPositionMarkers] = useState<PositionMarker[]>([]);
+  const { faucetPosition, setFaucetPosition, setFaucetKeyFrames } =
+    useContext(ContextFaucet);
+  // const [positionMarkers, setPositionMarkers] = useState<PositionMarker[]>([]);
 
-  positionMarkers[5] = {
-    faucetPosition: { translateX: 0, translateY: 0, zoom: 0 },
-    locationInDocument: 8,
-  };
+  const contentRoot = useRef(null);
 
-  console.log(positionMarkers);
+  const markerRefs = useRef<MutableRefObject<any>[]>([]);
+  const keyframes = getFaucetKeyframes();
+
+  useEffect(() => {
+    console.log(4444444444444444);
+    console.log(markerRefs.current);
+
+    if (markerRefs.current.length !== keyframes.length)
+      throw "Keyframe and Marker counts don't match";
+
+    setFaucetKeyFrames(
+      markerRefs.current.map((v, i) => {
+        return { faucetPosition: keyframes[i].faucetPosition, refMarker: v };
+      })
+    );
+  }, []);
 
   return (
     <div
@@ -34,8 +47,8 @@ const PortfolioOneMoreFaucet = () => {
           display: flex;
         `}
       >
-        <Faucet positionMarkers={positionMarkers} />
-        <FaucetControlls />
+        <Faucet />
+        <OnScreenController />
       </div>
       <div
         css={css`
@@ -48,38 +61,30 @@ const PortfolioOneMoreFaucet = () => {
         `}
       >
         <FaucetPositionMarker
-          position={{ zoom: 1, translateX: 0, translateY: 0 }}
-          onInfo={(info) => {
-            positionMarkers[0] = info;
-            setPositionMarkers(positionMarkers);
+          onRefReady={(ref) => {
+            markerRefs.current[0] = ref;
           }}
         />
         <div
           css={css`
             height: 400px;
             width: 200px;
-            /* background-color: red; */
           `}
         />
         <FaucetPositionMarker
-          position={{ zoom: 1.5, translateX: 0, translateY: -0.3 }}
-          onInfo={(info) => {
-            positionMarkers[1] = info;
-            setPositionMarkers(positionMarkers);
+          onRefReady={(ref) => {
+            markerRefs.current[1] = ref;
           }}
         />
         <div
           css={css`
             height: 400px;
             width: 200px;
-            /* background-color: red; */
           `}
         />
         <FaucetPositionMarker
-          position={{ zoom: 1.5, translateX: 0, translateY: -0.3 }}
-          onInfo={(info) => {
-            positionMarkers[2] = info;
-            setPositionMarkers(positionMarkers);
+          onRefReady={(ref) => {
+            markerRefs.current[2] = ref;
           }}
         />
       </div>

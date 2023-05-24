@@ -1,20 +1,19 @@
-import { useContext, useEffect, useRef } from "react";
+import { MutableRefObject, useContext, useEffect, useRef } from "react";
 import { FaucetPosition } from "./Faucet";
 import { ContextFaucet } from "./Context";
 import { css } from "@emotion/react";
 
-export interface PositionMarker {
-  locationInDocument: number;
-  faucetPosition: FaucetPosition;
-}
+// export interface PositionMarker {
+//   faucetPosition: FaucetPosition;
+// }
 
 interface Props {
-  position: FaucetPosition;
-  onInfo: (info: PositionMarker) => void;
+  // position: FaucetPosition;
+  onRefReady: (ref: MutableRefObject<any>) => void;
 }
 
 const FaucetPositionMarker = (p: Props) => {
-  const { positionMarkerList, setPositionMarkerList } = useContext(ContextFaucet);
+  // const { faucetKeyFrames, setFaucetKeyFrames } = useContext(ContextFaucet);
   const ref = useRef(null);
 
   useEffect(() => {
@@ -22,10 +21,7 @@ const FaucetPositionMarker = (p: Props) => {
     //   ...positionMarkerList,
     //   { faucetPosition: p.position, locationInDocument: ref.current.offsetTop },
     // ]);
-    p.onInfo({
-      faucetPosition: p.position,
-      locationInDocument: ref.current.offsetTop,
-    });
+    p.onRefReady(ref);
   }, []);
   return (
     <div
