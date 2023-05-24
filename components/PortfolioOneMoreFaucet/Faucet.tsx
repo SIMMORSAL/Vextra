@@ -11,17 +11,10 @@ export interface FaucetPosition {
   translateY: number;
 }
 
-interface Props {
-  // positionMarkers: PositionMarker[];
-}
+interface Props {}
 
 const Faucet = (p: Props) => {
   const { faucetPosition, faucetKeyFrames } = useContext(ContextFaucet);
-
-  // useEffect(() => {
-  //   console.log(111111111111111211);
-  //   console.log(p.positionMarkers);
-  // }, [p.positionMarkers]);
 
   return (
     <div

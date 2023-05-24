@@ -55,12 +55,12 @@ const PortfolioOneMoreFaucet = () => {
           grid-row: 1;
           grid-column: 1;
           width: 100%;
-          min-height: 100%;
           display: flex;
           flex-direction: column;
         `}
       >
         <FaucetPositionMarker
+          // showOnUi
           onRefReady={(ref) => {
             markerRefs.current[0] = ref;
           }}
@@ -72,17 +72,19 @@ const PortfolioOneMoreFaucet = () => {
           `}
         />
         <FaucetPositionMarker
+          // showOnUi
           onRefReady={(ref) => {
             markerRefs.current[1] = ref;
           }}
         />
         <div
           css={css`
-            height: 400px;
+            height: 300vh;
             width: 200px;
           `}
         />
         <FaucetPositionMarker
+          // showOnUi
           onRefReady={(ref) => {
             markerRefs.current[2] = ref;
           }}
