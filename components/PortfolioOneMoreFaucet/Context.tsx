@@ -1,8 +1,9 @@
 import { Dispatch, ReactNode, SetStateAction, createContext, useState } from "react";
+import { FaucetPosition } from "./Faucet";
 
 interface FaucetContextProps {
-  zoom: number;
-  setZoom: Dispatch<SetStateAction<number>>;
+  faucetPosition: FaucetPosition;
+  setFaucetPosition: Dispatch<SetStateAction<FaucetPosition>>;
 }
 
 export const ContextFaucet = createContext({} as FaucetContextProps);
@@ -12,10 +13,14 @@ interface Props {
 }
 
 const FaucetProvider = (p: Props) => {
-  const [zoom, setZoom] = useState(1);
+  const [faucetPosition, setFaucetPosition] = useState<FaucetPosition>({
+    zoom: 1,
+    translateX: 1,
+    translateY: 1,
+  });
 
   return (
-    <ContextFaucet.Provider value={{ zoom, setZoom }}>
+    <ContextFaucet.Provider value={{ faucetPosition, setFaucetPosition }}>
       {p.children}
     </ContextFaucet.Provider>
   );

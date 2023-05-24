@@ -2,8 +2,16 @@ import { css } from "@emotion/react";
 import { useContext } from "react";
 import { ContextFaucet } from "./Context";
 
+export interface FaucetPosition {
+  zoom: number;
+  // visibleWIdth: number;
+  // visibleHeight: number;
+  translateX: number;
+  translateY: number;
+}
+
 const Faucet = () => {
-  const { zoom } = useContext(ContextFaucet);
+  const { faucetPosition } = useContext(ContextFaucet);
 
   return (
     <div
@@ -23,10 +31,12 @@ const Faucet = () => {
     >
       <div
         css={css`
-          width: ${100 * zoom}vw;
-          height: ${100 * zoom}vh;
+          /* width: ${100 * faucetPosition.zoom}vw;
+          height: ${100 * faucetPosition.zoom}vh; */
+          scale: 2.3;
 
-          transition: height ease 500ms;
+          transition: ease 500ms;
+          transition-property: scale, height;
         `}
       >
         <img
