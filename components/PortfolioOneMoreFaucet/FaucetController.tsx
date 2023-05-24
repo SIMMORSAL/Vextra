@@ -15,7 +15,7 @@ const FaucetController = () => {
       <button
         onClick={() => {
           setJumpDistance(
-            jumpDistance === 0.01 ? 0.1 : jumpDistance === 0.1 ? 0.5 : 0.01
+            jumpDistance === 0.01 ? 0.1 : jumpDistance === 0.1 ? 0.3 : 0.01
           );
         }}
       >
@@ -42,7 +42,7 @@ const FaucetController = () => {
         >
           -
         </button>
-        <span> z: {faucetPosition.zoom.toPrecision(3)}</span>
+        <span> z: {faucetPosition.zoom.toPrecision(2)}</span>
       </div>
       <div>
         <button
@@ -65,7 +65,7 @@ const FaucetController = () => {
         >
           -
         </button>
-        <span> X: {faucetPosition.translateX.toPrecision(3)}</span>
+        <span> X: {faucetPosition.translateX.toPrecision(2)}</span>
       </div>
       <div>
         <button
@@ -88,7 +88,7 @@ const FaucetController = () => {
         >
           -
         </button>
-        <span> Y: {faucetPosition.translateY.toPrecision(3)}</span>
+        <span> Y: {faucetPosition.translateY.toPrecision(2)}</span>
       </div>
     </div>
   );

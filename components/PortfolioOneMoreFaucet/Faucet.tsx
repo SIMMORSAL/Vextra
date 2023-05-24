@@ -31,12 +31,15 @@ const Faucet = () => {
     >
       <div
         css={css`
-          /* width: ${100 * faucetPosition.zoom}vw;
-          height: ${100 * faucetPosition.zoom}vh; */
-          scale: 2.3;
+          width: 100vw;
+          height: 100vh;
+          scale: ${faucetPosition.zoom};
+          translate: ${faucetPosition.translateX * 100 +
+          "% " +
+          faucetPosition.translateY * 100}%;
 
           transition: ease 500ms;
-          transition-property: scale, height;
+          transition-property: scale, translate;
         `}
       >
         <img
