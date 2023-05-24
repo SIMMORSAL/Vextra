@@ -25,10 +25,9 @@ export function Content({ Component, pageProps }) {
       css={css`
         width: 100%;
         height: calc(100% - ${headerHeight}px);
-        transform: scale(${flashContent ? 0.95 : 1});
         border: ${tabRootIsShowing
           ? flashContent
-            ? "1px solid #484848"
+            ? "5px solid #484848"
             : `0px solid transparent`
           : ""};
 

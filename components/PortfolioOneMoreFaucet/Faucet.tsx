@@ -1,6 +1,7 @@
 import { css } from "@emotion/react";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { ContextFaucet } from "./Context";
+import { PositionMarker } from "./FaucetPositionMarker";
 
 export interface FaucetPosition {
   zoom: number;
@@ -10,8 +11,17 @@ export interface FaucetPosition {
   translateY: number;
 }
 
-const Faucet = () => {
-  const { faucetPosition } = useContext(ContextFaucet);
+interface Props {
+  positionMarkers: PositionMarker[];
+}
+
+const Faucet = (p: Props) => {
+  const { faucetPosition, positionMarkerList } = useContext(ContextFaucet);
+
+  useEffect(() => {
+    console.log(111111111111111211);
+    console.log(p.positionMarkers);
+  }, [p.positionMarkers]);
 
   return (
     <div
