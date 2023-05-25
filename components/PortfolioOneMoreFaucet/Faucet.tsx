@@ -105,7 +105,7 @@ const Faucet = (p: Props) => {
           "% " +
           faucetPosition.translateY * 100}%;
 
-          transition: ease 500ms;
+          transition: ease-out 200ms;
           transition-property: scale, translate;
         `}
       >
