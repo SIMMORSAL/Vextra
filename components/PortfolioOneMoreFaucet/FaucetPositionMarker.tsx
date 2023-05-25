@@ -1,6 +1,4 @@
-import { MutableRefObject, useContext, useEffect, useRef } from "react";
-import { FaucetPosition } from "./Faucet";
-import { ContextFaucet } from "./Context";
+import { MutableRefObject, useEffect, useRef } from "react";
 import { css } from "@emotion/react";
 
 interface Props {
@@ -20,9 +18,9 @@ const FaucetPositionMarker = (p: Props) => {
       css={css`
         ${p.showOnUi
           ? `
-        height: 10px;
-        width: 100%;
-        background-color: green;
+            height: 10px;
+            width: 100%;
+            background-color: green;
         `
           : ""}
       `}

@@ -1,4 +1,4 @@
-import { css, keyframes } from "@emotion/react";
+import { css } from "@emotion/react";
 import Faucet from "./Faucet";
 import { MutableRefObject, useContext, useEffect, useRef, useState } from "react";
 import { ContextFaucet } from "./Context";
@@ -7,9 +7,7 @@ import FaucetPositionMarker from "./FaucetPositionMarker";
 import { getFaucetKeyframes } from "./DataFaucetKeyframes";
 
 const PortfolioOneMoreFaucet = () => {
-  const { faucetPosition, setFaucetPosition, setFaucetKeyFrames } =
-    useContext(ContextFaucet);
-  // const [positionMarkers, setPositionMarkers] = useState<PositionMarker[]>([]);
+  const { setFaucetKeyFrames } = useContext(ContextFaucet);
 
   const contentRoot = useRef(null);
 
@@ -17,15 +15,16 @@ const PortfolioOneMoreFaucet = () => {
   const keyframes = getFaucetKeyframes();
 
   useEffect(() => {
-    console.log(4444444444444444);
-    console.log(markerRefs.current);
-
     if (markerRefs.current.length !== keyframes.length)
       throw "Keyframe and Marker counts don't match";
 
     setFaucetKeyFrames(
       markerRefs.current.map((v, i) => {
-        return { faucetPosition: keyframes[i].faucetPosition, refMarker: v };
+        return {
+          faucetPosition: keyframes[i].faucetPosition,
+          refMarker: v,
+          refPosition: v.current.offsetTop,
+        };
       })
     );
   }, []);
@@ -47,10 +46,13 @@ const PortfolioOneMoreFaucet = () => {
           display: flex;
         `}
       >
-        <Faucet />
+        <Faucet
+        // contentSize={contentRoot.current?.offsetHeight}
+        />
         <OnScreenController />
       </div>
       <div
+        ref={contentRoot}
         css={css`
           grid-row: 1;
           grid-column: 1;
@@ -67,12 +69,11 @@ const PortfolioOneMoreFaucet = () => {
         />
         <div
           css={css`
-            height: 400px;
+            height: 200vh;
             width: 200px;
           `}
         />
         <FaucetPositionMarker
-          // showOnUi
           onRefReady={(ref) => {
             markerRefs.current[1] = ref;
           }}
@@ -84,9 +85,19 @@ const PortfolioOneMoreFaucet = () => {
           `}
         />
         <FaucetPositionMarker
-          // showOnUi
           onRefReady={(ref) => {
             markerRefs.current[2] = ref;
+          }}
+        />
+        <div
+          css={css`
+            height: 200vh;
+            width: 200px;
+          `}
+        />
+        <FaucetPositionMarker
+          onRefReady={(ref) => {
+            markerRefs.current[3] = ref;
           }}
         />
       </div>

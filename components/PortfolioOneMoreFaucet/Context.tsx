@@ -1,6 +1,5 @@
 import { Dispatch, ReactNode, SetStateAction, createContext, useState } from "react";
-import { FaucetPosition } from "./Faucet";
-import { FaucetKeyframes } from "./DataFaucetKeyframes";
+import { FaucetKeyframes, FaucetPosition } from "./DataFaucetKeyframes";
 // import { PositionMarker } from "./FaucetPositionMarker";
 
 interface FaucetContextProps {
