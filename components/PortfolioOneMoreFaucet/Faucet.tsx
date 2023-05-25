@@ -48,18 +48,18 @@ const Faucet = (p: Props) => {
         setFaucetPosition({
           zoom:
             faucetKeyFrames[i].faucetPosition.zoom +
-            (faucetKeyFrames[i].faucetPosition.zoom -
-              faucetKeyFrames[i + 1].faucetPosition.zoom) *
+            (faucetKeyFrames[i + 1].faucetPosition.zoom -
+              faucetKeyFrames[i].faucetPosition.zoom) *
               normalizedOffsetToNextOne,
           translateX:
             faucetKeyFrames[i].faucetPosition.translateX +
-            (faucetKeyFrames[i].faucetPosition.translateX -
-              faucetKeyFrames[i + 1].faucetPosition.translateX) *
+            (faucetKeyFrames[i + 1].faucetPosition.translateX -
+              faucetKeyFrames[i].faucetPosition.translateX) *
               normalizedOffsetToNextOne,
           translateY:
             faucetKeyFrames[i].faucetPosition.translateY +
-            (faucetKeyFrames[i].faucetPosition.translateY -
-              faucetKeyFrames[i + 1].faucetPosition.translateY) *
+            (faucetKeyFrames[i + 1].faucetPosition.translateY -
+              faucetKeyFrames[i].faucetPosition.translateY) *
               normalizedOffsetToNextOne,
         });
 

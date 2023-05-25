@@ -30,9 +30,9 @@ export const getFaucetKeyframes = (): FaucetKeyframes[] => {
     },
     {
       faucetPosition: {
-        zoom: 1.2,
+        zoom: 2.3,
         translateX: 0,
-        translateY: 0.5,
+        translateY: -0.8,
       },
     },
     {

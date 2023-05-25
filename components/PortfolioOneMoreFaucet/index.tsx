@@ -85,6 +85,7 @@ const PortfolioOneMoreFaucet = () => {
           `}
         />
         <FaucetPositionMarker
+          showOnUi
           onRefReady={(ref) => {
             markerRefs.current[2] = ref;
           }}
