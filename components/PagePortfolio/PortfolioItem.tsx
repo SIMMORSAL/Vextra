@@ -214,6 +214,8 @@ export default function PortfolioItem(p: Props) {
                 width: 100%;
                 overflow: hidden;
                 cursor: pointer;
+                -webkit-user-drag: none;
+                user-select: none;
 
                 transform: scale(${isHovering ? 1.1 : 1});
 
