@@ -6,6 +6,7 @@ import OnScreenController from "./OnScreenController";
 import FaucetPositionMarker from "./FaucetPositionMarker";
 import { getFaucetKeyframes } from "./DataFaucetKeyframes";
 import { headerHeight } from "../Header";
+import FaucetLogo from "./FaucetLogo";
 
 const PortfolioOneMoreFaucet = () => {
   const { setFaucetKeyFrames, setFaucetPosition } = useContext(ContextFaucet);
@@ -15,7 +16,7 @@ const PortfolioOneMoreFaucet = () => {
   const markerRefs = useRef<MutableRefObject<any>[]>([]);
   const keyframes = getFaucetKeyframes();
 
-  const [initialAnimationStep, setInitialAnimationStep] = useState(0); // 99 means done
+  const [initialAnimationStep, setInitialAnimationStep] = useState(99); // 99 means done
 
   useEffect(() => {
     if (markerRefs.current.length !== keyframes.length)
@@ -34,39 +35,38 @@ const PortfolioOneMoreFaucet = () => {
     // * Starting initial animation
     const t: NodeJS.Timeout[] = [];
 
-    setInitialAnimationStep(1);
-    // setFaucetPosition({
-    //   zoom: 1.3,
-    //   translateX: 0,
-    //   translateY: 0,
-    // });
+    if (initialAnimationStep !== 99) {
+      setInitialAnimationStep(1);
 
-    t.push(
-      setTimeout(() => {
-        setInitialAnimationStep(2);
-        setFaucetPosition({
-          zoom: 0.7,
-          translateX: 0,
-          translateY: 0.1,
-        });
-      }, 300)
-    );
+      t.push(
+        setTimeout(() => {
+          setInitialAnimationStep(2);
+          setFaucetPosition({
+            zoom: 0.7,
+            translateX: 0,
+            translateY: 0.1,
+          });
+        }, 300)
+      );
 
-    t.push(
-      setTimeout(() => {
-        setInitialAnimationStep(3);
-        setFaucetPosition(getFaucetKeyframes()[1].faucetPosition);
-      }, 2500)
-    );
+      t.push(
+        setTimeout(() => {
+          setInitialAnimationStep(3);
+          setFaucetPosition(getFaucetKeyframes()[1].faucetPosition);
+        }, 2500)
+      );
+
+      t.push(
+        setTimeout(() => {
+          setInitialAnimationStep(99);
+        }, 4500)
+      );
+    }
 
     return () => {
       t.map((v) => clearTimeout(v));
     };
   }, []);
-
-  // useEffect(() => {
-  //   initialAnimationStep === 1
-  // }, [initialAnimationStep]);
 
   return (
     <div
@@ -74,7 +74,8 @@ const PortfolioOneMoreFaucet = () => {
         width: 100%;
         min-height: 100%;
         display: grid;
-        overflow: ${initialAnimationStep === 99 ? "auto" : "hidden"};
+        overflow: ${initialAnimationStep === 99 ? "visible" : "hidden"};
+        /* overflow: vi; */
       `}
     >
       <div
@@ -89,10 +90,7 @@ const PortfolioOneMoreFaucet = () => {
           transition: opacity ease 1500ms;
         `}
       >
-        <Faucet
-          initialAnimationDone={initialAnimationStep === 99}
-          // contentSize={contentRoot.current?.offsetHeight}
-        />
+        <Faucet initialAnimationDone={initialAnimationStep === 99} />
         {/* <OnScreenController /> */}
       </div>
       <div
@@ -103,6 +101,8 @@ const PortfolioOneMoreFaucet = () => {
           width: 100%;
           display: flex;
           flex-direction: column;
+          max-width: 1000px;
+          margin: 0 auto;
         `}
       >
         <FaucetPositionMarker
@@ -122,12 +122,14 @@ const PortfolioOneMoreFaucet = () => {
             markerRefs.current[1] = ref;
           }}
         />
+        <FaucetLogo animateIn={initialAnimationStep >= 3} />
         <div
           css={css`
-            height: 200vh;
+            height: 100vh;
           `}
         />
         <FaucetPositionMarker
+          showOnUi
           onRefReady={(ref) => {
             markerRefs.current[2] = ref;
           }}
@@ -151,6 +153,16 @@ const PortfolioOneMoreFaucet = () => {
         <FaucetPositionMarker
           onRefReady={(ref) => {
             markerRefs.current[4] = ref;
+          }}
+        />
+        <div
+          css={css`
+            height: 200vh;
+          `}
+        />
+        <FaucetPositionMarker
+          onRefReady={(ref) => {
+            markerRefs.current[5] = ref;
           }}
         />
       </div>

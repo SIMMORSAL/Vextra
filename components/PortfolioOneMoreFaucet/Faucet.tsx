@@ -108,7 +108,7 @@ const Faucet = (p: Props) => {
 
           transition: ${p.initialAnimationDone
             ? "ease-out 200ms"
-            : "ease-in-out 1000ms"};
+            : "ease-in-out 1300ms"};
           transition-property: scale, translate;
         `}
       >

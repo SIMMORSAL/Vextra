@@ -25,63 +25,41 @@ export const getFaucetKeyframes = (): FaucetKeyframes[] => {
     {
       faucetPosition: {
         zoom: 0.7,
+        translateX: -0.15,
+        translateY: 0.1,
+      },
+    },
+    {
+      faucetPosition: {
+        zoom: 1.9,
+        translateX: 0,
+        translateY: -0.5,
+      },
+    },
+    {
+      faucetPosition: {
+        zoom: 1.3,
+        translateX: 0,
+        translateY: 0.6,
+      },
+    },
+    {
+      faucetPosition: {
+        zoom: 0.7,
+        translateX: 0.2,
+        translateY: 0.1,
+      },
+    },
+    {
+      faucetPosition: {
+        zoom: 0.8,
         translateX: -0.2,
-        translateY: 0.1,
-      },
-    },
-    {
-      faucetPosition: {
-        zoom: 1.7,
-        translateX: 0,
-        translateY: 0.2,
-      },
-    },
-    {
-      faucetPosition: {
-        zoom: 2.3,
-        translateX: 0,
-        translateY: -0.8,
-      },
-    },
-    {
-      faucetPosition: {
-        zoom: 0.2,
-        translateX: 0.5,
-        translateY: 0.1,
+        translateY: -0.1,
       },
     },
   ];
 };
 
 export const getFaucetKeyframesPortrait = (): FaucetKeyframes[] => {
-  return [
-    {
-      faucetPosition: {
-        zoom: 0.7,
-        translateX: 0,
-        translateY: 0,
-      },
-    },
-    {
-      faucetPosition: {
-        zoom: 1.7,
-        translateX: 0,
-        translateY: 0.2,
-      },
-    },
-    {
-      faucetPosition: {
-        zoom: 2.3,
-        translateX: 0,
-        translateY: -0.8,
-      },
-    },
-    {
-      faucetPosition: {
-        zoom: 0.2,
-        translateX: 0.5,
-        translateY: 0.1,
-      },
-    },
-  ];
+  return [];
 };
