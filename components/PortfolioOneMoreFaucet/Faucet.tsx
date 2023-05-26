@@ -5,6 +5,7 @@ import { headerHeight } from "../Header";
 
 interface Props {
   // contentSize: number;
+  initialAnimationDone: boolean;
 }
 
 const Faucet = (p: Props) => {
@@ -105,7 +106,9 @@ const Faucet = (p: Props) => {
           "% " +
           faucetPosition.translateY * 100}%;
 
-          transition: ease-out 200ms;
+          transition: ${p.initialAnimationDone
+            ? "ease-out 200ms"
+            : "ease-in-out 1000ms"};
           transition-property: scale, translate;
         `}
       >

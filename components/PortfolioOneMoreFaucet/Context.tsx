@@ -1,5 +1,9 @@
 import { Dispatch, ReactNode, SetStateAction, createContext, useState } from "react";
-import { FaucetKeyframes, FaucetPosition } from "./DataFaucetKeyframes";
+import {
+  FaucetKeyframes,
+  FaucetPosition,
+  getFaucetKeyframes,
+} from "./DataFaucetKeyframes";
 // import { PositionMarker } from "./FaucetPositionMarker";
 
 interface FaucetContextProps {
@@ -16,11 +20,15 @@ interface Props {
 }
 
 const FaucetProvider = (p: Props) => {
-  const [faucetPosition, setFaucetPosition] = useState<FaucetPosition>({
-    zoom: 1,
-    translateX: 0,
-    translateY: 0,
-  });
+  const [faucetPosition, setFaucetPosition] = useState<FaucetPosition>(
+    getFaucetKeyframes().length !== 0
+      ? getFaucetKeyframes()[0].faucetPosition
+      : {
+          zoom: 0.7,
+          translateX: 0,
+          translateY: 0,
+        }
+  );
 
   const [faucetKeyFrames, setFaucetKeyFrames] = useState<FaucetKeyframes[]>([]);
 

@@ -29,9 +29,9 @@ const OnScreenController = () => {
             align-self: flex-end;
           `}
         >
-          {faucetKeyFrames.length !== 0 &&
+          {/* {faucetKeyFrames.length !== 0 &&
             faucetKeyFrames[2].refMarker.current &&
-            faucetKeyFrames[2].refMarker.current.offsetTop + ""}
+            faucetKeyFrames[2].refMarker.current.offsetTop + ""} */}
         </p>
         <div
           css={css`

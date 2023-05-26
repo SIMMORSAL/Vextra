@@ -5,14 +5,17 @@ import { ContextFaucet } from "./Context";
 import OnScreenController from "./OnScreenController";
 import FaucetPositionMarker from "./FaucetPositionMarker";
 import { getFaucetKeyframes } from "./DataFaucetKeyframes";
+import { headerHeight } from "../Header";
 
 const PortfolioOneMoreFaucet = () => {
-  const { setFaucetKeyFrames } = useContext(ContextFaucet);
+  const { setFaucetKeyFrames, setFaucetPosition } = useContext(ContextFaucet);
 
   const contentRoot = useRef(null);
 
   const markerRefs = useRef<MutableRefObject<any>[]>([]);
   const keyframes = getFaucetKeyframes();
+
+  const [initialAnimationStep, setInitialAnimationStep] = useState(0); // 99 means done
 
   useEffect(() => {
     if (markerRefs.current.length !== keyframes.length)
@@ -27,7 +30,43 @@ const PortfolioOneMoreFaucet = () => {
         };
       })
     );
+
+    // * Starting initial animation
+    const t: NodeJS.Timeout[] = [];
+
+    setInitialAnimationStep(1);
+    // setFaucetPosition({
+    //   zoom: 1.3,
+    //   translateX: 0,
+    //   translateY: 0,
+    // });
+
+    t.push(
+      setTimeout(() => {
+        setInitialAnimationStep(2);
+        setFaucetPosition({
+          zoom: 0.7,
+          translateX: 0,
+          translateY: 0.1,
+        });
+      }, 300)
+    );
+
+    t.push(
+      setTimeout(() => {
+        setInitialAnimationStep(3);
+        setFaucetPosition(getFaucetKeyframes()[1].faucetPosition);
+      }, 2500)
+    );
+
+    return () => {
+      t.map((v) => clearTimeout(v));
+    };
   }, []);
+
+  // useEffect(() => {
+  //   initialAnimationStep === 1
+  // }, [initialAnimationStep]);
 
   return (
     <div
@@ -35,6 +74,7 @@ const PortfolioOneMoreFaucet = () => {
         width: 100%;
         min-height: 100%;
         display: grid;
+        overflow: ${initialAnimationStep === 99 ? "auto" : "hidden"};
       `}
     >
       <div
@@ -44,12 +84,16 @@ const PortfolioOneMoreFaucet = () => {
           width: 100%;
           height: 100%;
           display: flex;
+          opacity: ${initialAnimationStep < 2 ? 0 : 1};
+
+          transition: opacity ease 1500ms;
         `}
       >
         <Faucet
-        // contentSize={contentRoot.current?.offsetHeight}
+          initialAnimationDone={initialAnimationStep === 99}
+          // contentSize={contentRoot.current?.offsetHeight}
         />
-        <OnScreenController />
+        {/* <OnScreenController /> */}
       </div>
       <div
         ref={contentRoot}
@@ -69,36 +113,44 @@ const PortfolioOneMoreFaucet = () => {
         />
         <div
           css={css`
-            height: 200vh;
-            width: 200px;
+            height: calc(50vh - ${headerHeight}px);
           `}
         />
         <FaucetPositionMarker
+          // showOnUi
           onRefReady={(ref) => {
             markerRefs.current[1] = ref;
           }}
         />
         <div
           css={css`
-            height: 300vh;
-            width: 200px;
+            height: 200vh;
           `}
         />
         <FaucetPositionMarker
-          showOnUi
           onRefReady={(ref) => {
             markerRefs.current[2] = ref;
           }}
         />
         <div
           css={css`
+            height: 300vh;
+          `}
+        />
+        <FaucetPositionMarker
+          showOnUi
+          onRefReady={(ref) => {
+            markerRefs.current[3] = ref;
+          }}
+        />
+        <div
+          css={css`
             height: 200vh;
-            width: 200px;
           `}
         />
         <FaucetPositionMarker
           onRefReady={(ref) => {
-            markerRefs.current[3] = ref;
+            markerRefs.current[4] = ref;
           }}
         />
       </div>
