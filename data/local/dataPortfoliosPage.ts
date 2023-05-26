@@ -19,7 +19,7 @@ export function getAllPortfolios(): Portfolio[] {
       headerItemsColor: "#777",
       textColor: "#fff",
       isBackgroundDark: false,
-      image: "/images/portfolio/xphone/PortfolioItemTemplate1.jpg",
+      image: "/images/portfolio/one-more-faucet/PortfolioItemOneMore.jpg",
       pageRichContent: [],
       // awardImage: "/images/portfolio/xphone/xphone-award.png",
       awardIsTransparent: true,

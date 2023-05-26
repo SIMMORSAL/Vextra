@@ -194,6 +194,7 @@ export default function PortfolioItem(p: Props) {
               height: calc(100% - 4px);
               left: 4px;
               position: relative;
+              border-radius: 16px;
               overflow: hidden;
               background-color: ${p.portfolio.backgroundColor
                 ? p.portfolio.backgroundColor
