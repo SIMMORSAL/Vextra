@@ -213,19 +213,6 @@ you can make your own.
 
 
 
-## Licence
-
-Weedware. If you want to use this commercially,
-you have to buy me a joint.
-
-Bitcoin Address:  
-![Bitcoin](https://user-images.githubusercontent.com/24822099/189475474-a5f0e60b-8501-4c64-9d70-d55b05a73fb5.png)  
-bc1qar2ukc0llsctga6rcgc58kuek5f89dwxpvc5ud
-
-
-
-
-
 
 
 
